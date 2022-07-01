@@ -1,0 +1,38 @@
+\begin{thebibliography}{1}
+
+\bibitem{lago}
+{\sc D.~Alford-Lago, C.~W. Curtis, A.~T. Ihler, and O.~Issan}, {\em Deep
+  {L}earning {E}nhanced {D}ynamic {M}ode {D}ecomposition},  (2022).
+
+\bibitem{botev}
+{\sc Z.~I. Botev, J.~F. Grotowski, and D.~P. Kroese}, {\em {Kernel density
+  estimation via diffusion}}, The Annals of Statistics, 38 (2010), pp.~2916 --
+  2957.
+
+\bibitem{brunton}
+{\sc S.~Brunton, B.~R. Noack, and P.~Koumoutsakos}, {\em Machine learning for
+  fluid mechanics}, Ann. Rev. Fluid Mech., 52 (2020), pp.~477--508.
+
+\bibitem{epanechnikov}
+{\sc V.~A. Epanechnikov}, {\em Non-parametric estimation of a multivariate
+  probability density}, Theory of Probability \& Its Applications, 14 (1969),
+  pp.~153--158.
+
+\bibitem{hornik}
+{\sc K.~Hornik, M.~Stinchcombe, and H.~White}, {\em Multilayer {F}eedforward
+  {N}etworks are {U}niversal {A}pproximators}, Neural Networks,  (1989).
+
+\bibitem{koopman}
+{\sc B.~Koopman}, {\em Hamiltonian systems and transformations in {H}ilbert
+  space}, Proc. Nat. Acad. Sci., 17 (1931), pp.~315--318.
+
+\bibitem{lusch}
+{\sc B.~Lusch, J.~N. Kutz, and S.~L. Brunton}, {\em Deep learning for universal
+  linear embeddings of nonlinear dynamics}, Nature Comm., 9 (2018), p.~4950.
+
+\bibitem{williams}
+{\sc M.~Williams, I.~G. Kevrekidis, and C.~W. Rowley}, {\em A data-driven
+  approximation of the {K}oopman operator: extending dynamic mode
+  decomposition}, J. Nonlin. Sci., 25 (2015), pp.~1307--1346.
+
+\end{thebibliography}
