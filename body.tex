@@ -349,15 +349,30 @@ Ok, so what the hell did we actually do?
     \item Used Epanechnikov kernel (optimal in a mean square error sense) which is $K(x) = 
     3(1-x^2)/4$ for $\abs{x} < 1$ else $K(x) = 0$ and has finite support \cite{epanechnikov}.
     \item Kernel choice not stastically significant \cite{epanechnikov}.
-    \item Bandwidth computed using Improved Sheather-Jones method \cite{botev}
+    \item Bandwidth computed using Improved Sheather-Jones method \cite{botev} and saved for 
+    each epoch and layer.
   \end{itemize}
 
   \item Used symmetric KL Divergence to find ``distance'' between empirical PDFs from data.
   \begin{itemize}
-    \item Both PDFs are assumed to have same support.
+    \item Both PDFs are assumed to have same support so that integration is over same domain.
     \item Using Simpson's Rule with 10,000 points for numerical integration, considering approximating 
     fourth derivative for error bound on integration.
-    \item 
+  \end{itemize}
+
+  \item Using Divergence data for each layer and inter-epoch, found linear fit with 95\% confidence
+  and prediction interval.
+  \begin{itemize}
+    \item First 20\% of divergence data is ignored to avoid transient behavior.
+    \item Slope of each layer and model saved, computed average and variance of slopes among all 
+    layers. 
+  \end{itemize}
+
+  \item Plotted average slopes with variances of fit for each latent dimension.
+  \begin{itemize}
+    \item Plots of the bandwidth per layer, inter-epoch, and latent dimension were made along 
+    with average bandwidths per latent dimension and inter-epoch.
+    \item Plots off all loss curves per model and latent dimension were also made.
   \end{itemize}
 \end{enumerate}
 

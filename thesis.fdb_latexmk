@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex thesis"] 1656543317 "thesis.aux" "thesis.bbl" "thesis" 1656699802
+["bibtex thesis"] 1656543317 "thesis.aux" "thesis.bbl" "thesis" 1656719430
   "./siammod.bst" 1494223185 17935 84ceb58ad31952007b36f4fe5a2d2ddc ""
-  "main.bib" 1656543282 12029 6ad15cd4a86dab6491b7f26d4fc4be91 ""
-  "thesis.aux" 1656699801 2903 c2c9de7c778eb48f6e596616aa593e50 "pdflatex"
+  "main.bib" 1656700187 12029 6ad15cd4a86dab6491b7f26d4fc4be91 ""
+  "thesis.aux" 1656719429 2903 c2c9de7c778eb48f6e596616aa593e50 "pdflatex"
   (generated)
   "thesis.bbl"
   "thesis.blg"
-["pdflatex"] 1656699798 "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/thesis.tex" "thesis.pdf" "thesis" 1656699802
+["pdflatex"] 1656719426 "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/thesis.tex" "thesis.pdf" "thesis" 1656719430
   "C:/Users/josep/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1655252028 278015 b5ae8789d05c9394f564dcef5be6e51a ""
   "C:/Users/josep/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1651614135 10246960 38f373af67a0067aa65b6e6f0c3f6a75 ""
   "C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1001775420 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -120,18 +120,18 @@
   "C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png" 1656468679 420609 3df3c08afa32978c2836adbb956c99df ""
   "C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/loss_plots.png" 1656447893 435730 b7ee4ce74f66976252655149c3fe58c6 ""
   "C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png" 1656432809 36069 0eb95701959eb070c0efec7fc69b13f2 ""
-  "abstract.tex" 1654134088 94 1a82f0a20121bd8634212190177832f7 ""
-  "body.tex" 1656699797 23832 e606a98f8ffd6fef5d16dd1c1e37be10 ""
-  "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/thesis.tex" 1655743837 18227 d1506b60a1f472f36bcc98eed8265154 ""
+  "abstract.tex" 1656700178 94 1a82f0a20121bd8634212190177832f7 ""
+  "body.tex" 1656719425 24614 b45ff71535b70898d7a7590a4d7f5d89 ""
+  "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/thesis.tex" 1656700189 18227 d1506b60a1f472f36bcc98eed8265154 ""
   "glossary.tex" 1494223185 1406 3b07350837667203526a06d93c4cadc9 ""
   "sdsu-thesis.cls" 1558242036 31827 f809eee83bcc4ba6ca92943f9c465752 ""
-  "thesis.aux" 1656699801 2903 c2c9de7c778eb48f6e596616aa593e50 "pdflatex"
+  "thesis.aux" 1656719429 2903 c2c9de7c778eb48f6e596616aa593e50 "pdflatex"
   "thesis.bbl" 1656543318 1499 4c4174b472648b6997f11ea92b58393e "bibtex thesis"
   "thesis.gls" 0 -1 0 ""
   "thesis.lof" 0 -1 0 "pdflatex"
   "thesis.lot" 0 -1 0 "pdflatex"
-  "thesis.tex" 1655743837 18227 d1506b60a1f472f36bcc98eed8265154 ""
-  "thesis.toc" 1656699801 1293 eb3486d558773e19d4050c55f3060e16 "pdflatex"
+  "thesis.tex" 1656700189 18227 d1506b60a1f472f36bcc98eed8265154 ""
+  "thesis.toc" 1656719429 1293 eb3486d558773e19d4050c55f3060e16 "pdflatex"
   (generated)
   "thesis.aux"
   "thesis.glo"

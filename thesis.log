@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.3)  1 JUL 2022 11:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.3)  1 JUL 2022 16:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -469,12 +469,12 @@ CHAPTER 3.
 <C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/slope_linear_fit.png, id=81, 722.7pt x 505.89pt>
 File: C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/slope_linear_fit.png Graphic file (type png)
 <use C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/slope_linear_fit.png>
-Package pdftex.def Info: C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/slope_linear_fit.png  used on input line 376.
+Package pdftex.def Info: C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/slope_linear_fit.png  used on input line 391.
 (pdftex.def)             Requested size: 451.6875pt x 316.18047pt.
 <C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/loss_plots.png, id=83, 1084.05pt x 722.7pt>
 File: C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/loss_plots.png Graphic file (type png)
 <use C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/loss_plots.png>
-Package pdftex.def Info: C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/loss_plots.png  used on input line 377.
+Package pdftex.def Info: C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/loss_plots.png  used on input line 392.
 (pdftex.def)             Requested size: 451.6875pt x 301.12793pt.
 [11
 
@@ -482,25 +482,25 @@ Package pdftex.def Info: C:/Users/josep/Documents/School Work/Research/Curtis/Ma
 <C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png, id=87, 1084.05pt x 722.7pt>
 File: C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png Graphic file (type png)
 <use C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png>
-Package pdftex.def Info: C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png  used on input line 381.
+Package pdftex.def Info: C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png  used on input line 396.
 (pdftex.def)             Requested size: 451.6875pt x 301.12793pt.
  [12 <C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/slope_linear_fit.png> <C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/loss_plots.png>]
  Section 3.2.
 <C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png, id=93, 722.7pt x 505.89pt>
 File: C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png Graphic file (type png)
 <use C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png>
-Package pdftex.def Info: C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png  used on input line 386.
+Package pdftex.def Info: C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png  used on input line 401.
 (pdftex.def)             Requested size: 451.6875pt x 316.18047pt.
 <C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/loss_plots.png, id=94, 1084.05pt x 722.7pt>
 File: C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/loss_plots.png Graphic file (type png)
 <use C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/loss_plots.png>
-Package pdftex.def Info: C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/loss_plots.png  used on input line 387.
+Package pdftex.def Info: C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/loss_plots.png  used on input line 402.
 (pdftex.def)             Requested size: 451.6875pt x 301.12793pt.
 [13 <C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png>]
 <C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png, id=99, 1084.05pt x 722.7pt>
 File: C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png Graphic file (type png)
 <use C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png>
-Package pdftex.def Info: C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png  used on input line 391.
+Package pdftex.def Info: C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png  used on input line 406.
 (pdftex.def)             Requested size: 451.6875pt x 301.12793pt.
  [14 <C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png> <C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/loss_plots.png>]
  Section 3.3.
@@ -524,7 +524,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  91i,14n,91p,1224b,314s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (28 pages, 1464906 bytes).
+Output written on thesis.pdf (28 pages, 1465582 bytes).
 PDF statistics:
  176 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
