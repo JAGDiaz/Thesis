@@ -289,18 +289,26 @@ For the normall distributed $X$ defined above, we have that probability density 
 $$f(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\parens{-\frac{1}{2}\parens{\frac{x-\mu}{\sigma}}^2}$$
 and the entropy integral for this evaluates to
 $$h[f] = \frac{1}{2}\parens{\log(2\pi\sigma^2) + 1}$$
-which only depends on the variance.
+which only depends on the variance. This expression tells us that the entropy of a
+normally distributed random variable increases as the variance does, graphically this is 
+associated with the flattening of the bell curve which can be interpretted as the values 
+around the mean being less likely to appear relative to values far from the mean. As such, 
+the result of any given sample is less certain.
+\begin{center}
+    \includegraphics[width=\textwidth]{Figures/entropy_example.png}
+    \includegraphics[width=\textwidth]{Figures/densities_example.png}
+\end{center}
 
 %Further, if we were to take many samples
 %and find the mean of the set of samples $\bar{x}$ we would expect that sample mean to 
 %approach the true mean as the number of samples increases. 
 
-\textbf{Examine Goofy gaussian variance change, same mean.}
-
 \textbf{Bias vs Variance.}
 
 \textbf{De-trending. KL div of differences.}
 
+When training an ML model, the expectation is that the machine will converge to some 
+configuration that allows it to accomplish the task it was designed for. For the sake of 
 
 \section{Basic Definitions}
 The KL Divergence (also called relative-entropy) is a statistical distance between a 
@@ -344,18 +352,20 @@ of a histogram. This is accomplished with the \emph{kernel density estimator} fo
 given by:
 $$\hat{f}(x; K, h) = \frac{1}{nh}\sum_{i = 1}^n K\parens{\frac{x - x_i}{h}}$$
 where $K$ is the chosen kernel, $h$ is what's called the bandwidth parameter, and 
-$\{x_i\}_{i=1}^n$ is the data that generates our histogram. Per [reference], the choice 
-of kernel does not provide much statistical significance; the choice of the bandwidth 
-parameter $h$ is very crucial for finding a density estimate that approximates the 
+$\{x_i\}_{i=1}^n$ is the data that generates our histogram. Per \cite{epanechnikov}, 
+the choice of kernel does not provide much statistical significance; the choice of 
+the bandwidth parameter $h$ is very crucial for finding a density estimate that 
+approximates the 
 underlying density function appropriately. Choosing an optimal $h$ depends on 
 the given data and the common method, Silverman's rule of thumb, works on the 
 assumption that the density function of the data is unimodal and close to 
 normal. For general data, on which no assumptions of normality are made, a more 
-general method can be found using the Improved Sheather Jones algorithm\cite{botev}.
+general method can be found using the Improved Sheather-Jones algorithm\cite{botev}.
 
 
 
 \section{Implementation Details}
+\noindent
 Ok, so what the hell did we actually do?
 \begin{enumerate}
   \item Ran a series of DLDMD models on two very well understood dynamical systems:
