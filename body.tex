@@ -263,23 +263,40 @@ convergence will tell us whether the machine is approaching a particular configu
 point-wise, this might not actually tell us much of anything else. The changes between 
 epochs is, in some sense, stochastic due to not knowing how the optimizer will update $Q$
 between epochs. As such, we propose a more statistical approach wherein we examine how the
-information content is changing from epoch to epoch. 
+information content is changing from epoch to epoch. By the noted stochastic nature of the 
+evolution, we consider the entries of $A$ and $b$ for each layer to be drawn from a continuous 
+probability distribution $X$ and examine how it changes epoch to epoch. 
 
 \textbf{More details forthcoming, get more details on why euclidean difference may be 
 unhelpful.}
 
-\textbf{Not helpful because it tells us nothing about information content or expressivity of 
-neural network architecture. All we get is convergence; useful but not terribly so.}
 
 \chapter{KULLBACK-LEIBLER DIVERGENCE}
 In the field of information theory, it is often useful to frame information as being 
 represented by a random variable and the values it can take on. For example, consider 
 a normally distributed random variable $X \sim N(\mu, \sigma^2)$ where $\mu$ is the 
-mean or expected values $\mathbb{E}[X]$ of $X$ and $\sigma^2$ is the variance 
+mean or expected value $\mathbb{E}[X]$ of $X$ and $\sigma^2$ is the variance 
 Var$[X]$ of $X$. This is one of the most well understood probability distributions
-due to countless years of study into properties, as such we know that if we were to 
+due to countless years of study into its properties, as such we know that if we were to 
 draw a sample for $X$ that we're much more likely to get something close to $\mu$
-than we to get something far away from $\mu$.
+than we are to get something far away from $\mu$. For example; if $\mu = 0$ and 
+$\sigma^2 = 1$, then upon drawing a sample the value 1 is more likely to appear
+than -37. The level of certainty of the outcome of the draw begs the question of 
+how that certainty can be quantified and conversely, we could instead consider the 
+uncertainty of any given probability distribution. A measure of the uncertainty was 
+proposed in 1948\cite{shannon} and this measure is known as \emph{informational entropy}
+or, simply, entropy. For a
+continuous distribution with density function $f(x)$, is given by 
+$$h[f] = \mathbb{E}\sqbracks{-\ln(f(x))} = -\int_X f(x)\log(f(x))\ dx$$
+For the normall distributed $X$ defined above, we have that probability density function
+$$f(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\parens{-\frac{1}{2}\parens{\frac{x-\mu}{\sigma}}^2}$$
+and the entropy integral for this evaluates to
+$$h[f] = \frac{1}{2}\parens{\log(2\pi\sigma^2) + 1}$$
+which only depends on the variance.
+
+%Further, if we were to take many samples
+%and find the mean of the set of samples $\bar{x}$ we would expect that sample mean to 
+%approach the true mean as the number of samples increases. 
 
 \textbf{Examine Goofy gaussian variance change, same mean.}
 
@@ -303,9 +320,19 @@ $P$. As a ``distance'', the KL Divergence is non-negative and 0 when $P = Q$ alm
 everywhere. Unlike more standard metrics, it is not symmetric and does not satisfy 
 the triangle equality. In order to deal with something that is, at least, symmetric 
 we'll consider using the symmetric KL Divergence which is defined as 
-$$D_{SKL}(P\ |\!|\ Q) = \frac{1}{2}\parens{D_{KL}(P\ |\!|\ Q) + D_{KL}(Q\ |\!|\ P)}$$
+$$D_{SKL}(P, Q) = \frac{1}{2}\parens{D_{KL}(P\ |\!|\ Q) + D_{KL}(Q\ |\!|\ P)}$$
 Which is the average of the KL Divergences for $P$ with respect to $Q$ and for $Q$
-with respect to $P$.
+with respect to $P$. In our cases, we'll be dealing with a continuous random variable
+with probability density functions $p$ and $q$, for which the corresponding KL 
+divergence formula is
+$$D_{KL}(P\ |\!|\ Q) = \int_\mathcal{X} p(x)\log\parens{p(x)/q(x)}\ dx$$
+As an analogue of the discrete case, the same simple interpretations about
+the formula apply. The reason we can consider this a ``distance'' is that the KL 
+divergence is non-negative, $D_{KL}(P\ |\!|\ Q) \geq 0$, which is known as Gibbs 
+inequality and only equals 0 when $P = Q$ almost everywhere. As such, the distance
+between $P$ and $Q$ is 0 when they are the ``same'' distribution and some positive 
+number if they differ.
+
 
 \section{How to build distributions (Non-parametric statistics)}
 The question remains about how we obtain the probability distribution of the random 
@@ -372,7 +399,7 @@ Ok, so what the hell did we actually do?
   \begin{itemize}
     \item Plots of the bandwidth per layer, inter-epoch, and latent dimension were made along 
     with average bandwidths per latent dimension and inter-epoch.
-    \item Plots off all loss curves per model and latent dimension were also made.
+    \item Plots of all loss curves per model and latent dimension were also made.
   \end{itemize}
 \end{enumerate}
 
@@ -388,22 +415,22 @@ Many strategies for this exist, we default to Simpson's Rule due to it's... accu
 
 \section{Duffing}
 \begin{center}
-    \includegraphics[width=\textwidth]{"C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/slope_linear_fit.png"} 
-    \includegraphics[width=\textwidth]{"C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/loss_plots.png"} 
+    \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png"} 
+    \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/loss_plots.png"} 
 \end{center}
 
 \begin{center}
-    \includegraphics[width=\textwidth]{"C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png"} 
+    \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png"} 
 \end{center}
 
 \section{Van der Pol}
 \begin{center}
-    \includegraphics[width=\textwidth]{"C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png"}
-    \includegraphics[width=\textwidth]{"C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/loss_plots.png"}
+    \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png"}
+    \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/loss_plots.png"}
 \end{center}
 
 \begin{center}
-    \includegraphics[width=\textwidth]{"C:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/my_work/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png"} 
+    \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png"} 
 \end{center}
 \section{Lorenz (Maybe)}
 
