@@ -721,6 +721,13 @@ INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbsy10.t
 INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy8.tfm
 INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy6.tfm
 INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
+INPUT .\Figures\divergence_example.png
+INPUT .\Figures\divergence_example.png
+INPUT Figures\divergence_example.png
+INPUT .\Figures\divergence_example.png
+INPUT .\Figures\divergence_example.png
+INPUT .\Figures\divergence_example.png
+INPUT .\Figures\divergence_example.png
 INPUT Z:\ML_models\DLDMD-newest\examples\duffing\slope_linear_fit.png
 INPUT Z:\ML_models\DLDMD-newest\examples\duffing\slope_linear_fit.png
 INPUT Z:\ML_models\DLDMD-newest\examples\duffing\slope_linear_fit.png

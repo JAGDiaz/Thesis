@@ -267,9 +267,6 @@ information content is changing from epoch to epoch. By the noted stochastic nat
 evolution, we consider the entries of $A$ and $b$ for each layer to be drawn from a continuous 
 probability distribution $X$ and examine how it changes epoch to epoch. 
 
-\textbf{More details forthcoming, get more details on why euclidean difference may be 
-unhelpful.}
-
 
 \chapter{KULLBACK-LEIBLER DIVERGENCE}
 In the field of information theory, it is often useful to frame information as being 
@@ -332,6 +329,9 @@ divergence is non-negative, $D_{KL}(P\ |\!|\ Q) \geq 0$, which is known as Gibbs
 inequality and only equals 0 when $P = Q$ almost everywhere. As such, the distance
 between $P$ and $Q$ is 0 when they are the ``same'' distribution and some positive 
 number if they differ.
+\begin{center}
+    \includegraphics[width=\textwidth]{Figures/divergence_example.png}
+\end{center}
 
 
 \section{How to build distributions (Non-parametric statistics)}
@@ -351,7 +351,7 @@ underlying density function appropriately. Choosing an optimal $h$ depends on
 the given data and the common method, Silverman's rule of thumb, works on the 
 assumption that the density function of the data is unimodal and close to 
 normal. For general data, on which no assumptions of normality are made, a more 
-general method can be found using the Improved Sheather Jones algorithm.
+general method can be found using the Improved Sheather Jones algorithm\cite{botev}.
 
 
 
