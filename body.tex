@@ -294,16 +294,25 @@ normally distributed random variable increases as the variance does, graphically
 associated with the flattening of the bell curve which can be interpretted as the values 
 around the mean being less likely to appear relative to values far from the mean. As such, 
 the result of any given sample is less certain.
-\begin{center}
-    \includegraphics[width=\textwidth]{Figures/entropy_example.png}
-    \includegraphics[width=\textwidth]{Figures/densities_example.png}
-\end{center}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}{.5\textwidth}
+        \includegraphics[width=\textwidth]{Figures/entropy_example.png}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+        \includegraphics[width=\textwidth]{Figures/densities_example.png}
+    \end{minipage}
+
+    \caption{Entropy and density function change with respect to $\sigma^2$.}
+\end{figure}
 
 %Further, if we were to take many samples
 %and find the mean of the set of samples $\bar{x}$ we would expect that sample mean to 
 %approach the true mean as the number of samples increases. 
 
 \textbf{Bias vs Variance.}
+
 
 \textbf{De-trending. KL div of differences.}
 
@@ -337,9 +346,13 @@ divergence is non-negative, $D_{KL}(P\ |\!|\ Q) \geq 0$, which is known as Gibbs
 inequality and only equals 0 when $P = Q$ almost everywhere. As such, the distance
 between $P$ and $Q$ is 0 when they are the ``same'' distribution and some positive 
 number if they differ.
-\begin{center}
-    \includegraphics[width=\textwidth]{Figures/divergence_example.png}
-\end{center}
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}{\textwidth}
+        \includegraphics[width=\textwidth]{Figures/divergence_example.png}
+    \end{minipage} 
+    \caption{KL Divergence example with Normal distributions}
+\end{figure}
 
 
 \section{How to build distributions (Non-parametric statistics)}
@@ -413,35 +426,75 @@ Ok, so what the hell did we actually do?
   \end{itemize}
 \end{enumerate}
 
-\textbf{Integration via Simpson's Rule (?) Ask Chris about this.}
-Since we are using density estimation, we do not have access to the actual probability
-densities for computing the divergences between consecutive distributions, we only 
-have the data driven approximations from KDE. As such, we turn to numerical integration.
-Many strategies for this exist, we default to Simpson's Rule due to it's... accuracy.
+% \textbf{Integration via Simpson's Rule (?) Ask Chris about this.}
+% Since we are using density estimation, we do not have access to the actual probability
+% densities for computing the divergences between consecutive distributions, we only 
+% have the data driven approximations from KDE. As such, we turn to numerical integration.
+% Many strategies for this exist, we default to Simpson's Rule due to it's... accuracy.
 
 
 
 \chapter{RESULTS} \label{chapter:middle}
 
 \section{Duffing}
-\begin{center}
-    \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png"} 
-    \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/loss_plots.png"} 
-\end{center}
 
-\begin{center}
-    \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png"} 
-\end{center}
+\begin{table}[ht]
+    \centering
+    \begin{minipage}{.5\textwidth}
+        \caption{\label{tab1} describes the hyperparameters used for the Duffing Oscillator that 
+        we left unchanged for each run.}
+        \begin{tabular*}{\columnwidth}{|@{\extracolsep{\stretch{1}}}*{2}{c}@{}|}\hline
+            hyperparameter & Value \\ \hline \hline
+            Blah & \\ \hline
+            Blah & \\ \hline
+            Blah & \\ \hline
+            Blah & \\ \hline
+            Blah & \\ \hline
+            Blah & \\ \hline
+        \end{tabular*}
+    \end{minipage}
+\end{table}
+
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}{.5\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png"} 
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/loss_plots.png"} 
+    \end{minipage}
+    \caption{Duffing average slopes and loss plots.}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}{\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png"} 
+    \end{minipage} 
+    \caption{Duffing Average bandwidth.}
+\end{figure}
 
 \section{Van der Pol}
-\begin{center}
-    \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png"}
-    \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/loss_plots.png"}
-\end{center}
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}{.5\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png"} 
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/loss_plots.png"} 
+    \end{minipage}
+    \caption{Van der Pol average slopes and loss plots.}
+\end{figure}
 
-\begin{center}
-    \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png"} 
-\end{center}
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}{\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png"} 
+    \end{minipage} 
+    \caption{Van der Pol Average bandwidth.}
+\end{figure}
+
 \section{Lorenz (Maybe)}
 
 \chapter{DISCUSSION}
