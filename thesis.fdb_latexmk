@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex thesis"] 1657305211 "thesis.aux" "thesis.bbl" "thesis" 1657305261
+["bibtex thesis"] 1657305211 "thesis.aux" "thesis.bbl" "thesis" 1657306210
   "./siammod.bst" 1494223185 17935 84ceb58ad31952007b36f4fe5a2d2ddc ""
   "main.bib" 1657153894 12272 8ee6cfb6aba7e9328a811550e64d034c ""
-  "thesis.aux" 1657305260 4230 34166a8b5e1d257627f7252b70ee6b59 "pdflatex"
+  "thesis.aux" 1657306209 4230 34166a8b5e1d257627f7252b70ee6b59 "pdflatex"
   (generated)
   "thesis.bbl"
   "thesis.blg"
-["pdflatex"] 1657305257 "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/thesis.tex" "thesis.pdf" "thesis" 1657305261
-  "C:/Users/josep/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1655252028 278015 b5ae8789d05c9394f564dcef5be6e51a ""
+["pdflatex"] 1657306206 "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/thesis.tex" "thesis.pdf" "thesis" 1657306210
+  "C:/Users/josep/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1657306181 278015 b5ae8789d05c9394f564dcef5be6e51a ""
   "C:/Users/josep/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1651614135 10246960 38f373af67a0067aa65b6e6f0c3f6a75 ""
   "C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1001775420 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1200.tfm" 993062508 1444 95ffe0f19b974d50849790c8225c7ef7 ""
@@ -116,9 +116,9 @@
   "C:/Users/josep/AppData/Local/Programs/MiKTeX/tex/latex/ulem/ulem.sty" 1578655045 15682 94f55b803e160cf7fb6e4d77d07cfe1d ""
   "C:/Users/josep/AppData/Local/Programs/MiKTeX/tex/latex/xfor/xfor.sty" 1233853356 2689 44855b72da58344b1c1d9b3087bce6ca ""
   "C:/Users/josep/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1623005690 4902 efb3d66683a2da2a232f71e3a571a899 ""
-  "Figures/densities_example.png" 1657226034 80258 b2409773726aa4a33f95181e42a72d9c ""
-  "Figures/divergence_example.png" 1657226033 42274 d737a3af79cd6c6f6acb1e1c2631d3b4 ""
-  "Figures/entropy_example.png" 1657226034 33130 a5063eeef33ca83ae8a5e3d4179eb88a ""
+  "Figures/densities_example.png" 1657306206 70267 a3f4acd24c550684035837a3cdaf45ae ""
+  "Figures/divergence_example.png" 1657306189 34542 0eea5c088262894db2c1c85c126a2caa ""
+  "Figures/entropy_example.png" 1657306192 26946 192043b94317649affb61c1339f211d3 ""
   "Z:/ML_models/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png" 1657298599 311799 820ecb315fd8ee2c1d856a2ad62840d8 ""
   "Z:/ML_models/DLDMD-newest/examples/duffing/loss_plots.png" 1657298539 340011 9c8b37c0443b649bca3624f9e4fbd769 ""
   "Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png" 1657298740 32101 c7dff9ec6f51bd10b161ea5d4115dd7f ""
@@ -130,13 +130,13 @@
   "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/thesis.tex" 1657301438 17808 917a0bdd2fec153446f0d1d3f2df21f5 ""
   "glossary.tex" 1494223185 1406 3b07350837667203526a06d93c4cadc9 ""
   "sdsu-thesis.cls" 1558242036 31827 f809eee83bcc4ba6ca92943f9c465752 ""
-  "thesis.aux" 1657305260 4230 34166a8b5e1d257627f7252b70ee6b59 "pdflatex"
+  "thesis.aux" 1657306209 4230 34166a8b5e1d257627f7252b70ee6b59 "pdflatex"
   "thesis.bbl" 1657305211 1651 8fa272841026018bd0ed89b93c98ba8e "bibtex thesis"
   "thesis.gls" 0 -1 0 ""
-  "thesis.lof" 1657305260 678 59d7db780cdcdf29f533cbc0d11abbff "pdflatex"
-  "thesis.lot" 1657305260 171 8e9a99c6aec06eae6e000414835cbccc "pdflatex"
+  "thesis.lof" 1657306209 678 59d7db780cdcdf29f533cbc0d11abbff "pdflatex"
+  "thesis.lot" 1657306209 171 8e9a99c6aec06eae6e000414835cbccc "pdflatex"
   "thesis.tex" 1657301438 17808 917a0bdd2fec153446f0d1d3f2df21f5 ""
-  "thesis.toc" 1657305260 1295 ae11bf5e94658b9f40d7d47da428cf98 "pdflatex"
+  "thesis.toc" 1657306209 1295 ae11bf5e94658b9f40d7d47da428cf98 "pdflatex"
   (generated)
   "thesis.aux"
   "thesis.glo"
