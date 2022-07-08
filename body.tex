@@ -435,23 +435,39 @@ Ok, so what the hell did we actually do?
 
 
 \chapter{RESULTS} \label{chapter:middle}
+From experimentation by \cite{lago}, we know that some sets of hyperparameters yield good reconstruction
+of the structure of the phase space of each the dynamical systems in question and that some do not.
 
 \section{Duffing}
-
+% |@{\extracolsep{\stretch{1}}}*{2}{c}@{}|
 \begin{table}[ht]
     \centering
-    \begin{minipage}{.5\textwidth}
+    \begin{minipage}{.65\textwidth}
         \caption{\label{tab1} describes the hyperparameters used for the Duffing Oscillator that 
-        we left unchanged for each run.}
-        \begin{tabular*}{\columnwidth}{|@{\extracolsep{\stretch{1}}}*{2}{c}@{}|}\hline
-            hyperparameter & Value \\ \hline \hline
-            Blah & \\ \hline
-            Blah & \\ \hline
-            Blah & \\ \hline
-            Blah & \\ \hline
-            Blah & \\ \hline
-            Blah & \\ \hline
-        \end{tabular*}
+        were left unchanged for each run.}
+        \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|} \hline% {\columnwidth}{|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|}\hline
+            Hyperparameter & Value \\ \hline \hline
+            Initial Conditions & 5000 \\ \hline
+            Training proportion & $66.66\%$ \\ \hline
+            Validation proportion & $19.98\%$ \\ \hline
+            Testing proportion & $13.36\%$ \\ \hline
+            $t_0$ & 0 \\ \hline
+            $\Delta t$ & 0.05 \\ \hline
+            $t_f$ & 20 \\ \hline
+            Epochs & 1000 \\ \hline
+            Encoder layers & 3 \\ \hline
+            Encoder hidden activation & elu \\ \hline
+            Encoder output activation & identity \\ \hline
+            Decoder layers & 3 \\ \hline
+            Decoder hidden activation & elu \\ \hline
+            Decoder output activation & identity \\ \hline
+            Neurons/layer & 128 \\ \hline
+            Weight initializer & $N(0, .1, 2)$ \\ \hline
+            Bias Initializer & 0 \\ \hline
+            Learning Rate & $10^{-3}$ \\ \hline
+            $a_1,\ a_2,\ a_3$ & 1 \\ \hline
+            $a_4$ & $10^{-14}$ \\ \hline
+        \end{tabularx}
     \end{minipage}
 \end{table}
 
