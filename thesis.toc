@@ -13,7 +13,7 @@
 \contentsline {section}{\numberline {1.4}Statement of Dilemma}{6}{}%
 \contentsline {chapter}{\numberline {2}KULLBACK-LEIBLER DIVERGENCE}{8}{}%
 \contentsline {section}{\numberline {2.1}Basic Definitions}{9}{}%
-\contentsline {section}{\numberline {2.2}How to build distributions (Non-parametric statistics)}{10}{}%
+\contentsline {section}{\numberline {2.2}How to build distributions (Non-parametric statistics)}{11}{}%
 \contentsline {section}{\numberline {2.3}Implementation Details}{11}{}%
 \contentsline {chapter}{\numberline {3}RESULTS}{13}{}%
 \contentsline {section}{\numberline {3.1}Duffing}{13}{}%

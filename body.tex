@@ -154,7 +154,24 @@ the use of Neural Networks (NNs). In 1989, \cite{hornik} showed that, with some 
 parameters, a NN can be used to approximate any continuous function from one vector space 
 to another to any arbitrary precision required. 
 
-\textbf{Expand once you've got more to say.}
+From this we can consider ML as a tool of regression. Say we have a set of training data
+$d_{tr} = \bracks{(x_j, y_j)}_{j=1}^{N_{tr}}$ and we believe that there is some function
+$f(x)$ such that 
+$$y_j = f(x_j) + \vep_j,$$
+where $\vep_j$ is assumed to be a sample drawn from $\mathcal{N}(0, \bar{\sigma}^2)$. 
+Generally $f$ is not known; so we must, using the training data, build an estimator 
+$f_e(x; d_{tr})$ and measure the performance of the estimator by examining the quantity
+$$\mathbb{E}_{d_{tr}}\sqbracks{\parens{f(x) + \vep - f_e(x;d_{tr})}^2} = 
+\text{bias}_{d_{tr}}^2 + \mathbb{V}(f_e) + \bar{\sigma}^2$$
+where 
+$$\text{bias}_{d_{tr}} = \mathbb{E}_{d_{tr}}\sqbracks{f_e} - f(x)$$
+and 
+$$\mathbb{V}(f_e) = \mathbb{E}_{d_{tr}}\sqbracks{\parens{\mathbb{E}_{d_{tr}}\sqbracks{f_e} - f_e(x; d_{tr})}^2}$$ 
+With this framing, ML methods can be cast as attempts to find an estimator relative to
+a given training that balances the competing dilemmas of being too biased or allowing too
+much variance. From the point of view of non-parametric statistics, we would need to utilize 
+other techniques\cite{hollander} to determine the bias and variance of any given estimator. For our purposes, 
+we will instead consider how metrics from information theory can be used to assess
 
 \section{DLDMD and it's limitations}
 
@@ -175,17 +192,19 @@ $\mathcal{D}$ to learn the best representations possible. As such, a loss
 function that correctly identifies and prioritizes the desired properties is 
 a necessary condition for the DLDMD to function as needed. A natural choice
 considering these constraints is given by
-$$\mathcal{L} = \alpha_1 \mathcal{L}_{\text{recon}} + \alpha_2 \mathcal{L}
-_{\text{dmd}} + \alpha_3 \mathcal{L}_{\text{pred}} +\alpha_4 
-\norm{\boldsymbol{W}_g}_2^2$$
+\begin{equation}
+    \mathcal{L} = \alpha_1 \mathcal{L}_{\text{recon}} + \alpha_2 \mathcal{L}
+    _{\text{dmd}} + \alpha_3 \mathcal{L}_{\text{pred}} +\alpha_4 
+    \norm{\boldsymbol{W}_g}_2^2 \label{eqn:loss function} 
+\end{equation}
 where 
-\begin{align*}
+\begin{align}
     \mathcal{L}_{\text{recon}} &= \frac{1}{N_T + 1}\sum_{j=1}^{N_T+1}\norm{\boldsymbol{y}_j - 
     (\mathcal{D}\circ\mathcal{E})(\boldsymbol{y}_j)}_2, \\
     \mathcal{L}_{\text{dmd}} &= E_r(\boldsymbol{K}_O), \\
     \mathcal{L}_{\text{pred}} &= \frac{1}{N_T}\sum_{j=1}^{N_T}\norm{\boldsymbol{y}_{j+1} - 
-    \mathcal{D}\parens{VT^j V^{-1}\mathcal{E}(x)}}_2,
-\end{align*}
+    \mathcal{D}\parens{VT^j V^{-1}\mathcal{E}(x)}}_2, \label{eqn:blah}
+\end{align}
 Each component guides the machine to a particular outcome: 
 \begin{enumerate}
     \item $\mathcal{L}_{\text{recon}}$ is the Mean Squared Error (MSE) of each time step
@@ -271,9 +290,9 @@ probability distribution $X$ and examine how it changes epoch to epoch.
 \chapter{KULLBACK-LEIBLER DIVERGENCE}
 In the field of information theory, it is often useful to frame information as being 
 represented by a random variable and the values it can take on. For example, consider 
-a normally distributed random variable $X \sim N(\mu, \sigma^2)$ where $\mu$ is the 
+a normally distributed random variable $X \sim \mathcal{N}(\mu, \sigma^2)$ where $\mu$ is the 
 mean or expected value $\mathbb{E}[X]$ of $X$ and $\sigma^2$ is the variance 
-Var$[X]$ of $X$. This is one of the most well understood probability distributions
+$\mathbb{V}[X]$ of $X$. This is one of the most well understood probability distributions
 due to countless years of study into its properties, as such we know that if we were to 
 draw a sample for $X$ that we're much more likely to get something close to $\mu$
 than we are to get something far away from $\mu$. For example; if $\mu = 0$ and 
@@ -281,12 +300,14 @@ $\sigma^2 = 1$, then upon drawing a sample the value 1 is more likely to appear
 than -37. The level of certainty of the outcome of the draw begs the question of 
 how that certainty can be quantified and conversely, we could instead consider the 
 uncertainty of any given probability distribution. A measure of the uncertainty was 
-proposed in 1948\cite{shannon} and this measure is known as \emph{informational entropy}
+proposed in 1948 and this measure is known as \emph{informational entropy} \cite{shannon}
 or, simply, entropy. For a
-continuous distribution with density function $f(x)$, is given by 
-$$h[f] = \mathbb{E}\sqbracks{-\ln(f(x))} = -\int_X f(x)\log(f(x))\ dx$$
+continuous distribution with density function $f(x)$, the entropy is given by 
+$$h[f] = \mathbb{E}\sqbracks{-\log(f(x))} = -\int_X f(x)\log(f(x))\ dx$$
 For the normall distributed $X$ defined above, we have that probability density function
-$$f(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\parens{-\frac{1}{2}\parens{\frac{x-\mu}{\sigma}}^2}$$
+\begin{equation}
+   f(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\parens{-\frac{1}{2}\parens{\frac{x-\mu}{\sigma}}^2} \label{eqn:normal} 
+\end{equation}
 and the entropy integral for this evaluates to
 $$h[f] = \frac{1}{2}\parens{\log(2\pi\sigma^2) + 1}$$
 which only depends on the variance. This expression tells us that the entropy of a
@@ -305,6 +326,7 @@ the result of any given sample is less certain.
     \end{minipage}
 
     \caption{Entropy and density function change with respect to $\sigma^2$.}
+    \label{fig:entropy example}
 \end{figure}
 
 %Further, if we were to take many samples
@@ -313,47 +335,60 @@ the result of any given sample is less certain.
 
 \textbf{Bias vs Variance.}
 
-
-\textbf{De-trending. KL div of differences.}
-
 When training an ML model, the expectation is that the machine will converge to some 
 configuration that allows it to accomplish the task it was designed for. For the sake of 
 
 \section{Basic Definitions}
-The KL Divergence (also called relative-entropy) is a statistical distance between a 
+The KL Divergence (KLD) is a statistical distance between a 
 pair of probability distributions which measures how different a distribution $P$ is 
 from a reference distribution $Q$. ``A simple interpretation of the 
 divergence of $P$ from $Q$ is the expected excess surprise from using $Q$ as a model 
 when the actual distribution is $P$.'' If $P$ and $Q$ are discrete distributions 
-defined on the probability space $\mathcal{X}$, then the KL Divergence of $P$ with 
+defined on the probability space $\mathcal{X}$, then the KLD of $P$ with 
 respect to $Q$ is given by
 $$D_{KL}(P\ |\!|\ Q) = \sum_{x \in \mathcal{X}}P(x)\log\parens{P(x)/Q(x)}$$
 In other words, it is the expectation of the logarithmic difference between the 
 probabilities $P$ and $Q$, where the expectation is taken using the probabilities 
-$P$. As a ``distance'', the KL Divergence is non-negative and 0 when $P = Q$ almost
+$P$. As a ``distance'', the KLD is non-negative and 0 when $P = Q$ almost
 everywhere. Unlike more standard metrics, it is not symmetric and does not satisfy 
 the triangle equality. In order to deal with something that is, at least, symmetric 
 we'll consider using the symmetric KL Divergence which is defined as 
 $$D_{SKL}(P, Q) = \frac{1}{2}\parens{D_{KL}(P\ |\!|\ Q) + D_{KL}(Q\ |\!|\ P)}$$
-Which is the average of the KL Divergences for $P$ with respect to $Q$ and for $Q$
+Which is the average of the KLD for $P$ with respect to $Q$ and for $Q$
 with respect to $P$. In our cases, we'll be dealing with a continuous random variable
-with probability density functions $p$ and $q$, for which the corresponding KL 
-divergence formula is
+with probability density functions $p$ and $q$, for which the corresponding KLD formula 
+is
 $$D_{KL}(P\ |\!|\ Q) = \int_\mathcal{X} p(x)\log\parens{p(x)/q(x)}\ dx$$
 As an analogue of the discrete case, the same simple interpretations about
-the formula apply. The reason we can consider this a ``distance'' is that the KL 
-divergence is non-negative, $D_{KL}(P\ |\!|\ Q) \geq 0$, which is known as Gibbs 
+the formula apply. The reason we can consider this a ``distance'' is that the KLD 
+is non-negative, $D_{KL}(P\ |\!|\ Q) \geq 0$, which is known as Gibbs 
 inequality and only equals 0 when $P = Q$ almost everywhere. As such, the distance
 between $P$ and $Q$ is 0 when they are the ``same'' distribution and some positive 
-number if they differ.
+number if they differ. For example, consider the random variables $X_1 \sim 
+\mathcal{N}(\mu_1, \sigma_1^2)$ and $X_2 \sim \mathcal{N}(\mu_2, \sigma_2^2)$ 
+with corresponding density functions given by equation \ref{eqn:normal}; the divergence 
+between the distributions is
+\begin{equation}
+    D_{KL}(p\ |\!|\ q) = \frac{1}{2}\parens{\ln\parens{\frac{\sigma_2^2}{\sigma_1^2}} + 
+    \frac{\sigma_1^2}{\sigma_2^2} + \frac{(\mu_1 - \mu_2)^2}{\sigma_2^2} - 1}, \label{eqn:normal divergence}
+\end{equation}
+Letting $\mu_1 = \mu_2$, $\sigma_1^2 = 1$, and allowing $\sigma_2^2$ to vary, we can 
+write 
+\begin{equation}
+    D_{KL}(p\ |\!|\ q) = \frac{1}{2}\parens{2\ln\sigma_2 + 
+    \frac{1}{\sigma_2^2} - 1}, \label{eqn:normal divergence2}
+\end{equation}
 \begin{figure}[ht]
     \centering
     \begin{minipage}{\textwidth}
         \includegraphics[width=\textwidth]{Figures/divergence_example.png}
     \end{minipage} 
-    \caption{KL Divergence example with Normal distributions}
+    \caption{KL Divergence example with Normal distributions. As expected, the }
+    \label{fig:divergence example}
 \end{figure}
+Figure \ref{fig:divergence example} illustrates 
 
+\textbf{De-trending. KL div of differences.}
 
 \section{How to build distributions (Non-parametric statistics)}
 The question remains about how we obtain the probability distribution of the random 

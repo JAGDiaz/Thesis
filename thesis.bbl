@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{lago}
 {\sc D.~Alford-Lago, C.~W. Curtis, A.~T. Ihler, and O.~Issan}, {\em Deep
@@ -17,6 +17,10 @@
 {\sc V.~A. Epanechnikov}, {\em Non-parametric estimation of a multivariate
   probability density}, Theory of Probability \& Its Applications, 14 (1969),
   pp.~153--158.
+
+\bibitem{hollander}
+{\sc M.~Hollander, D.~Wolfe, and E.~Chicken}, {\em Nonparametric Statistical
+  Methods}, Wiley Series in Probability and Statistics, Wiley, 2013.
 
 \bibitem{hornik}
 {\sc K.~Hornik, M.~Stinchcombe, and H.~White}, {\em Multilayer {F}eedforward
