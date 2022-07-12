@@ -410,9 +410,42 @@ underlying density function appropriately. Choosing an optimal $h$ depends on
 the given data and the common method, Silverman's rule of thumb, works on the 
 assumption that the density function of the data is unimodal and close to 
 normal. For general data, on which no assumptions of normality are made, a more 
-general method can be found using the Improved Sheather-Jones algorithm\cite{botev}.
+general method is found in the Improved Sheather-Jones algorithm\cite{botev}. 
 
-
+\section{Measuring entropy flow}
+At each epoch $n$ of training for each layer $l$ in the encoder $\mathcal{E}$ and 
+decoder $\mathcal{D}$ networks of the DLDMD algorithm, we generate an affliated matrix 
+of weights ${\bf W}_{l,\mathcal{E}}^{(n)}$ and ${\bf W}_{l,\mathcal{D}}^{(n)}$, respectively.
+Should any given training cause the machine to converge to a fixed state, then for each layer
+we should have that
+\begin{equation}
+    {\bf W}_{l,\mathcal{E}}^{(n)}, {\bf W}_{l,\mathcal{D}}^{(n)} \to 
+    {\bf W}_{l,\mathcal{E}}^{*}, {\bf W}_{l,\mathcal{D}}^{*} \text{ as }
+    n \to \infty \label{eqn:weight convergence}
+\end{equation}
+Consequently, we can charaterize any set of weights via the formulas
+\begin{equation}
+    {\bf W}_{l,\mathcal{E}}^{(n)} = {\bf W}_{l,\mathcal{E}}^{*} + {\bf W}_{l,\mathcal{E}}^{(n),f},\
+    {\bf W}_{l,\mathcal{D}}^{(n)} = {\bf W}_{l,\mathcal{D}}^{*} + {\bf W}_{l,\mathcal{D}}^{(n),f},
+\end{equation}
+where the fluctuation matrices ${\bf W}_{l,\mathcal{E}}^{(n),f}$ and 
+${\bf W}_{l,\mathcal{D}}^{(n),f}$ are defined implicitly. These fluctuations are what we're 
+most interested in studying. Using first-order differencing, we can study the affliated 
+detrended matrices $\delta{\bf W}_{l,\mathcal{E}}^{(n)}$ where
+\begin{align*}
+    \delta{\bf W}_{l,\mathcal{E}}^{(n)} &= {\bf W}_{l,\mathcal{E}}^{(n+1)} - {\bf W}_{l,\mathcal{E}}^{(n)} \\
+    &= {\bf W}_{l,\mathcal{E}}^{(n+1),f} - {\bf W}_{l,\mathcal{E}}^{(n),f}
+\end{align*}
+The definitions for the decoder weights are identical, and thus omitted. We can consider 
+$\delta{\bf W}_{l,\mathcal{E}}^{(n)}$ to be the deviation from the steady state and with it 
+in hand we flatten it's data and use KDE to generate an affliated empirical probability 
+distribution $p_{l,\mathcal{E}}^{(n)}(w)$. With these distributions we know find the KLD 
+between consecutive distributions to generate the following sequence: 
+\begin{equation}
+    D = \bracks{D_{KL}\parens{p_{l,\mathcal{E}}^{(n+1)} \Big|\!\Big| p_{l,\mathcal{E}}^{(n)}}}_{n=1}^{N_E - 2}
+\end{equation}
+which we can interpret to be the change in information between consecutive fluctuations from the 
+steady state.
 
 \section{Implementation Details}
 \noindent
