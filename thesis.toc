@@ -1,15 +1,13 @@
-\contentsline {schapter}{ABSTRACT}{vi}{}%
-\contentsline {schapter}{LIST OF TABLES}{viii}{}%
-\contentsline {schapter}{LIST OF FIGURES}{ix}{}%
-\contentsline {schapter}{GLOSSARY}{x}{}%
-\contentsline {schapter}{ACKNOWLEDGMENTS}{xi}{}%
+\contentsline {schapter}{ABSTRACT}{v}{}%
+\contentsline {schapter}{LIST OF TABLES}{vii}{}%
+\contentsline {schapter}{LIST OF FIGURES}{viii}{}%
 \pagebreak [3]
 \contentsline {chaphd}{CHAPTER}{1}{}%
 \nopagebreak 
 \contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{}%
 \contentsline {section}{\numberline {1.1}What is E-DMD?}{1}{}%
 \contentsline {section}{\numberline {1.2}What are Neural Networks?}{3}{}%
-\contentsline {section}{\numberline {1.3}DLDMD and it's limitations}{4}{}%
+\contentsline {section}{\numberline {1.3}DLDMD and it's limitations}{5}{}%
 \contentsline {section}{\numberline {1.4}Statement of Dilemma}{6}{}%
 \contentsline {chapter}{\numberline {2}KULLBACK-LEIBLER DIVERGENCE}{8}{}%
 \contentsline {section}{\numberline {2.1}Basic Definitions}{9}{}%

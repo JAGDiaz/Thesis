@@ -15,7 +15,7 @@
 % label. (\ref{chap:intro}, \pageref{chap:intro}) Latex will take care
 % of the numbering.
 
-In the study dynamical systems a central problem is how to derive models 
+In the study of dynamical systems a central problem is how to derive models 
 from measured data to facilitate the prediction of future states. Many 
 approaches and techniques exist in the literature, from deriving sets of 
 governing equations via application of the simple physical principles to 
@@ -171,7 +171,8 @@ With this framing, ML methods can be cast as attempts to find an estimator relat
 a given training that balances the competing dilemmas of being too biased or allowing too
 much variance. From the point of view of non-parametric statistics, we would need to utilize 
 other techniques\cite{hollander} to determine the bias and variance of any given estimator. For our purposes, 
-we will instead consider how metrics from information theory can be used to assess
+we will instead consider how metrics from information theory can be used to assess the change in 
+information as data is fed through a NN and a model is trained.
 
 \section{DLDMD and it's limitations}
 
@@ -288,6 +289,7 @@ probability distribution $X$ and examine how it changes epoch to epoch.
 
 
 \chapter{KULLBACK-LEIBLER DIVERGENCE}
+\label{chap:KLD}
 In the field of information theory, it is often useful to frame information as being 
 represented by a random variable and the values it can take on. For example, consider 
 a normally distributed random variable $X \sim \mathcal{N}(\mu, \sigma^2)$ where $\mu$ is the 
@@ -469,7 +471,8 @@ Ok, so what the hell did we actually do?
 
 
 
-\chapter{RESULTS} \label{chapter:middle}
+\chapter{RESULTS}
+\label{chap:results}
 From experimentation by \cite{lago}, we know that some sets of hyperparameters yield good reconstruction
 of the structure of the phase space of each the dynamical systems in question and that some do not.
 
@@ -549,3 +552,4 @@ of the structure of the phase space of each the dynamical systems in question an
 \section{Lorenz (Maybe)}
 
 \chapter{DISCUSSION}
+\label{chap:discussion}

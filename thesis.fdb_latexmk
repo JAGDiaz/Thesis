@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex thesis"] 1657589507 "thesis.aux" "thesis.bbl" "thesis" 1657589511
+["bibtex thesis"] 1657644617 "thesis.aux" "thesis.bbl" "thesis" 1657644621
   "./siammod.bst" 1494223185 17935 84ceb58ad31952007b36f4fe5a2d2ddc ""
   "main.bib" 1657576878 12586 8e4f088314a0065fcdbc54af13828931 ""
-  "thesis.aux" 1657589511 4570 46c3fbf98bbe197951bc8a67f0c4bfe4 "pdflatex"
+  "thesis.aux" 1657644620 4460 9b2d923cacbc9cfc83893272d09611e1 "pdflatex"
   (generated)
   "thesis.bbl"
   "thesis.blg"
-["pdflatex"] 1657589508 "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/thesis.tex" "thesis.pdf" "thesis" 1657589511
+["pdflatex"] 1657644617 "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/thesis.tex" "thesis.pdf" "thesis" 1657644621
   "C:/Users/josep/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1657316651 278015 b5ae8789d05c9394f564dcef5be6e51a ""
   "C:/Users/josep/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1651614135 10246960 38f373af67a0067aa65b6e6f0c3f6a75 ""
   "C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1001775420 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -126,17 +126,16 @@
   "Z:/ML_models/DLDMD-newest/examples/van_der_pol/loss_plots.png" 1657298540 435730 b7ee4ce74f66976252655149c3fe58c6 ""
   "Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png" 1657298750 36416 8e1694aeb98ac6f9050dd748379ceef3 ""
   "abstract.tex" 1656700178 94 1a82f0a20121bd8634212190177832f7 ""
-  "body.tex" 1657589503 31610 9820fb97e52515ef0acdc33948842da0 ""
-  "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/thesis.tex" 1657301438 17808 917a0bdd2fec153446f0d1d3f2df21f5 ""
+  "body.tex" 1657644534 31731 2e3890c82b09e25c82597c7d61dbe581 ""
+  "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/thesis.tex" 1657644613 17840 15fbb32a0b05aea80f2be0b3650ed81a ""
   "glossary.tex" 1494223185 1406 3b07350837667203526a06d93c4cadc9 ""
   "sdsu-thesis.cls" 1558242036 31827 f809eee83bcc4ba6ca92943f9c465752 ""
-  "thesis.aux" 1657589511 4570 46c3fbf98bbe197951bc8a67f0c4bfe4 "pdflatex"
-  "thesis.bbl" 1657589508 1823 5af89827ee380c4feb3f23cf3e427e8e "bibtex thesis"
-  "thesis.gls" 0 -1 0 ""
-  "thesis.lof" 1657589511 697 8ae2a6b415f102c2c1a55df3fc61980d "pdflatex"
-  "thesis.lot" 1657589511 171 8e9a99c6aec06eae6e000414835cbccc "pdflatex"
-  "thesis.tex" 1657301438 17808 917a0bdd2fec153446f0d1d3f2df21f5 ""
-  "thesis.toc" 1657589511 1295 bb3dec70c8e35d729df8c05cc41e2694 "pdflatex"
+  "thesis.aux" 1657644620 4460 9b2d923cacbc9cfc83893272d09611e1 "pdflatex"
+  "thesis.bbl" 1657644617 1823 5af89827ee380c4feb3f23cf3e427e8e "bibtex thesis"
+  "thesis.lof" 1657644620 697 8ae2a6b415f102c2c1a55df3fc61980d "pdflatex"
+  "thesis.lot" 1657644620 171 8e9a99c6aec06eae6e000414835cbccc "pdflatex"
+  "thesis.tex" 1657644613 17840 15fbb32a0b05aea80f2be0b3650ed81a ""
+  "thesis.toc" 1657644620 1205 0e2aa7645066445984094262aa75bb58 "pdflatex"
   (generated)
   "thesis.aux"
   "thesis.glo"
