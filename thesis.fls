@@ -764,6 +764,13 @@ INPUT .\Figures\divergence_example.png
 INPUT .\Figures\divergence_example.png
 INPUT .\Figures\divergence_example.png
 INPUT .\Figures\divergence_example.png
+INPUT .\Figures\duffing_phase_space.png
+INPUT .\Figures\duffing_phase_space.png
+INPUT Figures\duffing_phase_space.png
+INPUT .\Figures\duffing_phase_space.png
+INPUT .\Figures\duffing_phase_space.png
+INPUT .\Figures\duffing_phase_space.png
+INPUT .\Figures\duffing_phase_space.png
 INPUT Z:\ML_models\DLDMD-newest\examples\duffing\slope_linear_fit.png
 INPUT Z:\ML_models\DLDMD-newest\examples\duffing\slope_linear_fit.png
 INPUT Z:\ML_models\DLDMD-newest\examples\duffing\slope_linear_fit.png
@@ -785,6 +792,13 @@ INPUT Z:\ML_models\DLDMD-newest\examples\duffing\bandwidth_averages_plot.png
 INPUT Z:\ML_models\DLDMD-newest\examples\duffing\bandwidth_averages_plot.png
 INPUT Z:\ML_models\DLDMD-newest\examples\duffing\bandwidth_averages_plot.png
 INPUT Z:\ML_models\DLDMD-newest\examples\duffing\bandwidth_averages_plot.png
+INPUT .\Figures\van_der_pol_phase_space.png
+INPUT .\Figures\van_der_pol_phase_space.png
+INPUT Figures\van_der_pol_phase_space.png
+INPUT .\Figures\van_der_pol_phase_space.png
+INPUT .\Figures\van_der_pol_phase_space.png
+INPUT .\Figures\van_der_pol_phase_space.png
+INPUT .\Figures\van_der_pol_phase_space.png
 INPUT Z:\ML_models\DLDMD-newest\examples\van_der_pol\slope_linear_fit.png
 INPUT Z:\ML_models\DLDMD-newest\examples\van_der_pol\slope_linear_fit.png
 INPUT Z:\ML_models\DLDMD-newest\examples\van_der_pol\slope_linear_fit.png
@@ -829,6 +843,8 @@ INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmib10.pfb
 INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
+INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
+INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
 INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
