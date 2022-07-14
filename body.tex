@@ -598,7 +598,7 @@ From experimentation by \cite{lago}, we know that some sets of hyperparameters y
 of the structure of the phase space of each the dynamical systems in question and that some do not. For
 the sake of testing our method of measuring information change, we elect to focus on changing only the 
 lifting or latent dimension of the observables we wish to use for the DMD algorithm. After conducting 
-multiple trainings with latent dimensions ranging from $N_O = 2$ to $N_0 = 15$, the algorithm detailed 
+multiple trainings with latent dimensions ranging from $N_O = 2$ to $N_O = 15$, the algorithm detailed 
 in Chapter \ref{chap:KLD} was implemented for the following systems: The Duffing and Van der Pol oscillators
 and (maybe) Lorenz-63.
 
@@ -684,6 +684,26 @@ Figure \ref{fig:duffing slopes and losses} shows the average of the slopes of th
     \label{fig:duffing slopes and losses}
 \end{figure}
 
+\begin{figure}[p]
+    \centering
+    \begin{minipage}{.5\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_in.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_0.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_1.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_2.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_out.png"} 
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_in.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_0.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_1.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_2.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_out.png"} 
+    \end{minipage}
+    \caption{Duffing slope linear fits by layer.}
+    \label{fig:duffing slopes all layers}
+\end{figure}
+
 \begin{figure}[ht]
     \centering
     \begin{minipage}{\textwidth}
@@ -713,7 +733,8 @@ Figure \ref{fig:van der pol phase space} shows a graphical representation of the
 Van der Pol oscillator. Much like Duffing, we do have a curve that separates the phase space into 
 regions of different behavior in the limit cycle; but since all orbits approach the limit cycle there
 should be much variability with respect to initial conditions. Table \ref{table:van der pol params} 
-describes the hyperparameters used for the Van der Pol Oscillator that were left unchanged for each run.
+describes the hyperparameters used for the Van der Pol Oscillator that were left unchanged for each 
+run.
 \begin{table}[ht]
     \centering
     \begin{minipage}{.7\textwidth}
@@ -763,6 +784,26 @@ describes the hyperparameters used for the Van der Pol Oscillator that were left
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/loss_plots.png"} 
     \end{minipage}
     \caption{Van der Pol average slopes and loss plots.}
+\end{figure}
+
+\begin{figure}[p]
+    \centering
+    \begin{minipage}{.5\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_in.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_0.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_1.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_2.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_out.png"} 
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_in.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_0.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_1.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_2.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_out.png"} 
+    \end{minipage}
+    \caption{Van der Pol slope linear fits by layer.}
+    \label{fig:van der pol slopes all layers}
 \end{figure}
 
 \begin{figure}[ht]
