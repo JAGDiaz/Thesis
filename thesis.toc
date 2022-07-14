@@ -18,5 +18,5 @@
 \contentsline {section}{\numberline {3.1}The Duffing Oscillator}{16}{}%
 \contentsline {section}{\numberline {3.2}Van der Pol}{17}{}%
 \contentsline {section}{\numberline {3.3}Lorenz (Maybe)}{18}{}%
-\contentsline {chapter}{\numberline {4}DISCUSSION}{25}{}%
-\contentsline {schapter}{BIBLIOGRAPHY}{26}{}%
+\contentsline {chapter}{\numberline {4}DISCUSSION}{27}{}%
+\contentsline {schapter}{BIBLIOGRAPHY}{28}{}%
