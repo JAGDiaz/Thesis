@@ -506,11 +506,36 @@ associated change in information:
 Unlike in the first mention of entropy flow, we instead use the SKLD instead of the KLD. This consideration
 simplifies our analysis by disregarding the asymmertric nature of KLD and consequences of this choice 
 will be discussed in Chapter \ref{chap:discussion}. Given the discretized nature of the densities, we turn 
-to numerical integration to compute the integral in equation \ref{eqn:continuous KLD}. For the sake of an 
-apples to apples comparison, we make the assumption that consecutive densities have that same support
+to numerical integration to compute the integral in Equation \ref{eqn:continuous KLD}. For the sake of an 
+apples to apples comparison, we make the assumption that all densities have the same support
 and use the 10001 discretized points with Simpson's rule for the integral approximation. Each set of these
 divergences corresponds to a layer in the full network, and we can now use the divergences to characterize
-how the information is changing with respect to the steady state. 
+how the information is changing with respect to the steady state. Figure \ref{fig:divergence of model example}
+shows an example of the divergence over the whole training. 
+
+We're interested in what these divergences tell 
+us about information flow in the model's weights, and as such we seek a fitting of the data. Any overall trends
+are more important to our analysis than lone data points, so to avoid transient behavior skewing any fittings
+we ignore the first 20\% of the divergences computed. The values span several orders of magnitude, so a simple 
+fitting would certainly fail and we instead attempt a linear fit on the base 10 logarithm of the data. This 
+corresponds to an exponential fit in the original domain of the divergences with slope of the linear trend 
+being the approximate growth/decay rate of the information flow from the machines steady state. The slope 
+intercept is not so important for this reason, being only a constant that modifies the order of magnitude 
+without changing the trens, so for the time being we ignore it. In the interest of trying to identify a 
+classifier of good training, we then find the average and variance of the slopes of the linear fits of 
+the layers' divergence data. The backbone of our results is to compare these averages for each latent 
+dimension to the loss curves from the training for each dimension.
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}{\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_08_2022-06-21-0740/div_plot_linear_dec_2.png"}
+    \end{minipage}
+    \caption{Example of divergences for layer Dec 2 of Van der Pol model with latent dimension 8 
+    with linear fitting and confidence bands.}
+    \label{fig:divergence of model example}
+\end{figure}
+
 
 
 \begin{enumerate}
@@ -601,12 +626,14 @@ points. Figure \ref{fig:duffing phase space} shows a graphical representation of
 Duffing oscillator. The homoclinic connection itself provides an interesting challenge topologically in 
 that it divides the phase space into distinct regions that affect the end behavior of the system depending
 on the initial condition. Table \ref{table:duffing params} describes the hyperparameters used for the 
-Duffing Oscillator that were left unchanged for each run. Figure \ref{fig:duffing slopes and losses}
-shows the average and variance of the slopes of 
+Duffing Oscillator that were left unchanged for each run; note that the distribution given as 
+$\mathcal{N}(\mu, \sigma^2, n)$ is the truncated normal distribution, which is a normal distribution
+in which all values drawn that are more than $n$ standard deviations from the mean are discarded. 
+Figure \ref{fig:duffing slopes and losses} shows the average of the slopes of the linear fits 
 \begin{figure}[ht]
     \centering
     \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{"Figures/duffing_phase_space.png"} 
+        \includegraphics[width=\textwidth]{"Figures/duffing_phase_space.png"}
     \end{minipage}
     \caption{Duffing phase space.}
     \label{fig:duffing phase space}
@@ -615,7 +642,7 @@ shows the average and variance of the slopes of
 
 \begin{table}[ht]
     \centering
-    \begin{minipage}{.65\textwidth}
+    \begin{minipage}{.7\textwidth}
         \caption{Hyperparamters of the DLDMD algorithm held constant for each training run on Duffing.}
         \label{table:duffing params}
         \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|} \hline% {\columnwidth}{|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|}\hline
@@ -635,7 +662,7 @@ shows the average and variance of the slopes of
             Decoder hidden activation & elu \\ \hline
             Decoder output activation & identity \\ \hline
             Neurons/layer & 128 \\ \hline
-            Weight initializer & $N(0, .1, 2)$ \\ \hline
+            Weight initializer & $\mathcal{N}(0, .1, 2)$ \\ \hline
             Bias Initializer & 0 \\ \hline
             Learning Rate & $10^{-3}$ \\ \hline
             $a_1,\ a_2,\ a_3$ & 1 \\ \hline
@@ -666,6 +693,57 @@ shows the average and variance of the slopes of
 \end{figure}
 
 \section{Van der Pol}
+The Van der Pol oscillator is a non-conservative oscillator with non-linear damping, and models a more 
+specific kind of circuit than Duffing does. It's general form is given by 
+\begin{equation}
+    \ddot{x} - \alpha(1 - x^2)\dot{x} + x = 0
+\end{equation}
+Much like Duffing, varying $\alpha$ can give different and interesting phase space dynamics. For our
+purposes we will fix it to $\alpha = 1.5$. With this, the equivalent system of first order equations
+is 
+\begin{equation}
+    \begin{cases}
+        & \dot{x} = y \\
+        & \dot{y} = 1.5(1 - x^2)y - x  
+    \end{cases}
+\end{equation}
+Again, by introducing $y = \dot{x}$. Unlike Duffing, this system has a single unstable fixed point
+at the origin and all nontrivial orbits are attracted to a limit cycle that surrounds the origin. 
+Figure \ref{fig:van der pol phase space} shows a graphical representation of the phase space of our 
+Van der Pol oscillator. Much like Duffing, we do have a curve that separates the phase space into 
+regions of different behavior in the limit cycle; but since all orbits approach the limit cycle there
+should be much variability with respect to initial conditions. Table \ref{table:van der pol params} 
+describes the hyperparameters used for the Van der Pol Oscillator that were left unchanged for each run.
+\begin{table}[ht]
+    \centering
+    \begin{minipage}{.7\textwidth}
+        \caption{Hyperparamters of the DLDMD algorithm held constant for each training run on Van der Pol.}
+        \label{table:van der pol params}
+        \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|} \hline% {\columnwidth}{|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|}\hline
+            Hyperparameter & Value \\ \hline \hline
+            Initial Conditions & 5000 \\ \hline
+            Training proportion & $66.66\%$ \\ \hline
+            Validation proportion & $19.98\%$ \\ \hline
+            Testing proportion & $13.36\%$ \\ \hline
+            $t_0$ & 0 \\ \hline
+            $\Delta t$ & 0.05 \\ \hline
+            $t_f$ & 20 \\ \hline
+            $N_E$ & 1000 \\ \hline
+            Encoder layers & 3 \\ \hline
+            Encoder hidden activation & relu \\ \hline
+            Encoder output activation & identity \\ \hline
+            Decoder layers & 3 \\ \hline
+            Decoder hidden activation & relu \\ \hline
+            Decoder output activation & identity \\ \hline
+            Neurons/layer & 128 \\ \hline
+            Weight initializer & $\mathcal{N}(0, .1, 2)$ \\ \hline
+            Bias Initializer & 0 \\ \hline
+            Learning Rate & $10^{-3}$ \\ \hline
+            $a_1,\ a_2,\ a_3$ & 1 \\ \hline
+            $a_4$ & $10^{-14}$ \\ \hline
+        \end{tabularx}
+    \end{minipage}
+\end{table}
 
 \begin{figure}[ht]
     \centering
@@ -703,7 +781,14 @@ shows the average and variance of the slopes of
 \textbf{Mention potential issues with results.}
 
 \textbf{Mention issues with KDE not giving a ``unitary'' density.}
+When creating the empirical densities in Chapter \ref{chap:results}, often we end up deriving 
+density functions that don't core property of density functions: The sum of their probabilities 
+does not integrate to 1. KDE was doubtless designed for less pathological data than the kind we
+seem to be extracting from the weight matrices of the model. This perhaps conflicts with the 
+assumption that we should be able to extract a density from the weight matrices at all. This issue
+was rectified (though, you might say subverted) by numerically integrating the non-unitary densities
+and dividing by their area to force them into having the desired area. Due to their narrow support,
+this introduces a new issue in that some of the densities now have individual weights with density 
+greater than 1.
 
 \textbf{Mention misgiving about symmetric KLD.}
-
-\textbf{Mention }

@@ -14,9 +14,9 @@
 \contentsline {section}{\numberline {2.2}How to build distributions (Non-parametric statistics)}{11}{}%
 \contentsline {section}{\numberline {2.3}Measuring entropy flow}{11}{}%
 \contentsline {section}{\numberline {2.4}Implementation Details}{12}{}%
-\contentsline {chapter}{\numberline {3}RESULTS}{15}{}%
-\contentsline {section}{\numberline {3.1}The Duffing Oscillator}{15}{}%
-\contentsline {section}{\numberline {3.2}Van der Pol}{16}{}%
-\contentsline {section}{\numberline {3.3}Lorenz (Maybe)}{16}{}%
-\contentsline {chapter}{\numberline {4}DISCUSSION}{21}{}%
-\contentsline {schapter}{BIBLIOGRAPHY}{22}{}%
+\contentsline {chapter}{\numberline {3}RESULTS}{16}{}%
+\contentsline {section}{\numberline {3.1}The Duffing Oscillator}{16}{}%
+\contentsline {section}{\numberline {3.2}Van der Pol}{17}{}%
+\contentsline {section}{\numberline {3.3}Lorenz (Maybe)}{18}{}%
+\contentsline {chapter}{\numberline {4}DISCUSSION}{23}{}%
+\contentsline {schapter}{BIBLIOGRAPHY}{24}{}%
