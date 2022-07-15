@@ -778,6 +778,13 @@ INPUT .\Figures\duffing_phase_space.png
 INPUT .\Figures\duffing_phase_space.png
 INPUT .\Figures\duffing_phase_space.png
 INPUT .\Figures\duffing_phase_space.png
+INPUT Z:\ML_models\DLDMD-newest\examples\duffing\bandwidth_averages_plot.png
+INPUT Z:\ML_models\DLDMD-newest\examples\duffing\bandwidth_averages_plot.png
+INPUT Z:\ML_models\DLDMD-newest\examples\duffing\bandwidth_averages_plot.png
+INPUT Z:\ML_models\DLDMD-newest\examples\duffing\bandwidth_averages_plot.png
+INPUT Z:\ML_models\DLDMD-newest\examples\duffing\bandwidth_averages_plot.png
+INPUT Z:\ML_models\DLDMD-newest\examples\duffing\bandwidth_averages_plot.png
+INPUT Z:\ML_models\DLDMD-newest\examples\duffing\bandwidth_averages_plot.png
 INPUT Z:\ML_models\DLDMD-newest\examples\duffing\slope_linear_fit.png
 INPUT Z:\ML_models\DLDMD-newest\examples\duffing\slope_linear_fit.png
 INPUT Z:\ML_models\DLDMD-newest\examples\duffing\slope_linear_fit.png
@@ -932,13 +939,6 @@ INPUT Z:\ML_models\DLDMD-newest\examples\duffing\div_plot_linear_dec_out.png
 INPUT Z:\ML_models\DLDMD-newest\examples\duffing\div_plot_linear_dec_out.png
 INPUT Z:\ML_models\DLDMD-newest\examples\duffing\div_plot_linear_dec_out.png
 INPUT Z:\ML_models\DLDMD-newest\examples\duffing\div_plot_linear_dec_out.png
-INPUT Z:\ML_models\DLDMD-newest\examples\duffing\bandwidth_averages_plot.png
-INPUT Z:\ML_models\DLDMD-newest\examples\duffing\bandwidth_averages_plot.png
-INPUT Z:\ML_models\DLDMD-newest\examples\duffing\bandwidth_averages_plot.png
-INPUT Z:\ML_models\DLDMD-newest\examples\duffing\bandwidth_averages_plot.png
-INPUT Z:\ML_models\DLDMD-newest\examples\duffing\bandwidth_averages_plot.png
-INPUT Z:\ML_models\DLDMD-newest\examples\duffing\bandwidth_averages_plot.png
-INPUT Z:\ML_models\DLDMD-newest\examples\duffing\bandwidth_averages_plot.png
 INPUT .\Figures\van_der_pol_phase_space.png
 INPUT .\Figures\van_der_pol_phase_space.png
 INPUT Figures\van_der_pol_phase_space.png

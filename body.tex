@@ -489,8 +489,10 @@ kernel, defined as
 which is optimal in the mean square error sense. However, the choice of kernel is not a statistically 
 significant one\cite{epanechnikov} and we choose this kernel for the convenience of it having finite 
 support and non-vanishing first and second derivative on that support. The ISJ algorithm is used to 
-determine the appropriate bandwidth for each set of data. From this, we obtain the set of density 
-estimates for each detrended matrix
+determine the appropriate bandwidth for each set of data. These bandwidths are also being saved to 
+see if the optimal bandwidth with respect to each data set might also contain some instructive 
+information for quantification. From this, we obtain the set of density estimates for each detrended 
+matrix
 \begin{equation}
     p_{l,\mathcal{E}} = \text{KDE}(\delta{\bf W}_{l, \mathcal{E}}) = \bracks{p_{l,\mathcal{E}}^{(n)}(w)}_{n=1}^{N_E-1}
 \end{equation}
@@ -524,7 +526,7 @@ intercept is not so important for this reason, being only a constant that modifi
 without changing the trens, so for the time being we ignore it. In the interest of trying to identify a 
 classifier of good training, we then find the average and variance of the slopes of the linear fits of 
 the layers' divergence data. The backbone of our results is to compare these averages for each latent 
-dimension to the loss curves from the training for each dimension.
+dimension to the loss curves and phase portraits from the training for each dimension.
 
 \begin{figure}[ht]
     \centering
@@ -538,51 +540,51 @@ dimension to the loss curves from the training for each dimension.
 
 
 
-\begin{enumerate}
-  \item Ran a series of DLDMD models on two very well understood dynamical systems:
-  \begin{itemize}
-    \item Van der Pol oscillator and Multiple nonlinear centers Duffing oscillator
-    \item Used latent/lifting dimensions 2 - 15
-    \item Trained for 1000 epochs
-    \item Saved configuration of DLDMD network weights at each epoch
-    \item Used different data for each training, but each data set was drawn from 
-    the same system's dynamics. Working on reproducing with same data/determining
-    if that's necessary.
-  \end{itemize}
+% \begin{enumerate}
+  % \item Ran a series of DLDMD models on two very well understood dynamical systems:
+  % \begin{itemize}
+    % \item Van der Pol oscillator and Multiple nonlinear centers Duffing oscillator
+    % \item Used latent/lifting dimensions 2 - 15
+    % \item Trained for 1000 epochs
+    % \item Saved configuration of DLDMD network weights at each epoch
+    % \item Used different data for each training, but each data set was drawn from 
+    % the same system's dynamics. Working on reproducing with same data/determining
+    % if that's necessary.
+  % \end{itemize}
   
-  \item Detrended weight data via differencing and used Kernel Density Estimation to create
-  empirical PDFs from inter-epoch weights.
-  \begin{itemize}
-    \item For sake of ensuring statistical significance, kernel and bias weights are combined.
-    \item Used Epanechnikov kernel (optimal in a mean square error sense) which is $K(x) = 
-    3(1-x^2)/4$ for $\abs{x} < 1$ else $K(x) = 0$ and has finite support \cite{epanechnikov}.
-    \item Kernel choice not stastically significant \cite{epanechnikov}.
-    \item Bandwidth computed using Improved Sheather-Jones method \cite{botev} and saved for 
-    each epoch and layer.
-  \end{itemize}
+  % \item Detrended weight data via differencing and used Kernel Density Estimation to create
+  % empirical PDFs from inter-epoch weights.
+  % \begin{itemize}
+    % \item For sake of ensuring statistical significance, kernel and bias weights are combined.
+    % \item Used Epanechnikov kernel (optimal in a mean square error sense) which is $K(x) = 
+    % 3(1-x^2)/4$ for $\abs{x} < 1$ else $K(x) = 0$ and has finite support \cite{epanechnikov}.
+    % \item Kernel choice not stastically significant \cite{epanechnikov}.
+    % \item Bandwidth computed using Improved Sheather-Jones method \cite{botev} and saved for 
+    % each epoch and layer.
+  % \end{itemize}
 
-  \item Used symmetric KL Divergence to find ``distance'' between empirical PDFs from data.
-  \begin{itemize}
-    \item Both PDFs are assumed to have same support so that integration is over same domain.
-    \item Using Simpson's Rule with 10,000 points for numerical integration, considering approximating 
-    fourth derivative for error bound on integration.
-  \end{itemize}
+  % \item Used symmetric KL Divergence to find ``distance'' between empirical PDFs from data.
+  % \begin{itemize}
+    % \item Both PDFs are assumed to have same support so that integration is over same domain.
+    % \item Using Simpson's Rule with 10,000 points for numerical integration, considering approximating 
+    % fourth derivative for error bound on integration.
+  % \end{itemize}
 
-  \item Using Divergence data for each layer and inter-epoch, found linear fit with 95\% confidence
-  and prediction interval.
-  \begin{itemize}
-    \item First 20\% of divergence data is ignored to avoid transient behavior.
-    \item Slope of each layer and model saved, computed average and variance of slopes among all 
-    layers. 
-  \end{itemize}
+  % \item Using Divergence data for each layer and inter-epoch, found linear fit with 95\% confidence
+  % and prediction interval.
+  % \begin{itemize}
+    % \item First 20\% of divergence data is ignored to avoid transient behavior.
+    % \item Slope of each layer and model saved, computed average and variance of slopes among all 
+    % layers. 
+  % \end{itemize}
 
-  \item Plotted average slopes with variances of fit for each latent dimension.
-  \begin{itemize}
-    \item Plots of the bandwidth per layer, inter-epoch, and latent dimension were made along 
-    with average bandwidths per latent dimension and inter-epoch.
-    \item Plots of all loss curves per model and latent dimension were also made.
-  \end{itemize}
-\end{enumerate}
+  % \item Plotted average slopes with variances of fit for each latent dimension.
+  % \begin{itemize}
+    % \item Plots of the bandwidth per layer, inter-epoch, and latent dimension were made along 
+    % with average bandwidths per latent dimension and inter-epoch.
+    % \item Plots of all loss curves per model and latent dimension were also made.
+  % \end{itemize}
+% \end{enumerate}
 
 % \textbf{Integration via Simpson's Rule (?) Ask Chris about this.}
 % Since we are using density estimation, we do not have access to the actual probability
@@ -600,9 +602,27 @@ the sake of testing our method of measuring information change, we elect to focu
 lifting or latent dimension of the observables we wish to use for the DMD algorithm. After conducting 
 multiple trainings with latent dimensions ranging from $N_O = 2$ to $N_O = 15$, the algorithm detailed 
 in Chapter \ref{chap:KLD} was implemented for the following systems: The Duffing and Van der Pol oscillators
-and (maybe) Lorenz-63.
+and (maybe) Lorenz-63. The initial hope of our analysis is the data points that our algorithm generates 
+will show clear trends that will allow us to easily differentiate the optimal parameter choice for the 
+model from suboptimal or even bad parameter choices. Given the model's task of learning an imbedding and 
+find optimal observables in the latent space, we additionally surmised that we would see the most 
+variability in the model in what we call the edge layers: Enc in, Enc out, Dec in and Dec out. The 
+other layers in the model certaintly accomplish something as the model trains, but the dimension changes 
+that help E-DMD along are accomplished at the edge layers, so we expect them to evolve differently than
+the hidden layers.
 
 \section{The Duffing Oscillator}
+\label{section:duffing results}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}{\textwidth}
+        \includegraphics[width=\textwidth]{"Figures/duffing_phase_space.png"}
+    \end{minipage}
+    \caption{Duffing phase space.}
+    \label{fig:duffing phase space}
+\end{figure}
+
 The Duffing oscillator is a non-linear second-order differential equation used to model 
 certain damped and driven oscillators, whose general form is given by
 \begin{equation}
@@ -620,25 +640,6 @@ which when turned into a system of first-order equations by introducing $y = \do
         & \dot{y} = x - x^3  
     \end{cases}
 \end{equation}
-The interesting attributes of this system are that it has 3 fixed points, 2 of which are non-linear 
-centers with the third being a saddle point with homoclinic connections that encompass the other 2 fixed 
-points. Figure \ref{fig:duffing phase space} shows a graphical representation of the phase space of our 
-Duffing oscillator. The homoclinic connection itself provides an interesting challenge topologically in 
-that it divides the phase space into distinct regions that affect the end behavior of the system depending
-on the initial condition. Table \ref{table:duffing params} describes the hyperparameters used for the 
-Duffing Oscillator that were left unchanged for each run; note that the distribution given as 
-$\mathcal{N}(\mu, \sigma^2, n)$ is the truncated normal distribution, which is a normal distribution
-in which all values drawn that are more than $n$ standard deviations from the mean are discarded. 
-Figure \ref{fig:duffing slopes and losses} shows the average of the slopes of the linear fits 
-\begin{figure}[ht]
-    \centering
-    \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{"Figures/duffing_phase_space.png"}
-    \end{minipage}
-    \caption{Duffing phase space.}
-    \label{fig:duffing phase space}
-\end{figure}
-
 
 \begin{table}[ht]
     \centering
@@ -647,20 +648,21 @@ Figure \ref{fig:duffing slopes and losses} shows the average of the slopes of th
         \label{table:duffing params}
         \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|} \hline% {\columnwidth}{|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|}\hline
             Hyperparameter & Value \\ \hline \hline
-            Initial Conditions & 5000 \\ \hline
+            Initial Conditions & 10000 \\ \hline
             Training proportion & $66.66\%$ \\ \hline
             Validation proportion & $19.98\%$ \\ \hline
             Testing proportion & $13.36\%$ \\ \hline
+            Optimizer & Adam \\ \hline
             $t_0$ & 0 \\ \hline
             $\Delta t$ & 0.05 \\ \hline
             $t_f$ & 20 \\ \hline
             $N_E$ & 1000 \\ \hline
-            Encoder layers & 3 \\ \hline
-            Encoder hidden activation & elu \\ \hline
-            Encoder output activation & identity \\ \hline
-            Decoder layers & 3 \\ \hline
-            Decoder hidden activation & elu \\ \hline
-            Decoder output activation & identity \\ \hline
+            Enc/Dec layers & 3 \\ \hline
+            Enc/Dec hidden activation & ELU \\ \hline
+            Enc/Dec output activation & identity \\ \hline
+            % Dec/Dec layers & 3 \\ \hline
+            % Dec/Dec hidden activation & elu \\ \hline
+            % Dec/Dec output activation & identity \\ \hline
             Neurons/layer & 128 \\ \hline
             Weight initializer & $\mathcal{N}(0, .1, 2)$ \\ \hline
             Bias Initializer & 0 \\ \hline
@@ -671,18 +673,61 @@ Figure \ref{fig:duffing slopes and losses} shows the average of the slopes of th
     \end{minipage}
 \end{table}
 
+The interesting attributes of this system are that it has 3 fixed points, 2 of which are non-linear 
+centers with the third being a saddle point with homoclinic connections that encompass the other 2 fixed 
+points. Figure \ref{fig:duffing phase space} shows a graphical representation of the phase space of our 
+Duffing oscillator. The homoclinic connection itself provides an interesting challenge topologically in 
+that it divides the phase space into distinct regions that affect the end behavior of the system depending
+on the initial condition. Table \ref{table:duffing params} describes the hyperparameters used for the 
+Duffing Oscillator that were left unchanged for each run; note that the distribution given as 
+$\mathcal{N}(\mu, \sigma^2, n)$ is the truncated normal distribution, which is a normal distribution
+in which all values drawn that are more than $n$ standard deviations from the mean are discarded. 
+A few notes on the trainings themselves are worth mention here. No learning rate scheduling is used,
+so the learning rate with the Adam optimizer is held constant for all epochs. The activation function
+Exponential Linear Unit (ELU) is used instead of the more standard Rectified Linear Unit (RELU) due an 
+error that occurs in the numerics of DLDMD for latent dimension choices greater than 3. For reasons still 
+under investigation, the RELU activation function causes the Singular Value Decomposition to fail if the 
+latent dimension is 3 or greater and the algorithm subsequently ends with an error. After experimentation, 
+it was found that using ELU instead circumvents this problem without significantly affecting model training.
+
+Having established this, we'll consider the results of our analysis.
+Figure \ref{fig:duffing slopes and losses} shows the average of the slopes of the linear fits across 
+all layers for each epoch.  What we can see plainly is the for latent dimensions 2 through 5, the average
+slope is small in magnitude with a small to medium standard deviation relative to the scale with
+latent dimension 6 showing not only a much larger average slope, but as also much more variance. We may 
+contrast this with the losses for each latent dimension, which seems to show that latent dimension 5
+should be the optimal choice with all other choices being more or less equivalent. This does not match
+the results of the phase space representation, which show roughly that dimension 3 is best. 
+If we examine Figure \ref{fig:duffing average bandwidth}, which shows the average bandwidth from the ISJ
+algorithm across all layer for a given latent dimension per epoch, we can see that 3 has a slightly
+different trend and separates cleanly from each of the other choices. While this behavior tracks with our 
+understanding that this dimension is best and should be easily differentiated from the rest, it is 
+inconsistent the fact that the other bandwidth curves are banded together but don't have much in common
+with respect to Figure \ref{fig:duffing slopes and losses} for both the fitted slopes and loss curves.
 
 \begin{figure}[ht]
     \centering
-    \begin{minipage}{.5\textwidth}
+    \begin{minipage}{\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png"} 
+    \end{minipage} 
+    \caption{Duffing Average bandwidth.}
+    \label{fig:duffing average bandwidth}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}{\textwidth}
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png"} 
-    \end{minipage}%
-    \begin{minipage}{.5\textwidth}
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/loss_plots.png"} 
-    \end{minipage}
+    \end{minipage}%
     \caption{Duffing average slopes and loss plots.}
     \label{fig:duffing slopes and losses}
 \end{figure}
+
+For a more granular view of the individual fittings for each layer of the model, we have Figures 
+\ref{fig:duffing slopes all layers} and \ref{fig:duffing linear fits all layers}. Much to our 
+expectation, the plots for the edge layers have slightly different behavior than for the hidden layers;
+generally, the linear trends have a smaller slope and y-intercept further from 0.
 
 \begin{figure}[p]
     \centering
@@ -724,15 +769,18 @@ Figure \ref{fig:duffing slopes and losses} shows the average of the slopes of th
     \label{fig:duffing linear fits all layers}
 \end{figure}
 
+\section{The Van der Pol Oscillator}
+\label{section:van der pol results}
+
 \begin{figure}[ht]
     \centering
     \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png"} 
-    \end{minipage} 
-    \caption{Duffing Average bandwidth.}
+        \includegraphics[width=\textwidth]{"Figures/van_der_pol_phase_space.png"} 
+    \end{minipage}
+    \caption{Van der Pol phase space.}
+    \label{fig:van der pol phase space}
 \end{figure}
 
-\section{Van der Pol}
 The Van der Pol oscillator is a non-conservative oscillator with non-linear damping, and models a more 
 specific kind of circuit than Duffing does. It's general form is given by 
 \begin{equation}
@@ -752,55 +800,47 @@ at the origin and all nontrivial orbits are attracted to a limit cycle that surr
 Figure \ref{fig:van der pol phase space} shows a graphical representation of the phase space of our 
 Van der Pol oscillator. Much like Duffing, we do have a curve that separates the phase space into 
 regions of different behavior in the limit cycle; but since all orbits approach the limit cycle there
-should be much variability with respect to initial conditions. Table \ref{table:van der pol params} 
-describes the hyperparameters used for the Van der Pol Oscillator that were left unchanged for each 
-run.
-\begin{table}[ht]
-    \centering
-    \begin{minipage}{.7\textwidth}
-        \caption{Hyperparamters of the DLDMD algorithm held constant for each training run on Van der Pol.}
-        \label{table:van der pol params}
-        \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|} \hline% {\columnwidth}{|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|}\hline
-            Hyperparameter & Value \\ \hline \hline
-            Initial Conditions & 5000 \\ \hline
-            Training proportion & $66.66\%$ \\ \hline
-            Validation proportion & $19.98\%$ \\ \hline
-            Testing proportion & $13.36\%$ \\ \hline
-            $t_0$ & 0 \\ \hline
-            $\Delta t$ & 0.05 \\ \hline
-            $t_f$ & 20 \\ \hline
-            $N_E$ & 1000 \\ \hline
-            Encoder layers & 3 \\ \hline
-            Encoder hidden activation & relu \\ \hline
-            Encoder output activation & identity \\ \hline
-            Decoder layers & 3 \\ \hline
-            Decoder hidden activation & relu \\ \hline
-            Decoder output activation & identity \\ \hline
-            Neurons/layer & 128 \\ \hline
-            Weight initializer & $\mathcal{N}(0, .1, 2)$ \\ \hline
-            Bias Initializer & 0 \\ \hline
-            Learning Rate & $10^{-3}$ \\ \hline
-            $a_1,\ a_2,\ a_3$ & 1 \\ \hline
-            $a_4$ & $10^{-14}$ \\ \hline
-        \end{tabularx}
-    \end{minipage}
-\end{table}
+should be much variability with respect to initial conditions. We would expect training on this system 
+to be better overall due to the fact that all trajectories are essentially going to same place unlike
+the more complex behavior of Duffing. The hyperparameters for the Van der Pol
+training are identical to those of Duffing with the exception of the activation function; which is, 
+as mentioned in Section \ref{section:duffing results}, changed to Rectified Linear Unit. This difference 
+is minor enough that a Van der Pol hyperparameters table is omitted. 
+% \begin{table}[ht]
+    % \centering
+    % \begin{minipage}{.7\textwidth}
+        % \caption{Hyperparamters of the DLDMD algorithm held constant for each training run on Van der Pol.}
+        % \label{table:van der pol params}
+        % \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|} \hline% {\columnwidth}{|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|}\hline
+            % Hyperparameter & Value \\ \hline \hline
+            % Initial Conditions & 5000 \\ \hline
+            % Training proportion & $66.66\%$ \\ \hline
+            % Validation proportion & $19.98\%$ \\ \hline
+            % Testing proportion & $13.36\%$ \\ \hline
+            % $t_0$ & 0 \\ \hline
+            % $\Delta t$ & 0.05 \\ \hline
+            % $t_f$ & 20 \\ \hline
+            % $N_E$ & 1000 \\ \hline
+            % Encoder layers & 3 \\ \hline
+            % Encoder hidden activation & relu \\ \hline
+            % Encoder output activation & identity \\ \hline
+            % Decoder layers & 3 \\ \hline
+            % Decoder hidden activation & relu \\ \hline
+            % Decoder output activation & identity \\ \hline
+            % Neurons/layer & 128 \\ \hline
+            % Weight initializer & $\mathcal{N}(0, .1, 2)$ \\ \hline
+            % Bias Initializer & 0 \\ \hline
+            % Learning Rate & $10^{-3}$ \\ \hline
+            % $a_1,\ a_2,\ a_3$ & 1 \\ \hline
+            % $a_4$ & $10^{-14}$ \\ \hline
+        % \end{tabularx}
+    % \end{minipage}
+% \end{table}
 
 \begin{figure}[ht]
     \centering
     \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{"Figures/van_der_pol_phase_space.png"} 
-    \end{minipage}
-    \caption{Van der Pol phase space.}
-    \label{fig:van der pol phase space}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \begin{minipage}{.5\textwidth}
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png"} 
-    \end{minipage}%
-    \begin{minipage}{.5\textwidth}
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/loss_plots.png"} 
     \end{minipage}
     \caption{Van der Pol average slopes and loss plots.}
