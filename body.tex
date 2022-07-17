@@ -531,7 +531,7 @@ dimension to the loss curves and phase portraits from the training for each dime
 \begin{figure}[ht]
     \centering
     \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_08_2022-06-21-0740/div_plot_linear_dec_2.png"}
+        %\includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_08_2022-06-21-0740/div_plot_linear_dec_2.png"}
     \end{minipage}
     \caption{Example of divergences for layer Dec 2 of Van der Pol model with latent dimension 8 
     with linear fitting and confidence bands.}
@@ -690,20 +690,41 @@ under investigation, the RELU activation function causes the Singular Value Deco
 latent dimension is 3 or greater and the algorithm subsequently ends with an error. After experimentation, 
 it was found that using ELU instead circumvents this problem without significantly affecting model training.
 
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}{\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png"} 
+    \end{minipage}%
+    \caption{Duffing average slopes with standard deviations.}
+    \label{fig:duffing average slopes}
+\end{figure}
+
 Having established this, we'll consider the results of our analysis.
-Figure \ref{fig:duffing slopes and losses} shows the average of the slopes of the linear fits across 
+Figure \ref{fig:duffing average slopes} shows the average of the slopes of the linear fits across 
 all layers for each epoch.  What we can see plainly is the for latent dimensions 2 through 5, the average
 slope is small in magnitude with a small to medium standard deviation relative to the scale with
 latent dimension 6 showing not only a much larger average slope, but as also much more variance. We may 
-contrast this with the losses for each latent dimension, which seems to show that latent dimension 5
-should be the optimal choice with all other choices being more or less equivalent. This does not match
-the results of the phase space representation, which show roughly that dimension 3 is best. 
+contrast this with the losses in Figure \ref{fig:duffing losses} for each latent dimension, which seems 
+to show that latent dimension 5 should be the optimal choice with all other choices being more or less 
+equivalent. This does not match the results of the phase space representation, which show roughly that 
+dimension 3 is best. 
 If we examine Figure \ref{fig:duffing average bandwidth}, which shows the average bandwidth from the ISJ
 algorithm across all layer for a given latent dimension per epoch, we can see that 3 has a slightly
 different trend and separates cleanly from each of the other choices. While this behavior tracks with our 
 understanding that this dimension is best and should be easily differentiated from the rest, it is 
 inconsistent the fact that the other bandwidth curves are banded together but don't have much in common
-with respect to Figure \ref{fig:duffing slopes and losses} for both the fitted slopes and loss curves.
+with respect to Figures \ref{fig:duffing average slopes} and \ref{fig:duffing losses}
+for both the fitted slopes and loss curves.
+
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}{\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/loss_plots.png"} 
+    \end{minipage}%
+    \caption{Duffing loss plots, smoothed to accentuate trends.}
+    \label{fig:duffing losses}
+\end{figure}
 
 \begin{figure}[ht]
     \centering
@@ -714,22 +735,14 @@ with respect to Figure \ref{fig:duffing slopes and losses} for both the fitted s
     \label{fig:duffing average bandwidth}
 \end{figure}
 
-\begin{figure}[ht]
-    \centering
-    \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/loss_plots.png"} 
-    \end{minipage}%
-    \caption{Duffing average slopes and loss plots.}
-    \label{fig:duffing slopes and losses}
-\end{figure}
-
 For a more granular view of the individual fittings for each layer of the model, we have Figures 
 \ref{fig:duffing slopes all layers} and \ref{fig:duffing linear fits all layers}. Much to our 
 expectation, the plots for the edge layers have slightly different behavior than for the hidden layers;
-generally, the linear trends have a smaller slope and y-intercept further from 0.
+generally, the linear trends have a smaller slope and y-intercept further from 0. We can interpret this 
+as being indicative of have a information change trend that is further from the theoretical steady-state
+than for the other layers of the model. 
 
-\begin{figure}[p]
+\begin{figure}[h!p]
     \centering
     \begin{minipage}{.5\textwidth}
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_in.png"} 
@@ -749,7 +762,7 @@ generally, the linear trends have a smaller slope and y-intercept further from 0
     \label{fig:duffing slopes all layers}
 \end{figure}
 
-\begin{figure}[p]
+\begin{figure}[h!p]
     \centering
     \begin{minipage}{.5\textwidth}
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_in.png"} 
@@ -795,6 +808,25 @@ is
         & \dot{y} = 1.5(1 - x^2)y - x  
     \end{cases}
 \end{equation}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}{\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png"} 
+    \end{minipage}
+    \caption{Van der Pol average slopes with standard deviations.}
+    \label{fig:van der pol average slopes}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}{\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/loss_plots.png"} 
+    \end{minipage}
+    \caption{Van der Pol loss plots, smoothed to accentuate trend.}
+    \label{fig:van der pol losses}
+\end{figure}
+
 Again, by introducing $y = \dot{x}$. Unlike Duffing, this system has a single unstable fixed point
 at the origin and all nontrivial orbits are attracted to a limit cycle that surrounds the origin. 
 Figure \ref{fig:van der pol phase space} shows a graphical representation of the phase space of our 
@@ -805,48 +837,29 @@ to be better overall due to the fact that all trajectories are essentially going
 the more complex behavior of Duffing. The hyperparameters for the Van der Pol
 training are identical to those of Duffing with the exception of the activation function; which is, 
 as mentioned in Section \ref{section:duffing results}, changed to Rectified Linear Unit. This difference 
-is minor enough that a Van der Pol hyperparameters table is omitted. 
-% \begin{table}[ht]
-    % \centering
-    % \begin{minipage}{.7\textwidth}
-        % \caption{Hyperparamters of the DLDMD algorithm held constant for each training run on Van der Pol.}
-        % \label{table:van der pol params}
-        % \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|} \hline% {\columnwidth}{|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|}\hline
-            % Hyperparameter & Value \\ \hline \hline
-            % Initial Conditions & 5000 \\ \hline
-            % Training proportion & $66.66\%$ \\ \hline
-            % Validation proportion & $19.98\%$ \\ \hline
-            % Testing proportion & $13.36\%$ \\ \hline
-            % $t_0$ & 0 \\ \hline
-            % $\Delta t$ & 0.05 \\ \hline
-            % $t_f$ & 20 \\ \hline
-            % $N_E$ & 1000 \\ \hline
-            % Encoder layers & 3 \\ \hline
-            % Encoder hidden activation & relu \\ \hline
-            % Encoder output activation & identity \\ \hline
-            % Decoder layers & 3 \\ \hline
-            % Decoder hidden activation & relu \\ \hline
-            % Decoder output activation & identity \\ \hline
-            % Neurons/layer & 128 \\ \hline
-            % Weight initializer & $\mathcal{N}(0, .1, 2)$ \\ \hline
-            % Bias Initializer & 0 \\ \hline
-            % Learning Rate & $10^{-3}$ \\ \hline
-            % $a_1,\ a_2,\ a_3$ & 1 \\ \hline
-            % $a_4$ & $10^{-14}$ \\ \hline
-        % \end{tabularx}
-    % \end{minipage}
-% \end{table}
+is minor enough that a Van der Pol hyperparameters table is omitted.
 
 \begin{figure}[ht]
     \centering
     \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/loss_plots.png"} 
-    \end{minipage}
-    \caption{Van der Pol average slopes and loss plots.}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png"} 
+    \end{minipage} 
+    \caption{Van der Pol Average bandwidth.}
 \end{figure}
 
-\begin{figure}[p]
+Figure \ref{fig:van der pol average slopes}, shows the average and standard deviation of the slopes for 
+the Van der Pol training per latent dimension choice. Relative to Figure \ref{fig:duffing average slopes}
+for Duffing, we have larger average slopes and more variety with respect to the standard deviations for 
+each dimension. Based on the phase plane results, we should expect 8 to correspond to the best training 
+so it seems that a small in magnitude slope is indicative of good training and this in consistent for
+some of the loss curves in Figure \ref{fig:van der pol losses}. The slope of 5 is essentially 0 and 
+we that it has a loss curve almost indistinguishable from that of 8; and we can make a similar observation
+about 7 as well. However, 10 also has a small slope but the loss curve is markedly different from the 
+optimal choices and seems to match that of 3 which has a very large slope comparitively. One quality
+the optimal trainings seem to have in common is that they have smaller standard deviations than the 
+trainings with worse loss curves.
+
+\begin{figure}[h!p]
     \centering
     \begin{minipage}{.5\textwidth}
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_in.png"} 
@@ -866,7 +879,7 @@ is minor enough that a Van der Pol hyperparameters table is omitted.
     \label{fig:van der pol slopes all layers}
 \end{figure}
 
-\begin{figure}[p]
+\begin{figure}[h!p]
     \centering
     \begin{minipage}{.5\textwidth}
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_in.png"} 
@@ -886,13 +899,6 @@ is minor enough that a Van der Pol hyperparameters table is omitted.
     \label{fig:van der pol linear fits all layers}
 \end{figure}
 
-\begin{figure}[ht]
-    \centering
-    \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png"} 
-    \end{minipage} 
-    \caption{Van der Pol Average bandwidth.}
-\end{figure}
 
 \section{Lorenz (Maybe)}
 
