@@ -11,12 +11,14 @@
 \contentsline {section}{\numberline {1.4}Statement of Dilemma}{6}{}%
 \contentsline {chapter}{\numberline {2}KULLBACK-LEIBLER DIVERGENCE}{8}{}%
 \contentsline {section}{\numberline {2.1}Basic Definitions}{9}{}%
-\contentsline {section}{\numberline {2.2}How to build distributions (Non-parametric statistics)}{11}{}%
+\contentsline {section}{\numberline {2.2}How to build distributions (Non-parametric statistics)}{10}{}%
 \contentsline {section}{\numberline {2.3}Measuring entropy flow}{11}{}%
 \contentsline {section}{\numberline {2.4}Implementation Details}{12}{}%
-\contentsline {chapter}{\numberline {3}RESULTS}{15}{}%
-\contentsline {section}{\numberline {3.1}The Duffing Oscillator}{15}{}%
-\contentsline {section}{\numberline {3.2}The Van der Pol Oscillator}{18}{}%
-\contentsline {section}{\numberline {3.3}Lorenz (Maybe)}{20}{}%
-\contentsline {chapter}{\numberline {4}DISCUSSION}{29}{}%
-\contentsline {schapter}{BIBLIOGRAPHY}{30}{}%
+\contentsline {chapter}{\numberline {3}RESULTS}{14}{}%
+\contentsline {section}{\numberline {3.1}The Duffing Oscillator}{14}{}%
+\contentsline {section}{\numberline {3.2}The Van der Pol Oscillator}{17}{}%
+\contentsline {chapter}{\numberline {4}DISCUSSION}{26}{}%
+\contentsline {section}{\numberline {4.1}Non-unitary densities}{26}{}%
+\contentsline {section}{\numberline {4.2}Statistical issues with edge layers}{26}{}%
+\contentsline {section}{\numberline {4.3}Future work}{27}{}%
+\contentsline {schapter}{BIBLIOGRAPHY}{28}{}%
