@@ -1,16 +1,15 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Entropy and density function change with respect to $\sigma ^2$. The base of the logarithm shown here is $e$, but the base itself is irrelevant due to the shared properties of all logarithms: that they increase monotonically and unbounded. As the variance increases we see higher entropy in the left plot and a flattening of the probability density in the right plot.\relax }}{9}{}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces KL Divergence example with Normal distributions. As expected, the divergence decreases to 0 as $\sigma ^2 \to 1$ from either direction.\relax }}{10}{}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Example of divergences for layer Dec 2 of Van der Pol model with latent dimension 8 with linear fitting and confidence bands.\relax }}{13}{}%
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Duffing phase space.\relax }}{15}{}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Duffing average slopes with standard deviations.\relax }}{17}{}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Duffing loss plots, smoothed to accentuate trends.\relax }}{18}{}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Duffing Average bandwidth.\relax }}{18}{}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Duffing slope linear fits by layer.\relax }}{19}{}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Duffing slope linear fits by layer.\relax }}{20}{}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Van der Pol phase space.\relax }}{21}{}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Van der Pol average slopes with standard deviations.\relax }}{22}{}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Van der Pol loss plots, smoothed to accentuate trend.\relax }}{23}{}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Van der Pol Average bandwidth.\relax }}{23}{}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Van der Pol slope linear fits by layer.\relax }}{24}{}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Van der Pol slope linear fits by layer.\relax }}{25}{}%
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Histograms of computed areas from KDE.\relax }}{27}{}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Example of divergences for layer Dec 2 of Van der Pol model with latent dimension 8 with linear fitting and confidence bands.\relax }}{14}{}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Duffing phase space.\relax }}{16}{}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Duffing average slopes with standard deviations.\relax }}{18}{}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Duffing loss plots, smoothed to accentuate trends.\relax }}{19}{}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Duffing Average bandwidth.\relax }}{19}{}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Duffing slope linear fits by layer.\relax }}{20}{}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Duffing slope linear fits by layer.\relax }}{21}{}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Van der Pol phase space.\relax }}{22}{}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Van der Pol average slopes with standard deviations.\relax }}{23}{}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Van der Pol loss plots, smoothed to accentuate trend.\relax }}{24}{}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Van der Pol Average bandwidth.\relax }}{24}{}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Van der Pol slope linear fits by layer.\relax }}{25}{}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Van der Pol slope linear fits by layer.\relax }}{26}{}%

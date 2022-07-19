@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex thesis"] 1658177021 "thesis.aux" "thesis.bbl" "thesis" 1658177026
+["bibtex thesis"] 1658181944 "thesis.aux" "thesis.bbl" "thesis" 1658191738
   "./siammod.bst" 1494223185 17935 84ceb58ad31952007b36f4fe5a2d2ddc ""
   "main.bib" 1657576878 12586 8e4f088314a0065fcdbc54af13828931 ""
-  "thesis.aux" 1658177026 7917 0100cdd72671e52a8aeafc61bbbf6111 "pdflatex"
+  "thesis.aux" 1658191737 7615 10d63c89c2ff5840dac84e59a00d93cd "pdflatex"
   (generated)
   "thesis.bbl"
   "thesis.blg"
-["pdflatex"] 1658177021 "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/thesis.tex" "thesis.pdf" "thesis" 1658177026
+["pdflatex"] 1658191732 "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/thesis.tex" "thesis.pdf" "thesis" 1658191738
   "C:/Users/josep/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1657316651 278015 b5ae8789d05c9394f564dcef5be6e51a ""
   "C:/Users/josep/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1651614135 10246960 38f373af67a0067aa65b6e6f0c3f6a75 ""
   "C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1001775420 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -122,7 +122,6 @@
   "Figures/duffing_phase_space.png" 1658089606 220429 b6c611b215af7c25799063f98e8f983e ""
   "Figures/entropy_example.png" 1658098707 22964 ce4376f58cd1639660a6cabdd40aa088 ""
   "Figures/van_der_pol_phase_space.png" 1658089609 216599 12a5607c11914aa017e6b84129daa8f5 ""
-  "Z:/ML_models/DLDMD-newest/examples/area_devs.png" 1658169675 23777 c1fff054d1a48c7a228c734951549b5f ""
   "Z:/ML_models/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png" 1658098517 94328 77b4fca41ce7cef772cb2650a52a653a ""
   "Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_0.png" 1658110583 60174 7a04a9e9e40d4ee9534e933b421fe0e0 ""
   "Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_1.png" 1658110583 60722 74c2bcb090fba3f61cf0dbbdaa1f9b31 ""
@@ -135,7 +134,7 @@
   "Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_in.png" 1658110582 34191 550f580e01d67e85c75d77e6b80bb4ee ""
   "Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_out.png" 1658110582 39897 1e5cec8e6127236c63fa1f81ff3671ee ""
   "Z:/ML_models/DLDMD-newest/examples/duffing/loss_plots.png" 1658098326 86205 6701883394f0bb676100953de84af0d0 ""
-  "Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png" 1658110575 15741 1918657ed4ac6afd62c50dd558972746 ""
+  "Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png" 1658183365 14395 fd4a76699d2e339710e4b4aacb1f43d2 ""
   "Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_0.png" 1658110580 23092 8eaa683c428681ac4766b84104e7e6a4 ""
   "Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_1.png" 1658110580 22785 10f3efb8812dfe83c3d8f58cd74cc549 ""
   "Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_2.png" 1658110580 23037 4f369b95aae6cdf24633350762cca040 ""
@@ -170,16 +169,16 @@
   "Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_in.png" 1658110585 20321 91224018e38117212198d911abce717d ""
   "Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_out.png" 1658110586 20556 7cfcd9ac9d8ee2bd0ac1fd55f864e368 ""
   "abstract.tex" 1656700178 94 1a82f0a20121bd8634212190177832f7 ""
-  "body.tex" 1658177013 60571 c33b1f9513def2aab074c2c1f421ca7a ""
+  "body.tex" 1658191731 60984 7e8b4a25f836f6cd08ff6549b3e214c5 ""
   "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/thesis.tex" 1658086553 17840 15fbb32a0b05aea80f2be0b3650ed81a ""
   "glossary.tex" 1494223185 1406 3b07350837667203526a06d93c4cadc9 ""
   "sdsu-thesis.cls" 1558242036 31827 f809eee83bcc4ba6ca92943f9c465752 ""
-  "thesis.aux" 1658177026 7917 0100cdd72671e52a8aeafc61bbbf6111 "pdflatex"
-  "thesis.bbl" 1658177021 1823 5af89827ee380c4feb3f23cf3e427e8e "bibtex thesis"
-  "thesis.lof" 1658177026 2270 3e917731464f75c67e488c4afb623123 "pdflatex"
-  "thesis.lot" 1658177026 279 fb7ce1a814602968fd10d5c29d7c4958 "pdflatex"
+  "thesis.aux" 1658191737 7615 10d63c89c2ff5840dac84e59a00d93cd "pdflatex"
+  "thesis.bbl" 1658181945 1823 5af89827ee380c4feb3f23cf3e427e8e "bibtex thesis"
+  "thesis.lof" 1658191737 2160 6dd9882a791e2a8561db61860eec47d4 "pdflatex"
+  "thesis.lot" 1658191737 279 2baecb430828b2b87e334e0945d582b3 "pdflatex"
   "thesis.tex" 1658086553 17840 15fbb32a0b05aea80f2be0b3650ed81a ""
-  "thesis.toc" 1658177026 1460 b0da0b0db55fb84ae8f3965e0731b044 "pdflatex"
+  "thesis.toc" 1658191737 1389 b0f70b3af3c9f3bb2062260a210220d8 "pdflatex"
   (generated)
   "thesis.aux"
   "thesis.glo"
