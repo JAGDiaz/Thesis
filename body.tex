@@ -479,8 +479,8 @@ kernel, defined as
 \begin{equation}
     K(x) = 
     \begin{cases}
-        \frac{3(1-x^2)}{4} & \abs{x} < 1 \\
-        0 & \text{else}
+        \frac{3(1-x^2)}{4}, & \abs{x} < 1 \\
+        0, & \text{else}
     \end{cases},\label{eqn:epanechnikov}
 \end{equation}
 which is optimal in the mean square error sense. However, the choice of kernel is not a statistically 
@@ -795,6 +795,26 @@ predict future states of Duffing for latent dimensions smaller than 6.
     \label{fig:duffing linear fits all layers}
 \end{figure}
 
+\begin{figure}[!htbp]
+    \centering
+    \begin{minipage}{.5\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_03.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_05.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png"} 
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_02.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_04.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png"} 
+    \end{minipage}
+    \caption{Duffing DLDMD results.}
+    \label{fig:duffing DLDMD results}
+\end{figure}
+
 \begin{table}[!htb]
     \centering
     \begin{minipage}{\textwidth}
@@ -806,9 +826,9 @@ predict future states of Duffing for latent dimensions smaller than 6.
                 x, & x > 0 \\
                 0, & \text{else}
             \end{cases}$ & 
-            $\sigma(x) = \begin{cases}
+            $\sigma(x; \alpha) = \begin{cases}
                 x, & x > 0 \\
-                \alpha(e^x - 1) & \text{else}
+                \alpha(e^x - 1), & \text{else}
             \end{cases}$ \\ \hline
         \end{tabularx}
     \end{minipage}
@@ -933,30 +953,69 @@ trainings with worse loss curves.
     \label{fig:van der pol linear fits all layers}
 \end{figure}
 
+\begin{figure}[!htbp]
+    \centering
+    \begin{minipage}{.5\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_00.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_03.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_05.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_07.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_09.png"} 
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_02.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_04.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_06.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_08.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_00.png"} 
+    \end{minipage}
+    \caption{Van der Pol DLDMD results.}
+    \label{fig:van der pol DLDMD results}
+\end{figure}
 
 \chapter{DISCUSSION}
 \label{chap:discussion}
 
 While we believe that we've struck upon some useful results with respect to finding different behavior
-and trends in some of the different values we've computed, but it must be made clear that some assumptions
+and trends in some of the different values we've computed, it must be made clear that some assumptions
 were made on our part that might not have been valid ones to makes given what we've learned since the 
 outset. Some of which is detailed in the coming sections. Perhaps the biggest assumption made is that 
 we have sets of optimal parameters at all for the DLDMD algorithm. There hasn't been much study into this 
 algorithm yet, and the only measure of it's validity is given by \cite{lago} in their results and our 
 replications which admittedly rely on the ``eye-ball'' metric. Predicting future states in multidimensional
-nonlinear dynamical systems from the data itself is very tricky and it's difficult to quantify accuracy 
-or whether key phase space features are respected.
+nonlinear dynamical systems from time-series data is very tricky and it's difficult to quantify accuracy 
+or whether key phase space features are respected in the predictions. Dealing with separatrices and 
+the concentric centers, the prediction results, and the activation function issues of Duffing in 
+particular casts some doubt on the parameters we have taken to be optimal. 
 
-% \section{Non-unitary densities}
-% When creating the empirical densities in Chapter \ref{chap:results}, often we end up deriving 
-% density functions that don't core property of density functions: The sum of their probabilities 
-% does not integrate to 1. KDE was doubtless designed for less pathological data than the kind we
-% seem to be extracting from the weight matrices of the model. This perhaps conflicts with the 
-% assumption that we should be able to extract a density from the weight matrices at all. This issue
-% was rectified (though, you might say subverted) by numerically integrating the non-unitary densities
-% and dividing by their area to force them into having the desired area. Figure \ref{fig:area deviance}
-% shows histograms of the numerically computed areas of the densities yielded by KDE. Peaks are visible near
-% 1 for each model, but the spread around this average is not insignificant. 
+% Our results are also quite 
+% idealized due to the perfect data from numerical integration that DLDMD uses 
+
+\section{Non-unitary densities}
+When creating the empirical densities in Chapter \ref{chap:results}, often we end up deriving 
+density functions that don't exhibit a core property of density functions: The sum of their 
+probabilities does not integrate to 1. KDE was doubtless designed for less pathological data than 
+the kind we seem to be extracting from the weight matrices of the model. This perhaps conflicts with the 
+assumption that we should be able to extract a density from the weight matrices at all. After some 
+investigation, we've come to realize that the this is a consequence of the bandwidth use in KDE. 
+For our density estimation, we made no assumptions about the shape or modality of the data and so 
+the existing literature led us to using the ISJ to find an optimal bandwidth for each probability
+density. The resulting densities are full of narrow peak and wide troughs, reminiscent of Dirac's comb;
+which explains why the numerical integration schemes that are being used aren't giving us the areas we
+expect. The bandwidths due to ISJ we're on the order of $10^{-6}$ and we found that using larger 
+bandwidths led to overall smoother densities that we were able to numerically verify have approximately 
+unitary area. The varying shapes based on bandwidth are another indicator of the inherent tradeoff 
+between bias and variance in any model.
+
+We have no reason to believe that there is anything at all wrong with the software package
+being used for KDE and instead postulate that a more sophisticated scheme of integration, one that doesn't
+rely as much on smooth data, is needed for the optimal bandwidth parameter. One silver-lining we can
+deduce from this is that the apparent failure of boiler plate numerical integration can give us an idea
+of how much variance a given derived density has and we can use that make other inferences about 
+the model itself.
+
+% Figure BLAH shows histograms of the numerically 
+% computed areas of the densities yielded by KDE. Peaks are visible near 1 , but the spread around this average is not insignificant. 
 
 % \begin{figure}[h!]
     % \centering
@@ -973,17 +1032,30 @@ The weight matrices are used in the model for linear transformations; the hidden
 have approximately $D^2$ entries while the edge layers 
 have about $D\cdot d$ entries, where $D$ is the number of neurons in the layer and $d$ is the number 
 of physical dimensions of the systems or the latent dimension. In either case, $d <\!\!< D$ so from a 
-statistical standpoint the edge layers don't have as much data for the analysis. As we'll elaborate on in
-each section of this chapter, we do notice marginally different behavior in the results for the edge layers
-as we do for the hidden layers and it's as of yet unclear whether this is evidence of the validity of our 
-hypothesis or a consequence of having less data to fully characterize their evolution.
+statistical standpoint the edge layers don't have as much data for the analysis. As we've elaborated on 
+in Chapter \ref{chap:results}, we do notice marginally different behavior in the results for the edge 
+layers than we do for the hidden layers and it's as of yet unclear whether this is evidence of the 
+validity of our hypothesis or a consequence of having less data to fully characterize their evolution. 
+For the range of latent dimensions we ran the model with, the hidden layers have approximately 16000 
+data points and the edge layers can have as few as 258 data points or as many 1161 data points. This
+spread alone leads to a belief that the higher latent dimensions should yield better results because
+there are more trainable parameters and it is consistent with the expectation that more observables 
+leads to an improved E-DMD in the lifted coordinates. It is, however, not consistent with all of the
+results from DLDMD or the analysis in this thesis.
 
 \section{Future work}
-In the interest of future exploration of the ideas in this thesis, another ML model that would be excellent
-to examine would be a classifier of some kind. Such a problem would also allow us to use alternative metrics 
-such as model accuracy (which is much easier to quantify than the for the dynamical systems we investigate) 
-along with our analysis to get a better idea of the limits of this discovery of good training through the frame 
-of information change. Such classifiers are all over the modern literature of ML and would have great interest 
-in a method for determining good training during training would be of immense utility. Naturally, image 
-processing applications of ML would be worth looking at through this lense considering how much more complex
-pictures are 
+In the interest of future exploration of the ideas in this thesis, another ML model that would be 
+excellent to examine would be a classifier of some kind. Such a problem would also allow us to use 
+alternative metrics such as model accuracy (which is much easier to quantify than the for the dynamical 
+systems we investigate) along with our analysis to get a better idea of the limits of this discovery of 
+good training through the frame of information change. Such classifiers are all over the modern literature 
+of ML and would have great interest in a method for determining good training during training would be of 
+immense utility. Naturally, image processing applications of ML would be worth looking at through this 
+lense considering how much more complex images are as inputs and that most applications implicitly
+involve examining fine details with respect to the amount of information the image contains. It would
+also provide an opportunity to experiment with NN architectures other than the Sequential model 
+of DLDMD. 
+
+Change in information content might also be a meaningful consideration for unsupervised training in 
+that have another way to quantify if the model is arriving at a configuration that accomplishes the 
+given task or not. 
