@@ -1,6 +1,6 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Entropy and density function change with respect to $\sigma ^2$. The base of the logarithm shown here is $e$, but the base itself is irrelevant due to the shared properties of all logarithms: that they increase monotonically and unbounded. As the variance increases we see higher entropy in the left plot and a flattening of the probability density in the right plot.\relax }}{9}{}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces KL Divergence example with Normal distributions. As expected, the divergence decreases to 0 as $\sigma ^2 \to 1$ from either direction.\relax }}{10}{}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Example of divergences for layer Dec 2 of Van der Pol model with latent dimension 8 with linear fitting and confidence bands.\relax }}{14}{}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Example of divergences for layer Enc 1 of Van der Pol model with latent dimension 7 with linear fitting and confidence bands.\relax }}{14}{}%
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Duffing phase space.\relax }}{16}{}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Duffing average slopes with standard deviations.\relax }}{18}{}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Duffing loss plots, smoothed to accentuate trends.\relax }}{19}{}%

@@ -528,67 +528,12 @@ dimension to the loss curves and phase portraits from the training for each dime
 \begin{figure}[ht]
     \centering
     \begin{minipage}{\textwidth}
-        %\includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_08/div_plot_linear_dec_2.png"}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_07_2022-07-17-1837/bandwidth_ISJ/div_plot_linear_enc_1"}
     \end{minipage}
-    \caption{Example of divergences for layer Dec 2 of Van der Pol model with latent dimension 8 
+    \caption{Example of divergences for layer Enc 1 of Van der Pol model with latent dimension 7 
     with linear fitting and confidence bands.}
     \label{fig:divergence of model example}
 \end{figure}
-
-
-
-% \begin{enumerate}
-  % \item Ran a series of DLDMD models on two very well understood dynamical systems:
-  % \begin{itemize}
-    % \item Van der Pol oscillator and Multiple nonlinear centers Duffing oscillator
-    % \item Used latent/lifting dimensions 2 - 15
-    % \item Trained for 1000 epochs
-    % \item Saved configuration of DLDMD network weights at each epoch
-    % \item Used different data for each training, but each data set was drawn from 
-    % the same system's dynamics. Working on reproducing with same data/determining
-    % if that's necessary.
-  % \end{itemize}
-  
-  % \item Detrended weight data via differencing and used Kernel Density Estimation to create
-  % empirical PDFs from inter-epoch weights.
-  % \begin{itemize}
-    % \item For sake of ensuring statistical significance, kernel and bias weights are combined.
-    % \item Used Epanechnikov kernel (optimal in a mean square error sense) which is $K(x) = 
-    % 3(1-x^2)/4$ for $\abs{x} < 1$ else $K(x) = 0$ and has finite support \cite{epanechnikov}.
-    % \item Kernel choice not stastically significant \cite{epanechnikov}.
-    % \item Bandwidth computed using Improved Sheather-Jones method \cite{botev} and saved for 
-    % each epoch and layer.
-  % \end{itemize}
-
-  % \item Used symmetric KL Divergence to find ``distance'' between empirical PDFs from data.
-  % \begin{itemize}
-    % \item Both PDFs are assumed to have same support so that integration is over same domain.
-    % \item Using Simpson's Rule with 10,000 points for numerical integration, considering approximating 
-    % fourth derivative for error bound on integration.
-  % \end{itemize}
-
-  % \item Using Divergence data for each layer and inter-epoch, found linear fit with 95\% confidence
-  % and prediction interval.
-  % \begin{itemize}
-    % \item First 20\% of divergence data is ignored to avoid transient behavior.
-    % \item Slope of each layer and model saved, computed average and variance of slopes among all 
-    % layers. 
-  % \end{itemize}
-
-  % \item Plotted average slopes with variances of fit for each latent dimension.
-  % \begin{itemize}
-    % \item Plots of the bandwidth per layer, inter-epoch, and latent dimension were made along 
-    % with average bandwidths per latent dimension and inter-epoch.
-    % \item Plots of all loss curves per model and latent dimension were also made.
-  % \end{itemize}
-% \end{enumerate}
-
-% \textbf{Integration via Simpson's Rule (?) Ask Chris about this.}
-% Since we are using density estimation, we do not have access to the actual probability
-% densities for computing the divergences between consecutive distributions, we only 
-% have the data driven approximations from KDE. As such, we turn to numerical integration.
-% Many strategies for this exist, we default to Simpson's Rule due to it's... accuracy.
-
 
 
 \chapter{RESULTS}
@@ -807,7 +752,7 @@ predict future states of Duffing for latent dimensions smaller than 6.
     \begin{minipage}{.5\textwidth}
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_02.png"} 
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_04.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_06.png"} 
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png"} 
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png"} 
     \end{minipage}
