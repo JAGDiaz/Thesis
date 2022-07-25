@@ -35,8 +35,10 @@ Say more once you've thought of it.
 As it says on the tin, we seek a predictive model for a time series $\bracks{
 \boldsymbol{y}_j}_{j=1}^{N^T+1}$, which are the measurements of a uniformly 
 sampled unknown dynamical system of the form
-$$\dd{\boldsymbol{y}}{t} = f\parens{\boldsymbol{y}(t)},\quad \boldsymbol{y}(0) 
-= \boldsymbol{x} \in \mathcal{M} \subseteq \R^{N_s}$$
+\begin{equation}
+    \dd{\boldsymbol{y}}{t} = f\parens{\boldsymbol{y}(t)},\quad \boldsymbol{y}(0) 
+    = \boldsymbol{x} \in \mathcal{M} \subseteq \R^{N_s}
+\end{equation}
 As established in the introduction, there is an old and venerable literature 
 dedicated to deriving system using classical methods. What this literature will 
 admit is that such a process is not trivial and even difficult or impossible to 
@@ -49,8 +51,9 @@ $\mathcal{K}$. If we denote $\boldsymbol{\varphi}(t;\boldsymbol{x}) =
 $\boldsymbol{x}$ and denote $g: \mathcal{M} \to \C$ to be a square integrable 
 observable of the system then, according to \cite{koopman}, there exists a 
 linear representation of the flow map given by $\mathcal{K}$;
-$$\mathcal{K}^t g(\boldsymbol{x}) = g(\boldsymbol{\varphi}(t; \boldsymbol{x}))
-,$$
+\begin{equation}
+    \mathcal{K}^t g(\boldsymbol{x}) = g(\boldsymbol{\varphi}(t; \boldsymbol{x})),
+\end{equation}
 which means that $\mathcal{K}$ is a linear time-advancement operator of the 
 dynamics. This might seem like it trivializes the problem, given that we now 
 have a linear system, but it does not. The Koopman operator is an 
@@ -60,13 +63,17 @@ problem for an infinite dimensional linear one.
 In order to actually use this new representation, it suffices to find the 
 eigenvalues $\bracks{\lambda_\ell}$, and their affiliated eigenfunctions 
 $\bracks{\boldsymbol{\phi}_\ell}$, of the Koopman Operator such that
-$$\mathcal{K}^t\boldsymbol{\phi}_\ell = \exp(t\lambda_\ell)\boldsymbol{\phi}
-_\ell \implies g(\boldsymbol{x}) = \sum_{\ell \in \N} c_\ell \boldsymbol{\phi}_
-\ell(\boldsymbol{x}),$$
+\begin{equation}
+    \mathcal{K}^t\boldsymbol{\phi}_\ell = \exp(t\lambda_\ell)\boldsymbol{\phi}
+    _\ell \implies g(\boldsymbol{x}) = \sum_{\ell \in \N} c_\ell \boldsymbol{\phi}_
+    \ell(\boldsymbol{x}),    
+\end{equation}
 where we can essentially construct a modal decomposition of $g$. From here 
 advancing the dynamics to time $t$ is equivalent to writing
-$$\mathcal{K}^{t} g(\boldsymbol{x}) = \sum_{\ell \in \N} a_\ell \boldsymbol{
-  \phi}_\ell (\boldsymbol{\varphi}(t,\boldsymbol{x}))$$
+\begin{equation}
+    \mathcal{K}^{t} g(\boldsymbol{x}) = \sum_{\ell \in \N} a_\ell \boldsymbol{
+    \phi}_\ell (\boldsymbol{\varphi}(t,\boldsymbol{x}))    
+\end{equation} 
 The most useful property of this framing is that we have a global linearization 
 of the flow, with a major caveat: Generally, finding these eigenvalues and 
 eigenfunctions is impossible. This led to the development of the already 
@@ -74,44 +81,55 @@ mentioned and much much lauded Dynamic Mode Decomposition (DMD) and it's
 extensions, which seeks to numerically approximate a finite number of these 
 modes. We'll focus on the particular extension that \cite{lago} implements: 
 Extended DMD (E-DMD) \cite{williams}. With E-DMD, we suppose that 
-$$g(\boldsymbol{x}) = \sum_{\ell = 1}^{N_O} a_\ell \boldsymbol{\psi}_\ell
-(\boldsymbol{x})$$
+\begin{equation}
+    g(\boldsymbol{x}) = \sum_{\ell = 1}^{N_O} a_\ell \boldsymbol{\psi}_\ell
+    (\boldsymbol{x}) 
+\end{equation}
 which is to say that the observable $g$ exists in a finite dimensional subspace 
 of $L^2(\mathcal{M})$, applying the Koopman operator implies that
-\begin{align*} 
+\begin{align} 
     \mathcal{K}^{\delta t} g(\boldsymbol{x}) &= \sum_{\ell = 1}^{N_O} a_\ell 
     \boldsymbol{\phi}_\ell
     (\boldsymbol{\varphi}(\delta t,\boldsymbol{x})) \\
     &= \sum_{\ell = 1}^{N_O} \boldsymbol{\phi}_\ell (\boldsymbol{x})
     (\boldsymbol{K}_O^T
     \boldsymbol{a})_\ell + r(\boldsymbol{x};\boldsymbol{K}_O)
-\end{align*}
+\end{align}
 for discrete time step $\delta t$. $K_O$ is the $N_O\times N_O$ matrix that 
 minimizes
-$$\boldsymbol{K}_O = \underset{K}{\text{argmin}}\norm{\Psi_+ - K\Psi_-}_F^2$$
+\begin{equation}
+    \boldsymbol{K}_O = \underset{K}{\text{argmin}}\norm{\Psi_+ - K\Psi_-}_F^2
+\end{equation}
 and $r(\boldsymbol{x}, \boldsymbol{K}_O)$ is a residual that represents the 
 total error due to DMD. If the ansatz that $g$ lives in a finite space holds, 
 then $r$ is identically 0. We define $\Psi_\pm$ to be
-$$\Psi_- = \parens{\Psi_1\ \Psi_2\ \cdots \Psi_{N_T}},\quad \Psi_+ = \parens{
-  \Psi_2\ \Psi_3\ \cdots \Psi_{N_T+1}}$$
+\begin{equation}
+    \Psi_- = \parens{\Psi_1\ \Psi_2\ \cdots \Psi_{N_T}},\quad \Psi_+ = \parens{
+    \Psi_2\ \Psi_3\ \cdots \Psi_{N_T+1}} 
+\end{equation}
 where $\bracks{\Psi_j}$ is an observable of the time series of interest 
 $\bracks{\boldsymbol{y}_j}$. What the expression for $\boldsymbol{K}_O$ tells 
 us is that, we are trying to find a one-step mapping from each data point
 to the next. Practically speaking, $\boldsymbol{K}_O$ is found
 %$\boldsymbol{K}_O$ approximates $\mathcal{K}$ for a one-step mapping and is found 
 using an SVD, with which we can write
-$$\Psi_- = U\Sigma W^{\dagger} \implies \boldsymbol{K}_O = \Psi_+W\Sigma^{-P}
-U^{\dagger}$$
+\begin{equation}
+    \Psi_- = U\Sigma W^{\dagger} \implies \boldsymbol{K}_O = \Psi_+W\Sigma^{-P}U^{\dagger}
+\end{equation}
 where $-P$ denotes the Moore-Penrose pseudo-inverse and $\dagger$ denotes the 
 conjugate transpose. This gives us an expression for $r$ in terms of the 
 observables $\Psi$:
-$$E_r(\boldsymbol{K}_O) = \norm{\Psi_+(I - WW^\dagger)}_F$$
+\begin{equation}
+    E_r(\boldsymbol{K}_O) = \norm{\Psi_+(I - WW^\dagger)}_F
+\end{equation}
 % and we can find with an 
 %explicit expression it using an SVD on $\Psi_-$. 
 Finding the eigenvalues, eigenfunctions, and Koopman modes comes down to an 
 eigen-decomposition, from which the dynamics can be approximated as 
-$$y(t;\boldsymbol{x}) \approx V\exp(t\Lambda)V^{-1}\boldsymbol{\Psi}
-(\boldsymbol{x})$$
+\begin{equation}
+    y(t;\boldsymbol{x}) \approx V\exp(t\Lambda)V^{-1}\boldsymbol{\Psi}
+    (\boldsymbol{x})
+\end{equation}
 where $\boldsymbol{K}_O = VTV^{-1}$, $\Lambda_{\ell\ell} = \ln(T_{\ell\ell})/
 \delta t$ is a diagonal matrix and $\boldsymbol{\Psi}$ is the representation 
 of the initial condition in terms of the observables. 
@@ -153,20 +171,30 @@ to another to any arbitrary precision required.
 From this we can consider ML as a tool of regression. Say we have a set of training data
 $d_{tr} = \bracks{(x_j, y_j)}_{j=1}^{N_{tr}}$ and we believe that there is some function
 $f(x)$ such that 
-$$y_j = f(x_j) + \vep_j,$$
+\begin{equation}
+    y_j = f(x_j) + \vep_j,    
+\end{equation}
 where $\vep_j$ is assumed to be a sample drawn from $\mathcal{N}(0, \bar{\sigma}^2)$. 
 Generally $f$ is not known; so we must, using the training data, build an estimator 
 $f_e(x; d_{tr})$ and measure the performance of the estimator by examining the quantity
-$$\mathbb{E}_{d_{tr}}\sqbracks{\parens{f(x) + \vep - f_e(x;d_{tr})}^2} = 
-\text{bias}_{d_{tr}}^2 + \mathbb{V}(f_e) + \bar{\sigma}^2$$
+\begin{equation}
+    \mathbb{E}_{d_{tr}}\sqbracks{\parens{f(x) + \vep - f_e(x;d_{tr})}^2} = 
+    \text{bias}_{d_{tr}}^2 + \mathbb{V}(f_e) + \bar{\sigma}^2
+\end{equation}
 where 
-$$\text{bias}_{d_{tr}} = \mathbb{E}_{d_{tr}}\sqbracks{f_e} - f(x)$$
+\begin{equation}
+    \text{bias}_{d_{tr}} = \mathbb{E}_{d_{tr}}\sqbracks{f_e} - f(x)
+\end{equation}
 and 
-$$\mathbb{V}(f_e) = \mathbb{E}_{d_{tr}}\sqbracks{\parens{\mathbb{E}_{d_{tr}}\sqbracks{f_e} - f_e(x; d_{tr})}^2}$$ 
+\begin{equation}
+    \mathbb{V}(f_e) = \mathbb{E}_{d_{tr}}\sqbracks{\parens{\mathbb{E}_{d_{tr}}
+    \sqbracks{f_e} - f_e(x; d_{tr})}^2}
+\end{equation}
 With this framing, ML methods can be cast as attempts to find an estimator relative to
 a given training that balances the competing dilemmas of being too biased or allowing too
 much variance. From the point of view of non-parametric statistics, we would need to utilize 
-other techniques\cite{hollander} to determine the bias and variance of any given estimator. For our purposes, 
+other techniques\cite{hollander} to determine the bias and variance of any given estimator. 
+For our purposes, 
 we will instead consider how metrics from information theory can be used to assess the change in 
 information as data is fed through a NN and a model is trained.
 
@@ -178,7 +206,9 @@ observables on $\bracks{\boldsymbol{y}_j}$ that allow for the best prediction
 of future system states. This is implemented by defining an encoder 
 $\mathcal{E}: N_S \to N_O$ and decoder $\mathcal{D}: N_O \to N_S$ composed of 
 Dense layers such that 
-$$(\mathcal{D}\circ\mathcal{E})(\boldsymbol{x}) = \boldsymbol{x}$$
+\begin{equation}
+    (\mathcal{D}\circ\mathcal{E})(\boldsymbol{x}) = \boldsymbol{x}
+\end{equation}
 We choose $N_O \geq N_S$ and an appropriate loss function so that 
 $\mathcal{E}$ and $\mathcal{D}$ give a richer space of observables, called the 
 latent space, for EDMD to use when advancing the dynamics. The implementation 
@@ -553,11 +583,11 @@ other layers in the model certaintly accomplish something as the model trains, b
 that help E-DMD along are accomplished at the edge layers, so we expect them to evolve differently than
 the hidden layers. 
 
-Though not explicitly
-part of the algorithm, we'll examine how the bandwidths generated by the ISJ method might also give us 
-insight into optimal parameter choice as well. As a surrogate of the bin size of the affliated histogram
-of the data, it can give us an idea of how small a window each possible weight can exist in and examining
-their evolution can give us an idea of how the shape of the empirical density is changing by epoch
+% Though not explicitly
+% part of the algorithm, we'll examine how the bandwidths generated by the ISJ method might also give us 
+% insight into optimal parameter choice as well. As a surrogate of the bin size of the affliated histogram
+% of the data, it can give us an idea of how small a window each possible weight can exist in and examining
+% their evolution can give us an idea of how the shape of the empirical density is changing by epoch.
 
 
 \section{The Duffing Oscillator}
@@ -746,15 +776,15 @@ predict future states of Duffing for latent dimensions smaller than 6.
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png"} 
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_03.png"} 
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_05.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_07.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_09.png"} 
     \end{minipage}%
     \begin{minipage}{.5\textwidth}
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_02.png"} 
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_04.png"} 
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_06.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_08.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_10.png"} 
     \end{minipage}
     \caption{Duffing DLDMD results.}
     \label{fig:duffing DLDMD results}
@@ -856,8 +886,6 @@ trainings with worse loss curves.
     \caption{Van der Pol Average bandwidth.}
 \end{figure}
 
-
-
 \begin{figure}[h!p]
     \centering
     \begin{minipage}{.5\textwidth}
@@ -912,7 +940,7 @@ trainings with worse loss curves.
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_04.png"} 
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_06.png"} 
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_08.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_00.png"} 
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_10.png"} 
     \end{minipage}
     \caption{Van der Pol DLDMD results.}
     \label{fig:van der pol DLDMD results}
@@ -920,7 +948,34 @@ trainings with worse loss curves.
 
 \chapter{DISCUSSION}
 \label{chap:discussion}
+Having presented these results, we will briefly discuss some of the consequences we can deduce from 
+them and consider some interpretations of the fittings. The divergences represent the relative
+entropy of the detrended weight matrices and we can still think of the fittings as representing
+the trend of deviation from the steady state distribution of the weights for each layer, but a more
+concrete interpretation from an information theoretic perspective is still elusive. Trying to tie 
+these results back to the most basic definition of entropy and the equivalent understanding of it 
+being some measure of surprise is non-obvious and we may only consider these results as a metric in
+and of themselves without a more theoretic realization beyond simple information change. Perhaps for 
+an easier understanding we can simply measure the entropy of the detrended distributions individually,
+but this refocusing is something we learned in hindsight and wasn't a more obvious direction of 
+investigation at the beginning.
 
+\section{The Good}
+The results of this thesis are very useful in that we have arrived at some alternative metrics for
+quantifying good training of DLDMD. Both Figures \ref{fig:duffing average slopes} and \ref{fig:van 
+der pol average slopes} give us an idea of which dimension is optimal via the average of the slopes
+of all the fittings of the layers and we can surmise that smaller average slopes and standard deviations
+tend to correspond to better training and comparisons with the phase space results and loss curves 
+justify this claim. At the very least, we see that differences are apparent in our metrics for 
+hyperparameters that we know to be successful versus those that are not and it may be useful to 
+incorporate such analysis into a model to decide whether training should end at any given stage 
+in favor of different parameters. The most appropriate way to integrate this into a training scheme 
+will be difficult, but it should be possible to run this in parallel to a training scheme by saving
+sets of weights from previous epochs and choosing slope bounds that you'd like the averages to fall 
+into.
+
+
+\section{Optimal Parameters}
 While we believe that we've struck upon some useful results with respect to finding different behavior
 and trends in some of the different values we've computed, it must be made clear that some assumptions
 were made on our part that might not have been valid ones to makes given what we've learned since the 
@@ -932,9 +987,6 @@ nonlinear dynamical systems from time-series data is very tricky and it's diffic
 or whether key phase space features are respected in the predictions. Dealing with separatrices and 
 the concentric centers, the prediction results, and the activation function issues of Duffing in 
 particular casts some doubt on the parameters we have taken to be optimal. 
-
-% Our results are also quite 
-% idealized due to the perfect data from numerical integration that DLDMD uses 
 
 \section{Non-unitary densities}
 When creating the empirical densities in Chapter \ref{chap:results}, often we end up deriving 
@@ -958,19 +1010,6 @@ rely as much on smooth data, is needed for the optimal bandwidth parameter. One 
 deduce from this is that the apparent failure of boiler plate numerical integration can give us an idea
 of how much variance a given derived density has and we can use that make other inferences about 
 the model itself.
-
-% Figure BLAH shows histograms of the numerically 
-% computed areas of the densities yielded by KDE. Peaks are visible near 1 , but the spread around this average is not insignificant. 
-
-% \begin{figure}[h!]
-    % \centering
-    % \begin{minipage}{\textwidth}
-        % \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/area_devs.png"} 
-    % \end{minipage}%
-    % \caption{Histograms of computed areas from KDE.}
-    % \label{fig:area deviance}
-% \end{figure}
-
 
 \section{Statistical issues with edge layers}
 The weight matrices are used in the model for linear transformations; the hidden layers 
@@ -1003,4 +1042,4 @@ of DLDMD.
 
 Change in information content might also be a meaningful consideration for unsupervised training in 
 that have another way to quantify if the model is arriving at a configuration that accomplishes the 
-given task or not. 
+given task or not when metrics are not available due to lack of training targets. 

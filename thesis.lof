@@ -3,7 +3,7 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Example of divergences for layer Enc 1 of Van der Pol model with latent dimension 7 with linear fitting and confidence bands.\relax }}{14}{}%
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Duffing phase space.\relax }}{16}{}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Duffing average slopes with standard deviations.\relax }}{18}{}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Duffing loss plots, smoothed to accentuate trends.\relax }}{19}{}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Duffing loss plots, smoothed to accentuate trends.\relax }}{18}{}%
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Duffing Average bandwidth.\relax }}{19}{}%
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Duffing slope linear fits by layer.\relax }}{20}{}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Duffing slope linear fits by layer.\relax }}{21}{}%
