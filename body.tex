@@ -662,6 +662,30 @@ Duffing Oscillator that were left unchanged for each run; note that the distribu
 $\mathcal{N}(\mu, \sigma^2, n)$ is the truncated normal distribution, which is a normal distribution
 in which all values drawn that are more than $n$ standard deviations from the mean are discarded. 
 
+\begin{table}[!htb]
+    \centering
+    \begin{minipage}{\textwidth}
+        \caption{ReLU activation function vs ELU activation function. Unlike ReLU, ELU is negative 
+        for $x < 0$. For some models, ELU can be advantageous if ReLU causes many of the neuron to
+        ``die'' during training which means the weights associated with that neuron become 0, and
+        those neurons do not contribute anything to output of the machine. Other activation functions
+        can assuage this problem, but ELU can be made arbitrarily close to ReLU and so is quite
+        popular.}
+        \label{table:elu vs relu}
+        \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|} \hline% {\columnwidth}{|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|}\hline
+            ReLU & ELU \\ \hline \hline
+            $\sigma(x) = \begin{cases}
+                x, & x > 0 \\
+                0, & \text{else}
+            \end{cases}$ & 
+            $\sigma(x; \alpha) = \begin{cases}
+                x, & x > 0 \\
+                \alpha(e^x - 1), & \text{else}
+            \end{cases}$ \\ \hline
+        \end{tabularx}
+    \end{minipage}
+\end{table}
+
 A few notes on the trainings themselves are worth mentioning here. No learning rate scheduling is used,
 so the learning rate with the Adam optimizer is held constant for all epochs. The activation function
 Exponential Linear Unit (ELU) is used instead of the more standard Rectified Linear Unit (ReLU) due an 
@@ -686,21 +710,23 @@ reduce the number of variables down to the latent dimension alone.
 
 Having established this, we'll consider the results of our analysis.
 Figure \ref{fig:duffing average slopes} shows the average of the slopes of the linear fits across 
-all layers for each epoch.  What we can see plainly is that for latent dimensions 2 through 5, the average
-slope is small in magnitude with a small to medium standard deviation relative to the scale with
-latent dimension 6 showing not only a much larger average slope, but as also much more variance. We may 
-contrast this with the losses in Figure \ref{fig:duffing losses} for each latent dimension, which seems 
-to show that latent dimension 5 should be the optimal choice with all other choices being more or less 
-equivalent. This does not match the results of the phase space representation, which show roughly that 
-dimension 3 is best. 
-If we examine Figure \ref{fig:duffing average bandwidth}, which shows the average bandwidth from the ISJ
-algorithm across all layer for a given latent dimension per epoch, we can see that 3 has a slightly
-different trend and separates cleanly from each of the other choices. While this behavior tracks with our 
-understanding that this dimension is best and should be easily differentiated from the rest, it is 
-inconsistent the fact that the other bandwidth curves are banded together but don't have much in common
-with respect to Figures \ref{fig:duffing average slopes} and \ref{fig:duffing losses}
-for both the fitted slopes and loss curves.
-
+all layers for each epoch.  What we can see plainly is that for latent dimensions 3 and 8, 
+the average slope is small in magnitude with a small to medium standard deviation relative to the scale 
+with the other latent dimensions showing not only much larger average slopes, but as also much more 
+variance. We may contrast this with the losses in Figure \ref{fig:duffing DLDMD results} for each latent 
+dimension, which seems to show that those latent dimensions should be the optimal choices with all other 
+choices being more or less equivalent. These phase space representations are very close indeed, however, 
+which motivates examining other metrics. If we examine Figure \ref{fig:duffing average bandwidth}, which shows the average 
+bandwidth from the ISJ algorithm across all layers for a given latent dimension per epoch, we can see 
+that each latent dimension choice seems to fall into the same band between $4\cdot10^{-6}$ and 
+$6\cdot10^{-6}$. From this we can deduce that the overall trend in computed bandwidths from the ISJ 
+algorithm is not significantly different for any latent dimension; so it seems that this may not be a 
+useful value for differentiating between good parameter choices. If we examine Figure \ref{fig:duffing losses},
+we see that considering loss curves alone can be unreliable, and a contrast with Figure \ref{fig:duffing DLDMD results} 
+is quite instructive when trying to recognize why you may want to consider more than just loss curves when 
+evaluating the utility of a ML model. Even so, we see that latent dimension 3 has a better loss curve, 
+a faithful phase space forecasting and a small average slope with respect to Figure \ref{fig:duffing average slopes}
+and we conclude that this is a good indication of successful training.
 
 \begin{figure}[!ht]
     \centering
@@ -720,15 +746,15 @@ for both the fitted slopes and loss curves.
     \label{fig:duffing average bandwidth}
 \end{figure}
 
-For a more granular view of the individual fittings for each layer of the model, we have Figures 
-\ref{fig:duffing slopes all layers} and \ref{fig:duffing linear fits all layers}. Much to our 
+For a more granular view of the individual fittings for each layer of the model, we have Figure
+\ref{fig:duffing slopes all layers}. Much to our 
 expectation, the plots for the edge layers have slightly different behavior than for the hidden layers;
 generally, the linear trends have a smaller slope and y-intercept further from 0. We can interpret this 
 as being indicative of having an information change trend that is further from the theoretical steady-state
 than for the other layers of the model. We've come to associate this with the kind of expressivity that is
 desireable for ML models to have in that they are able to cope with the kind of variability that real world 
 data could exhibit. The ultimate conclusion we're able to draw is that DLDMD seems to adequately train and 
-predict future states of Duffing for latent dimensions smaller than 6.
+predict future states of Duffing for latent dimensions 3, 4, 5, and 6.
 
 \begin{figure}[!htbp]
     \centering
@@ -746,7 +772,7 @@ predict future states of Duffing for latent dimensions smaller than 6.
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_2.png"} 
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_out.png"} 
     \end{minipage}
-    \caption{Duffing slope linear fits by layer.}
+    \caption{Duffing slope of linear fits by layer.}
     \label{fig:duffing slopes all layers}
 \end{figure}
 
@@ -766,7 +792,7 @@ predict future states of Duffing for latent dimensions smaller than 6.
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_2.png"} 
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_out.png"} 
     \end{minipage}
-    \caption{Duffing slope linear fits by layer.}
+    \caption{Duffing linear fits by layer.}
     \label{fig:duffing linear fits all layers}
 \end{figure}
 
@@ -786,28 +812,9 @@ predict future states of Duffing for latent dimensions smaller than 6.
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_08.png"} 
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_10.png"} 
     \end{minipage}
-    \caption{Duffing DLDMD results.}
+    \caption{Duffing DLDMD results by latent dimension.}
     \label{fig:duffing DLDMD results}
 \end{figure}
-
-\begin{table}[!htb]
-    \centering
-    \begin{minipage}{\textwidth}
-        \caption{ReLU activation function vs ELU activation function.}
-        \label{table:elu vs relu}
-        \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|} \hline% {\columnwidth}{|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|}\hline
-            ReLU & ELU \\ \hline \hline
-            $\sigma(x) = \begin{cases}
-                x, & x > 0 \\
-                0, & \text{else}
-            \end{cases}$ & 
-            $\sigma(x; \alpha) = \begin{cases}
-                x, & x > 0 \\
-                \alpha(e^x - 1), & \text{else}
-            \end{cases}$ \\ \hline
-        \end{tabularx}
-    \end{minipage}
-\end{table}
 
 \section{The Van der Pol Oscillator}
 \label{section:van der pol results}
@@ -844,7 +851,6 @@ is
     \caption{Van der Pol average slopes with standard deviations.}
     \label{fig:van der pol average slopes}
 \end{figure}
-
 Again, by introducing $y = \dot{x}$. Unlike Duffing, this system has a single unstable fixed point
 at the origin and all nontrivial orbits are attracted to a limit cycle that surrounds the origin. 
 Figure \ref{fig:van der pol phase space} shows a graphical representation of the phase space of our 
@@ -868,15 +874,25 @@ is minor enough that a Van der Pol hyperparameters table is omitted.
 
 Figure \ref{fig:van der pol average slopes}, shows the average and standard deviation of the slopes for 
 the Van der Pol training per latent dimension choice. Relative to Figure \ref{fig:duffing average slopes}
-for Duffing, we have larger average slopes and more variety with respect to the standard deviations for 
-each dimension. Based on the phase plane results, we should expect 8 to correspond to the best training 
-so it seems that a small in magnitude slope is indicative of good training and this in consistent for
-some of the loss curves in Figure \ref{fig:van der pol losses}. The slope of 5 is essentially 0 and 
-we that it has a loss curve almost indistinguishable from that of 8; and we can make a similar observation
-about 7 as well. However, 10 also has a small slope but the loss curve is markedly different from the 
-optimal choices and seems to match that of 3 which has a very large slope comparitively. One quality
-the optimal trainings seem to have in common is that they have smaller standard deviations than the 
-trainings with worse loss curves. 
+for Duffing, we have a more uniform decrease in the magnitude of the average slope as the latent dimension 
+increases and higher variances in general. Based on the phase plane results in Figure \ref{fig:van der pol DLDMD results}, 
+we should expect 6 and 9 to correspond to the best training so it seems that a small in magnitude slope is indicative 
+of good training and this is consistent for some of the loss curves in Figure \ref{fig:van der pol losses}. 
+However, the loss curves of each latent dimension choice aside from 2 fall on one another and the average
+bandwidths in \ref{fig:van der pol average bandwidth} do as well. We can see in Figures \ref{fig:van der pol slopes all layers}
+and \ref{fig:van der pol linear fits all layers} that like in Duffing, the edge layers evolve differently 
+than the hidden layers and we see that in their having larger $y$-intercepts and more variation in their 
+slopes as well. With this more granular view, we can also see why all the average slopes are negative,
+which is not the case for Duffing. The exact interpretation of this will be discussed later, but we've come 
+to see this is as the trend of deviation from the steady growing smaller as the model trains and a consequence 
+of the simpler phase space of Van der Pol.
+
+% The slope of 5 is essentially 0 and 
+% we that it has a loss curve almost indistinguishable from that of 8; and we can make a similar observation
+% about 7 as well. However, 10 also has a small slope but the loss curve is markedly different from the 
+% optimal choices and seems to match that of 3 which has a very large slope comparitively. One quality
+% the optimal trainings seem to have in common is that they have smaller standard deviations than the 
+% trainings with worse loss curves. 
 
 \begin{figure}[ht]
     \centering
@@ -884,9 +900,10 @@ trainings with worse loss curves.
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png"} 
     \end{minipage} 
     \caption{Van der Pol Average bandwidth.}
+    \label{fig:van der pol average bandwidth}
 \end{figure}
 
-\begin{figure}[h!p]
+\begin{figure}[!htbp]
     \centering
     \begin{minipage}{.5\textwidth}
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_in.png"} 
@@ -902,11 +919,11 @@ trainings with worse loss curves.
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_2.png"} 
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_out.png"} 
     \end{minipage}
-    \caption{Van der Pol slope linear fits by layer.}
+    \caption{Van der Pol slope of linear fits by layer.}
     \label{fig:van der pol slopes all layers}
 \end{figure}
 
-\begin{figure}[h!p]
+\begin{figure}[!htbp]
     \centering
     \begin{minipage}{.5\textwidth}
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_in.png"} 
@@ -922,7 +939,7 @@ trainings with worse loss curves.
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_2.png"} 
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_out.png"} 
     \end{minipage}
-    \caption{Van der Pol slope linear fits by layer.}
+    \caption{Van der Pol linear fits by layer.}
     \label{fig:van der pol linear fits all layers}
 \end{figure}
 
@@ -942,7 +959,7 @@ trainings with worse loss curves.
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_08.png"} 
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_10.png"} 
     \end{minipage}
-    \caption{Van der Pol DLDMD results.}
+    \caption{Van der Pol DLDMD results by latent dimension.}
     \label{fig:van der pol DLDMD results}
 \end{figure}
 
@@ -972,7 +989,13 @@ incorporate such analysis into a model to decide whether training should end at 
 in favor of different parameters. The most appropriate way to integrate this into a training scheme 
 will be difficult, but it should be possible to run this in parallel to a training scheme by saving
 sets of weights from previous epochs and choosing slope bounds that you'd like the averages to fall 
-into.
+into. As a proof of concept, we've found that the data in the form of the weights of a model can be
+used to characterize the model's evolution outside of the traditional metrics of ML and gives us a
+statistical viewpoint of the seemingly random walk that these models take during training. We've also 
+shown how individual layers of a given model can have an outsized impact on the effectiveness of the 
+model. The egde layers evolved in a very different way than the hidden layer and Figures 
+\ref{fig:duffing slopes all layers} and \ref{fig:van der pol slopes all layers} show this.
+% In the understanding of 
 
 
 \section{Optimal Parameters}
@@ -1039,7 +1062,6 @@ lense considering how much more complex images are as inputs and that most appli
 involve examining fine details with respect to the amount of information the image contains. It would
 also provide an opportunity to experiment with NN architectures other than the Sequential model 
 of DLDMD. 
-
 Change in information content might also be a meaningful consideration for unsupervised training in 
-that have another way to quantify if the model is arriving at a configuration that accomplishes the 
+that we have another way to quantify if the model is arriving at a configuration that accomplishes the 
 given task or not when metrics are not available due to lack of training targets. 

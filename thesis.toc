@@ -16,11 +16,11 @@
 \contentsline {section}{\numberline {2.4}Implementation Details}{12}{}%
 \contentsline {chapter}{\numberline {3}RESULTS}{15}{}%
 \contentsline {section}{\numberline {3.1}The Duffing Oscillator}{15}{}%
-\contentsline {section}{\numberline {3.2}The Van der Pol Oscillator}{19}{}%
+\contentsline {section}{\numberline {3.2}The Van der Pol Oscillator}{23}{}%
 \contentsline {chapter}{\numberline {4}DISCUSSION}{29}{}%
 \contentsline {section}{\numberline {4.1}The Good}{29}{}%
-\contentsline {section}{\numberline {4.2}Optimal Parameters}{29}{}%
+\contentsline {section}{\numberline {4.2}Optimal Parameters}{30}{}%
 \contentsline {section}{\numberline {4.3}Non-unitary densities}{30}{}%
-\contentsline {section}{\numberline {4.4}Statistical issues with edge layers}{30}{}%
+\contentsline {section}{\numberline {4.4}Statistical issues with edge layers}{31}{}%
 \contentsline {section}{\numberline {4.5}Future work}{31}{}%
-\contentsline {schapter}{BIBLIOGRAPHY}{32}{}%
+\contentsline {schapter}{BIBLIOGRAPHY}{33}{}%
