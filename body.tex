@@ -344,9 +344,10 @@ continuous distribution with density function $f(x)$, the entropy is given by
 \begin{equation}
     h[f] = \mathbb{E}\sqbracks{-\log(f(x))} = -\int_X f(x)\log(f(x))\ dx    
 \end{equation}
-For the normall distributed $X$ defined above, we have that probability density function
+For the normally distributed $X$ defined above, we have the probability density function
 \begin{equation}
-   f(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\parens{-\frac{1}{2}\parens{\frac{x-\mu}{\sigma}}^2} \label{eqn:normal} 
+   f(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\parens{-\frac{1}{2}\parens{\frac{x-\mu}{\sigma}}^2} 
+   \label{eqn:normal} 
 \end{equation}
 and the entropy integral for this evaluates to
 \begin{equation}
@@ -363,12 +364,13 @@ configuration that allows it to accomplish the task it was designed for. For the
 
 \begin{figure}[ht]
     \centering
-    \begin{minipage}{.5\textwidth}
-        \includegraphics[width=\textwidth]{Figures/entropy_example.png}
-    \end{minipage}%
-    \begin{minipage}{.5\textwidth}
-        \includegraphics[width=\textwidth]{Figures/densities_example.png}
-    \end{minipage}
+    % \begin{minipage}{.5\textwidth}
+        % \includegraphics[width=\textwidth]{Figures/entropy_example.png}
+    % \end{minipage}%
+    % \begin{minipage}{.5\textwidth}
+        % \includegraphics[width=\textwidth]{Figures/densities_example.png}
+    % \end{minipage}
+    \includegraphics[width=\textwidth]{Figures/entropy_densities_example.png}
 
     \caption{Entropy and density function change with respect to $\sigma^2$. The base 
     of the logarithm shown here is $e$, but the base itself is irrelevant due to the shared

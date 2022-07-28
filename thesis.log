@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.3)  28 JUL 2022 08:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.3)  28 JUL 2022 13:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -622,393 +622,388 @@ pdfTeX warning (ext4): destination with the same identifier (name{enumi.0}) has 
 l.307 \begin{equation}
                       ] [7]
 CHAPTER 2.
-<Figures/entropy_example.png, id=299, 722.7pt x 361.35pt>
-File: Figures/entropy_example.png Graphic file (type png)
-<use Figures/entropy_example.png>
-Package pdftex.def Info: Figures/entropy_example.png  used on input line 367.
-(pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Figures/densities_example.png, id=301, 722.7pt x 361.35pt>
-File: Figures/densities_example.png Graphic file (type png)
-<use Figures/densities_example.png>
-Package pdftex.def Info: Figures/densities_example.png  used on input line 370.
-(pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
+<Figures/entropy_densities_example.png, id=299, 722.7pt x 361.35pt>
+File: Figures/entropy_densities_example.png Graphic file (type png)
+<use Figures/entropy_densities_example.png>
+Package pdftex.def Info: Figures/entropy_densities_example.png  used on input line 373.
+(pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
  Section 2.1.
 [8
 
-] [9 <./Figures/entropy_example.png> <./Figures/densities_example.png>]
-<Figures/divergence_example.png, id=320, 722.7pt x 361.35pt>
+] [9 <./Figures/entropy_densities_example.png>]
+<Figures/divergence_example.png, id=317, 722.7pt x 361.35pt>
 File: Figures/divergence_example.png Graphic file (type png)
 <use Figures/divergence_example.png>
-Package pdftex.def Info: Figures/divergence_example.png  used on input line 430.
+Package pdftex.def Info: Figures/divergence_example.png  used on input line 432.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
 
  Section 2.2.
 [10 <./Figures/divergence_example.png>]
-<Figures/kde_example.png, id=332, 722.7pt x 361.35pt>
+<Figures/kde_example.png, id=330, 722.7pt x 361.35pt>
 File: Figures/kde_example.png Graphic file (type png)
 <use Figures/kde_example.png>
-Package pdftex.def Info: Figures/kde_example.png  used on input line 472.
+Package pdftex.def Info: Figures/kde_example.png  used on input line 474.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
 
  Section 2.3.
 [11]
  Section 2.4.
 [12 <./Figures/kde_example.png>] [13]
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_07_2022-07-17-1837/div_plot_linear_enc_1.png, id=366, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_07_2022-07-17-1837/div_plot_linear_enc_1.png, id=363, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_07_2022-07-17-1837/div_plot_linear_enc_1.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_07_2022-07-17-1837/div_plot_linear_enc_1.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_07_2022-07-17-1837/div_plot_linear_enc_1.png  used on input line 590.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_07_2022-07-17-1837/div_plot_linear_enc_1.png  used on input line 592.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
  [14] [15 <Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_07_2022-07-17-1837/div_plot_linear_enc_1.png>]
 CHAPTER 3.
  Section 3.1.
-<Figures/duffing_phase_space.png, id=378, 722.7pt x 361.35pt>
+<Figures/duffing_phase_space.png, id=376, 722.7pt x 361.35pt>
 File: Figures/duffing_phase_space.png Graphic file (type png)
 <use Figures/duffing_phase_space.png>
-Package pdftex.def Info: Figures/duffing_phase_space.png  used on input line 628.
+Package pdftex.def Info: Figures/duffing_phase_space.png  used on input line 630.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
 [16
 
 ] [17 <./Figures/duffing_phase_space.png>]
-<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png, id=396, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png, id=394, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png  used on input line 734.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png  used on input line 736.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
  [18]
-<Z:/ML_models/DLDMD-newest/examples/duffing/loss_plots.png, id=408, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/loss_plots.png, id=406, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/loss_plots.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/loss_plots.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/loss_plots.png  used on input line 763.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/loss_plots.png  used on input line 765.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png, id=409, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png, id=407, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png  used on input line 772.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png  used on input line 774.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
  [19 <Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png>]
-<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_in.png, id=416, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_in.png, id=414, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_in.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_in.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_in.png  used on input line 791.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_in.png  used on input line 793.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_0.png, id=417, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_0.png, id=415, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_0.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_0.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_0.png  used on input line 792.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_0.png  used on input line 794.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_1.png, id=418, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_1.png, id=416, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_1.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_1.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_1.png  used on input line 793.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_1.png  used on input line 795.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_2.png, id=419, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_2.png, id=417, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_2.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_2.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_2.png  used on input line 794.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_2.png  used on input line 796.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_out.png, id=420, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_out.png, id=418, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_out.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_out.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_out.png  used on input line 795.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_out.png  used on input line 797.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_in.png, id=421, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_in.png, id=419, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_in.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_in.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_in.png  used on input line 798.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_in.png  used on input line 800.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_0.png, id=422, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_0.png, id=420, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_0.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_0.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_0.png  used on input line 799.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_0.png  used on input line 801.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_1.png, id=423, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_1.png, id=421, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_1.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_1.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_1.png  used on input line 800.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_1.png  used on input line 802.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_2.png, id=424, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_2.png, id=422, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_2.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_2.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_2.png  used on input line 801.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_2.png  used on input line 803.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_out.png, id=425, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_out.png, id=423, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_out.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_out.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_out.png  used on input line 802.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_out.png  used on input line 804.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_in.png, id=426, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_in.png, id=424, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_in.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_in.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_in.png  used on input line 811.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_in.png  used on input line 813.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_0.png, id=427, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_0.png, id=425, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_0.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_0.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_0.png  used on input line 812.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_0.png  used on input line 814.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_1.png, id=428, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_1.png, id=426, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_1.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_1.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_1.png  used on input line 813.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_1.png  used on input line 815.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_2.png, id=429, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_2.png, id=427, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_2.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_2.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_2.png  used on input line 814.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_2.png  used on input line 816.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_out.png, id=430, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_out.png, id=428, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_out.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_out.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_out.png  used on input line 815.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_out.png  used on input line 817.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_in.png, id=431, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_in.png, id=429, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_in.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_in.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_in.png  used on input line 818.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_in.png  used on input line 820.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_0.png, id=432, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_0.png, id=430, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_0.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_0.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_0.png  used on input line 819.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_0.png  used on input line 821.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_1.png, id=433, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_1.png, id=431, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_1.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_1.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_1.png  used on input line 820.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_1.png  used on input line 822.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_2.png, id=434, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_2.png, id=432, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_2.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_2.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_2.png  used on input line 821.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_2.png  used on input line 823.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_out.png, id=435, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_out.png, id=433, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_out.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_out.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_out.png  used on input line 822.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_out.png  used on input line 824.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png, id=436, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png, id=434, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png  used on input line 831.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png  used on input line 833.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_03.png, id=437, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_03.png, id=435, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_03.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_03.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_03.png  used on input line 832.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_03.png  used on input line 834.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_05.png, id=438, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_05.png, id=436, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_05.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_05.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_05.png  used on input line 833.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_05.png  used on input line 835.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_07.png, id=439, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_07.png, id=437, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_07.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_07.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_07.png  used on input line 834.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_07.png  used on input line 836.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_09.png, id=440, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_09.png, id=438, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_09.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_09.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_09.png  used on input line 835.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_09.png  used on input line 837.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_02.png, id=441, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_02.png, id=439, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_02.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_02.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_02.png  used on input line 838.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_02.png  used on input line 840.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_04.png, id=442, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_04.png, id=440, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_04.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_04.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_04.png  used on input line 839.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_04.png  used on input line 841.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_06.png, id=443, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_06.png, id=441, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_06.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_06.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_06.png  used on input line 840.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_06.png  used on input line 842.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_08.png, id=444, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_08.png, id=442, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_08.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_08.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_08.png  used on input line 841.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_08.png  used on input line 843.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_10.png, id=445, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_10.png, id=443, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_10.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_10.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_10.png  used on input line 842.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_10.png  used on input line 844.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
  [20 <Z:/ML_models/DLDMD-newest/examples/duffing/loss_plots.png> <Z:/ML_models/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png>] [21 <Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_in.png> <Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_0.png> <Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_1.png> <Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_2.png> <Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_out.png> <Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_in.png> <Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_0.png> <Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_1.png> <Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_2.png> <Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_out.png>] [22 <Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_in.png> <Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_0.png> <Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_1.png> <Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_2.png> <Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_out.png> <Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_in.png> <Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_0.png> <Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_1.png> <Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_2.png> <Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_out.png>] [23 <Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png> <Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_03.png> <Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_05.png> <Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_07.png> <Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_09.png> <Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_02.png> <Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_04.png> <Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_06.png> <Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_08.png> <Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_10.png>]
  Section 3.2.
-<Figures/van_der_pol_phase_space.png, id=495, 722.7pt x 361.35pt>
+<Figures/van_der_pol_phase_space.png, id=493, 722.7pt x 361.35pt>
 File: Figures/van_der_pol_phase_space.png Graphic file (type png)
 <use Figures/van_der_pol_phase_space.png>
-Package pdftex.def Info: Figures/van_der_pol_phase_space.png  used on input line 854.
+Package pdftex.def Info: Figures/van_der_pol_phase_space.png  used on input line 856.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png, id=496, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png, id=494, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png  used on input line 878.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png  used on input line 880.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/loss_plots.png, id=500, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/loss_plots.png, id=498, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/loss_plots.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/loss_plots.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/loss_plots.png  used on input line 898.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/loss_plots.png  used on input line 900.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
 [24 <./Figures/van_der_pol_phase_space.png>]
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png, id=515, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png, id=513, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png  used on input line 929.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png  used on input line 931.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_in.png, id=516, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_in.png, id=514, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_in.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_in.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_in.png  used on input line 938.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_in.png  used on input line 940.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_0.png, id=517, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_0.png, id=515, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_0.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_0.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_0.png  used on input line 939.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_0.png  used on input line 941.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_1.png, id=518, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_1.png, id=516, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_1.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_1.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_1.png  used on input line 940.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_1.png  used on input line 942.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_2.png, id=519, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_2.png, id=517, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_2.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_2.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_2.png  used on input line 941.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_2.png  used on input line 943.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_out.png, id=520, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_out.png, id=518, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_out.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_out.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_out.png  used on input line 942.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_out.png  used on input line 944.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_in.png, id=521, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_in.png, id=519, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_in.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_in.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_in.png  used on input line 945.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_in.png  used on input line 947.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_0.png, id=522, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_0.png, id=520, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_0.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_0.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_0.png  used on input line 946.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_0.png  used on input line 948.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_1.png, id=523, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_1.png, id=521, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_1.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_1.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_1.png  used on input line 947.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_1.png  used on input line 949.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_2.png, id=524, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_2.png, id=522, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_2.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_2.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_2.png  used on input line 948.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_2.png  used on input line 950.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_out.png, id=525, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_out.png, id=523, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_out.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_out.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_out.png  used on input line 949.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_out.png  used on input line 951.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_in.png, id=526, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_in.png, id=524, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_in.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_in.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_in.png  used on input line 958.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_in.png  used on input line 960.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_0.png, id=527, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_0.png, id=525, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_0.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_0.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_0.png  used on input line 959.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_0.png  used on input line 961.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_1.png, id=528, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_1.png, id=526, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_1.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_1.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_1.png  used on input line 960.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_1.png  used on input line 962.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_2.png, id=529, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_2.png, id=527, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_2.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_2.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_2.png  used on input line 961.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_2.png  used on input line 963.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_out.png, id=530, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_out.png, id=528, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_out.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_out.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_out.png  used on input line 962.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_out.png  used on input line 964.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_in.png, id=531, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_in.png, id=529, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_in.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_in.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_in.png  used on input line 965.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_in.png  used on input line 967.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_0.png, id=532, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_0.png, id=530, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_0.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_0.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_0.png  used on input line 966.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_0.png  used on input line 968.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_1.png, id=533, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_1.png, id=531, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_1.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_1.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_1.png  used on input line 967.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_1.png  used on input line 969.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_2.png, id=534, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_2.png, id=532, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_2.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_2.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_2.png  used on input line 968.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_2.png  used on input line 970.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_out.png, id=535, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_out.png, id=533, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_out.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_out.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_out.png  used on input line 969.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_out.png  used on input line 971.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_00.png, id=536, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_00.png, id=534, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_00.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_00.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_00.png  used on input line 978.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_00.png  used on input line 980.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_03.png, id=537, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_03.png, id=535, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_03.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_03.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_03.png  used on input line 979.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_03.png  used on input line 981.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_05.png, id=538, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_05.png, id=536, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_05.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_05.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_05.png  used on input line 980.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_05.png  used on input line 982.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_07.png, id=539, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_07.png, id=537, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_07.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_07.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_07.png  used on input line 981.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_07.png  used on input line 983.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_09.png, id=540, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_09.png, id=538, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_09.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_09.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_09.png  used on input line 982.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_09.png  used on input line 984.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_02.png, id=541, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_02.png, id=539, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_02.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_02.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_02.png  used on input line 985.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_02.png  used on input line 987.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_04.png, id=542, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_04.png, id=540, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_04.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_04.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_04.png  used on input line 986.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_04.png  used on input line 988.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_06.png, id=543, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_06.png, id=541, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_06.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_06.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_06.png  used on input line 987.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_06.png  used on input line 989.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_08.png, id=544, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_08.png, id=542, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_08.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_08.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_08.png  used on input line 988.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_08.png  used on input line 990.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_10.png, id=545, 722.7pt x 361.35pt>
+<Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_10.png, id=543, 722.7pt x 361.35pt>
 File: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_10.png Graphic file (type png)
 <use Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_10.png>
-Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_10.png  used on input line 989.
+Package pdftex.def Info: Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_10.png  used on input line 991.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
  [25 <Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png>] [26 <Z:/ML_models/DLDMD-newest/examples/van_der_pol/loss_plots.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png>] [27 <Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_in.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_0.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_1.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_2.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_out.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_in.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_0.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_1.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_2.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_out.png>] [28 <Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_in.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_0.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_1.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_2.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_out.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_in.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_0.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_1.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_2.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_out.png>] [29 <Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_00.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_03.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_05.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_07.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_09.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_02.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_04.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_06.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_08.png> <Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_10.png>]
 CHAPTER 4.
@@ -1037,17 +1032,17 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 51E866E9F0683F6C68351F97D31ADF71;3599.
  ) 
 Here is how much of TeX's memory you used:
- 17464 strings out of 478582
- 316788 string characters out of 2844345
- 624285 words of memory out of 3000000
- 35182 multiletter control sequences out of 15000+600000
+ 17457 strings out of 478582
+ 316632 string characters out of 2844345
+ 624286 words of memory out of 3000000
+ 35176 multiletter control sequences out of 15000+600000
  478670 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  91i,22n,91p,1224b,472s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (42 pages, 7103539 bytes).
+Output written on thesis.pdf (42 pages, 7081330 bytes).
 PDF statistics:
- 724 PDF objects out of 1000 (max. 8388607)
+ 722 PDF objects out of 1000 (max. 8388607)
  144 named destinations out of 1000 (max. 500000)
- 558 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 553 words of extra memory for PDF output out of 10000 (max. 10000000)
 
