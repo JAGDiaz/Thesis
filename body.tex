@@ -65,14 +65,14 @@ eigenvalues $\bracks{\lambda_\ell}$, and their affiliated eigenfunctions
 $\bracks{\boldsymbol{\phi}_\ell}$, of the Koopman Operator such that
 \begin{equation}
     \mathcal{K}^t\boldsymbol{\phi}_\ell = \exp(t\lambda_\ell)\boldsymbol{\phi}
-    _\ell \implies g(\boldsymbol{x}) = \sum_{\ell \in \N} c_\ell \boldsymbol{\phi}_
+    _\ell \implies g(\boldsymbol{x}) = \sum_{\ell \in \N} a_\ell \boldsymbol{\phi}_
     \ell(\boldsymbol{x}),    
 \end{equation}
 where we can essentially construct a modal decomposition of $g$. From here 
 advancing the dynamics to time $t$ is equivalent to writing
 \begin{equation}
-    \mathcal{K}^{t} g(\boldsymbol{x}) = \sum_{\ell \in \N} a_\ell \boldsymbol{
-    \phi}_\ell (\boldsymbol{\varphi}(t,\boldsymbol{x}))    
+    \mathcal{K}^{t} g(\boldsymbol{x}) = \sum_{\ell \in \N} a_\ell 
+    \exp(t\lambda_\ell)\boldsymbol{\phi}_\ell (\boldsymbol{x})
 \end{equation} 
 The most useful property of this framing is that we have a global linearization 
 of the flow, with a major caveat: Generally, finding these eigenvalues and 
@@ -82,29 +82,28 @@ extensions, which seeks to numerically approximate a finite number of these
 modes. We'll focus on the particular extension that \cite{lago} implements: 
 Extended DMD (E-DMD) \cite{williams}. With E-DMD, we suppose that 
 \begin{equation}
-    g(\boldsymbol{x}) = \sum_{\ell = 1}^{N_O} a_\ell \boldsymbol{\psi}_\ell
+    g(\boldsymbol{x}) = \sum_{\ell = 1}^{N_O} a_\ell \boldsymbol{\phi}_\ell
     (\boldsymbol{x}) 
 \end{equation}
 which is to say that the observable $g$ exists in a finite dimensional subspace 
 of $L^2(\mathcal{M})$, applying the Koopman operator implies that
 \begin{align} 
     \mathcal{K}^{\delta t} g(\boldsymbol{x}) &= \sum_{\ell = 1}^{N_O} a_\ell 
-    \boldsymbol{\phi}_\ell
-    (\boldsymbol{\varphi}(\delta t,\boldsymbol{x})) \\
+    \exp(\delta t\lambda_\ell)\boldsymbol{\phi}_\ell (\boldsymbol{x}) \\
     &= \sum_{\ell = 1}^{N_O} \boldsymbol{\phi}_\ell (\boldsymbol{x})
     (\boldsymbol{K}_O^T
     \boldsymbol{a})_\ell + r(\boldsymbol{x};\boldsymbol{K}_O)
 \end{align}
-for discrete time step $\delta t$. $K_O$ is the $N_O\times N_O$ matrix that 
+for discrete time step $\delta t$. $\boldsymbol{K}_O$ is the $N_O\times N_O$ matrix that 
 minimizes
 \begin{equation}
-    \boldsymbol{K}_O = \underset{K}{\text{argmin}}\norm{\Psi_+ - K\Psi_-}_F^2
+    \boldsymbol{K}_O = \underset{K}{\text{argmin}}\norm{{\bf\Psi}_+ - K{\bf\Psi}_-}_F^2
 \end{equation}
 and $r(\boldsymbol{x}, \boldsymbol{K}_O)$ is a residual that represents the 
-total error due to DMD. If the ansatz that $g$ lives in a finite space holds, 
-then $r$ is identically 0. We define $\Psi_\pm$ to be
+total error due to DMD. If the ansatz that $g$ lives in a finite dimensional space holds, 
+then $r$ is identically 0. We define ${\bf\Psi}_\pm$ to be
 \begin{equation}
-    \Psi_- = \parens{\Psi_1\ \Psi_2\ \cdots \Psi_{N_T}},\quad \Psi_+ = \parens{
+    {\bf\Psi}_- = \parens{\Psi_1\ \Psi_2\ \cdots \Psi_{N_T}},\quad {\bf\Psi}_+ = \parens{
     \Psi_2\ \Psi_3\ \cdots \Psi_{N_T+1}} 
 \end{equation}
 where $\bracks{\Psi_j}$ is an observable of the time series of interest 
@@ -114,25 +113,31 @@ to the next. Practically speaking, $\boldsymbol{K}_O$ is found
 %$\boldsymbol{K}_O$ approximates $\mathcal{K}$ for a one-step mapping and is found 
 using an SVD, with which we can write
 \begin{equation}
-    \Psi_- = U\Sigma W^{\dagger} \implies \boldsymbol{K}_O = \Psi_+W\Sigma^{-P}U^{\dagger}
+    {\bf\Psi}_- = {\bf U\Sigma W}^{\dagger} \implies \boldsymbol{K}_O = 
+    {\bf\Psi}_+{\bf W\Sigma}^{-P}{\bf U}^{\dagger}
 \end{equation}
 where $-P$ denotes the Moore-Penrose pseudo-inverse and $\dagger$ denotes the 
 conjugate transpose. This gives us an expression for $r$ in terms of the 
-observables $\Psi$:
+observables ${\bf\Psi}$:
 \begin{equation}
-    E_r(\boldsymbol{K}_O) = \norm{\Psi_+(I - WW^\dagger)}_F
+    E_r(\boldsymbol{K}_O) = \norm{{\bf\Psi}_+({\bf I} - {\bf WW}^\dagger)}_F
 \end{equation}
 % and we can find with an 
 %explicit expression it using an SVD on $\Psi_-$. 
 Finding the eigenvalues, eigenfunctions, and Koopman modes comes down to an 
-eigen-decomposition, from which the dynamics can be approximated as 
+eigen-decomposition of $\boldsymbol{K}_O$,
 \begin{equation}
-    y(t;\boldsymbol{x}) \approx V\exp(t\Lambda)V^{-1}\boldsymbol{\Psi}
-    (\boldsymbol{x})
+    \boldsymbol{K}_O = {\bf VTV}^{-1}, 
 \end{equation}
-where $\boldsymbol{K}_O = VTV^{-1}$, $\Lambda_{\ell\ell} = \ln(T_{\ell\ell})/
-\delta t$ is a diagonal matrix and $\boldsymbol{\Psi}$ is the representation 
-of the initial condition in terms of the observables. 
+with $\lambda_\ell = \ln(({\bf T})_{\ell\ell})/\delta t$,
+from which the dynamics can be approximated as 
+\begin{equation}
+    y(t;\boldsymbol{x}) \approx \boldsymbol{K}_m\exp(t{\bf\Lambda}){\bf V}^{-1}\boldsymbol{\Psi}(\boldsymbol{x}) 
+\end{equation}
+where $\boldsymbol{\Psi}$ is the representation of the initial condition in terms of the observables, 
+$\boldsymbol{K}_m$ is the $N_S \times N_O$ matrix whose columns are the Koopman modes 
+$\bracks{{\bf k}_\ell}$, and ${\bf \Lambda}$ is the diagonal matrix whose elements are $\lambda_\ell
+= ({\bf \Lambda})_{\ell\ell}$
 
 \section{What are Neural Networks?}
 
@@ -168,7 +173,7 @@ the use of Neural Networks (NNs). In 1989, \cite{hornik} showed that, with some 
 parameters, a NN can be used to approximate any continuous function from one vector space 
 to another to any arbitrary precision required. 
 
-From this we can consider ML as a tool of regression. Say we have a set of training data
+From this we can consider ML as a tool of regression\cite{oreilly,theodoridis}. Say we have a set of training data
 $d_{tr} = \bracks{(x_j, y_j)}_{j=1}^{N_{tr}}$ and we believe that there is some function
 $f(x)$ such that 
 \begin{equation}
@@ -228,7 +233,7 @@ where
     (\mathcal{D}\circ\mathcal{E})(\boldsymbol{y}_j)}_2, \\
     \mathcal{L}_{\text{dmd}} &= E_r(\boldsymbol{K}_O), \\
     \mathcal{L}_{\text{pred}} &= \frac{1}{N_T}\sum_{j=1}^{N_T}\norm{\boldsymbol{y}_{j+1} - 
-    \mathcal{D}\parens{VT^j V^{-1}\mathcal{E}(x)}}_2, \label{eqn:blah}
+    \mathcal{D}\parens{VT^j V^{-1}\mathcal{E}(\boldsymbol{x})}}_2, \label{eqn:blah}
 \end{align}
 Each component guides the machine to a particular outcome: 
 \begin{enumerate}
@@ -267,8 +272,9 @@ were made to test the limits of DLDMD. \cite{lago} was primarily interested in r
 the phase space behavior of a handful of well known nonlinear oscillators such as the 
 nonlinear harmonic oscillator, the Duffing oscillator, and the Van der Pol oscillator. 
 Additionally, chaotic systems like Lorenz 63 and the R\"{o}ssler system were examined but 
-chaos proved to be quite a challenge for the algorithm to overcome. A study into the addition
-of gaussian noise led to the discovery of the machine being quite robust to data due to the 
+chaos proved to be quite a challenge for the algorithm to overcome. A study conducted by the
+author for a class project into the addition
+of gaussian noise led to the discovery of the machine being quite robust to noisy data due to the 
 characteristics of it's loss function and additional noise mitigation was accomplished by 
 implementing convolutional layers instead of traditional dense layers.
 
@@ -287,7 +293,9 @@ minimum at all.
 How can this be quantified? A useful starting point would be to examine the weights of
 the matrices that make up the layers of a model. For Dense layers, passing a vector of 
 data $\boldsymbol{x} \in \R^{d}$ through a layer $L$ can be written as 
-$$L(\boldsymbol{x}; A, \sigma, b) = \sigma(A\boldsymbol{x} + b)$$
+\begin{equation}
+    L(\boldsymbol{x}; A, \sigma, b) = \sigma(A\boldsymbol{x} + b)
+\end{equation}
 for some matrix $A \in \R^{D\times d}$, vector $b \in \R^{D}$ and (typically nonlinear)
 activation function $\sigma: \R^D \to \R^D$. For a given layer, $\sigma$ is a fixed 
 hyperparameter of the machine, but both $A$ and $b$ have entries that are tuned by the 
@@ -296,12 +304,16 @@ models, so considering the configuration of these matrices epoch to epoch can he
 determine whether they are converging to a set of elements that accomplish the desired 
 task or not. The next state for each layer is dependent on the previous, so a reasonable 
 framing would be as one of a discrete dynamical system of the form
-$$Q_{n+1} = P(Q_n) \quad (\text{Come up with better symbols later})$$
+\begin{equation}
+    Q_{n+1} = P(Q_n)
+\end{equation}
 where $P$ is the training procedure and $Q_n$ represents the configuration of the network's
 weights at each epoch $n$. Typically, the initial state $Q_0$ is ``random'' in the sense 
 that the weights are selected from a probability distribution. In the interest of examining 
 convergences, one might consider the following limit 
-$$\lim \norm{Q_{n+1} - Q_n}_2$$
+\begin{equation}
+    \lim \norm{Q_{n+1} - Q_n}_2    
+\end{equation}
 for some $L^2$ norm on the space that $Q_n$ inhabits. While this ``one-step'' Cauchy 
 convergence will tell us whether the machine is approaching a particular configuration
 point-wise, this might not actually tell us much of anything else. The changes between 
@@ -372,10 +384,10 @@ pair of probability distributions which measures how different a distribution $P
 from a reference distribution $Q$. ``A simple interpretation of the 
 divergence of $P$ from $Q$ is the expected excess surprise from using $Q$ as a model 
 when the actual distribution is $P$.'' If $P$ and $Q$ are discrete distributions 
-defined on the probability space $\mathcal{X}$, then the KLD of $P$ with 
+defined on the probability space $X$, then the KLD of $P$ with 
 respect to $Q$ is given by
 \begin{equation}
-    D_{KL}(P\ |\!|\ Q) = \sum_{x \in \mathcal{X}}P(x)\log\parens{P(x)/Q(x)} \label{eqn:discrete KLD}
+    D_{KL}(P\ |\!|\ Q) = \sum_{x \in X}P(x)\log\parens{P(x)/Q(x)} \label{eqn:discrete KLD}
 \end{equation}
 In other words, it is the expectation of the logarithmic difference between the 
 probabilities $P$ and $Q$, where the expectation is taken using the probabilities 
@@ -391,7 +403,7 @@ with respect to $P$. In our cases, we'll be dealing with a continuous random var
 with probability density functions $p$ and $q$, for which the corresponding KLD formula 
 is
 \begin{equation}
-    D_{KL}(P\ |\!|\ Q) = \int_\mathcal{X} p(x)\log\parens{p(x)/q(x)}\ dx \label{eqn:continuous KLD}
+    D_{KL}(P\ |\!|\ Q) = \int_X p(x)\log\parens{p(x)/q(x)}\ dx \label{eqn:continuous KLD}
 \end{equation}
 As an analogue of the discrete case, the same simple interpretations about
 the formula apply. The reason we can consider this a ``distance'' is that the KLD 
@@ -430,14 +442,16 @@ Many techniques exist, but we'll be using Kernel Density Estimation (KDE). The m
 basic idea behind KDE is using a different bin centering method and a smoothing factor, 
 called a kernel, to approximate a probability density $f$ from measured data in the form 
 of a histogram. This is accomplished with the \emph{kernel density estimator} for $f$
-given by:
-$$\hat{f}(x; K, h) = \frac{1}{nh}\sum_{i = 1}^n K\parens{\frac{x - x_i}{h}}$$
+given by
+\begin{equation}
+    \hat{f}(x; K, h) = \frac{1}{nh}\sum_{i = 1}^n K\parens{\frac{x - x_i}{h}},
+\end{equation}
 where $K$ is the chosen kernel, $h$ is what's called the bandwidth parameter, and 
-$\{x_i\}_{i=1}^n$ is the data that generates our histogram. Per \cite{epanechnikov}, 
-the choice of kernel does not provide much statistical significance; but the choice of 
-the bandwidth parameter $h$ is very crucial for finding a density estimate that 
-approximates the 
-underlying density function appropriately. Choosing an optimal $h$ depends on 
+$\{x_i\}_{i=1}^n$ is the data that generates our histogram. Per Epanechnikov, 
+the choice of kernel does not provide much statistical significance\cite{epanechnikov}; 
+but the choice of the bandwidth parameter $h$ is very crucial for finding a density estimate
+that approximates the underlying density function appropriately and can be thought of as an 
+analogue of the bin width for the affliated histogram. Choosing an optimal $h$ depends on 
 the given data and the common method, Silverman's rule of thumb, works on the 
 assumption that the density function of the data is unimodal and close to 
 normal. For general data, on which no assumptions of normality are made, a more 
@@ -449,7 +463,19 @@ the estimator $\hat{f}$ with respect to $h$, which is given by
 \end{equation}
 and depends on the unknown quantity $\norm{f''}$. The ISJ uses an iterative method 
 based on the data and kernel function to approximate $\norm{f''}$ and arrive at 
-the best bandwidth for the given data.
+the best bandwidth for the given data. See Figure \ref{fig:kde example} for an example 
+density found using KDE and the ISJ algorithm.
+
+\begin{figure}[hbt!]
+    \centering
+    \begin{minipage}{\textwidth}
+        \includegraphics[width=\textwidth]{Figures/kde_example.png}
+    \end{minipage} 
+    \caption{Example of a density function found using KDE, its shape coincides with that
+    of the histogram generated from the same samples.}
+    \label{fig:kde example}
+\end{figure}
+
 
 
 \section{Measuring entropy flow}
@@ -503,9 +529,9 @@ from here on out. For each layer $l$, the set of detrended matrices are computed
     \delta{\bf W}_{l, \mathcal{E}} = \bracks{{\bf W}_{l,\mathcal{E}}^{(n+1),f} - {\bf W}_{l,\mathcal{E}}^{(n),f}}_{n=1}^{N_E-1},
 \end{equation}
 these matrices are flattened and their entries are used as the data for KDE. The KDE implementation
-used is that of KDEpy ({\bf https://pypi.org/project/KDEpy/}), which implements several 
-algorithms for KDE in python including the bandwidth computation of ISJ. The kernel used is the Epanechnikov
-kernel, defined as 
+used is that of KDEpy (\href{https://pypi.org/project/KDEpy/}{https://pypi.org/project/KDEpy/}), which implements several 
+algorithms for KDE in python including the bandwidth computation of ISJ and a very fast implementation
+of the KDE that uses the Fast Fourier Transform. The kernel used is the Epanechnikov kernel, defined as 
 \begin{equation}
     K(x) = 
     \begin{cases}
@@ -524,10 +550,10 @@ matrix
     p_{l,\mathcal{E}} = \text{KDE}(\delta{\bf W}_{l, \mathcal{E}}) = \bracks{p_{l,\mathcal{E}}^{(n)}(w)}_{n=1}^{N_E-1}
 \end{equation}
 where $w$ is the weight value itself and $p_{l,\mathcal{E}}(w)$ is the approximate density associated 
-with that weight value. For the sake of our discretization of this data, we use 10001 linearly spaced 
+with that weight value. For the sake of our discretization of this data, we use 5001 linearly spaced 
 points to represent the weights of each distribution from the smallest weight to the largest. The number 
 of discrete points is also of some importance for the next step; given these density approximations, we 
-can now compute what we're truly interested in: the relative entropy of consecutive densities and the 
+can now compute what we're truly interested in, the relative entropy of consecutive densities and the 
 associated change in information:
 \begin{equation}
     D_l = \bracks{D_{SKL}\parens{p_{l,\mathcal{E}}^{(n+1)} \Big|\!\Big| p_{l,\mathcal{E}}^{(n)}}}_{n=1}^{N_E-2}
@@ -536,11 +562,12 @@ Unlike in the first mention of entropy flow, we instead use the SKLD instead of 
 simplifies our analysis by disregarding the asymmertric nature of KLD and consequences of this choice 
 will be discussed in Chapter \ref{chap:discussion}. Given the discretized nature of the densities, we turn 
 to numerical integration to compute the integral in Equation \ref{eqn:continuous KLD}. For the sake of an 
-apples to apples comparison, we make the assumption that all densities have the same support
-and use the 10001 discretized points with Simpson's rule for the integral approximation. Each set of these
-divergences corresponds to a layer in the full network, and we can now use the divergences to characterize
-how the information is changing with respect to the steady state. Figure \ref{fig:divergence of model example}
-shows an example of the divergence over the whole training. 
+apples to apples comparison, we make the assumption that all densities associated with a given layer 
+have the same support and use the 5001 discretized points with a sum scaled by the spacing between those
+points for the integral approximation. Each set of these divergences corresponds to a layer in the full 
+network, and we can now use the divergences to characterize how the information is changing with respect 
+to the steady state. Figure \ref{fig:divergence of model example} shows an example of the divergence 
+of the detrended data for a single layer over the whole training. 
 
 We're interested in what these divergences tell 
 us about information flow in the model's weights, and as such we seek a fitting of the data. Any overall trends
@@ -550,15 +577,17 @@ fitting would certainly fail and we instead attempt a linear fit on the base 10 
 corresponds to an exponential fit in the original domain of the divergences with slope of the linear trend 
 being the approximate growth/decay rate of the information flow from the machines steady state. The slope 
 intercept is not so important for this reason, being only a constant that modifies the order of magnitude 
-without changing the trens, so for the time being we ignore it. In the interest of trying to identify a 
+without changing the trend, so for the time being we ignore it. In the interest of trying to identify a 
 classifier of good training, we then find the average and variance of the slopes of the linear fits of 
-the layers' divergence data. The backbone of our results is to compare these averages for each latent 
+the layer's divergence data. The backbone of our results is to compare these averages for each latent 
 dimension to the loss curves and phase portraits from the training for each dimension.
+We have written code that implements all of these, and they can be found on GitHub at
+\href{https://github.com/JAGDiaz/Thesis_Analysis_Scripts}{https://github.com/JAGDiaz/Thesis\_Analysis\_Scripts}.
 
-\begin{figure}[ht]
+\begin{figure}[hbt!]
     \centering
     \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_07_2022-07-17-1837/bandwidth_ISJ/div_plot_linear_enc_1"}
+        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_07_2022-07-17-1837/div_plot_linear_enc_1"}
     \end{minipage}
     \caption{Example of divergences for layer Enc 1 of Van der Pol model with latent dimension 7 
     with linear fitting and confidence bands.}
@@ -657,7 +686,7 @@ centers with the third being a saddle point with homoclinic connections that enc
 points. Figure \ref{fig:duffing phase space} shows a graphical representation of the phase space of our 
 Duffing oscillator. The homoclinic connection itself provides an interesting challenge topologically in 
 that it divides the phase space into distinct regions that affect the end behavior of the system depending
-on the initial condition. Table \ref{table:duffing params} describes the hyperparameters used for the 
+on the initial condition\cite{strogatz:2000}. Table \ref{table:duffing params} describes the hyperparameters used for the 
 Duffing Oscillator that were left unchanged for each run; note that the distribution given as 
 $\mathcal{N}(\mu, \sigma^2, n)$ is the truncated normal distribution, which is a normal distribution
 in which all values drawn that are more than $n$ standard deviations from the mean are discarded. 
@@ -856,7 +885,7 @@ at the origin and all nontrivial orbits are attracted to a limit cycle that surr
 Figure \ref{fig:van der pol phase space} shows a graphical representation of the phase space of our 
 Van der Pol oscillator. Much like Duffing, we do have a curve that separates the phase space into 
 regions of different behavior in the limit cycle; but since all orbits approach the limit cycle there
-should be much variability with respect to initial conditions. We would expect training on this system 
+should be much variability with respect to initial conditions\cite{strogatz:2000}. We would expect training on this system 
 to be better overall due to the fact that all trajectories are essentially going to same place unlike
 the more complex behavior of Duffing. The hyperparameters for the Van der Pol
 training are identical to those of Duffing with the exception of the activation function; which is, 

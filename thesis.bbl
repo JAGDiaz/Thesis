@@ -18,6 +18,11 @@
   probability density}, Theory of Probability \& Its Applications, 14 (1969),
   pp.~153--158.
 
+\bibitem{oreilly}
+{\sc A.~Geron}, {\em Hands-On Machine Learning with Scikit-Learn, Keras, and
+  TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems},
+  O'Reilly Media, Inc., 2nd~ed., 2019.
+
 \bibitem{hollander}
 {\sc M.~Hollander, D.~Wolfe, and E.~Chicken}, {\em Nonparametric Statistical
   Methods}, Wiley Series in Probability and Statistics, Wiley, 2013.
@@ -37,6 +42,14 @@
 \bibitem{shannon}
 {\sc C.~E. Shannon}, {\em A mathematical theory of communication}, The Bell
   System Technical Journal, 27 (1948), pp.~379--423.
+
+\bibitem{strogatz:2000}
+{\sc S.~H. Strogatz}, {\em Nonlinear Dynamics and Chaos: With Applications to
+  Physics, Biology, Chemistry and Engineering}, Westview Press, 2000.
+
+\bibitem{theodoridis}
+{\sc S.~Theodoridis}, {\em Machine Learning: A Bayesian and Optimization
+  Perspective}, Academic Press, Inc., USA, 1st~ed., 2015.
 
 \bibitem{williams}
 {\sc M.~Williams, I.~G. Kevrekidis, and C.~W. Rowley}, {\em A data-driven
