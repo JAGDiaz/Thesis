@@ -33,7 +33,7 @@ underlying dynamics to forecast future states. These are called Dynamic Mode
 Decompositions and they fit nicely within the broad family of modal 
 decompositions. In the coming sections, we will introduce a specific strain
 of Dynamic Mode Decomposition and discuss improvements made to it using
-Machine Learning. The ultimate goal of this thesis is to show that we have
+Machine Learning (ML). The ultimate goal of this thesis is to show that we have
 come up with a method for quantifying the effectiveness of the training 
 that the affliated network undergoes with a few computed indicators.
 
@@ -188,7 +188,7 @@ generated from measured data is one that statisticians have studied for decades.
 one produce a model that respects that data used to generate it without underfitting or 
 overfitting?
 
-With respect to function approximation, we can consider ML through NNs 
+With respect to function approximation, we can consider ML through NNs
 as a tool of regression \cite{oreilly, theodoridis}. 
 Say we have a set of training data $d_{tr} = \bracks{(x_j, y_j)}_{j=1}^{N_{tr}}$ 
 and we believe that there is some function $f(x)$ such that 
@@ -314,16 +314,25 @@ Chapter \ref{chap:results}.
     \centering
     \begin{minipage}{.5\textwidth}
         $$\mathcal{E}$$
+        \centering
         \includegraphics[width=\textwidth]{Figures/Encoder.png}
+        \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+            Enc\ \ in & Enc\ \ \ 0 & Enc\ \ \ 1 & Enc\ \ \ 2 & Enc out
+        \end{tabularx}
     \end{minipage}%
     \begin{minipage}{.5\textwidth}
         $$\mathcal{D}$$
+        \centering
         \includegraphics[width=\textwidth]{Figures/Decoder.png}
+        \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+            Dec\ \ in & Dec\ \ \ 0 & Dec\ \ \ 1 & Dec\ \ \ 2 & Dec out
+        \end{tabularx}
     \end{minipage}
 
     \caption{Example of DLDMD newtork with $N_S = 2,\ N_O = 4,$ and $N_L = 3$ where every
-    hidden layer has 16 neurons. This representation is meaningful, but it is missing some key 
-    network features like the activation functions for each layer.}
+    hidden layer has 16 neurons. This representation is meaningful in that it gives the name of 
+    each layer as they appear from left to right, but it is missing some key 
+    network features like the activation functions.}
     \label{fig:network details}
 \end{figure}
 
@@ -515,9 +524,7 @@ density found using KDE and the ISJ algorithm.
 
 \begin{figure}[hbt!]
     \centering
-    \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{Figures/kde_example.png}
-    \end{minipage} 
+    \includegraphics[width=\textwidth]{Figures/kde_example.png}
     \caption{Example of a density function found using KDE, its shape coincides with that
     of the histogram generated from the same samples.}
     \label{fig:kde example}

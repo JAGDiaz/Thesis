@@ -1,6 +1,17 @@
 \documentclass[11pt,aspectratio=169]{beamer}
 \usetheme{Copenhagen}
 
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{bm}
@@ -83,13 +94,70 @@
         In the study of dynamical systems a central problem is how to derive models 
         from measured data to facilitate the prediction of future states. The data-driven
         method Dynamic Mode Decomposition and it's extensions offer a compelling avenue
-        in the modern
+        in the problem of prediction from time-series data.
+
+        The marriage of these methods with Machine Learning and Neural Networks allows for
+        the leveraging the power of these tools in the space. 
+
+        If standard metrics of model training are unavailable, 
     
     \end{frame}
 
     \begin{frame}
-        \frametitle{Sample frame title}
+        \frametitle{Introduction - The Network}
+        Example of DLDMD newtork with $N_S = 2,\ N_O = 4,$ and $N_L = 3$ where every
+        hidden layer has 16 neurons.
+        \begin{figure}
+            \centering
+            \begin{minipage}{.5\textwidth}
+                $$\mathcal{E}$$
+                \includegraphics[width=\textwidth]{../Figures/Encoder.png}
+            \end{minipage}%
+            \begin{minipage}{.5\textwidth}
+                $$\mathcal{D}$$
+                \includegraphics[width=\textwidth]{../Figures/Decoder.png}
+            \end{minipage}
+        \end{figure}
+    \end{frame}
 
+    \begin{frame}
+        \frametitle{Kullback-Leibler Divergence - Entropy}
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{../Figures/entropy_densities_example.png}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Kullback-Leibler Divergence - normal distribution example}
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{../Figures/divergence_example.png}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Kullback-Leibler Divergence - KDE example}
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{../Figures/kde_example.png}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Kullback-Leibler Divergence - Example fitting}
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_07_2022-07-17-1837/div_plot_linear_enc_1"}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Results - Duffing}
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{../Figures/duffing_phase_space.png}
+        \end{figure}
     \end{frame}
 
     \begin{frame}
@@ -128,7 +196,6 @@
         \end{figure}
     \end{frame}
 
-
     \begin{frame}
         \frametitle{Results - Duffing linear fit slope averages and variances}
         \begin{figure}
@@ -142,7 +209,13 @@
 
     \end{frame}
 
-
+    \begin{frame}
+        \frametitle{Results - Van der Pol}
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{../Figures/van_der_pol_phase_space.png}
+        \end{figure}
+    \end{frame}
 
     \begin{frame}
         \frametitle{Results - Van der Pol loss curves and phase space}
@@ -194,6 +267,4 @@
 
     \end{frame}
 
-    
-    
 \end{document}
