@@ -6,45 +6,45 @@ The style file: siammod.bst
 Reallocating 'name_of_file' (item size: 1) to 5 items.
 Database file #1: main.bib
 Warning--empty journal in lago
-You've used 13 entries,
+You've used 18 entries,
             2032 wiz_defined-function locations,
-            580 strings with 5541 characters,
-and the built_in function-call counts, 4304 in all, are:
-= -- 406
-> -- 173
+            610 strings with 6178 characters,
+and the built_in function-call counts, 6122 in all, are:
+= -- 595
+> -- 226
 < -- 0
-+ -- 71
-- -- 56
-* -- 326
-:= -- 669
-add.period$ -- 13
-call.type$ -- 13
-change.case$ -- 65
++ -- 92
+- -- 72
+* -- 456
+:= -- 932
+add.period$ -- 18
+call.type$ -- 18
+change.case$ -- 87
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 213
-empty$ -- 329
-format.name$ -- 56
-if$ -- 920
+cite$ -- 19
+duplicate$ -- 305
+empty$ -- 473
+format.name$ -- 72
+if$ -- 1323
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 17
-newline$ -- 42
-num.names$ -- 26
-pop$ -- 66
+int.to.str$ -- 18
+missing$ -- 22
+newline$ -- 57
+num.names$ -- 37
+pop$ -- 83
 preamble$ -- 1
-purify$ -- 54
+purify$ -- 72
 quote$ -- 0
-skip$ -- 171
+skip$ -- 256
 stack$ -- 0
-substring$ -- 283
-swap$ -- 88
+substring$ -- 447
+swap$ -- 132
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 44
+type$ -- 62
 warning$ -- 1
-while$ -- 43
-width$ -- 15
-write$ -- 116
+while$ -- 65
+width$ -- 20
+write$ -- 161
 (There was 1 warning)

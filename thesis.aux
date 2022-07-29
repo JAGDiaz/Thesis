@@ -31,18 +31,20 @@
 \@writefile{toc}{\nopagebreak }
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.1}\protected@file@percent }
 \newlabel{chap:intro}{{1}{1}{INTRODUCTION}{chapter.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.1}What is E-DMD?}{1}{section.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}What is Dynamic Mode Decomposition?}{1}{section.1.1}\protected@file@percent }
+\citation{schmid}
 \citation{lago}
 \citation{williams}
 \@writefile{toc}{\contentsline {section}{\numberline {1.2}What are Neural Networks?}{3}{section.1.2}\protected@file@percent }
+\citation{rumelhart}
 \citation{hornik}
 \citation{oreilly}
 \citation{theodoridis}
 \citation{hollander}
 \citation{lago}
-\@writefile{toc}{\contentsline {section}{\numberline {1.3}DLDMD and it's limitations}{5}{section.1.3}\protected@file@percent }
-\newlabel{eqn:loss function}{{1.19}{5}{INTRODUCTION}{equation.1.3.19}{}}
-\newlabel{eqn:blah}{{1.22}{5}{INTRODUCTION}{equation.1.3.22}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}DLDMD and Its Limitations}{5}{section.1.3}\protected@file@percent }
+\newlabel{eqn:loss function}{{1.20}{5}{INTRODUCTION}{equation.1.3.20}{}}
+\newlabel{eqn:blah}{{1.23}{5}{INTRODUCTION}{equation.1.3.23}{}}
 \citation{lago}
 \citation{lago}
 \citation{brunton}
@@ -50,31 +52,34 @@
 \citation{lago}
 \@writefile{toc}{\contentsline {section}{\numberline {1.4}Statement of Dilemma}{6}{section.1.4}\protected@file@percent }
 \citation{shannon}
+\citation{kullback}
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}KULLBACK-LEIBLER DIVERGENCE}{8}{chapter.2}\protected@file@percent }
 \newlabel{chap:KLD}{{2}{8}{KULLBACK-LEIBLER DIVERGENCE}{chapter.2}{}}
 \newlabel{eqn:normal}{{2.2}{8}{KULLBACK-LEIBLER DIVERGENCE}{equation.2.0.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Basic Definitions}{8}{section.2.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Entropy and density function change with respect to $\sigma ^2$. The base of the logarithm shown here is $e$, but the base itself is irrelevant due to the shared properties of all logarithms: that they increase monotonically and unbounded. As the variance increases we see higher entropy in the left plot and a flattening of the probability density in the right plot.\relax }}{9}{figure.caption.1}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:entropy example}{{2.1}{9}{Entropy and density function change with respect to $\sigma ^2$. The base of the logarithm shown here is $e$, but the base itself is irrelevant due to the shared properties of all logarithms: that they increase monotonically and unbounded. As the variance increases we see higher entropy in the left plot and a flattening of the probability density in the right plot.\relax }{figure.caption.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Basic Definitions}{9}{section.2.1}\protected@file@percent }
 \newlabel{eqn:discrete KLD}{{2.4}{9}{KULLBACK-LEIBLER DIVERGENCE}{equation.2.1.4}{}}
-\newlabel{eqn:continuous KLD}{{2.6}{10}{KULLBACK-LEIBLER DIVERGENCE}{equation.2.1.6}{}}
+\newlabel{eqn:continuous KLD}{{2.6}{9}{KULLBACK-LEIBLER DIVERGENCE}{equation.2.1.6}{}}
+\citation{rosenblatt}
+\citation{parzen}
 \newlabel{eqn:normal divergence}{{2.7}{10}{KULLBACK-LEIBLER DIVERGENCE}{equation.2.1.7}{}}
 \newlabel{eqn:normal divergence2}{{2.8}{10}{KULLBACK-LEIBLER DIVERGENCE}{equation.2.1.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces KL Divergence example with Normal distributions. As expected, the divergence decreases to 0 as $\sigma ^2 \to 1$ from either direction.\relax }}{10}{figure.caption.2}\protected@file@percent }
-\newlabel{fig:divergence example}{{2.2}{10}{KL Divergence example with Normal distributions. As expected, the divergence decreases to 0 as $\sigma ^2 \to 1$ from either direction.\relax }{figure.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Kullback-Leibler Divergence example with two normal distributions. As expected, the divergence decreases to 0 as $\sigma ^2 \to 1$ from either direction.\relax }}{10}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:divergence example}{{2.2}{10}{Kullback-Leibler Divergence example with two normal distributions. As expected, the divergence decreases to 0 as $\sigma ^2 \to 1$ from either direction.\relax }{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}How to build distributions (Non-parametric statistics)}{10}{section.2.2}\protected@file@percent }
 \citation{epanechnikov}
 \citation{botev}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}How to build distributions (Non-parametric statistics)}{11}{section.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Measuring entropy flow}{11}{section.2.3}\protected@file@percent }
 \newlabel{eqn:weight convergence}{{2.11}{11}{KULLBACK-LEIBLER DIVERGENCE}{equation.2.3.11}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Example of a density function found using KDE, its shape coincides with that of the histogram generated from the same samples.\relax }}{12}{figure.caption.3}\protected@file@percent }
 \newlabel{fig:kde example}{{2.3}{12}{Example of a density function found using KDE, its shape coincides with that of the histogram generated from the same samples.\relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Implementation Details}{12}{section.2.4}\protected@file@percent }
 \citation{epanechnikov}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Implementation Details}{13}{section.2.4}\protected@file@percent }
 \newlabel{eqn:epanechnikov}{{2.16}{13}{KULLBACK-LEIBLER DIVERGENCE}{equation.2.4.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Example of divergences for layer Enc 1 of Van der Pol model with latent dimension 7 with linear fitting and confidence bands.\relax }}{15}{figure.caption.4}\protected@file@percent }
-\newlabel{fig:divergence of model example}{{2.4}{15}{Example of divergences for layer Enc 1 of Van der Pol model with latent dimension 7 with linear fitting and confidence bands.\relax }{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Example of linear fitting of divergence data for one of the models we examine in Chapter \ref  {chap:results}.\relax }}{15}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:divergence of model example}{{2.4}{15}{Example of linear fitting of divergence data for one of the models we examine in Chapter \ref {chap:results}.\relax }{figure.caption.4}{}}
 \citation{lago}
 \citation{strogatz:2000}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}RESULTS}{16}{chapter.3}\protected@file@percent }
@@ -87,45 +92,45 @@
 \newlabel{table:duffing params}{{3.1}{17}{Hyperparamters of the DLDMD algorithm held constant for each training run on Duffing.\relax }{table.caption.6}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces ReLU activation function vs ELU activation function. Unlike ReLU, ELU is negative for $x < 0$. For some models, ELU can be advantageous if ReLU causes many of the neuron to ``die'' during training which means the weights associated with that neuron become 0, and those neurons do not contribute anything to output of the machine. Other activation functions can assuage this problem, but ELU can be made arbitrarily close to ReLU and so is quite popular.\relax }}{18}{table.caption.7}\protected@file@percent }
 \newlabel{table:elu vs relu}{{3.2}{18}{ReLU activation function vs ELU activation function. Unlike ReLU, ELU is negative for $x < 0$. For some models, ELU can be advantageous if ReLU causes many of the neuron to ``die'' during training which means the weights associated with that neuron become 0, and those neurons do not contribute anything to output of the machine. Other activation functions can assuage this problem, but ELU can be made arbitrarily close to ReLU and so is quite popular.\relax }{table.caption.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Duffing average slopes with standard deviations.\relax }}{19}{figure.caption.8}\protected@file@percent }
-\newlabel{fig:duffing average slopes}{{3.2}{19}{Duffing average slopes with standard deviations.\relax }{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Duffing average slopes of linear fits with standard deviations. This plot illustrates what we want to find. Each latent dimension gives us a different behavior and we can readily see how the information must be changing during training.\relax }}{19}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:duffing average slopes}{{3.2}{19}{Duffing average slopes of linear fits with standard deviations. This plot illustrates what we want to find. Each latent dimension gives us a different behavior and we can readily see how the information must be changing during training.\relax }{figure.caption.8}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Duffing loss plots, smoothed to accentuate trends.\relax }}{20}{figure.caption.9}\protected@file@percent }
 \newlabel{fig:duffing losses}{{3.3}{20}{Duffing loss plots, smoothed to accentuate trends.\relax }{figure.caption.9}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Duffing Average bandwidth.\relax }}{20}{figure.caption.10}\protected@file@percent }
 \newlabel{fig:duffing average bandwidth}{{3.4}{20}{Duffing Average bandwidth.\relax }{figure.caption.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Duffing slope of linear fits by layer.\relax }}{21}{figure.caption.11}\protected@file@percent }
-\newlabel{fig:duffing slopes all layers}{{3.5}{21}{Duffing slope of linear fits by layer.\relax }{figure.caption.11}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Duffing linear fits by layer.\relax }}{22}{figure.caption.12}\protected@file@percent }
-\newlabel{fig:duffing linear fits all layers}{{3.6}{22}{Duffing linear fits by layer.\relax }{figure.caption.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Duffing DLDMD results by latent dimension.\relax }}{23}{figure.caption.13}\protected@file@percent }
-\newlabel{fig:duffing DLDMD results}{{3.7}{23}{Duffing DLDMD results by latent dimension.\relax }{figure.caption.13}{}}
 \citation{strogatz:2000}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}The Van der Pol Oscillator}{24}{section.3.2}\protected@file@percent }
-\newlabel{section:van der pol results}{{3.2}{24}{RESULTS}{section.3.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Van der Pol phase space.\relax }}{24}{figure.caption.14}\protected@file@percent }
-\newlabel{fig:van der pol phase space}{{3.8}{24}{Van der Pol phase space.\relax }{figure.caption.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Van der Pol average slopes with standard deviations.\relax }}{25}{figure.caption.15}\protected@file@percent }
-\newlabel{fig:van der pol average slopes}{{3.9}{25}{Van der Pol average slopes with standard deviations.\relax }{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}The Van der Pol Oscillator}{21}{section.3.2}\protected@file@percent }
+\newlabel{section:van der pol results}{{3.2}{21}{RESULTS}{section.3.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Duffing slope of linear fits by layer.\relax }}{22}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:duffing slopes all layers}{{3.5}{22}{Duffing slope of linear fits by layer.\relax }{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Duffing linear fits by layer.\relax }}{23}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:duffing linear fits all layers}{{3.6}{23}{Duffing linear fits by layer.\relax }{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Duffing DLDMD results by latent dimension.\relax }}{24}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:duffing DLDMD results}{{3.7}{24}{Duffing DLDMD results by latent dimension.\relax }{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Van der Pol phase space.\relax }}{25}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:van der pol phase space}{{3.8}{25}{Van der Pol phase space.\relax }{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Van der Pol average slopes with standard deviations.\relax }}{26}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:van der pol average slopes}{{3.9}{26}{Van der Pol average slopes with standard deviations.\relax }{figure.caption.15}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Van der Pol loss plots, smoothed to accentuate trend.\relax }}{26}{figure.caption.16}\protected@file@percent }
 \newlabel{fig:van der pol losses}{{3.10}{26}{Van der Pol loss plots, smoothed to accentuate trend.\relax }{figure.caption.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces Van der Pol Average bandwidth.\relax }}{26}{figure.caption.17}\protected@file@percent }
-\newlabel{fig:van der pol average bandwidth}{{3.11}{26}{Van der Pol Average bandwidth.\relax }{figure.caption.17}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces Van der Pol slope of linear fits by layer.\relax }}{27}{figure.caption.18}\protected@file@percent }
-\newlabel{fig:van der pol slopes all layers}{{3.12}{27}{Van der Pol slope of linear fits by layer.\relax }{figure.caption.18}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces Van der Pol linear fits by layer.\relax }}{28}{figure.caption.19}\protected@file@percent }
-\newlabel{fig:van der pol linear fits all layers}{{3.13}{28}{Van der Pol linear fits by layer.\relax }{figure.caption.19}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces Van der Pol DLDMD results by latent dimension.\relax }}{29}{figure.caption.20}\protected@file@percent }
-\newlabel{fig:van der pol DLDMD results}{{3.14}{29}{Van der Pol DLDMD results by latent dimension.\relax }{figure.caption.20}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}DISCUSSION}{30}{chapter.4}\protected@file@percent }
-\newlabel{chap:discussion}{{4}{30}{DISCUSSION}{chapter.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}The Good}{30}{section.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces Van der Pol Average bandwidth.\relax }}{27}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:van der pol average bandwidth}{{3.11}{27}{Van der Pol Average bandwidth.\relax }{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces Van der Pol slope of linear fits by layer.\relax }}{28}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:van der pol slopes all layers}{{3.12}{28}{Van der Pol slope of linear fits by layer.\relax }{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces Van der Pol linear fits by layer.\relax }}{29}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:van der pol linear fits all layers}{{3.13}{29}{Van der Pol linear fits by layer.\relax }{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces Van der Pol DLDMD results by latent dimension.\relax }}{30}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:van der pol DLDMD results}{{3.14}{30}{Van der Pol DLDMD results by latent dimension.\relax }{figure.caption.20}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}DISCUSSION}{31}{chapter.4}\protected@file@percent }
+\newlabel{chap:discussion}{{4}{31}{DISCUSSION}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}The Good}{31}{section.4.1}\protected@file@percent }
 \citation{lago}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Optimal Parameters}{31}{section.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Non-unitary densities}{31}{section.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Statistical issues with edge layers}{32}{section.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Future work}{32}{section.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Optimal Parameters}{32}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Non-unitary densities}{32}{section.4.3}\protected@file@percent }
 \bibstyle{siammod}
 \bibdata{main}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Statistical issues with edge layers}{33}{section.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Future work}{33}{section.4.5}\protected@file@percent }
 \bibcite{lago}{1}
 \bibcite{botev}{2}
 \bibcite{brunton}{3}
@@ -134,10 +139,15 @@
 \bibcite{hollander}{6}
 \bibcite{hornik}{7}
 \bibcite{koopman}{8}
-\bibcite{lusch}{9}
-\bibcite{shannon}{10}
-\bibcite{strogatz:2000}{11}
-\bibcite{theodoridis}{12}
-\bibcite{williams}{13}
-\@writefile{toc}{\contentsline {schapter}{BIBLIOGRAPHY}{34}{section.4.5}\protected@file@percent }
-\gdef \@abspage@last{42}
+\bibcite{kullback}{9}
+\bibcite{lusch}{10}
+\bibcite{parzen}{11}
+\bibcite{rosenblatt}{12}
+\bibcite{rumelhart}{13}
+\bibcite{schmid}{14}
+\bibcite{shannon}{15}
+\bibcite{strogatz:2000}{16}
+\bibcite{theodoridis}{17}
+\@writefile{toc}{\contentsline {schapter}{BIBLIOGRAPHY}{35}{section.4.5}\protected@file@percent }
+\bibcite{williams}{18}
+\gdef \@abspage@last{44}

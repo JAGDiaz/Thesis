@@ -27,20 +27,27 @@ to the more concrete and scientifically-sound methods of deriving models
 from first principles, it is often very difficult if not outright untenable.
 
 As such, data-driven methods have rapidly become very useful approaches for 
-coming up with rough and ready models. 
+coming up with rough and ready models for prediction. A collection of such
+methods exploit the Koopman operator to find numerical approximations of 
+underlying dynamics to forecast future states. These are called Dynamic Mode 
+Decompositions and they fit nicely within the broad family of modal 
+decompositions. In the coming sections, we will introduce a specific strain
+of Dynamic Mode Decomposition and discuss improvements made to it using
+Machine Learning. The ultimate goal of this thesis is to show that we have
+come up with a method for quantifying the effectiveness of the training 
+that the affliated network undergoes with a few computed indicators.
 
-Say more once you've thought of it.
 
-\section{What is E-DMD?}
-As it says on the tin, we seek a predictive model for a time series $\bracks{
-\boldsymbol{y}_j}_{j=1}^{N^T+1}$, which are the measurements of a uniformly 
-sampled unknown dynamical system of the form
+\section{What is Dynamic Mode Decomposition?}
+As it says on the tin, we seek a predictive model for a time series 
+$\bracks{\boldsymbol{y}_j}_{j=1}^{N^T+1}$, which are the measurements of a 
+uniformly sampled unknown dynamical system of the form
 \begin{equation}
     \dd{\boldsymbol{y}}{t} = f\parens{\boldsymbol{y}(t)},\quad \boldsymbol{y}(0) 
     = \boldsymbol{x} \in \mathcal{M} \subseteq \R^{N_s}
 \end{equation}
 As established in the introduction, there is an old and venerable literature 
-dedicated to deriving system using classical methods. What this literature will 
+dedicated to deriving systems using classical methods. What this literature will 
 admit is that such a process is not trivial and even difficult or impossible to 
 do in practice; particularly for nonlinear phenomena worth investigating. We 
 want something that is more easily generalized and algorithmic.
@@ -57,8 +64,8 @@ linear representation of the flow map given by $\mathcal{K}$;
 which means that $\mathcal{K}$ is a linear time-advancement operator of the 
 dynamics. This might seem like it trivializes the problem, given that we now 
 have a linear system, but it does not. The Koopman operator is an 
-\emph{infinite} dimensional operator, so we've traded a potentially nonlinear 
-problem for an infinite dimensional linear one.
+infinite-dimensional operator, so we have traded a potentially nonlinear 
+problem for an infinite-dimensional linear one.
 
 In order to actually use this new representation, it suffices to find the 
 eigenvalues $\bracks{\lambda_\ell}$, and their affiliated eigenfunctions 
@@ -75,22 +82,23 @@ advancing the dynamics to time $t$ is equivalent to writing
     \exp(t\lambda_\ell)\boldsymbol{\phi}_\ell (\boldsymbol{x})
 \end{equation} 
 The most useful property of this framing is that we have a global linearization 
-of the flow, with a major caveat: Generally, finding these eigenvalues and 
-eigenfunctions is impossible. This led to the development of the already 
-mentioned and much much lauded Dynamic Mode Decomposition (DMD) and it's 
+of the flow, with a major caveat: finding these eigenvalues and 
+eigenfunctions is usually impossible. This led to the development of the already 
+mentioned and much lauded Dynamic Mode Decomposition (DMD) \cite{schmid} and its 
 extensions, which seeks to numerically approximate a finite number of these 
-modes. We'll focus on the particular extension that \cite{lago} implements: 
-Extended DMD (E-DMD) \cite{williams}. With E-DMD, we suppose that 
+modes. We will focus on the particular extension that \cite{lago} implements: 
+Extended Dynamic Mode Decomposition (EDMD) \cite{williams}. With EDMD, we suppose that 
 \begin{equation}
-    g(\boldsymbol{x}) = \sum_{\ell = 1}^{N_O} a_\ell \boldsymbol{\phi}_\ell
+    g(\boldsymbol{x}) = \sum_{\ell = 1}^{N_O} a_\ell \boldsymbol{\psi}_\ell
     (\boldsymbol{x}) 
 \end{equation}
 which is to say that the observable $g$ exists in a finite dimensional subspace 
-of $L^2(\mathcal{M})$, applying the Koopman operator implies that
+of $L^2(\mathcal{M})$ with basis functions $\bracks{\boldsymbol{\psi}_\ell}_{\ell=1}^{N_O}$, 
+and applying the Koopman operator implies that
 \begin{align} 
     \mathcal{K}^{\delta t} g(\boldsymbol{x}) &= \sum_{\ell = 1}^{N_O} a_\ell 
-    \exp(\delta t\lambda_\ell)\boldsymbol{\phi}_\ell (\boldsymbol{x}) \\
-    &= \sum_{\ell = 1}^{N_O} \boldsymbol{\phi}_\ell (\boldsymbol{x})
+    \exp(\delta t\lambda_\ell)\boldsymbol{\psi}_\ell (\boldsymbol{x}) \\
+    &= \sum_{\ell = 1}^{N_O} \boldsymbol{\psi}_\ell (\boldsymbol{x})
     (\boldsymbol{K}_O^T
     \boldsymbol{a})_\ell + r(\boldsymbol{x};\boldsymbol{K}_O)
 \end{align}
@@ -111,7 +119,7 @@ $\bracks{\boldsymbol{y}_j}$. What the expression for $\boldsymbol{K}_O$ tells
 us is that, we are trying to find a one-step mapping from each data point
 to the next. Practically speaking, $\boldsymbol{K}_O$ is found
 %$\boldsymbol{K}_O$ approximates $\mathcal{K}$ for a one-step mapping and is found 
-using an SVD, with which we can write
+using a singular value decomposition (SVD), with which we can write
 \begin{equation}
     {\bf\Psi}_- = {\bf U\Sigma W}^{\dagger} \implies \boldsymbol{K}_O = 
     {\bf\Psi}_+{\bf W\Sigma}^{-P}{\bf U}^{\dagger}
@@ -136,8 +144,12 @@ from which the dynamics can be approximated as
 \end{equation}
 where $\boldsymbol{\Psi}$ is the representation of the initial condition in terms of the observables, 
 $\boldsymbol{K}_m$ is the $N_S \times N_O$ matrix whose columns are the Koopman modes 
-$\bracks{{\bf k}_\ell}$, and ${\bf \Lambda}$ is the diagonal matrix whose elements are $\lambda_\ell
-= ({\bf \Lambda})_{\ell\ell}$
+$\bracks{{\bf k}_\ell}_{\ell=1}^{N_O}$ which solve the initial value problem
+\begin{equation}
+    \boldsymbol{x} = \sum_{\ell=1}^{N_O}{\bf k}_\ell\boldsymbol{\phi}(\boldsymbol{x}),
+\end{equation}
+and ${\bf \Lambda}$ is the diagonal matrix whose elements are $\lambda_\ell
+= ({\bf \Lambda})_{\ell\ell}$.
 
 \section{What are Neural Networks?}
 
@@ -158,24 +170,28 @@ what the data is to the experience.
 The oldest known example 
 of NNs were the perceptrons of the 1950s, which could perform binary classifications of 
 linearly separable data. Multilayer versions of this simple architecture allowed for 
-classification of larger set of classes, but the researcher of the time arrived at the 
+classification of larger set of classes, but the researchers of the time arrived at the 
 limits of their computing environments rather quickly and a brief dark age in the study 
 and application of neural networks ensued. Interest was renewed in the 1980s when many 
 of the hardware limitations of previous decades were ameliorated and new algorithms for 
-optimizing had been pioneered.
+optimizing had been pioneered \cite{rumelhart}.
 
 In modern mathematical study and application, the question of function representation is
 an ever-present one; specifically with respect to approximating quantities that can be 
-given via series. While truncations and use of the likes of fourier series are useful and 
+given via series. While truncations and use of the likes of Fourier series are useful and 
 effective in some narrow applications, one means of representation that has shown much 
 promise in recent years due to the greater availability of computing power is through 
-the use of Neural Networks (NNs). In 1989, \cite{hornik} showed that, with some appropriate
+the use of NNs. In 1989, \cite{hornik} showed that, with some appropriate
 parameters, a NN can be used to approximate any continuous function from one vector space 
-to another to any arbitrary precision required. 
+to another to any arbitrary precision required. The means of how this approximation is 
+generated from measured data is one that statisticians have studied for decades. How can 
+one produce a model that respects that data used to generate it without underfitting or 
+overfitting?
 
-From this we can consider ML as a tool of regression\cite{oreilly,theodoridis}. Say we have a set of training data
-$d_{tr} = \bracks{(x_j, y_j)}_{j=1}^{N_{tr}}$ and we believe that there is some function
-$f(x)$ such that 
+With respect to function approximation, we can consider ML through NNs 
+as a tool of regression \cite{oreilly, theodoridis}. 
+Say we have a set of training data $d_{tr} = \bracks{(x_j, y_j)}_{j=1}^{N_{tr}}$ 
+and we believe that there is some function $f(x)$ such that 
 \begin{equation}
     y_j = f(x_j) + \vep_j,    
 \end{equation}
@@ -196,21 +212,21 @@ and
     \sqbracks{f_e} - f_e(x; d_{tr})}^2}
 \end{equation}
 With this framing, ML methods can be cast as attempts to find an estimator relative to
-a given training that balances the competing dilemmas of being too biased or allowing too
+a given training set that balances the competing dilemmas of being too biased or allowing too
 much variance. From the point of view of non-parametric statistics, we would need to utilize 
-other techniques\cite{hollander} to determine the bias and variance of any given estimator. 
+other techniques \cite{hollander} to determine the bias and variance of any given estimator. 
 For our purposes, 
 we will instead consider how metrics from information theory can be used to assess the change in 
 information as data is fed through a NN and a model is trained.
 
-\section{DLDMD and it's limitations}
+\section{DLDMD and Its Limitations}
 
 The key innovation of 
 \cite{lago} is to use a neural network to come up with the collection of 
 observables on $\bracks{\boldsymbol{y}_j}$ that allow for the best prediction 
 of future system states. This is implemented by defining an encoder 
 $\mathcal{E}: N_S \to N_O$ and decoder $\mathcal{D}: N_O \to N_S$ composed of 
-Dense layers such that 
+dense layers such that 
 \begin{equation}
     (\mathcal{D}\circ\mathcal{E})(\boldsymbol{x}) = \boldsymbol{x}
 \end{equation}
@@ -225,7 +241,7 @@ considering these constraints is given by
 \begin{equation}
     \mathcal{L} = \alpha_1 \mathcal{L}_{\text{recon}} + \alpha_2 \mathcal{L}
     _{\text{dmd}} + \alpha_3 \mathcal{L}_{\text{pred}} +\alpha_4 
-    \norm{\boldsymbol{W}_g}_2^2 \label{eqn:loss function} 
+    \norm{\boldsymbol{W}_g}_2 \label{eqn:loss function} 
 \end{equation}
 where 
 \begin{align}
@@ -237,7 +253,7 @@ where
 \end{align}
 Each component guides the machine to a particular outcome: 
 \begin{enumerate}
-    \item $\mathcal{L}_{\text{recon}}$ is the Mean Squared Error (MSE) of each time step
+    \item $\mathcal{L}_{\text{recon}}$ is the mean-squared error (MSE) of each time step
     with respect to the reconstruction from the composition of $\mathcal{E}$ and $\mathcal{D}$. 
     This component ensures that, under training, the network effectively acts as a near identity 
     transformation for data that is fed into it. This quality allows the DMD advanced trajectories 
@@ -247,9 +263,9 @@ Each component guides the machine to a particular outcome:
     \item $\mathcal{L}_{\text{DMD}}$ is the error associated with DMD. Consequently, this 
     component is the one that is most responsible for finding the optimal set of observables for DMD.
     $\mathcal{E}$ immerses the data into a higher dimensional latent space, in effect acting as our 
-    set of observable; minimizing this gives us greater flexibility in the latent space.
+    set of observables; minimizing this gives us greater flexibility in the latent space.
     
-    \item $\mathcal{L}_{\text{pred}}$ is the (MSE) for each forward time prediction due to DMD and 
+    \item $\mathcal{L}_{\text{pred}}$ is the MSE for each forward time prediction due to DMD and 
     immersion/submersion due to $\mathcal{E}/\mathcal{D}$. In addition to balancing the last conditions, 
     this condition ensures that the DMD step in the latent dimension is consistent with the next time-step from 
     the time series after encoding, advancing, and decoding.  
@@ -265,7 +281,7 @@ Each component guides the machine to a particular outcome:
     $\alpha_4 < 10^{-10}$.
 \end{enumerate}
 
-The marriage of E-DMD with Dense NNs and some meaningful choices of loss function as 
+The marriage of EDMD with dense NNs and some meaningful choices of loss function as 
 an innovation was made by \cite{lago, brunton, lusch}, and has proved to be quite a 
 robust method for learning dynamics from data. In researching this thesis, many attempts 
 were made to test the limits of DLDMD. \cite{lago} was primarily interested in recreating 
@@ -274,8 +290,8 @@ nonlinear harmonic oscillator, the Duffing oscillator, and the Van der Pol oscil
 Additionally, chaotic systems like Lorenz 63 and the R\"{o}ssler system were examined but 
 chaos proved to be quite a challenge for the algorithm to overcome. A study conducted by the
 author for a class project into the addition
-of gaussian noise led to the discovery of the machine being quite robust to noisy data due to the 
-characteristics of it's loss function and additional noise mitigation was accomplished by 
+of Gaussian noise led to the discovery of the machine being quite robust to noisy data due to the 
+characteristics of its loss function and additional noise mitigation was accomplished by 
 implementing convolutional layers instead of traditional dense layers.
 
 \section{Statement of Dilemma}
@@ -291,16 +307,17 @@ opposed to the optimizer becoming stuck in a local minimum or there being no glo
 minimum at all.
 
 How can this be quantified? A useful starting point would be to examine the weights of
-the matrices that make up the layers of a model. For Dense layers, passing a vector of 
+the matrices that make up the layers of a model. For dense layers, passing a vector of 
 data $\boldsymbol{x} \in \R^{d}$ through a layer $L$ can be written as 
 \begin{equation}
-    L(\boldsymbol{x}; A, \sigma, b) = \sigma(A\boldsymbol{x} + b)
+    L(\boldsymbol{x}; {\bf A}, \sigma, {\bf b}) = \sigma(A\boldsymbol{x} + b)
 \end{equation}
-for some matrix $A \in \R^{D\times d}$, vector $b \in \R^{D}$ and (typically nonlinear)
-activation function $\sigma: \R^D \to \R^D$. For a given layer, $\sigma$ is a fixed 
-hyperparameter of the machine, but both $A$ and $b$ have entries that are tuned by the 
-optimizer as training takes places. Training takes place on a per epoch basis for most 
-models, so considering the configuration of these matrices epoch to epoch can help us 
+for some matrix ${\bf A} \in \R^{N_O\times d}$, vector ${\bf b} \in \R^{N_O}$ and (typically nonlinear)
+activation function $\sigma: \R^{N_O} \to \R^{N_O}$. For a given layer, $\sigma$ is a choice of the 
+model, but both ${\bf A}$ and ${\bf b}$ have entries that are tuned by the 
+optimizer as training takes places. Training takes place on a per epoch basis as the training data 
+is fed into the network and the optimization procedure adjusts the weights relative to the desired 
+metrics, so considering the configuration of these matrices epoch to epoch can help us 
 determine whether they are converging to a set of elements that accomplish the desired 
 task or not. The next state for each layer is dependent on the previous, so a reasonable 
 framing would be as one of a discrete dynamical system of the form
@@ -308,36 +325,36 @@ framing would be as one of a discrete dynamical system of the form
     Q_{n+1} = P(Q_n)
 \end{equation}
 where $P$ is the training procedure and $Q_n$ represents the configuration of the network's
-weights at each epoch $n$. Typically, the initial state $Q_0$ is ``random'' in the sense 
-that the weights are selected from a probability distribution. In the interest of examining 
+weights at each epoch $n$. Typically, the initial state $Q_0$ is random with it's weights being
+selected from a probability distribution. In the interest of examining 
 convergences, one might consider the following limit 
 \begin{equation}
-    \lim \norm{Q_{n+1} - Q_n}_2    
+    \lim_{n\to\infty} \norm{Q_{n+1} - Q_n}_2    
 \end{equation}
-for some $L^2$ norm on the space that $Q_n$ inhabits. While this ``one-step'' Cauchy 
+for some 2 norm on the space that $Q_n$ inhabits. While this ``one-step'' Cauchy 
 convergence will tell us whether the machine is approaching a particular configuration
 point-wise, this might not actually tell us much of anything else. The changes between 
 epochs is, in some sense, stochastic due to not knowing how the optimizer will update $Q$
 between epochs. As such, we propose a more statistical approach wherein we examine how the
-information content is changing from epoch to epoch. By the noted stochastic nature of the 
-evolution, we consider the entries of $A$ and $b$ for each layer to be drawn from a continuous 
+information content is changing from epoch to epoch. From the stochastic nature of the 
+evolution, we consider the entries of ${\bf A}$ and ${\bf b}$ for each layer to be drawn from a continuous 
 probability distribution $X$ and examine how it changes epoch to epoch. 
 
 
 \chapter{KULLBACK-LEIBLER DIVERGENCE}
 \label{chap:KLD}
-In the field of information theory, it is often useful to frame information as being 
+In the field of information theory, we frame information as being 
 represented by a random variable and the values it can take on. For example, consider 
 a normally distributed random variable $X \sim \mathcal{N}(\mu, \sigma^2)$ where $\mu$ is the 
 mean or expected value $\mathbb{E}[X]$ of $X$ and $\sigma^2$ is the variance 
 $\mathbb{V}[X]$ of $X$. This is one of the most well understood probability distributions
 due to countless years of study into its properties, as such we know that if we were to 
-draw a sample for $X$ that we're much more likely to get something close to $\mu$
-than we are to get something far away from $\mu$. For example; if $\mu = 0$ and 
+draw a sample for $X$ that we are much more likely to get something close to $\mu$
+than we are to get something far away from $\mu$. If $\mu = 0$ and 
 $\sigma^2 = 1$, then upon drawing a sample the value 1 is more likely to appear
 than -37. The level of certainty of the outcome of the draw begs the question of 
 how that certainty can be quantified and conversely, we could instead consider the 
-uncertainty of any given probability distribution. A measure of the uncertainty was 
+uncertainty in any given probability distribution. A measure of the uncertainty was 
 proposed in 1948 and this measure is known as \emph{informational entropy} \cite{shannon}
 or, simply, entropy. For a
 continuous distribution with density function $f(x)$, the entropy is given by 
@@ -355,12 +372,10 @@ and the entropy integral for this evaluates to
 \end{equation}
 which only depends on the variance. This expression tells us that the entropy of a
 normally distributed random variable increases as the variance does, graphically this is 
-associated with the flattening of the bell curve which can be interpretted as the values 
+associated with the flattening of the bell curve which can be interpreted as the values 
 around the mean being less likely to appear relative to values far from the mean. As such, 
 the result of any given sample is less certain; Figure \ref{fig:entropy example} demonstrates 
 this.
-When training an ML model, the expectation is that the machine will converge to some 
-configuration that allows it to accomplish the task it was designed for. For the sake of 
 
 \begin{figure}[ht]
     \centering
@@ -381,11 +396,11 @@ configuration that allows it to accomplish the task it was designed for. For the
 \end{figure}
 
 \section{Basic Definitions}
-The KL Divergence (KLD) is a statistical distance between a 
+The Kullback-Leibler Divergence (KLD) is a statistical distance between a 
 pair of probability distributions which measures how different a distribution $P$ is 
-from a reference distribution $Q$. ``A simple interpretation of the 
+from a reference distribution $Q$. A simple interpretation of the 
 divergence of $P$ from $Q$ is the expected excess surprise from using $Q$ as a model 
-when the actual distribution is $P$.'' If $P$ and $Q$ are discrete distributions 
+when the actual distribution is $P$ \cite{kullback}. If $P$ and $Q$ are discrete distributions 
 defined on the probability space $X$, then the KLD of $P$ with 
 respect to $Q$ is given by
 \begin{equation}
@@ -394,14 +409,14 @@ respect to $Q$ is given by
 In other words, it is the expectation of the logarithmic difference between the 
 probabilities $P$ and $Q$, where the expectation is taken using the probabilities 
 $P$. As a ``distance'', the KLD is non-negative and 0 when $P = Q$ almost
-everywhere. Unlike more standard metrics, it is not symmetric and does not satisfy 
-the triangle equality. In order to deal with something that is, at least, symmetric 
-we'll consider using the symmetric KL Divergence (SKLD) which is defined as 
+everywhere. Unlike metrics, it is not symmetric and does not satisfy 
+the triangle inequality. In order to deal with something that is, at least, symmetric 
+we are using the symmetric KLD (SKLD) which is defined as 
 \begin{equation}
-    D_{SKL}(P, Q) = \frac{1}{2}\parens{D_{KL}(P\ |\!|\ Q) + D_{KL}(Q\ |\!|\ P)}
+    D_{SKL}(P, Q) = \frac{1}{2}\parens{D_{KL}(P\ |\!|\ Q) + D_{KL}(Q\ |\!|\ P)},
 \end{equation}
-Which is the average of the KLD for $P$ with respect to $Q$ and for $Q$
-with respect to $P$. In our cases, we'll be dealing with a continuous random variable
+which is the average of the KLD for $P$ with respect to $Q$ and for $Q$
+with respect to $P$. In our cases, we are be dealing with a continuous random variable
 with probability density functions $p$ and $q$, for which the corresponding KLD formula 
 is
 \begin{equation}
@@ -431,7 +446,7 @@ write
     \begin{minipage}{\textwidth}
         \includegraphics[width=\textwidth]{Figures/divergence_example.png}
     \end{minipage} 
-    \caption{KL Divergence example with Normal distributions. As expected, the divergence 
+    \caption{Kullback-Leibler Divergence example with two normal distributions. As expected, the divergence 
     decreases to 0 as $\sigma^2 \to 1$ from either direction.}
     \label{fig:divergence example}
 \end{figure}
@@ -440,7 +455,8 @@ Figure \ref{fig:divergence example} illustrates the KLD between the example norm
 \section{How to build distributions (Non-parametric statistics)}
 The question remains about how we obtain the probability distribution of the random 
 variable that represents the evolution of each layer of an ML model from measured data. 
-Many techniques exist, but we'll be using Kernel Density Estimation (KDE). The most 
+Many techniques exist, but we are using Kernel Density Estimation (KDE) \cite{rosenblatt, parzen}. 
+The most 
 basic idea behind KDE is using a different bin centering method and a smoothing factor, 
 called a kernel, to approximate a probability density $f$ from measured data in the form 
 of a histogram. This is accomplished with the \emph{kernel density estimator} for $f$
@@ -450,15 +466,15 @@ given by
 \end{equation}
 where $K$ is the chosen kernel, $h$ is what's called the bandwidth parameter, and 
 $\{x_i\}_{i=1}^n$ is the data that generates our histogram. Per Epanechnikov, 
-the choice of kernel does not provide much statistical significance\cite{epanechnikov}; 
+the choice of kernel does not provide much statistical significance \cite{epanechnikov}; 
 but the choice of the bandwidth parameter $h$ is very crucial for finding a density estimate
 that approximates the underlying density function appropriately and can be thought of as an 
 analogue of the bin width for the affliated histogram. Choosing an optimal $h$ depends on 
 the given data and the common method, Silverman's rule of thumb, works on the 
 assumption that the density function of the data is unimodal and close to 
 normal. For general data, on which no assumptions of normality are made, a more 
-general method is found in the Improved Sheather-Jones algorithm (ISJ)\cite{botev}. 
-The ISJ seeks to minimize the assymptotic mean integrated squared error (AMISE) of 
+general method is found in the Improved Sheather-Jones algorithm (ISJ) \cite{botev}. 
+The ISJ seeks to minimize the asymptotic-mean-integrated-squared error (AMISE) of 
 the estimator $\hat{f}$ with respect to $h$, which is given by 
 \begin{equation}
     \text{AMISE}(\hat{f}) = \frac{h^2}{4}\norm{f''}^2 + \frac{1}{2n\sqrt{h\pi}}
@@ -516,7 +532,7 @@ which we can interpret to be the change in information between consecutive fluct
 steady state.
 
 \section{Implementation Details}
-The devil is in the details with respect to how this analysis is carried out and we will
+The devil is in the details with respect to how this analysis is carried out, and we
 go over the important ones here. After the training of each model for $N_E$ epochs, the 
 data that we have to play with is 
 \begin{equation}
@@ -525,14 +541,14 @@ data that we have to play with is
 \end{equation}
 which are the sets of weights of the layers of the encoder and decoder. Note that both sub-networks 
 have the same number of layers and only differ by the dimension of their inputs and outputs.
-The following procedures are identical for both sets, so we'll only be referencing the encoder set
+The following procedures are identical for both sets, so we only reference the encoder set
 from here on out. For each layer $l$, the set of detrended matrices are computed
 \begin{equation}
     \delta{\bf W}_{l, \mathcal{E}} = \bracks{{\bf W}_{l,\mathcal{E}}^{(n+1),f} - {\bf W}_{l,\mathcal{E}}^{(n),f}}_{n=1}^{N_E-1},
 \end{equation}
 these matrices are flattened and their entries are used as the data for KDE. The KDE implementation
 used is that of KDEpy (\href{https://pypi.org/project/KDEpy/}{https://pypi.org/project/KDEpy/}), which implements several 
-algorithms for KDE in python including the bandwidth computation of ISJ and a very fast implementation
+algorithms for KDE in Python including the bandwidth computation of ISJ and a very fast implementation
 of the KDE that uses the Fast Fourier Transform. The kernel used is the Epanechnikov kernel, defined as 
 \begin{equation}
     K(x) = 
@@ -541,8 +557,8 @@ of the KDE that uses the Fast Fourier Transform. The kernel used is the Epanechn
         0, & \text{else}
     \end{cases},\label{eqn:epanechnikov}
 \end{equation}
-which is optimal in the mean square error sense. However, the choice of kernel is not a statistically 
-significant one\cite{epanechnikov} and we choose this kernel for the convenience of it having finite 
+which is optimal in the mean-square error sense. However, the choice of kernel is not a statistically 
+significant one \cite{epanechnikov} and we choose this kernel for the convenience of it having finite 
 support and non-vanishing first and second derivative on that support. The ISJ algorithm is used to 
 determine the appropriate bandwidth for each set of data. These bandwidths are also being saved to 
 see if the optimal bandwidth with respect to each data set might also contain some instructive 
@@ -555,7 +571,7 @@ where $w$ is the weight value itself and $p_{l,\mathcal{E}}(w)$ is the approxima
 with that weight value. For the sake of our discretization of this data, we use 5001 linearly spaced 
 points to represent the weights of each distribution from the smallest weight to the largest. The number 
 of discrete points is also of some importance for the next step; given these density approximations, we 
-can now compute what we're truly interested in, the relative entropy of consecutive densities and the 
+can now compute what we are truly interested in, the relative entropy of consecutive densities and the 
 associated change in information:
 \begin{equation}
     D_l = \bracks{D_{SKL}\parens{p_{l,\mathcal{E}}^{(n+1)} \Big|\!\Big| p_{l,\mathcal{E}}^{(n)}}}_{n=1}^{N_E-2}
@@ -571,16 +587,19 @@ network, and we can now use the divergences to characterize how the information 
 to the steady state. Figure \ref{fig:divergence of model example} shows an example of the divergence 
 of the detrended data for a single layer over the whole training. 
 
-We're interested in what these divergences tell 
-us about information flow in the model's weights, and as such we seek a fitting of the data. Any overall trends
-are more important to our analysis than lone data points, so to avoid transient behavior skewing any fittings
+We are interested in what these divergences tell us about information flow in the model's weights and 
+seek to identify specific classifiers of good training. That is the ultimate goal of this thesis: 
+Can we find quantifiable attributes of the network that behave one way for good training and in a 
+distinguishably different way for bad training? Finding fittings of the data of the divergence data
+is the most reasonable place to start and trends will provide for easier classification. Any overall trend
+is more important to our analysis than lone data points, so to avoid transient behavior skewing any fittings
 we ignore the first 20\% of the divergences computed. The values span several orders of magnitude, so a simple 
 fitting would certainly fail and we instead attempt a linear fit on the base 10 logarithm of the data. This 
 corresponds to an exponential fit in the original domain of the divergences with slope of the linear trend 
 being the approximate growth/decay rate of the information flow from the machines steady state. The slope 
 intercept is not so important for this reason, being only a constant that modifies the order of magnitude 
-without changing the trend, so for the time being we ignore it. In the interest of trying to identify a 
-classifier of good training, we then find the average and variance of the slopes of the linear fits of 
+without changing the trend, so for the time being we ignore it. In the interest of trying to find a 
+classifier of good training, we compute the average and variance of the slopes of the linear fits of 
 the layer's divergence data. The backbone of our results is to compare these averages for each latent 
 dimension to the loss curves and phase portraits from the training for each dimension.
 We have written code that implements all of these, and they can be found on GitHub at
@@ -591,8 +610,8 @@ We have written code that implements all of these, and they can be found on GitH
     \begin{minipage}{\textwidth}
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_07_2022-07-17-1837/div_plot_linear_enc_1"}
     \end{minipage}
-    \caption{Example of divergences for layer Enc 1 of Van der Pol model with latent dimension 7 
-    with linear fitting and confidence bands.}
+    \caption{Example of linear fitting of divergence data for one of the models we examine in Chapter
+    \ref{chap:results}.}
     \label{fig:divergence of model example}
 \end{figure}
 
@@ -605,13 +624,13 @@ the sake of testing our method of measuring information change, we elect to focu
 lifting or latent dimension of the observables we wish to use for the DMD algorithm. After conducting 
 multiple trainings with latent dimensions ranging from $N_O = 2$ to $N_O = 10$ for the Duffing and Van der 
 Pol oscillators, the algorithm detailed in Chapter \ref{chap:KLD} was implemented. The initial hope of our 
-analysis is the data points that our algorithm generates 
-will show clear trends that will allow us to easily differentiate the optimal parameter choice for the 
-model from suboptimal or even bad parameter choices. Given the model's task of learning an imbedding and 
+analysis is that data points that our algorithm generates 
+will show clear trends that allow us to easily differentiate the optimal parameter choices for the 
+model from suboptimal or even bad parameter choices. Given the model's task of learning an embedding and 
 find optimal observables in the latent space, we additionally surmised that we would see the most 
 variability in the model in what we call the edge layers: Enc in, Enc out, Dec in and Dec out. The 
 other layers in the model certaintly accomplish something as the model trains, but the dimension changes 
-that help E-DMD along are accomplished at the edge layers, so we expect them to evolve differently than
+that help EDMD along are accomplished at the edge layers, so we expect them to evolve differently than
 the hidden layers. 
 
 % Though not explicitly
@@ -639,7 +658,7 @@ certain damped and driven oscillators, whose general form is given by
     \ddot{x} + \delta\dot{x} + \alpha x + \beta x^3 = \gamma\cos(\omega t)
 \end{equation}
 There are many sets of coefficients for which many types of behvior are exhibited by the
-system; but for our purposes we'll only consider the following configuration:
+system, but for our purposes we are only considering the following configuration:
 \begin{equation}
     \ddot{x} - x + x^3 = 0
 \end{equation}
@@ -688,34 +707,11 @@ centers with the third being a saddle point with homoclinic connections that enc
 points. Figure \ref{fig:duffing phase space} shows a graphical representation of the phase space of our 
 Duffing oscillator. The homoclinic connection itself provides an interesting challenge topologically in 
 that it divides the phase space into distinct regions that affect the end behavior of the system depending
-on the initial condition\cite{strogatz:2000}. Table \ref{table:duffing params} describes the hyperparameters used for the 
+on the initial condition \cite{strogatz:2000}. Table \ref{table:duffing params} describes the hyperparameters 
+used for the 
 Duffing Oscillator that were left unchanged for each run; note that the distribution given as 
 $\mathcal{N}(\mu, \sigma^2, n)$ is the truncated normal distribution, which is a normal distribution
 in which all values drawn that are more than $n$ standard deviations from the mean are discarded. 
-
-\begin{table}[!htb]
-    \centering
-    \begin{minipage}{\textwidth}
-        \caption{ReLU activation function vs ELU activation function. Unlike ReLU, ELU is negative 
-        for $x < 0$. For some models, ELU can be advantageous if ReLU causes many of the neuron to
-        ``die'' during training which means the weights associated with that neuron become 0, and
-        those neurons do not contribute anything to output of the machine. Other activation functions
-        can assuage this problem, but ELU can be made arbitrarily close to ReLU and so is quite
-        popular.}
-        \label{table:elu vs relu}
-        \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|} \hline% {\columnwidth}{|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|}\hline
-            ReLU & ELU \\ \hline \hline
-            $\sigma(x) = \begin{cases}
-                x, & x > 0 \\
-                0, & \text{else}
-            \end{cases}$ & 
-            $\sigma(x; \alpha) = \begin{cases}
-                x, & x > 0 \\
-                \alpha(e^x - 1), & \text{else}
-            \end{cases}$ \\ \hline
-        \end{tabularx}
-    \end{minipage}
-\end{table}
 
 A few notes on the trainings themselves are worth mentioning here. No learning rate scheduling is used,
 so the learning rate with the Adam optimizer is held constant for all epochs. The activation function
@@ -723,28 +719,59 @@ Exponential Linear Unit (ELU) is used instead of the more standard Rectified Lin
 error that occurs in the numerics of DLDMD for latent dimension choices greater than 3. ELU is a 
 parameterized activation function whose definition is given in Table \ref{table:elu vs relu} and is closely
 related to ReLU; in fact, if the parameter $\alpha$ is set to 0 then ELU and ReLU are identical. For the
-sake of having similar performance for ELU with respect to ReLU, we choose $\alpha = .01$. For reasons still 
-under investigation, the RELU activation function causes the Singular Value Decomposition to fail if the 
+sake of having similar performance for ELU with respect to ReLU, we choose $\alpha = .01$.
+As stated in the caption for Table \ref{table:elu vs relu}, ReLU can lead some model to ``kill'' the 
+weights associated with a given neuron by causing them to go to 0. Consequently, this can cause the 
+data being fed into the model to have more zeros than is useful for EDMD and the matrices in that step 
+become ill-conditioned. This happens to Duffing using ReLU if the 
 latent dimension is 3 or greater and the algorithm subsequently ends with an error. After experimentation, 
-it was found that using ELU instead circumvents this problem without significantly affecting model training.
-As a final note, the training for this model (and Van der Pol) across all latent dimensions was done on the 
+it was found that using ELU instead circumvents this problem ReLU issue without significantly affecting 
+model training. As a final note, the training for this model (and Van der Pol) across all latent dimensions 
+was done on the 
 same data set with the same subsets chosen to be the training, test, and validation data. We do this to
 reduce the number of variables down to the latent dimension alone.
+
+\begin{table}[hb!]
+    \centering
+    \begin{minipage}{\textwidth}
+        \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|} \hline% {\columnwidth}{|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|@{\extracolsep{\stretch{1}}}*{1}{c}@{}|}\hline
+            ReLU & ELU \\ \hline \hline
+            $\sigma(x) = \begin{cases}
+                x, & x > 0 \\
+                0, & x \leq 0
+            \end{cases}$ & 
+            $\sigma(x; \alpha) = \begin{cases}
+                x, & x > 0 \\
+                \alpha(e^x - 1), & x \leq 0
+            \end{cases}$ \\ \hline
+        \end{tabularx}
+    \end{minipage}
+    \caption{ReLU activation function vs ELU activation function. Unlike ReLU, ELU is negative 
+    for $x < 0$. For some models, ELU can be advantageous if ReLU causes many of the neuron to
+    ``die'' during training which means the weights associated with that neuron become 0, and
+    those neurons do not contribute anything to output of the machine. Other activation functions
+    can assuage this problem, but ELU can be made arbitrarily close to ReLU and so is quite
+    popular.}
+    \label{table:elu vs relu}
+\end{table}
+
 \begin{figure}[!ht]
     \centering
     \begin{minipage}{\textwidth}
         \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png"} 
     \end{minipage}%
-    \caption{Duffing average slopes with standard deviations.}
+    \caption{Duffing average slopes of linear fits with standard deviations. This plot illustrates what we want 
+    to find. Each latent dimension gives us a different behavior and we can readily see how the information must
+    be changing during training.}
     \label{fig:duffing average slopes}
 \end{figure}
 
-Having established this, we'll consider the results of our analysis.
+Having established this, we now consider the results of our analysis.
 Figure \ref{fig:duffing average slopes} shows the average of the slopes of the linear fits across 
 all layers for each epoch.  What we can see plainly is that for latent dimensions 3 and 8, 
 the average slope is small in magnitude with a small to medium standard deviation relative to the scale 
-with the other latent dimensions showing not only much larger average slopes, but as also much more 
-variance. We may contrast this with the losses in Figure \ref{fig:duffing DLDMD results} for each latent 
+with the other latent dimensions showing much larger average slopes and higher variance. We may contrast this 
+with the losses in Figure \ref{fig:duffing DLDMD results} for each latent 
 dimension, which seems to show that those latent dimensions should be the optimal choices with all other 
 choices being more or less equivalent. These phase space representations are very close indeed, however, 
 which motivates examining other metrics. If we examine Figure \ref{fig:duffing average bandwidth}, which shows the average 
@@ -780,11 +807,11 @@ and we conclude that this is a good indication of successful training.
 For a more granular view of the individual fittings for each layer of the model, we have Figure
 \ref{fig:duffing slopes all layers}. Much to our 
 expectation, the plots for the edge layers have slightly different behavior than for the hidden layers;
-generally, the linear trends have a smaller slope and y-intercept further from 0. We can interpret this 
+generally, the linear trends have a smaller slope and $y$-intercept further from 0. We can interpret this 
 as being indicative of having an information change trend that is further from the theoretical steady-state
-than for the other layers of the model. We've come to associate this with the kind of expressivity that is
+than for the other layers of the model. We have come to associate this with the kind of expressivity that is
 desireable for ML models to have in that they are able to cope with the kind of variability that real world 
-data could exhibit. The ultimate conclusion we're able to draw is that DLDMD seems to adequately train and 
+data could exhibit. The ultimate conclusion we are able to draw is that DLDMD seems to adequately train and 
 predict future states of Duffing for latent dimensions 3, 4, 5, and 6.
 
 \begin{figure}[!htbp]
@@ -865,7 +892,7 @@ specific kind of circuit than Duffing does. It's general form is given by
     \ddot{x} - \mu(1 - x^2)\dot{x} + x = 0
 \end{equation}
 Much like Duffing, varying $\mu$ can give different and interesting phase space dynamics. For our
-purposes we will fix it to $\mu = 1.5$. With this, the equivalent system of first order equations
+purposes we fix it to $\mu = 1.5$. With this, the equivalent system of first order equations
 is 
 \begin{equation}
     \begin{cases}
@@ -882,12 +909,13 @@ is
     \caption{Van der Pol average slopes with standard deviations.}
     \label{fig:van der pol average slopes}
 \end{figure}
-Again, by introducing $y = \dot{x}$. Unlike Duffing, this system has a single unstable fixed point
+Unlike Duffing, this system has a single unstable fixed point
 at the origin and all nontrivial orbits are attracted to a limit cycle that surrounds the origin. 
 Figure \ref{fig:van der pol phase space} shows a graphical representation of the phase space of our 
 Van der Pol oscillator. Much like Duffing, we do have a curve that separates the phase space into 
-regions of different behavior in the limit cycle; but since all orbits approach the limit cycle there
-should be much variability with respect to initial conditions\cite{strogatz:2000}. We would expect training on this system 
+regions of different behavior (the limit cycle), but since all orbits approach the limit cycle there
+shouldn't be much variability in end behavior with respect to initial conditions \cite{strogatz:2000}. 
+We would expect training on this system 
 to be better overall due to the fact that all trajectories are essentially going to same place unlike
 the more complex behavior of Duffing. The hyperparameters for the Van der Pol
 training are identical to those of Duffing with the exception of the activation function; which is, 
@@ -914,7 +942,7 @@ bandwidths in \ref{fig:van der pol average bandwidth} do as well. We can see in 
 and \ref{fig:van der pol linear fits all layers} that like in Duffing, the edge layers evolve differently 
 than the hidden layers and we see that in their having larger $y$-intercepts and more variation in their 
 slopes as well. With this more granular view, we can also see why all the average slopes are negative,
-which is not the case for Duffing. The exact interpretation of this will be discussed later, but we've come 
+which is not the case for Duffing. The exact interpretation of this will be discussed later, but we have come 
 to see this is as the trend of deviation from the steady growing smaller as the model trains and a consequence 
 of the simpler phase space of Van der Pol.
 
@@ -996,7 +1024,7 @@ of the simpler phase space of Van der Pol.
 
 \chapter{DISCUSSION}
 \label{chap:discussion}
-Having presented these results, we will briefly discuss some of the consequences we can deduce from 
+Having presented these results, we briefly discuss some of the consequences we can deduce from 
 them and consider some interpretations of the fittings. The divergences represent the relative
 entropy of the detrended weight matrices and we can still think of the fittings as representing
 the trend of deviation from the steady state distribution of the weights for each layer, but a more
@@ -1005,7 +1033,7 @@ these results back to the most basic definition of entropy and the equivalent un
 being some measure of surprise is non-obvious and we may only consider these results as a metric in
 and of themselves without a more theoretic realization beyond simple information change. Perhaps for 
 an easier understanding we can simply measure the entropy of the detrended distributions individually,
-but this refocusing is something we learned in hindsight and wasn't a more obvious direction of 
+but this refocusing is something we learned in hindsight and was not a more obvious direction of 
 investigation at the beginning.
 
 \section{The Good}
@@ -1019,10 +1047,10 @@ hyperparameters that we know to be successful versus those that are not and it m
 incorporate such analysis into a model to decide whether training should end at any given stage 
 in favor of different parameters. The most appropriate way to integrate this into a training scheme 
 will be difficult, but it should be possible to run this in parallel to a training scheme by saving
-sets of weights from previous epochs and choosing slope bounds that you'd like the averages to fall 
-into. As a proof of concept, we've found that the data in the form of the weights of a model can be
+sets of weights from previous epochs and choosing slope bounds that you would like the averages to fall 
+into. As a proof of concept, we have found that the data in the form of the weights of a model can be
 used to characterize the model's evolution outside of the traditional metrics of ML and gives us a
-statistical viewpoint of the seemingly random walk that these models take during training. We've also 
+statistical viewpoint of the seemingly random walk that these models take during training. We have also 
 shown how individual layers of a given model can have an outsized impact on the effectiveness of the 
 model. The egde layers evolved in a very different way than the hidden layer and Figures 
 \ref{fig:duffing slopes all layers} and \ref{fig:van der pol slopes all layers} show this.
@@ -1030,14 +1058,14 @@ model. The egde layers evolved in a very different way than the hidden layer and
 
 
 \section{Optimal Parameters}
-While we believe that we've struck upon some useful results with respect to finding different behavior
-and trends in some of the different values we've computed, it must be made clear that some assumptions
-were made on our part that might not have been valid ones to makes given what we've learned since the 
-outset. Some of which is detailed in the coming sections. Perhaps the biggest assumption made is that 
-we have sets of optimal parameters at all for the DLDMD algorithm. There hasn't been much study into this 
-algorithm yet, and the only measure of it's validity is given by \cite{lago} in their results and our 
+While we believe that we have struck upon some useful results with respect to finding different behavior
+and trends in some of the different values we have computed, it must be made clear that some assumptions
+were made on our part that might not have been valid ones to makes given what we have learned since the 
+outset. Perhaps the biggest assumption made is that 
+we have sets of optimal parameters at all for the DLDMD algorithm. There has not been much study into this 
+algorithm yet, and the only measure of its validity is given by \cite{lago} in their results and our 
 replications which admittedly rely on the ``eye-ball'' metric. Predicting future states in multidimensional
-nonlinear dynamical systems from time-series data is very tricky and it's difficult to quantify accuracy 
+nonlinear dynamical systems from time-series data is very tricky and it is difficult to quantify accuracy 
 or whether key phase space features are respected in the predictions. Dealing with separatrices and 
 the concentric centers, the prediction results, and the activation function issues of Duffing in 
 particular casts some doubt on the parameters we have taken to be optimal. 
@@ -1048,18 +1076,17 @@ density functions that don't exhibit a core property of density functions: The s
 probabilities does not integrate to 1. KDE was doubtless designed for less pathological data than 
 the kind we seem to be extracting from the weight matrices of the model. This perhaps conflicts with the 
 assumption that we should be able to extract a density from the weight matrices at all. After some 
-investigation, we've come to realize that the this is a consequence of the bandwidth use in KDE. 
+investigation, we have come to realize that this is a consequence of the bandwidth use in KDE. 
 For our density estimation, we made no assumptions about the shape or modality of the data and so 
 the existing literature led us to using the ISJ to find an optimal bandwidth for each probability
-density. The resulting densities are full of narrow peak and wide troughs, reminiscent of Dirac's comb;
-which explains why the numerical integration schemes that are being used aren't giving us the areas we
-expect. The bandwidths due to ISJ we're on the order of $10^{-6}$ and we found that using larger 
+density. The resulting densities are full of narrow peak and wide troughs, reminiscent of Dirac's comb. 
+The bandwidths due to ISJ were on the order of $10^{-6}$ and we found that using larger 
 bandwidths led to overall smoother densities that we were able to numerically verify have approximately 
 unitary area. The varying shapes based on bandwidth are another indicator of the inherent tradeoff 
 between bias and variance in any model.
 
 We have no reason to believe that there is anything at all wrong with the software package
-being used for KDE and instead postulate that a more sophisticated scheme of integration, one that doesn't
+being used for KDE and instead postulate that a more sophisticated scheme of integration, one that does not
 rely as much on smooth data, is needed for the optimal bandwidth parameter. One silver-lining we can
 deduce from this is that the apparent failure of boiler plate numerical integration can give us an idea
 of how much variance a given derived density has and we can use that make other inferences about 
@@ -1078,7 +1105,7 @@ For the range of latent dimensions we ran the model with, the hidden layers have
 data points and the edge layers can have as few as 258 data points or as many 1161 data points. This
 spread alone leads to a belief that the higher latent dimensions should yield better results because
 there are more trainable parameters and it is consistent with the expectation that more observables 
-leads to an improved E-DMD in the lifted coordinates. It is, however, not consistent with all of the
+leads to an improved EDMD in the lifted coordinates. It is, however, not consistent with all of the
 results from DLDMD or the analysis in this thesis.
 
 \section{Future work}

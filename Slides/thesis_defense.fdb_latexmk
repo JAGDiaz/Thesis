@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1659039203 "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/Slides/thesis_defense.tex" "thesis_defense.pdf" "thesis_defense" 1659039212
+["pdflatex"] 1659047426 "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/Slides/thesis_defense.tex" "thesis_defense.pdf" "thesis_defense" 1659047434
   "C:/Users/josep/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1659028821 278194 14217b9c74496d1250e88da84646256e ""
   "C:/Users/josep/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1651614135 10246960 38f373af67a0067aa65b6e6f0c3f6a75 ""
   "C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1233955448 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -243,11 +243,11 @@
   "Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_2_square.png" 1659038819 9806 db24ffa544d728af784ab32319d15df6 ""
   "Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_in_square.png" 1659038818 9712 b018547e26ebcf0d00a68b06b382c520 ""
   "Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_out_square.png" 1659038820 10035 d1f3cd43e64dcb012d21b3a53da11a01 ""
-  "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/Slides/thesis_defense.tex" 1659039203 7857 ba8709f589c49883ac7962b849c904f9 ""
-  "thesis_defense.aux" 1659039211 2111 18dab8decf19c35c017d213826fb1111 "pdflatex"
-  "thesis_defense.nav" 1659039211 1011 83c4ff004b77303d878240d0bcc95e05 "pdflatex"
+  "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/Slides/thesis_defense.tex" 1659047426 9124 d18b485124669c0002c89c78f4553dc9 ""
+  "thesis_defense.aux" 1659047434 2375 1bcca384a3f4942a08663e34cc6f7a1f "pdflatex"
+  "thesis_defense.nav" 1659047434 1202 a971439ba5eedf62b158aa4c3f07763d "pdflatex"
   "thesis_defense.out" 0 -1 0 "pdflatex"
-  "thesis_defense.tex" 1659039203 7857 ba8709f589c49883ac7962b849c904f9 ""
+  "thesis_defense.tex" 1659047426 9124 d18b485124669c0002c89c78f4553dc9 ""
   (generated)
   "thesis_defense.aux"
   "thesis_defense.log"
