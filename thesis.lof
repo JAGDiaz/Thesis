@@ -1,18 +1,19 @@
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Entropy and density function change with respect to $\sigma ^2$. The base of the logarithm shown here is $e$, but the base itself is irrelevant due to the shared properties of all logarithms: that they increase monotonically and unbounded. As the variance increases we see higher entropy in the left plot and a flattening of the probability density in the right plot.\relax }}{9}{figure.caption.1}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Kullback-Leibler Divergence example with two normal distributions. As expected, the divergence decreases to 0 as $\sigma ^2 \to 1$ from either direction.\relax }}{10}{figure.caption.2}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Example of a density function found using KDE, its shape coincides with that of the histogram generated from the same samples.\relax }}{12}{figure.caption.3}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Example of linear fitting of divergence data for one of the models we examine in Chapter \ref {chap:results}.\relax }}{15}{figure.caption.4}%
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Duffing phase space.\relax }}{17}{figure.caption.5}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Duffing average slopes of linear fits with standard deviations. This plot illustrates what we want to find. Each latent dimension gives us a different behavior and we can readily see how the information must be changing during training.\relax }}{19}{figure.caption.8}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Duffing loss plots, smoothed to accentuate trends.\relax }}{20}{figure.caption.9}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Duffing Average bandwidth.\relax }}{20}{figure.caption.10}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Duffing slope of linear fits by layer.\relax }}{22}{figure.caption.11}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Duffing linear fits by layer.\relax }}{23}{figure.caption.12}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Duffing DLDMD results by latent dimension.\relax }}{24}{figure.caption.13}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Van der Pol phase space.\relax }}{25}{figure.caption.14}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Van der Pol average slopes with standard deviations.\relax }}{26}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Van der Pol loss plots, smoothed to accentuate trend.\relax }}{26}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Van der Pol Average bandwidth.\relax }}{27}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Van der Pol slope of linear fits by layer.\relax }}{28}{figure.caption.18}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Van der Pol linear fits by layer.\relax }}{29}{figure.caption.19}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Van der Pol DLDMD results by latent dimension.\relax }}{30}{figure.caption.20}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Example of DLDMD newtork with $N_S = 2,\ N_O = 4,$ and $N_L = 3$ where every hidden layer has 16 neurons. This representation is meaningful, but it is missing some key network features like the activation functions for each layer.\relax }}{7}{figure.caption.1}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Entropy and density function change with respect to $\sigma ^2$. The base of the logarithm shown here is $e$, but the base itself is irrelevant due to the shared properties of all logarithms: that they increase monotonically and unbounded. As the variance increases we see higher entropy in the left plot and a flattening of the probability density in the right plot.\relax }}{10}{figure.caption.2}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Kullback-Leibler Divergence example with two normal distributions. As expected, the divergence decreases to 0 as $\sigma ^2 \to 1$ from either direction.\relax }}{11}{figure.caption.3}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Example of a density function found using KDE, its shape coincides with that of the histogram generated from the same samples.\relax }}{13}{figure.caption.4}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Example of linear fitting of divergence data for one of the models we examine in Chapter \ref {chap:results}.\relax }}{16}{figure.caption.5}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Duffing phase space.\relax }}{18}{figure.caption.6}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Duffing average slopes of linear fits with standard deviations. This plot illustrates what we want to find. Each latent dimension gives us a different behavior and we can readily see how the information must be changing during training.\relax }}{20}{figure.caption.9}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Duffing loss plots, smoothed to accentuate trends.\relax }}{21}{figure.caption.10}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Duffing Average bandwidth.\relax }}{21}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Duffing slope of linear fits by layer.\relax }}{23}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Duffing linear fits by layer.\relax }}{24}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Duffing DLDMD results by latent dimension.\relax }}{25}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Van der Pol phase space.\relax }}{26}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Van der Pol average slopes with standard deviations.\relax }}{27}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Van der Pol loss plots, smoothed to accentuate trend.\relax }}{27}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Van der Pol Average bandwidth.\relax }}{28}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Van der Pol slope of linear fits by layer.\relax }}{29}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Van der Pol linear fits by layer.\relax }}{30}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Van der Pol DLDMD results by latent dimension.\relax }}{31}{figure.caption.21}%

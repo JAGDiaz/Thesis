@@ -92,7 +92,7 @@ Extended Dynamic Mode Decomposition (EDMD) \cite{williams}. With EDMD, we suppos
     g(\boldsymbol{x}) = \sum_{\ell = 1}^{N_O} a_\ell \boldsymbol{\psi}_\ell
     (\boldsymbol{x}) 
 \end{equation}
-which is to say that the observable $g$ exists in a finite dimensional subspace 
+which is to say that the observable $g$ exists in a $N_O$-dimensional subspace 
 of $L^2(\mathcal{M})$ with basis functions $\bracks{\boldsymbol{\psi}_\ell}_{\ell=1}^{N_O}$, 
 and applying the Koopman operator implies that
 \begin{align} 
@@ -224,7 +224,8 @@ information as data is fed through a NN and a model is trained.
 The key innovation of 
 \cite{lago} is to use a neural network to come up with the collection of 
 observables on $\bracks{\boldsymbol{y}_j}$ that allow for the best prediction 
-of future system states. This is implemented by defining an encoder 
+of future system states, we call this method Deep Learning Enhanced DMD (DLDMD). 
+This is implemented by defining an encoder 
 $\mathcal{E}: N_S \to N_O$ and decoder $\mathcal{D}: N_O \to N_S$ composed of 
 dense layers such that 
 \begin{equation}
@@ -294,6 +295,40 @@ of Gaussian noise led to the discovery of the machine being quite robust to nois
 characteristics of its loss function and additional noise mitigation was accomplished by 
 implementing convolutional layers instead of traditional dense layers.
 
+\section{Network Architecture of DLDMD}
+This discussion leads naturally to the architecture of the network itself. The composition
+of the decoder with the encoder $\mathcal{D} \circ \mathcal{E}$ gives an Autoencoder \cite{kramer}
+that actually learns the optimal embeddings and imbeddings that we use in the DMD step of DLDMD.
+The encoder and decoder are sequential networks that accepts data at the input layer, runs them 
+through the hidden layers, and yields them at the output layer. For convenience we label the input
+layers Enc in and Dec in, the hidden layers Enc $l$ and Dec $l$ for the hidden layers, and the 
+output layers Enc out and Dec out for the encoder and decoder, respectively. The number of hidden 
+layers $N_L$ is a model choice with the indexing being 0-based: $0 \leq l < N_L$. Figure 
+\ref{fig:network details} shows an example of the DLDMD network. As will be explained in the next
+section, passing data through the network involves linear transformations that change the dimension
+of that data and this is what allows us to ``lift'' the time-series into the latent space. This 
+realization motivates considering the evolution of each layer individually, which we will revisit in 
+Chapter \ref{chap:results}.
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}{.5\textwidth}
+        $$\mathcal{E}$$
+        \includegraphics[width=\textwidth]{Figures/Encoder.png}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+        $$\mathcal{D}$$
+        \includegraphics[width=\textwidth]{Figures/Decoder.png}
+    \end{minipage}
+
+    \caption{Example of DLDMD newtork with $N_S = 2,\ N_O = 4,$ and $N_L = 3$ where every
+    hidden layer has 16 neurons. This representation is meaningful, but it is missing some key 
+    network features like the activation functions for each layer.}
+    \label{fig:network details}
+\end{figure}
+
+
+
 \section{Statement of Dilemma}
 Having estabilshed DLDMD and having discussed testing it's limitations via training 
 new models and \emph{visually} qualifying each run as a success or failure, a question is 
@@ -310,7 +345,7 @@ How can this be quantified? A useful starting point would be to examine the weig
 the matrices that make up the layers of a model. For dense layers, passing a vector of 
 data $\boldsymbol{x} \in \R^{d}$ through a layer $L$ can be written as 
 \begin{equation}
-    L(\boldsymbol{x}; {\bf A}, \sigma, {\bf b}) = \sigma(A\boldsymbol{x} + b)
+    L(\boldsymbol{x}; {\bf A}, \sigma, {\bf b}) = \sigma({\bf A}\boldsymbol{x} + {\bf b})
 \end{equation}
 for some matrix ${\bf A} \in \R^{N_O\times d}$, vector ${\bf b} \in \R^{N_O}$ and (typically nonlinear)
 activation function $\sigma: \R^{N_O} \to \R^{N_O}$. For a given layer, $\sigma$ is a choice of the 
@@ -325,7 +360,7 @@ framing would be as one of a discrete dynamical system of the form
     Q_{n+1} = P(Q_n)
 \end{equation}
 where $P$ is the training procedure and $Q_n$ represents the configuration of the network's
-weights at each epoch $n$. Typically, the initial state $Q_0$ is random with it's weights being
+weights at each epoch $n$. The initial state $Q_0$ is random with it's weights being
 selected from a probability distribution. In the interest of examining 
 convergences, one might consider the following limit 
 \begin{equation}
@@ -379,12 +414,6 @@ this.
 
 \begin{figure}[ht]
     \centering
-    % \begin{minipage}{.5\textwidth}
-        % \includegraphics[width=\textwidth]{Figures/entropy_example.png}
-    % \end{minipage}%
-    % \begin{minipage}{.5\textwidth}
-        % \includegraphics[width=\textwidth]{Figures/densities_example.png}
-    % \end{minipage}
     \includegraphics[width=\textwidth]{Figures/entropy_densities_example.png}
 
     \caption{Entropy and density function change with respect to $\sigma^2$. The base 
@@ -536,11 +565,11 @@ The devil is in the details with respect to how this analysis is carried out, an
 go over the important ones here. After the training of each model for $N_E$ epochs, the 
 data that we have to play with is 
 \begin{equation}
-    {\bf W}_\mathcal{E} = \bracks{{\bf W}_{l,\mathcal{E}}^{(n)}}_{n=1, l=1}^{N_E, N_l}, 
-    {\bf W}_\mathcal{D} = \bracks{{\bf W}_{l,\mathcal{D}}^{(n)}}_{n=1, l=1}^{N_E, N_l}, 
+    {\bf W}_\mathcal{E} = \bracks{{\bf W}_{l,\mathcal{E}}^{(n)}}_{n=1, l=1}^{N_E, N_L}, 
+    {\bf W}_\mathcal{D} = \bracks{{\bf W}_{l,\mathcal{D}}^{(n)}}_{n=1, l=1}^{N_E, N_L}, 
 \end{equation}
 which are the sets of weights of the layers of the encoder and decoder. Note that both sub-networks 
-have the same number of layers and only differ by the dimension of their inputs and outputs.
+have the same number of layers $N_L$ and only differ by the dimension of their inputs and outputs.
 The following procedures are identical for both sets, so we only reference the encoder set
 from here on out. For each layer $l$, the set of detrended matrices are computed
 \begin{equation}
