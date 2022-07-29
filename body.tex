@@ -304,7 +304,9 @@ through the hidden layers, and yields them at the output layer. For convenience 
 layers Enc in and Dec in, the hidden layers Enc $l$ and Dec $l$ for the hidden layers, and the 
 output layers Enc out and Dec out for the encoder and decoder, respectively. The number of hidden 
 layers $N_L$ is a model choice with the indexing being 0-based: $0 \leq l < N_L$. Figure 
-\ref{fig:network details} shows an example of the DLDMD network. As will be explained in the next
+\ref{fig:network details} shows an example of the DLDMD network. The layers in the Figure are 
+labeled, sequentially, left to right: Enc in, Enc 0, Enc 1, Enc 2, Enc out, Dec in, Dec 0, Dec 1,
+Dec 2, Dec out. As will be explained in the next
 section, passing data through the network involves linear transformations that change the dimension
 of that data and this is what allows us to ``lift'' the time-series into the latent space. This 
 realization motivates considering the evolution of each layer individually, which we will revisit in 
@@ -315,7 +317,7 @@ Chapter \ref{chap:results}.
     \begin{minipage}{.5\textwidth}
         $$\mathcal{E}$$
         \centering
-        \includegraphics[width=\textwidth]{Figures/Encoder.png}
+        \includegraphics[width=.9\textwidth]{Figures/Encoder.png}
         \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
             Enc\ \ in & Enc\ \ \ 0 & Enc\ \ \ 1 & Enc\ \ \ 2 & Enc out
         \end{tabularx}
@@ -323,7 +325,7 @@ Chapter \ref{chap:results}.
     \begin{minipage}{.5\textwidth}
         $$\mathcal{D}$$
         \centering
-        \includegraphics[width=\textwidth]{Figures/Decoder.png}
+        \includegraphics[width=.9\textwidth]{Figures/Decoder.png}
         \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
             Dec\ \ in & Dec\ \ \ 0 & Dec\ \ \ 1 & Dec\ \ \ 2 & Dec out
         \end{tabularx}
