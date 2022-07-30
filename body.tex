@@ -226,7 +226,7 @@ The key innovation of
 observables on $\bracks{\boldsymbol{y}_j}$ that allow for the best prediction 
 of future system states, we call this method Deep Learning Enhanced DMD (DLDMD). 
 This is implemented by defining an encoder 
-$\mathcal{E}: N_S \to N_O$ and decoder $\mathcal{D}: N_O \to N_S$ composed of 
+$\mathcal{E}: \R^{N_S} \to \R^{N_O}$ and decoder $\mathcal{D}: \R^{N_O} \to \R^{N_S}$ composed of 
 dense layers such that 
 \begin{equation}
     (\mathcal{D}\circ\mathcal{E})(\boldsymbol{x}) = \boldsymbol{x}
@@ -252,6 +252,7 @@ where
     \mathcal{L}_{\text{pred}} &= \frac{1}{N_T}\sum_{j=1}^{N_T}\norm{\boldsymbol{y}_{j+1} - 
     \mathcal{D}\parens{VT^j V^{-1}\mathcal{E}(\boldsymbol{x})}}_2, \label{eqn:blah}
 \end{align}
+Recall that $N_T$ is the number of measurements in our time-series data after the first.
 Each component guides the machine to a particular outcome: 
 \begin{enumerate}
     \item $\mathcal{L}_{\text{recon}}$ is the mean-squared error (MSE) of each time step
@@ -276,7 +277,7 @@ Each component guides the machine to a particular outcome:
     weight matrices from blowing up in value as the model trains, which can be a 
     concern for ML models.
     
-    \item $\alpha_1,\ \alpha_2,\ \alpha_3,$ and $\alpha_4$ are 4 positive constants that allow us to assign a 
+    \item $\alpha_1,\ \alpha_2,\ \alpha_3,$ and $\alpha_4$ are four positive constants that allow us to assign a 
     weighting to each component of the loss. This allows the loss function to be dynamically weighted to 
     prioritize some conditions over others. In \cite{lago}, $\alpha_1 = \alpha_2 = \alpha_3 = 1$ and 
     $\alpha_4 < 10^{-10}$.
@@ -377,7 +378,7 @@ convergences, one might consider the following limit
 \begin{equation}
     \lim_{n\to\infty} \norm{Q_{n+1} - Q_n}_2    
 \end{equation}
-for some 2 norm on the space that $Q_n$ inhabits. While this ``one-step'' Cauchy 
+for some two-norm on the space that $Q_n$ inhabits. While this ``one-step'' Cauchy 
 convergence will tell us whether the machine is approaching a particular configuration
 point-wise, this might not actually tell us much of anything else. The changes between 
 epochs is, in some sense, stochastic due to not knowing how the optimizer will update $Q$
@@ -518,9 +519,16 @@ The ISJ seeks to minimize the asymptotic-mean-integrated-squared error (AMISE) o
 the estimator $\hat{f}$ with respect to $h$, which is given by 
 \begin{equation}
     \text{AMISE}(\hat{f}) = \frac{h^2}{4}\norm{f''}^2 + \frac{1}{2n\sqrt{h\pi}}
+    \label{eqn:amise}
 \end{equation}
-and depends on the unknown quantity $\norm{f''}$. The ISJ uses an iterative method 
-based on the data and kernel function to approximate $\norm{f''}$ and arrive at 
+and depends on the unknown quantity $\norm{f''}$. The analysis that \cite{terrell} uses
+to derive equation \ref{eqn:amise} relies on a few assumptions, such as the existence 
+of $f''$, which may not always apply to an arbitrary density.
+%Not only is this quantity unknown, but
+%there is no guarantee that $f''$ exists for an arbitrary density. 
+The ISJ uses an 
+iterative method based on the data and kernel function to approximate $\norm{f''}$ 
+numerically to assuage that issue and arrive at 
 the best bandwidth for the given data. See Figure \ref{fig:kde example} for an example 
 density found using KDE and the ISJ algorithm.
 
@@ -550,8 +558,9 @@ Consequently, we can charaterize any set of weights via the formulas
     {\bf W}_{l,\mathcal{E}}^{(n)} = {\bf W}_{l,\mathcal{E}}^{*} + {\bf W}_{l,\mathcal{E}}^{(n),f},\
     {\bf W}_{l,\mathcal{D}}^{(n)} = {\bf W}_{l,\mathcal{D}}^{*} + {\bf W}_{l,\mathcal{D}}^{(n),f},
 \end{equation}
-where the fluctuation matrices ${\bf W}_{l,\mathcal{E}}^{(n),f}$ and 
-${\bf W}_{l,\mathcal{D}}^{(n),f}$ are defined implicitly. These fluctuations are what we're 
+where ${\bf W}_{l,\mathcal{E}}^{(n),f}$ and 
+${\bf W}_{l,\mathcal{D}}^{(n),f}$ can be thought of as fluctuations from the 
+steady state. These fluctuations are what we're 
 most interested in studying. Using first-order differencing, we can study the affliated 
 detrended matrices $\delta{\bf W}_{l,\mathcal{E}}^{(n)}$ where
 \begin{align*}
@@ -615,7 +624,7 @@ associated change in information:
     D_l = \bracks{D_{SKL}\parens{p_{l,\mathcal{E}}^{(n+1)} \Big|\!\Big| p_{l,\mathcal{E}}^{(n)}}}_{n=1}^{N_E-2}
 \end{equation}
 Unlike in the first mention of entropy flow, we instead use the SKLD instead of the KLD. This consideration
-simplifies our analysis by disregarding the asymmertric nature of KLD and consequences of this choice 
+simplifies our analysis by disregarding the asymmetric nature of KLD and consequences of this choice 
 will be discussed in Chapter \ref{chap:discussion}. Given the discretized nature of the densities, we turn 
 to numerical integration to compute the integral in Equation \ref{eqn:continuous KLD}. For the sake of an 
 apples to apples comparison, we make the assumption that all densities associated with a given layer 
@@ -740,8 +749,8 @@ which when turned into a system of first-order equations by introducing $y = \do
     \end{minipage}
 \end{table}
 
-The interesting attributes of this system are that it has 3 fixed points, 2 of which are non-linear 
-centers with the third being a saddle point with homoclinic connections that encompass the other 2 fixed 
+The interesting attributes of this system are that it has three fixed points, two of which are non-linear 
+centers with the third being a saddle point with homoclinic connections that encompass the other two fixed 
 points. Figure \ref{fig:duffing phase space} shows a graphical representation of the phase space of our 
 Duffing oscillator. The homoclinic connection itself provides an interesting challenge topologically in 
 that it divides the phase space into distinct regions that affect the end behavior of the system depending
@@ -754,20 +763,20 @@ in which all values drawn that are more than $n$ standard deviations from the me
 A few notes on the trainings themselves are worth mentioning here. No learning rate scheduling is used,
 so the learning rate with the Adam optimizer is held constant for all epochs. The activation function
 Exponential Linear Unit (ELU) is used instead of the more standard Rectified Linear Unit (ReLU) due an 
-error that occurs in the numerics of DLDMD for latent dimension choices greater than 3. ELU is a 
+error that occurs in the numerics of DLDMD for latent dimension choices greater than three. ELU is a 
 parameterized activation function whose definition is given in Table \ref{table:elu vs relu} and is closely
 related to ReLU; in fact, if the parameter $\alpha$ is set to 0 then ELU and ReLU are identical. For the
 sake of having similar performance for ELU with respect to ReLU, we choose $\alpha = .01$.
-As stated in the caption for Table \ref{table:elu vs relu}, ReLU can lead some model to ``kill'' the 
+As stated in the caption for Table \ref{table:elu vs relu}, ReLU can lead some models to ``kill'' the 
 weights associated with a given neuron by causing them to go to 0. Consequently, this can cause the 
 data being fed into the model to have more zeros than is useful for EDMD and the matrices in that step 
 become ill-conditioned. This happens to Duffing using ReLU if the 
-latent dimension is 3 or greater and the algorithm subsequently ends with an error. After experimentation, 
-it was found that using ELU instead circumvents this problem ReLU issue without significantly affecting 
+latent dimension is three or greater and the algorithm subsequently ends with an error. After experimentation, 
+it was found that using ELU instead circumvents this issue that ReLU raises without significantly affecting 
 model training. As a final note, the training for this model (and Van der Pol) across all latent dimensions 
 was done on the 
-same data set with the same subsets chosen to be the training, test, and validation data. We do this to
-reduce the number of variables down to the latent dimension alone.
+same data set with the same subsets chosen to be the training, test, and validation sets. We do this to
+reduce the number of variables down to the latent dimension $N_O$ alone.
 
 \begin{table}[hb!]
     \centering

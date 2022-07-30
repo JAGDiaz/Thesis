@@ -64,6 +64,11 @@
 {\sc P.~Schmid}, {\em Dynamic mode decomposition of numerical and experimental
   data}, J. Fluid Mech., 656 (2010), pp.~5--28.
 
+\bibitem{terrell}
+{\sc D.~W. Scott and G.~R. Terrell}, {\em Biased and unbiased cross-validation
+  in density estimation}, Journal of the American Statistical Association, 82
+  (1987), pp.~1131--1146.
+
 \bibitem{shannon}
 {\sc C.~E. Shannon}, {\em A mathematical theory of communication}, The Bell
   System Technical Journal, 27 (1948), pp.~379--423.

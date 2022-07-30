@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1659126926 "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/Slides/thesis_defense.tex" "thesis_defense.pdf" "thesis_defense" 1659126935
+["pdflatex"] 1659130912 "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/Slides/thesis_defense.tex" "thesis_defense.pdf" "thesis_defense" 1659130921
   "../Figures/Decoder.png" 1659115390 226875 05e31ed6fc4e5dfc8f455eaf11b0ca55 ""
   "../Figures/Encoder.png" 1659115765 260668 bbdf688dfa8693d15b5905f98d575655 ""
   "../Figures/divergence_example.png" 1659040282 30251 d84d6233f9067e2a5d01763634d89c24 ""
@@ -255,11 +255,11 @@
   "Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_in_square.png" 1659038818 9712 b018547e26ebcf0d00a68b06b382c520 ""
   "Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_out_square.png" 1659038820 10035 d1f3cd43e64dcb012d21b3a53da11a01 ""
   "Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_07_2022-07-17-1837/div_plot_linear_enc_1.png" 1658378582 64346 e41049f0a3036f05b8063586d0b379f1 ""
-  "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/Slides/thesis_defense.tex" 1659126915 11058 bd8d55db834ac453e37544525deecbdf ""
-  "thesis_defense.aux" 1659126935 3149 834e1a87625e2103a14defe67e0546b7 "pdflatex"
-  "thesis_defense.nav" 1659126935 1760 80a68e95556c790f6368970db289fcf5 "pdflatex"
+  "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/Slides/thesis_defense.tex" 1659130911 11266 aa2280c3c920af8c7db7559614019750 ""
+  "thesis_defense.aux" 1659130921 3149 834e1a87625e2103a14defe67e0546b7 "pdflatex"
+  "thesis_defense.nav" 1659130921 1760 80a68e95556c790f6368970db289fcf5 "pdflatex"
   "thesis_defense.out" 0 -1 0 "pdflatex"
-  "thesis_defense.tex" 1659126915 11058 bd8d55db834ac453e37544525deecbdf ""
+  "thesis_defense.tex" 1659130911 11266 aa2280c3c920af8c7db7559614019750 ""
   (generated)
   "thesis_defense.aux"
   "thesis_defense.log"
