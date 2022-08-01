@@ -106,9 +106,11 @@
         from measured data to facilitate the prediction of future states. The data-driven
         method Dynamic Mode Decomposition and it's extensions offer a compelling avenue
         in the problem of prediction from time-series data.
+        \vspace{1cm}
 
         The marriage of these methods with Machine Learning and Neural Networks allows for
         the leveraging the power of these tools in the space. 
+        \vspace{1cm}
 
         If standard metrics of model training are unavailable, what other tools can we use 
         to analyze the performance of a Machine Learning algorithm?
@@ -150,7 +152,7 @@
             \mathcal{K}^{t} g(\boldsymbol{x}) = \sum_{\ell \in \N} a_\ell 
             \exp(t\lambda_\ell)\boldsymbol{\phi}_\ell (\boldsymbol{x})
         \end{equation} 
-        This is the basis of Dynamic Mode Decomposition (DMD). If we suppose 
+        If we suppose 
         \begin{equation}
             g(\boldsymbol{x}) = \sum_{\ell = 1}^{N_O} a_\ell \boldsymbol{\psi}_\ell
             (\boldsymbol{x}) 
@@ -158,9 +160,9 @@
         with basis $\bracks{\boldsymbol{\psi}_\ell}_{\ell=1}^{N_O}$ of a subspace, 
         then applying $\mathcal{K}$ for discrete time implies that
         \begin{align} 
-            \mathcal{K}^{\delta t} g(\boldsymbol{x}) &= \sum_{\ell = 1}^{N_O} a_\ell 
-            \exp(\delta t\lambda_\ell)\boldsymbol{\psi}_\ell (\boldsymbol{x}) \\
-            &= \sum_{\ell = 1}^{N_O} \boldsymbol{\psi}_\ell (\boldsymbol{x})
+            \mathcal{K}^{\delta t} g(\boldsymbol{x}) = \sum_{\ell = 1}^{N_O} a_\ell 
+            \exp(\delta t\lambda_\ell)\boldsymbol{\psi}_\ell (\boldsymbol{x})
+            = \sum_{\ell = 1}^{N_O} \boldsymbol{\psi}_\ell (\boldsymbol{x})
             (\boldsymbol{K}_O^T
             \boldsymbol{a})_\ell + r(\boldsymbol{x};\boldsymbol{K}_O)
         \end{align}
@@ -180,7 +182,7 @@
         \end{equation}
         where $\bracks{\Psi_j}$ is an observable of the time series of interest 
         $\bracks{\boldsymbol{y}_j}$. $\boldsymbol{K}_O$ is a one-step mapping from each data point
-        to the next. That we find
+        to the next that is found
         %$\boldsymbol{K}_O$ approximates $\mathcal{K}$ for a one-step mapping and is found 
         using a singular value decomposition (SVD). Thus
         \begin{equation}
@@ -195,36 +197,41 @@
     \end{frame}
 
     \begin{frame}
-        \frametitle{Introduction - Flow reconstruction}
-        With this the dynamics can be approximated as 
+        \frametitle{Introduction - Flow reconstruction and advancement}
+        With this the dynamics can be approximated and advanced as 
         \begin{equation}
             y(t;\boldsymbol{x}) \approx \boldsymbol{K}_m\exp(t{\bf\Lambda}){\bf V}^{-1}\boldsymbol{\Psi}(\boldsymbol{x}) 
         \end{equation}
         where $\boldsymbol{\Psi}$ is the representation of the initial condition in terms of the observables, 
         $\boldsymbol{K}_m$ is the $N_S \times N_O$ matrix whose columns are the Koopman modes 
-        $\bracks{{\bf k}_\ell}_{\ell=1}^{N_O}$ which solve the initial value problem
-        \begin{equation}
-            \boldsymbol{x} = \sum_{\ell=1}^{N_O}{\bf k}_\ell\boldsymbol{\phi}(\boldsymbol{x}),
-        \end{equation}
+        %$\bracks{{\bf k}_\ell}_{\ell=1}^{N_O}$ which solve the initial value problem
+        %\begin{equation}
+        %    \boldsymbol{x} = \sum_{\ell=1}^{N_O}{\bf k}_\ell\boldsymbol{\phi}(\boldsymbol{x}),
+        %\end{equation}
         and ${\bf \Lambda}$ is the diagonal matrix whose elements are $\lambda_\ell
         = ({\bf \Lambda})_{\ell\ell}$.
-        This is the basis for Extended DMD (EDMD).
+        
+        \vspace{1cm}
+
+        This is the basis for Dynamic Mode Decomposition (DMD) when $N_O = N_S$ 
+        and the ultimate takeaway is that if an optimal set of observables is found, 
+        the error from DMD can be reduced.
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Introduction - Neural Networks}
-        Ever since
-        scientists discovered the relatively simple interaction between neurons and axons in 
-        the human brain, the idea of creating a learning computer has been attractive.
-        The most straight-forward attempts have been 
-        to construct artificial Neural Networks (NNs) that pantomime the biological ones that we carry 
-        around in our heads. In much the same 
-        way that a person is ``trained'' to perform a task by repeating it with feedback and 
-        adjusting their performance as they go, an artificial NNs uses data, a loss function, and 
-        an optimization algorithm to change the state of the NN to one which can better accomplish 
-        the task. The loss function and optimizer are to the feedback and behavioral adjustment 
-        what the data is to the experience. 
-    \end{frame}
+    % \begin{frame}
+        % \frametitle{Introduction - Neural Networks}
+        % Ever since
+        % scientists discovered the relatively simple interaction between neurons and axons in 
+        % the human brain, the idea of creating a learning computer has been attractive.
+        % The most straight-forward attempts have been 
+        % to construct artificial Neural Networks (NNs) that pantomime the biological ones that we carry 
+        % around in our heads. In much the same 
+        % way that a person is ``trained'' to perform a task by repeating it with feedback and 
+        % adjusting their performance as they go, an artificial NNs uses data, a loss function, and 
+        % an optimization algorithm to change the state of the NN to one which can better accomplish 
+        % the task. The loss function and optimizer are to the feedback and behavioral adjustment 
+        % what the data is to the experience. 
+    % \end{frame}
 
     % \begin{frame}
         % \frametitle{Introduction - Function approximation and regression}
@@ -261,7 +268,7 @@
 
     \begin{frame}
         \frametitle{Introduction - DLDMD}
-        The key innovation of 
+        The key innovation of Lago
         \cite{lago} is to use a neural network to come up with the collection of 
         observables on $\bracks{\boldsymbol{y}_j}$ that allow for the best prediction 
         of future system states, we call this method Deep Learning Enhanced DMD (DLDMD). 
@@ -589,6 +596,14 @@
     \end{frame}
     
     \begin{frame}
+        \frametitle{Results - Duffing linear fit slope averages and variances}
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png"}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}
         \frametitle{Results - Duffing linear fit slopes}
         \begin{figure}
             \centering
@@ -608,14 +623,6 @@
                 \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_2_square.png"}
             \end{minipage}
             \includegraphics[width=.3333\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_out_square.png"}
-        \end{figure}
-    \end{frame}
-
-    \begin{frame}
-        \frametitle{Results - Duffing linear fit slope averages and variances}
-        \begin{figure}
-            \centering
-            \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png"}
         \end{figure}
     \end{frame}
 
@@ -646,6 +653,15 @@
     \end{frame}
 
     \begin{frame}
+        \frametitle{Results - Van der Pol linear fit slope averages and variances}
+        
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png"}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}
         \frametitle{Results - Van der Pol linear fit slopes} 
         \begin{figure}
             \centering
@@ -665,15 +681,6 @@
                 \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_2_square.png"}
             \end{minipage}
             \includegraphics[width=.3333\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_out_square.png"}
-        \end{figure}
-    \end{frame}
-
-    \begin{frame}
-        \frametitle{Results - Van der Pol linear fit slope averages and variances}
-        
-        \begin{figure}
-            \centering
-            \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png"}
         \end{figure}
     \end{frame}
 
