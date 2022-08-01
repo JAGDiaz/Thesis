@@ -498,7 +498,7 @@ The question remains about how we obtain the probability distribution of the ran
 variable that represents the evolution of each layer of an ML model from measured data. 
 Many techniques exist, but we are using Kernel Density Estimation (KDE) \cite{rosenblatt, parzen}. 
 The most 
-basic idea behind KDE is using a different bin centering method and a smoothing factor, 
+basic idea behind KDE is using a bin centering method and a smoothing factor, 
 called a kernel, to approximate a probability density $f$ from measured data in the form 
 of a histogram. This is accomplished with the \emph{kernel density estimator} for $f$
 given by
@@ -570,7 +570,7 @@ detrended matrices $\delta{\bf W}_{l,\mathcal{E}}^{(n)}$ where
 The definitions for the decoder weights are identical, and thus omitted. We can consider 
 $\delta{\bf W}_{l,\mathcal{E}}^{(n)}$ to be the deviation from the steady state and with it 
 in hand we flatten it's data and use KDE to generate an affliated empirical probability 
-distribution $p_{l,\mathcal{E}}^{(n)}(w)$. With these distributions we know find the KLD 
+distribution $p_{l,\mathcal{E}}^{(n)}(w)$. With these distributions we now find the KLD 
 between consecutive distributions to generate the following sequence: 
 \begin{equation}
     D = \bracks{D_{KL}\parens{p_{l,\mathcal{E}}^{(n+1)} \Big|\!\Big| p_{l,\mathcal{E}}^{(n)}}}_{n=1}^{N_E - 2}
@@ -601,7 +601,7 @@ of the KDE that uses the Fast Fourier Transform. The kernel used is the Epanechn
     K(x) = 
     \begin{cases}
         \frac{3(1-x^2)}{4}, & \abs{x} < 1 \\
-        0, & \text{else}
+        0, & \abs{x} \geq 1
     \end{cases},\label{eqn:epanechnikov}
 \end{equation}
 which is optimal in the mean-square error sense. However, the choice of kernel is not a statistically 

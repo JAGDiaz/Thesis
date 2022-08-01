@@ -115,53 +115,47 @@
     \end{frame}
 
     \begin{frame}
-        \frametitle{Introduction - Prediction from time-series}
-        As it says on the tin, we seek a predictive model for a time series 
+        \frametitle{Introduction - Koopmanism}
+        We seek a predictive model for a time series 
         $\bracks{\boldsymbol{y}_j}_{j=1}^{N^T+1}$, which are the measurements of a 
-        uniformly sampled unknown dynamical system of the form
+        dynamical system of the form
         \begin{equation}
             \dd{\boldsymbol{y}}{t} = f\parens{\boldsymbol{y}(t)},\quad \boldsymbol{y}(0) 
             = \boldsymbol{x} \in \mathcal{M} \subseteq \R^{N_s}
         \end{equation}
-        One method that can be leveraged for this is via the Koopman Operator 
-        $\mathcal{K}$. If we denote $\boldsymbol{\varphi}(t;\boldsymbol{x}) =
-        \boldsymbol{y}(t)$ to be the flow map affiliated with the initial condition 
-        $\boldsymbol{x}$ and denote $g: \mathcal{M} \to \C$ to be a square integrable 
-        observable of the system then, according to \cite{koopman}, there exists a 
-        linear representation of the flow map given by $\mathcal{K}$;
+        Denote $\boldsymbol{\varphi}(t;\boldsymbol{x}) =
+        \boldsymbol{y}(t)$ to be the flow map from $\boldsymbol{x}$
+        and $g: \mathcal{M} \to \C,$ be a square integrable 
+        observable then, by \cite{koopman}, $\exists \mathcal{K}$ such that
         \begin{equation}
             \mathcal{K}^t g(\boldsymbol{x}) = g(\boldsymbol{\varphi}(t; \boldsymbol{x})),
         \end{equation}
-    
-    \end{frame}
-
-    \begin{frame}
-        \frametitle{Introduction - Infinite Dimensional Linear Operator $\mathcal{K}$}
-        In order to actually use this new representation, it suffices to find the 
-        eigenvalues $\bracks{\lambda_\ell}$, and their affiliated eigenfunctions 
-        $\bracks{\boldsymbol{\phi}_\ell}$, of the Koopman Operator such that
+        Finding the eigen-values $\bracks{\lambda_\ell}$ and 
+        eigen-functions $\bracks{\boldsymbol{\phi}_\ell}$ of $\mathcal{K}$ yields
         \begin{equation}
             \mathcal{K}^t\boldsymbol{\phi}_\ell = \exp(t\lambda_\ell)\boldsymbol{\phi}
             _\ell \implies g(\boldsymbol{x}) = \sum_{\ell \in \N} a_\ell \boldsymbol{\phi}_
             \ell(\boldsymbol{x}),    
         \end{equation}
-        where we can essentially construct a modal decomposition of $g$. From here 
-        advancing the dynamics to time $t$ is equivalent to writing
-        \begin{equation}
-            \mathcal{K}^{t} g(\boldsymbol{x}) = \sum_{\ell \in \N} a_\ell 
-            \exp(t\lambda_\ell)\boldsymbol{\phi}_\ell (\boldsymbol{x})
-        \end{equation} 
+        A modal decomposition of $g$.
+
+    
     \end{frame}
 
     \begin{frame}
         \frametitle{Introduction - DMD and EDMD}
+        From here advancing the dynamics to time $t$ is equivalent to writing
+        \begin{equation}
+            \mathcal{K}^{t} g(\boldsymbol{x}) = \sum_{\ell \in \N} a_\ell 
+            \exp(t\lambda_\ell)\boldsymbol{\phi}_\ell (\boldsymbol{x})
+        \end{equation} 
+        This is the basis of Dynamic Mode Decomposition (DMD). If we suppose 
         \begin{equation}
             g(\boldsymbol{x}) = \sum_{\ell = 1}^{N_O} a_\ell \boldsymbol{\psi}_\ell
             (\boldsymbol{x}) 
         \end{equation}
-        which is to say that the observable $g$ exists in a $N_O$-dimensional subspace 
-        of $L^2(\mathcal{M})$ with basis functions $\bracks{\boldsymbol{\psi}_\ell}_{\ell=1}^{N_O}$, 
-        and applying the Koopman operator implies that
+        with basis $\bracks{\boldsymbol{\psi}_\ell}_{\ell=1}^{N_O}$ of a subspace, 
+        then applying $\mathcal{K}$ for discrete time implies that
         \begin{align} 
             \mathcal{K}^{\delta t} g(\boldsymbol{x}) &= \sum_{\ell = 1}^{N_O} a_\ell 
             \exp(\delta t\lambda_\ell)\boldsymbol{\psi}_\ell (\boldsymbol{x}) \\
@@ -173,13 +167,12 @@
 
     \begin{frame}
         \frametitle{Introduction - Time advancement}
-        for discrete time step $\delta t$. $\boldsymbol{K}_O$ is the $N_O\times N_O$ matrix that 
+        Where
         \begin{equation}
             \boldsymbol{K}_O = \underset{K}{\text{argmin}}\norm{{\bf\Psi}_+ - K{\bf\Psi}_-}_F^2
         \end{equation}
-        and $r(\boldsymbol{x}, \boldsymbol{K}_O)$ is a residual that represents the 
-        total error due to DMD. If the ansatz that $g$ lives in a finite dimensional space holds, 
-        then $r$ is identically 0. We define ${\bf\Psi}_\pm$ to be
+
+        We define ${\bf\Psi}_\pm$ to be
         \begin{equation}
             {\bf\Psi}_- = \parens{\Psi_1\ \Psi_2\ \cdots \Psi_{N_T}},\quad {\bf\Psi}_+ = \parens{
             \Psi_2\ \Psi_3\ \cdots \Psi_{N_T+1}} 
@@ -308,12 +301,7 @@
     \end{frame}
 
     \begin{frame}
-        \frametitle{Introduction - }
-
-    \end{frame}
-
-    \begin{frame}
-        \frametitle{Introduction - The Network}
+        \frametitle{Introduction - The Network Architecture}
         Example of DLDMD newtork with $N_S = 2,\ N_O = 4,$ and $N_L = 3$ where every
         hidden layer has 16 neurons. The layers in the Figure are 
         labeled, sequentially, left to right: Enc in, Enc 0, Enc 1, Enc 2, Enc out, Dec in, 
@@ -332,11 +320,112 @@
     \end{frame}
 
     \begin{frame}
+        \frametitle{Introduction - The Dilemma}
+        How can this be quantified? A useful starting point would be to examine the weights of
+        the matrices that make up the layers of a model. For dense layers, passing a vector of 
+        data $\boldsymbol{x} \in \R^{d}$ through a layer $L$ can be written as 
+        \begin{equation}
+            L(\boldsymbol{x}; {\bf A}, \sigma, {\bf b}) = \sigma({\bf A}\boldsymbol{x} + {\bf b})
+        \end{equation}
+        for some matrix ${\bf A} \in \R^{N_O\times d}$, vector ${\bf b} \in \R^{N_O}$ and (typically nonlinear)
+        activation function $\sigma: \R^{N_O} \to \R^{N_O}$. For a given layer, $\sigma$ is a choice of the 
+        model, but both ${\bf A}$ and ${\bf b}$ have entries that are tuned by the 
+        optimizer as training takes places. The next state for each layer is dependent on the previous, so a reasonable 
+        framing would be as one of a discrete dynamical system of the form
+        \begin{equation}
+            Q_{n+1} = P(Q_n)
+        \end{equation}
+        where $P$ is the training procedure and $Q_n$ represents the configuration of the network's
+        weights at each epoch $n$. The initial state $Q_0$ is random with it's weights being
+        selected from a probability distribution. 
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Introduction - Information Theory}
+        In the interest of examining 
+        convergences, one might consider the following limit 
+        \begin{equation}
+            \lim_{n\to\infty} \norm{Q_{n+1} - Q_n}_2    
+        \end{equation}
+        for some two-norm on the space that $Q_n$ inhabits. While this ``one-step'' Cauchy 
+        convergence will tell us whether the machine is approaching a particular configuration
+        point-wise, this might not actually tell us much of anything else. The changes between 
+        epochs is, in some sense, stochastic due to not knowing how the optimizer will update $Q$
+        between epochs. As such, we propose a more statistical approach wherein we examine how the
+        information content is changing from epoch to epoch. From the stochastic nature of the 
+        evolution, we consider the entries of ${\bf A}$ and ${\bf b}$ for each layer to be drawn from a continuous 
+        probability distribution $X$ and examine how it changes epoch to epoch.
+    \end{frame}
+
+    \begin{frame}
         \frametitle{Kullback-Leibler Divergence - Entropy}
+        A measure of the uncertainty was 
+        proposed in 1948 and this measure is known as \emph{informational entropy} \cite{shannon}
+        or, simply, entropy. For a
+        continuous distribution with density function $f(x)$, the entropy is given by 
+        \begin{equation}
+            h[f] = \mathbb{E}\sqbracks{-\log(f(x))} = -\int_X f(x)\log(f(x))\ dx    
+        \end{equation}
+        For the normally distributed $X$ defined above, we have the probability density function
+        \begin{equation}
+        f(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\parens{-\frac{1}{2}\parens{\frac{x-\mu}{\sigma}}^2} 
+        \label{eqn:normal} 
+        \end{equation}
+        and the entropy integral for this evaluates to
+        \begin{equation}
+            h[f] = \frac{1}{2}\parens{\log(2\pi\sigma^2) + 1}
+        \end{equation}
+        which only depends on the variance.
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Kullback-Leibler Divergence - Entropy example}
         \begin{figure}
             \centering
             \includegraphics[width=\textwidth]{../Figures/entropy_densities_example.png}
         \end{figure}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Kullback-Leibler Divergence - Basic Definitions}
+        The Kullback-Leibler Divergence (KLD) is a statistical distance between a 
+        pair of probability distributions which measures how different a distribution $P$ is 
+        from a reference distribution $Q$. A simple interpretation of the 
+        divergence of $P$ from $Q$ is the expected excess surprise from using $Q$ as a model 
+        when the actual distribution is $P$ \cite{kullback}. If $P$ and $Q$ are discrete distributions 
+        defined on the probability space $X$, then the KLD of $P$ with 
+        respect to $Q$ is given by
+        \begin{equation}
+            D_{KL}(P\ |\!|\ Q) = \sum_{x \in X}P(x)\log\parens{P(x)/Q(x)} \label{eqn:discrete KLD}
+        \end{equation}
+        In our cases, we are be dealing with a continuous random variable
+        with probability density functions $p$ and $q$, for which the corresponding KLD formula 
+        is
+        \begin{equation}
+            D_{KL}(P\ |\!|\ Q) = \int_X p(x)\log\parens{p(x)/q(x)}\ dx \label{eqn:continuous KLD}
+        \end{equation}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Kullback-Leibler Divergence - Statistical Distance}
+        The reason we can consider this a ``distance'' is that the KLD 
+        is non-negative, $D_{KL}(P\ |\!|\ Q) \geq 0$, which is known as Gibbs 
+        inequality and only equals 0 when $P = Q$ almost everywhere. As such, the distance
+        between $P$ and $Q$ is 0 when they are the ``same'' distribution and some positive 
+        number if they differ. For example, consider the random variables $X_1 \sim 
+        \mathcal{N}(\mu_1, \sigma_1^2)$ and $X_2 \sim \mathcal{N}(\mu_2, \sigma_2^2)$ 
+        with corresponding density functions given by equation \ref{eqn:normal}; the divergence 
+        between the distributions is
+        \begin{equation}
+            D_{KL}(p\ |\!|\ q) = \frac{1}{2}\parens{\ln\parens{\frac{\sigma_2^2}{\sigma_1^2}} + 
+            \frac{\sigma_1^2}{\sigma_2^2} + \frac{(\mu_1 - \mu_2)^2}{\sigma_2^2} - 1}, \label{eqn:normal divergence}
+        \end{equation}
+        Letting $\mu_1 = \mu_2$, $\sigma_1^2 = 1$, and allowing $\sigma_2^2$ to vary, we can 
+        write 
+        \begin{equation}
+            D_{KL}(p\ |\!|\ q) = \frac{1}{2}\parens{\ln\sigma_2^2 + 
+            \frac{1}{\sigma_2^2} - 1}, \label{eqn:normal divergence2}
+        \end{equation}
     \end{frame}
 
     \begin{frame}
@@ -348,11 +437,127 @@
     \end{frame}
 
     \begin{frame}
+        \frametitle{Kullback-Leibler Divergence - Kernel Density Estimation}
+        The most 
+        basic idea behind KDE is using a bin centering method and a smoothing factor, 
+        called a kernel, to approximate a probability density $f$ from measured data in the form 
+        of a histogram. This is accomplished with the \emph{kernel density estimator} for $f$
+        given by
+        \begin{equation}
+            \hat{f}(x; K, h) = \frac{1}{nh}\sum_{i = 1}^n K\parens{\frac{x - x_i}{h}},
+        \end{equation}
+        where $K$ is the chosen kernel, $h$ is what's called the bandwidth parameter, and 
+        $\{x_i\}_{i=1}^n$ is the data that generates our histogram. Per Epanechnikov, 
+        the choice of kernel does not provide much statistical significance \cite{epanechnikov}; 
+        but the choice of the bandwidth parameter $h$ is very crucial for finding a density estimate
+        that approximates the underlying density function appropriately and can be thought of as an 
+        analogue of the bin width for the affliated histogram. We choose $h$ using the 
+        Improved Sheather-Jones algorithm \cite{botev}, which algorithmically finds an optimal 
+        bandwidth using the data itself.
+    \end{frame}
+
+    \begin{frame}
         \frametitle{Kullback-Leibler Divergence - KDE example}
         \begin{figure}
             \centering
             \includegraphics[width=\textwidth]{../Figures/kde_example.png}
         \end{figure}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Kullback-Leibler Divergence - Measuring Entropy Flow}
+        Should any given training cause the machine to converge to a fixed state, then for each layer
+        we should have that
+        \begin{equation}
+            {\bf W}_{l,\mathcal{E}}^{(n)}, {\bf W}_{l,\mathcal{D}}^{(n)} \to 
+            {\bf W}_{l,\mathcal{E}}^{*}, {\bf W}_{l,\mathcal{D}}^{*} \text{ as }
+            n \to \infty \label{eqn:weight convergence}
+        \end{equation}
+        Consequently, we can charaterize any set of weights via the formulas
+        \begin{equation}
+            {\bf W}_{l,\mathcal{E}}^{(n)} = {\bf W}_{l,\mathcal{E}}^{*} + {\bf W}_{l,\mathcal{E}}^{(n),f},\
+            {\bf W}_{l,\mathcal{D}}^{(n)} = {\bf W}_{l,\mathcal{D}}^{*} + {\bf W}_{l,\mathcal{D}}^{(n),f},
+        \end{equation}
+        where ${\bf W}_{l,\mathcal{E}}^{(n),f}$ and 
+        ${\bf W}_{l,\mathcal{D}}^{(n),f}$ can be thought of as fluctuations from the 
+        steady state. Using first-order differencing, we can study the affliated 
+        detrended matrices $\delta{\bf W}_{l,\mathcal{E}}^{(n)}$ where
+        \begin{align*}
+            \delta{\bf W}_{l,\mathcal{E}}^{(n)} &= {\bf W}_{l,\mathcal{E}}^{(n+1)} - {\bf W}_{l,\mathcal{E}}^{(n)} \\
+            &= {\bf W}_{l,\mathcal{E}}^{(n+1),f} - {\bf W}_{l,\mathcal{E}}^{(n),f}
+        \end{align*}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Kullback-Leibler Divergence - Consecutive Distributions}
+        We can consider 
+        $\delta{\bf W}_{l,\mathcal{E}}^{(n)}$ to be the deviation from the steady state and with it 
+        in hand we flatten it's data and use KDE to generate an affliated empirical probability 
+        distribution $p_{l,\mathcal{E}}^{(n)}(w)$. With these distributions we now find the KLD 
+        between consecutive distributions to generate the following sequence: 
+        \begin{equation}
+            D = \bracks{D_{KL}\parens{p_{l,\mathcal{E}}^{(n+1)} \Big|\!\Big| p_{l,\mathcal{E}}^{(n)}}}_{n=1}^{N_E - 2}
+        \end{equation}
+        which we can interpret to be the change in information between consecutive fluctuations from the 
+        steady state.
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Kullback-Leibler Divergence - Implementation details}
+        After the training of each model for $N_E$ epochs, the 
+        data that we have to play with is 
+        \begin{equation}
+            {\bf W}_\mathcal{E} = \bracks{{\bf W}_{l,\mathcal{E}}^{(n)}}_{n=1, l=1}^{N_E, N_L}, 
+            {\bf W}_\mathcal{D} = \bracks{{\bf W}_{l,\mathcal{D}}^{(n)}}_{n=1, l=1}^{N_E, N_L}, 
+        \end{equation}
+        which are the sets of weights of the layers of the encoder and decoder. Note that both sub-networks 
+        have the same number of layers $N_L$ and only differ by the dimension of their inputs and outputs.
+        The following procedures are identical for both sets, so we only reference the encoder set
+        from here on out. For each layer $l$, the set of detrended matrices are computed
+        \begin{equation}
+            \delta{\bf W}_{l, \mathcal{E}} = \bracks{{\bf W}_{l,\mathcal{E}}^{(n+1),f} - {\bf W}_{l,\mathcal{E}}^{(n),f}}_{n=1}^{N_E-1},
+        \end{equation}
+        these matrices are flattened and their entries are used as the data for KDE.
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Kullback-Leibler Divergence - Implementation details cont.}
+        The kernel used is the Epanechnikov kernel, defined as 
+        \begin{equation}
+            K(x) = 
+            \begin{cases}
+                \frac{3(1-x^2)}{4}, & \abs{x} < 1 \\
+                0, & \abs{x} \geq 1
+            \end{cases},\label{eqn:epanechnikov}
+        \end{equation}
+        which is optimal in the mean-square error sense. From this, we obtain the set of density estimates for each detrended 
+        matrix
+        \begin{equation}
+            p_{l,\mathcal{E}} = \text{KDE}(\delta{\bf W}_{l, \mathcal{E}}) = \bracks{p_{l,\mathcal{E}}^{(n)}(w)}_{n=1}^{N_E-1}
+        \end{equation}
+        where $w$ is the weight value itself and $p_{l,\mathcal{E}}(w)$ is the approximate density associated 
+        with that weight value. Given these density approximations, we 
+        can now compute what we are truly interested in:
+        \begin{equation}
+            D_l = \bracks{D_{SKL}\parens{p_{l,\mathcal{E}}^{(n+1)} \Big|\!\Big| p_{l,\mathcal{E}}^{(n)}}}_{n=1}^{N_E-2}
+        \end{equation}
+        Unlike in the first mention, we instead use the SKLD instead of the KLD.
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Kullback-Leibler Divergence - Implementation details cont.}
+        We are interested in what these divergences tell us about information flow in the model's weights and 
+        seek to identify specific classifiers of good training. 
+        Can we find quantifiable attributes of the network that behave one way for good training and in a 
+        distinguishably different way for bad training? Finding fittings of the data of the divergence data
+        is the most reasonable place to start and trends will provide for easier classification. Any overall trend
+        is more important to our analysis than lone data points, so to avoid transient behavior skewing any fittings
+        we ignore the first 20\% of the divergences computed. We attempt a linear fit on the base 10 logarithm of the data. This 
+        corresponds to an exponential fit in the original domain of the divergences with slope of the linear trend 
+        being the approximate growth/decay rate of the information flow from the machines steady state. 
+        In the interest of trying to find a 
+        classifier of good training, we compute the average and variance of the slopes of the linear fits of 
+        the layer's divergence data.
     \end{frame}
 
     \begin{frame}
@@ -365,11 +570,6 @@
 
     \begin{frame}
         \frametitle{Results - Duffing}
-        % $$\ddot{x} + \delta\dot{x} + \alpha x + \beta x^3 = \gamma\cos(\omega t) \to 
-        % \begin{cases}
-            % & \dot{x} = y \\
-            % & \dot{y} = x - x^3  
-        % \end{cases}$$
         \begin{figure}
             \centering
             \includegraphics[width=\textwidth]{../Figures/duffing_phase_space.png}
@@ -492,7 +692,7 @@
     \begin{frame}
         \frametitle{References}
         \bibliographystyle{plain}
-        \bibliography{main.bib}
+        {\footnotesize \bibliography{../main.bib}}
     \end{frame}
 
     \begin{frame}
