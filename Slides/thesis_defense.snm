@@ -1,9 +1,6 @@
-\beamer@slide {eqn:loss function}{10}
-\beamer@slide {eqn:blah}{10}
-\beamer@slide {eqn:normal}{14}
-\beamer@slide {eqn:discrete KLD}{16}
-\beamer@slide {eqn:continuous KLD}{16}
-\beamer@slide {eqn:normal divergence}{17}
-\beamer@slide {eqn:normal divergence2}{17}
-\beamer@slide {eqn:weight convergence}{21}
-\beamer@slide {eqn:epanechnikov}{24}
+\beamer@slide {eqn:normal}{11}
+\beamer@slide {eqn:continuous KLD}{13}
+\beamer@slide {eqn:normal divergence}{14}
+\beamer@slide {eqn:normal divergence2}{14}
+\beamer@slide {eqn:weight convergence}{18}
+\beamer@slide {eqn:epanechnikov}{19}

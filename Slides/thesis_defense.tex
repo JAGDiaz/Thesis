@@ -110,7 +110,8 @@
         The marriage of these methods with Machine Learning and Neural Networks allows for
         the leveraging the power of these tools in the space. 
 
-        If standard metrics of model training are unavailable, 
+        If standard metrics of model training are unavailable, what other tools can we use 
+        to analyze the performance of a Machine Learning algorithm?
     
     \end{frame}
 
@@ -178,26 +179,24 @@
             \Psi_2\ \Psi_3\ \cdots \Psi_{N_T+1}} 
         \end{equation}
         where $\bracks{\Psi_j}$ is an observable of the time series of interest 
-        $\bracks{\boldsymbol{y}_j}$. What the expression for $\boldsymbol{K}_O$ tells 
-        us is that, we are trying to find a one-step mapping from each data point
-        to the next. Practically speaking, $\boldsymbol{K}_O$ is found
+        $\bracks{\boldsymbol{y}_j}$. $\boldsymbol{K}_O$ is a one-step mapping from each data point
+        to the next. That we find
         %$\boldsymbol{K}_O$ approximates $\mathcal{K}$ for a one-step mapping and is found 
-        using a singular value decomposition (SVD), with which we can write
+        using a singular value decomposition (SVD). Thus
         \begin{equation}
             {\bf\Psi}_- = {\bf U\Sigma W}^{\dagger} \implies \boldsymbol{K}_O = 
-            {\bf\Psi}_+{\bf W\Sigma}^{-P}{\bf U}^{\dagger}
+            {\bf\Psi}_+{\bf W\Sigma}^{-P}{\bf U}^{\dagger}.
         \end{equation}
+        Another eigendecomposition gives
+        \begin{equation}
+            \boldsymbol{K}_O = {\bf VTV}^{-1}, 
+        \end{equation}
+        with $\lambda_\ell = \ln(({\bf T})_{\ell\ell})/\delta t$.
     \end{frame}
 
     \begin{frame}
         \frametitle{Introduction - Flow reconstruction}
-        Finding the eigenvalues, eigenfunctions, and Koopman modes comes down to an 
-        eigen-decomposition of $\boldsymbol{K}_O$,
-        \begin{equation}
-            \boldsymbol{K}_O = {\bf VTV}^{-1}, 
-        \end{equation}
-        with $\lambda_\ell = \ln(({\bf T})_{\ell\ell})/\delta t$,
-        from which the dynamics can be approximated as 
+        With this the dynamics can be approximated as 
         \begin{equation}
             y(t;\boldsymbol{x}) \approx \boldsymbol{K}_m\exp(t{\bf\Lambda}){\bf V}^{-1}\boldsymbol{\Psi}(\boldsymbol{x}) 
         \end{equation}
@@ -209,57 +208,56 @@
         \end{equation}
         and ${\bf \Lambda}$ is the diagonal matrix whose elements are $\lambda_\ell
         = ({\bf \Lambda})_{\ell\ell}$.
+        This is the basis for Extended DMD (EDMD).
     \end{frame}
 
     \begin{frame}
         \frametitle{Introduction - Neural Networks}
-        Before we move on, a brief digression on Neural Networks (NNs) is appropriate. Ever since
+        Ever since
         scientists discovered the relatively simple interaction between neurons and axons in 
-        the human brain, they have been enamored with the ability to create a learning computer 
-        with the similar ability to become more adept at a task with training and practice. 
-        In the same way that art imitates life, the most straight-forward attempts have been 
-        to construct artificial neural networks that pantomime the biological ones that we carry 
-        around in our heads; and while these pale imitations have not been developed to rival the 
-        human brain, they have led to some major achievements in automation. In much the same 
+        the human brain, the idea of creating a learning computer has been attractive.
+        The most straight-forward attempts have been 
+        to construct artificial Neural Networks (NNs) that pantomime the biological ones that we carry 
+        around in our heads. In much the same 
         way that a person is ``trained'' to perform a task by repeating it with feedback and 
-        adjusting their performance as they go, an artificial NN uses data, a loss function, and 
+        adjusting their performance as they go, an artificial NNs uses data, a loss function, and 
         an optimization algorithm to change the state of the NN to one which can better accomplish 
         the task. The loss function and optimizer are to the feedback and behavioral adjustment 
         what the data is to the experience. 
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Introduction - Function approximation and regression}
-        Say we have a set of training data $d_{tr} = \bracks{(x_j, y_j)}_{j=1}^{N_{tr}}$ 
-        and we believe that there is some function $f(x)$ such that 
-        \begin{equation}
-            y_j = f(x_j) + \vep_j,    
-        \end{equation}
-        where $\vep_j$ is assumed to be a sample drawn from $\mathcal{N}(0, \bar{\sigma}^2)$. 
-        \cite{oreilly, theodoridis}
-        Generally $f$ is not known; so we must, using the training data, build an estimator 
-        $f_e(x; d_{tr})$ and measure the performance of the estimator by examining the quantity
-        \begin{equation}
-            \mathbb{E}_{d_{tr}}\sqbracks{\parens{f(x) + \vep - f_e(x;d_{tr})}^2} = 
-            \text{bias}_{d_{tr}}^2 + \mathbb{V}(f_e) + \bar{\sigma}^2
-        \end{equation}
-        where 
-        \begin{equation}
-            \text{bias}_{d_{tr}} = \mathbb{E}_{d_{tr}}\sqbracks{f_e} - f(x)
-        \end{equation}
-        and 
-        \begin{equation}
-            \mathbb{V}(f_e) = \mathbb{E}_{d_{tr}}\sqbracks{\parens{\mathbb{E}_{d_{tr}}
-            \sqbracks{f_e} - f_e(x; d_{tr})}^2}
-        \end{equation}
-        % With this framing, ML methods can be cast as attempts to find an estimator relative to
-        % a given training set that balances the competing dilemmas of being too biased or allowing too
-        % much variance. From the point of view of non-parametric statistics, we would need to utilize 
-        % other techniques \cite{hollander} to determine the bias and variance of any given estimator. 
-        For our purposes, 
-        we will instead consider how metrics from information theory can be used to assess the change in 
-        information as data is fed through a NN and a model is trained.
-    \end{frame}
+    % \begin{frame}
+        % \frametitle{Introduction - Function approximation and regression}
+        % Say we have a set of training data $d_{tr} = \bracks{(x_j, y_j)}_{j=1}^{N_{tr}}$ 
+        % and we believe that there is some function $f(x)$ such that 
+        % \begin{equation}
+            % y_j = f(x_j) + \vep_j,    
+        % \end{equation}
+        % where $\vep_j$ is assumed to be a sample drawn from $\mathcal{N}(0, \bar{\sigma}^2)$. 
+        % \cite{oreilly, theodoridis}
+        % Generally $f$ is not known; so we must, using the training data, build an estimator 
+        % $f_e(x; d_{tr})$ and measure the performance of the estimator by examining the quantity
+        % \begin{equation}
+            % \mathbb{E}_{d_{tr}}\sqbracks{\parens{f(x) + \vep - f_e(x;d_{tr})}^2} = 
+            % \text{bias}_{d_{tr}}^2 + \mathbb{V}(f_e) + \bar{\sigma}^2
+        % \end{equation}
+        % where 
+        % \begin{equation}
+            % \text{bias}_{d_{tr}} = \mathbb{E}_{d_{tr}}\sqbracks{f_e} - f(x)
+        % \end{equation}
+        % and 
+        % \begin{equation}
+            % \mathbb{V}(f_e) = \mathbb{E}_{d_{tr}}\sqbracks{\parens{\mathbb{E}_{d_{tr}}
+            % \sqbracks{f_e} - f_e(x; d_{tr})}^2}
+        % \end{equation}
+        % % With this framing, ML methods can be cast as attempts to find an estimator relative to
+        % % a given training set that balances the competing dilemmas of being too biased or allowing too
+        % % much variance. From the point of view of non-parametric statistics, we would need to utilize 
+        % % other techniques \cite{hollander} to determine the bias and variance of any given estimator. 
+        % For our purposes, 
+        % we will instead consider how metrics from information theory can be used to assess the change in 
+        % information as data is fed through a NN and a model is trained.
+    % \end{frame}
 
     \begin{frame}
         \frametitle{Introduction - DLDMD}
@@ -280,25 +278,25 @@
         $\mathcal{D}$ to learn the best representations possible. 
     \end{frame}
     
-    \begin{frame}
-        \frametitle{Introduction - The loss function}
-        A natural choice
-        considering these constraints is given by
-        \begin{equation}
-            \mathcal{L} = \alpha_1 \mathcal{L}_{\text{recon}} + \alpha_2 \mathcal{L}
-            _{\text{dmd}} + \alpha_3 \mathcal{L}_{\text{pred}} +\alpha_4 
-            \norm{\boldsymbol{W}_g}_2 \label{eqn:loss function} 
-        \end{equation}
-        where 
-        \begin{align}
-            \mathcal{L}_{\text{recon}} &= \frac{1}{N_T + 1}\sum_{j=1}^{N_T+1}\norm{\boldsymbol{y}_j - 
-            (\mathcal{D}\circ\mathcal{E})(\boldsymbol{y}_j)}_2, \\
-            \mathcal{L}_{\text{dmd}} &= E_r(\boldsymbol{K}_O), \\
-            \mathcal{L}_{\text{pred}} &= \frac{1}{N_T}\sum_{j=1}^{N_T}\norm{\boldsymbol{y}_{j+1} - 
-            \mathcal{D}\parens{VT^j V^{-1}\mathcal{E}(\boldsymbol{x})}}_2, \label{eqn:blah}
-        \end{align}
-        Recall that $N_T$ is the number of measurements in our time-series data after the first.
-    \end{frame}
+    % \begin{frame}
+        % \frametitle{Introduction - The loss function}
+        % A natural choice
+        % considering these constraints is given by
+        % \begin{equation}
+            % \mathcal{L} = \alpha_1 \mathcal{L}_{\text{recon}} + \alpha_2 \mathcal{L}
+            % _{\text{dmd}} + \alpha_3 \mathcal{L}_{\text{pred}} +\alpha_4 
+            % \norm{\boldsymbol{W}_g}_2 \label{eqn:loss function} 
+        % \end{equation}
+        % where 
+        % \begin{align}
+            % \mathcal{L}_{\text{recon}} &= \frac{1}{N_T + 1}\sum_{j=1}^{N_T+1}\norm{\boldsymbol{y}_j - 
+            % (\mathcal{D}\circ\mathcal{E})(\boldsymbol{y}_j)}_2, \\
+            % \mathcal{L}_{\text{dmd}} &= E_r(\boldsymbol{K}_O), \\
+            % \mathcal{L}_{\text{pred}} &= \frac{1}{N_T}\sum_{j=1}^{N_T}\norm{\boldsymbol{y}_{j+1} - 
+            % \mathcal{D}\parens{VT^j V^{-1}\mathcal{E}(\boldsymbol{x})}}_2, \label{eqn:blah}
+        % \end{align}
+        % Recall that $N_T$ is the number of measurements in our time-series data after the first.
+    % \end{frame}
 
     \begin{frame}
         \frametitle{Introduction - The Network Architecture}
@@ -321,27 +319,18 @@
 
     \begin{frame}
         \frametitle{Introduction - The Dilemma}
-        How can this be quantified? A useful starting point would be to examine the weights of
-        the matrices that make up the layers of a model. For dense layers, passing a vector of 
+        For dense layers, passing a vector of 
         data $\boldsymbol{x} \in \R^{d}$ through a layer $L$ can be written as 
         \begin{equation}
             L(\boldsymbol{x}; {\bf A}, \sigma, {\bf b}) = \sigma({\bf A}\boldsymbol{x} + {\bf b})
         \end{equation}
         for some matrix ${\bf A} \in \R^{N_O\times d}$, vector ${\bf b} \in \R^{N_O}$ and (typically nonlinear)
-        activation function $\sigma: \R^{N_O} \to \R^{N_O}$. For a given layer, $\sigma$ is a choice of the 
-        model, but both ${\bf A}$ and ${\bf b}$ have entries that are tuned by the 
-        optimizer as training takes places. The next state for each layer is dependent on the previous, so a reasonable 
+        activation function $\sigma: \R^{N_O} \to \R^{N_O}$. 
+        The next state for each layer is dependent on the previous, so a reasonable 
         framing would be as one of a discrete dynamical system of the form
         \begin{equation}
             Q_{n+1} = P(Q_n)
         \end{equation}
-        where $P$ is the training procedure and $Q_n$ represents the configuration of the network's
-        weights at each epoch $n$. The initial state $Q_0$ is random with it's weights being
-        selected from a probability distribution. 
-    \end{frame}
-
-    \begin{frame}
-        \frametitle{Introduction - Information Theory}
         In the interest of examining 
         convergences, one might consider the following limit 
         \begin{equation}
@@ -349,13 +338,25 @@
         \end{equation}
         for some two-norm on the space that $Q_n$ inhabits. While this ``one-step'' Cauchy 
         convergence will tell us whether the machine is approaching a particular configuration
-        point-wise, this might not actually tell us much of anything else. The changes between 
-        epochs is, in some sense, stochastic due to not knowing how the optimizer will update $Q$
-        between epochs. As such, we propose a more statistical approach wherein we examine how the
-        information content is changing from epoch to epoch. From the stochastic nature of the 
-        evolution, we consider the entries of ${\bf A}$ and ${\bf b}$ for each layer to be drawn from a continuous 
-        probability distribution $X$ and examine how it changes epoch to epoch.
+        point-wise, this might not actually tell us much of anything else.
     \end{frame}
+
+    % \begin{frame}
+        % \frametitle{Introduction - Information Theory}
+        % In the interest of examining 
+        % convergences, one might consider the following limit 
+        % \begin{equation}
+            % \lim_{n\to\infty} \norm{Q_{n+1} - Q_n}_2    
+        % \end{equation}
+        % for some two-norm on the space that $Q_n$ inhabits. While this ``one-step'' Cauchy 
+        % convergence will tell us whether the machine is approaching a particular configuration
+        % point-wise, this might not actually tell us much of anything else. The changes between 
+        % epochs is, in some sense, stochastic due to not knowing how the optimizer will update $Q$
+        % between epochs. As such, we propose a more statistical approach wherein we examine how the
+        % information content is changing from epoch to epoch. From the stochastic nature of the 
+        % evolution, we consider the entries of ${\bf A}$ and ${\bf b}$ for each layer to be drawn from a continuous 
+        % probability distribution $X$ and examine how it changes epoch to epoch.
+    % \end{frame}
 
     \begin{frame}
         \frametitle{Kullback-Leibler Divergence - Entropy}
@@ -392,27 +393,20 @@
         pair of probability distributions which measures how different a distribution $P$ is 
         from a reference distribution $Q$. A simple interpretation of the 
         divergence of $P$ from $Q$ is the expected excess surprise from using $Q$ as a model 
-        when the actual distribution is $P$ \cite{kullback}. If $P$ and $Q$ are discrete distributions 
-        defined on the probability space $X$, then the KLD of $P$ with 
-        respect to $Q$ is given by
-        \begin{equation}
-            D_{KL}(P\ |\!|\ Q) = \sum_{x \in X}P(x)\log\parens{P(x)/Q(x)} \label{eqn:discrete KLD}
-        \end{equation}
-        In our cases, we are be dealing with a continuous random variable
-        with probability density functions $p$ and $q$, for which the corresponding KLD formula 
+        when the actual distribution is $P$ \cite{kullback}. If $P$ and $Q$ are continuous probability
+        distributions defined on $X$
+        with probability density functions $p$ and $q$, the KLD formula 
         is
         \begin{equation}
             D_{KL}(P\ |\!|\ Q) = \int_X p(x)\log\parens{p(x)/q(x)}\ dx \label{eqn:continuous KLD}
         \end{equation}
+        The reason we can consider this a ``distance'' is that the KLD 
+        is non-negative, $D_{KL}(P\ |\!|\ Q) \geq 0$. 
     \end{frame}
 
     \begin{frame}
         \frametitle{Kullback-Leibler Divergence - Statistical Distance}
-        The reason we can consider this a ``distance'' is that the KLD 
-        is non-negative, $D_{KL}(P\ |\!|\ Q) \geq 0$, which is known as Gibbs 
-        inequality and only equals 0 when $P = Q$ almost everywhere. As such, the distance
-        between $P$ and $Q$ is 0 when they are the ``same'' distribution and some positive 
-        number if they differ. For example, consider the random variables $X_1 \sim 
+        For example, consider the random variables $X_1 \sim 
         \mathcal{N}(\mu_1, \sigma_1^2)$ and $X_2 \sim \mathcal{N}(\mu_2, \sigma_2^2)$ 
         with corresponding density functions given by equation \ref{eqn:normal}; the divergence 
         between the distributions is
@@ -466,7 +460,7 @@
 
     \begin{frame}
         \frametitle{Kullback-Leibler Divergence - Measuring Entropy Flow}
-        Should any given training cause the machine to converge to a fixed state, then for each layer
+        For a converging machine, for each layer
         we should have that
         \begin{equation}
             {\bf W}_{l,\mathcal{E}}^{(n)}, {\bf W}_{l,\mathcal{D}}^{(n)} \to 
@@ -479,28 +473,34 @@
             {\bf W}_{l,\mathcal{D}}^{(n)} = {\bf W}_{l,\mathcal{D}}^{*} + {\bf W}_{l,\mathcal{D}}^{(n),f},
         \end{equation}
         where ${\bf W}_{l,\mathcal{E}}^{(n),f}$ and 
-        ${\bf W}_{l,\mathcal{D}}^{(n),f}$ can be thought of as fluctuations from the 
-        steady state. Using first-order differencing, we can study the affliated 
-        detrended matrices $\delta{\bf W}_{l,\mathcal{E}}^{(n)}$ where
-        \begin{align*}
-            \delta{\bf W}_{l,\mathcal{E}}^{(n)} &= {\bf W}_{l,\mathcal{E}}^{(n+1)} - {\bf W}_{l,\mathcal{E}}^{(n)} \\
-            &= {\bf W}_{l,\mathcal{E}}^{(n+1),f} - {\bf W}_{l,\mathcal{E}}^{(n),f}
-        \end{align*}
-    \end{frame}
-
-    \begin{frame}
-        \frametitle{Kullback-Leibler Divergence - Consecutive Distributions}
-        We can consider 
-        $\delta{\bf W}_{l,\mathcal{E}}^{(n)}$ to be the deviation from the steady state and with it 
-        in hand we flatten it's data and use KDE to generate an affliated empirical probability 
-        distribution $p_{l,\mathcal{E}}^{(n)}(w)$. With these distributions we now find the KLD 
-        between consecutive distributions to generate the following sequence: 
+        ${\bf W}_{l,\mathcal{D}}^{(n),f}$ are fluctuations from the 
+        steady state. First-order differencing gives us detrended matrices:
+        \begin{equation}
+            \delta{\bf W}_{l,\mathcal{E}}^{(n)} = {\bf W}_{l,\mathcal{E}}^{(n+1)} - {\bf W}_{l,\mathcal{E}}^{(n)}
+            = {\bf W}_{l,\mathcal{E}}^{(n+1),f} - {\bf W}_{l,\mathcal{E}}^{(n),f}
+        \end{equation}
+        Using KDE we generate an affliated empirical probability 
+        distribution $p_{l,\mathcal{E}}^{(n)}(w)$, which we can use to find consecutive divergences with KLD:
+        % With these distributions we now find the KLD 
+        % between consecutive distributions to generate the following sequence: 
         \begin{equation}
             D = \bracks{D_{KL}\parens{p_{l,\mathcal{E}}^{(n+1)} \Big|\!\Big| p_{l,\mathcal{E}}^{(n)}}}_{n=1}^{N_E - 2}
         \end{equation}
-        which we can interpret to be the change in information between consecutive fluctuations from the 
-        steady state.
     \end{frame}
+
+    % \begin{frame}
+        % \frametitle{Kullback-Leibler Divergence - Consecutive Distributions}
+        % We can consider 
+        % $\delta{\bf W}_{l,\mathcal{E}}^{(n)}$ to be the deviation from the steady state and with it 
+        % in hand we flatten it's data and use KDE to generate an affliated empirical probability 
+        % distribution $p_{l,\mathcal{E}}^{(n)}(w)$. With these distributions we now find the KLD 
+        % between consecutive distributions to generate the following sequence: 
+        % \begin{equation}
+            % D = \bracks{D_{KL}\parens{p_{l,\mathcal{E}}^{(n+1)} \Big|\!\Big| p_{l,\mathcal{E}}^{(n)}}}_{n=1}^{N_E - 2}
+        % \end{equation}
+        % which we can interpret to be the change in information between consecutive fluctuations from the 
+        % steady state.
+    % \end{frame}
 
     \begin{frame}
         \frametitle{Kullback-Leibler Divergence - Implementation details}
@@ -510,18 +510,12 @@
             {\bf W}_\mathcal{E} = \bracks{{\bf W}_{l,\mathcal{E}}^{(n)}}_{n=1, l=1}^{N_E, N_L}, 
             {\bf W}_\mathcal{D} = \bracks{{\bf W}_{l,\mathcal{D}}^{(n)}}_{n=1, l=1}^{N_E, N_L}, 
         \end{equation}
-        which are the sets of weights of the layers of the encoder and decoder. Note that both sub-networks 
-        have the same number of layers $N_L$ and only differ by the dimension of their inputs and outputs.
-        The following procedures are identical for both sets, so we only reference the encoder set
-        from here on out. For each layer $l$, the set of detrended matrices are computed
+        which are the sets of weights of the layers of the encoder and decoder. 
+        For each layer $l$, the set of detrended matrices are computed
         \begin{equation}
             \delta{\bf W}_{l, \mathcal{E}} = \bracks{{\bf W}_{l,\mathcal{E}}^{(n+1),f} - {\bf W}_{l,\mathcal{E}}^{(n),f}}_{n=1}^{N_E-1},
         \end{equation}
         these matrices are flattened and their entries are used as the data for KDE.
-    \end{frame}
-
-    \begin{frame}
-        \frametitle{Kullback-Leibler Divergence - Implementation details cont.}
         The kernel used is the Epanechnikov kernel, defined as 
         \begin{equation}
             K(x) = 
@@ -530,7 +524,12 @@
                 0, & \abs{x} \geq 1
             \end{cases},\label{eqn:epanechnikov}
         \end{equation}
-        which is optimal in the mean-square error sense. From this, we obtain the set of density estimates for each detrended 
+        which is optimal in the mean-square error sense. 
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Kullback-Leibler Divergence - Implementation details cont.}
+        From this, we obtain the set of density estimates for each detrended 
         matrix
         \begin{equation}
             p_{l,\mathcal{E}} = \text{KDE}(\delta{\bf W}_{l, \mathcal{E}}) = \bracks{p_{l,\mathcal{E}}^{(n)}(w)}_{n=1}^{N_E-1}
@@ -542,23 +541,23 @@
             D_l = \bracks{D_{SKL}\parens{p_{l,\mathcal{E}}^{(n+1)} \Big|\!\Big| p_{l,\mathcal{E}}^{(n)}}}_{n=1}^{N_E-2}
         \end{equation}
         Unlike in the first mention, we instead use the SKLD instead of the KLD.
-    \end{frame}
-
-    \begin{frame}
-        \frametitle{Kullback-Leibler Divergence - Implementation details cont.}
         We are interested in what these divergences tell us about information flow in the model's weights and 
         seek to identify specific classifiers of good training. 
-        Can we find quantifiable attributes of the network that behave one way for good training and in a 
-        distinguishably different way for bad training? Finding fittings of the data of the divergence data
-        is the most reasonable place to start and trends will provide for easier classification. Any overall trend
-        is more important to our analysis than lone data points, so to avoid transient behavior skewing any fittings
-        we ignore the first 20\% of the divergences computed. We attempt a linear fit on the base 10 logarithm of the data. This 
-        corresponds to an exponential fit in the original domain of the divergences with slope of the linear trend 
-        being the approximate growth/decay rate of the information flow from the machines steady state. 
-        In the interest of trying to find a 
-        classifier of good training, we compute the average and variance of the slopes of the linear fits of 
-        the layer's divergence data.
     \end{frame}
+
+    % \begin{frame}
+        % \frametitle{Kullback-Leibler Divergence - Implementation details cont.}
+        % Can we find quantifiable attributes of the network that behave one way for good training and in a 
+        % distinguishably different way for bad training? Finding fittings of the data of the divergence data
+        % is the most reasonable place to start and trends will provide for easier classification. Any overall trend
+        % is more important to our analysis than lone data points, so to avoid transient behavior skewing any fittings
+        % we ignore the first 20\% of the divergences computed. We attempt a linear fit on the base 10 logarithm of the data. This 
+        % corresponds to an exponential fit in the original domain of the divergences with slope of the linear trend 
+        % being the approximate growth/decay rate of the information flow from the machines steady state. 
+        % In the interest of trying to find a 
+        % classifier of good training, we compute the average and variance of the slopes of the linear fits of 
+        % the layer's divergence data.
+    % \end{frame}
 
     \begin{frame}
         \frametitle{Kullback-Leibler Divergence - Example fitting}
@@ -620,10 +619,10 @@
         \end{figure}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Results - Duffing notes}
+    % \begin{frame}
+        % \frametitle{Results - Duffing notes}
 
-    \end{frame}
+    % \end{frame}
 
     \begin{frame}
         \frametitle{Results - Van der Pol}
@@ -678,13 +677,20 @@
         \end{figure}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Results - Van der Pol notes}
+    % \begin{frame}
+        % \frametitle{Results - Van der Pol notes}
 
-    \end{frame}
+    % \end{frame}
 
     \begin{frame}
         \frametitle{Discussion}
+        \begin{itemize}
+            \item The Good \vspace{1cm}
+            \item Optimal Parameters \vspace{1cm}
+            \item Non-unitary densities \vspace{1cm}
+            \item Statistical issues with edge layers \vspace{1cm}
+            \item Future work
+        \end{itemize}
 
     \end{frame}
 

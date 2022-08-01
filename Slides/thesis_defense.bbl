@@ -16,12 +16,6 @@ V.~A. Epanechnikov.
 \newblock {\em Theory of Probability \& Its Applications}, 14(1):153--158,
   1969.
 
-\bibitem{oreilly}
-Aurelien Geron.
-\newblock {\em Hands-On Machine Learning with Scikit-Learn, Keras, and
-  TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems}.
-\newblock O'Reilly Media, Inc., 2nd edition, 2019.
-
 \bibitem{koopman}
 B.O. Koopman.
 \newblock Hamiltonian systems and transformations in {H}ilbert space.
@@ -36,10 +30,5 @@ S.~Kullback and R.~A. Leibler.
 C.~E. Shannon.
 \newblock A mathematical theory of communication.
 \newblock {\em The Bell System Technical Journal}, 27(3):379--423, 1948.
-
-\bibitem{theodoridis}
-Sergios Theodoridis.
-\newblock {\em Machine Learning: A Bayesian and Optimization Perspective}.
-\newblock Academic Press, Inc., USA, 1st edition, 2015.
 
 \end{thebibliography}
