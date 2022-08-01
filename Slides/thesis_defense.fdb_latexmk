@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex thesis_defense"] 1659374609 "thesis_defense.aux" "thesis_defense.bbl" "thesis_defense" 1659374914
-  "../main.bib" 1659145702 19024 bf74454ae56b76ac861996cc04306d03 ""
+["bibtex thesis_defense"] 1659376778 "thesis_defense.aux" "thesis_defense.bbl" "thesis_defense" 1659376779
+  "../main.bib" 1659376778 19200 2d8161c917991c145c590922beed2bab ""
   "C:/Users/josep/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291868336 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "thesis_defense.aux" 1659374913 6226 13372a88adaecdb37d0ea3fa79515918 "pdflatex"
+  "thesis_defense.aux" 1659376660 6226 13372a88adaecdb37d0ea3fa79515918 "pdflatex"
   (generated)
   "thesis_defense.bbl"
   "thesis_defense.blg"
-["pdflatex"] 1659374903 "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/Slides/thesis_defense.tex" "thesis_defense.pdf" "thesis_defense" 1659374914
+["pdflatex"] 1659376650 "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/Slides/thesis_defense.tex" "thesis_defense.pdf" "thesis_defense" 1659376779
   "../Figures/Decoder.png" 1659115390 226875 05e31ed6fc4e5dfc8f455eaf11b0ca55 ""
   "../Figures/Encoder.png" 1659115765 260668 bbdf688dfa8693d15b5905f98d575655 ""
   "../Figures/divergence_example.png" 1659040282 30251 d84d6233f9067e2a5d01763634d89c24 ""
@@ -282,9 +282,9 @@
   "Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_out_square.png" 1659158880 10035 d1f3cd43e64dcb012d21b3a53da11a01 ""
   "Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_07_2022-07-17-1837/div_plot_linear_enc_1.png" 1658378582 64346 e41049f0a3036f05b8063586d0b379f1 ""
   "c:/Users/josep/Documents/School Work/Research/Curtis/Machine_Learning/sdsu-thesis-latex_2019-07-23/Example/Slides/thesis_defense.tex" 1659374903 34918 115cec4c85c1242e69aeac27cfaeb3bb ""
-  "thesis_defense.aux" 1659374913 6226 13372a88adaecdb37d0ea3fa79515918 "pdflatex"
-  "thesis_defense.bbl" 1659374609 1124 3e7bfe9180e1805e2ad4af625fbe4e40 "bibtex thesis_defense"
-  "thesis_defense.nav" 1659374913 3155 b379335c0c1e73cb5bf3ba258b1317d0 "pdflatex"
+  "thesis_defense.aux" 1659376660 6226 13372a88adaecdb37d0ea3fa79515918 "pdflatex"
+  "thesis_defense.bbl" 1659376779 1195 7733ce539e4ca859930fb3d68ac144c0 "bibtex thesis_defense"
+  "thesis_defense.nav" 1659376660 3155 b379335c0c1e73cb5bf3ba258b1317d0 "pdflatex"
   "thesis_defense.out" 0 -1 0 "pdflatex"
   "thesis_defense.tex" 1659374903 34918 115cec4c85c1242e69aeac27cfaeb3bb ""
   (generated)
