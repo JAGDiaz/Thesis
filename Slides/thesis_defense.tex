@@ -118,104 +118,111 @@
     \end{frame}
 
     \begin{frame}
-        \frametitle{Introduction - Koopmanism}
-        We seek a predictive model for a time series 
-        $\bracks{\boldsymbol{y}_j}_{j=1}^{N^T+1}$, which are the measurements of a 
-        dynamical system of the form
-        \begin{equation}
-            \dd{\boldsymbol{y}}{t} = f\parens{\boldsymbol{y}(t)},\quad \boldsymbol{y}(0) 
-            = \boldsymbol{x} \in \mathcal{M} \subseteq \R^{N_s}
-        \end{equation}
-        Denote $\boldsymbol{\varphi}(t;\boldsymbol{x}) =
-        \boldsymbol{y}(t)$ to be the flow map from $\boldsymbol{x}$
-        and $g: \mathcal{M} \to \C,$ be a square integrable 
-        observable then, by \cite{koopman}, $\exists \mathcal{K}$ such that
-        \begin{equation}
-            \mathcal{K}^t g(\boldsymbol{x}) = g(\boldsymbol{\varphi}(t; \boldsymbol{x})),
-        \end{equation}
-        Finding the eigen-values $\bracks{\lambda_\ell}$ and 
-        eigen-functions $\bracks{\boldsymbol{\phi}_\ell}$ of $\mathcal{K}$ yields
-        \begin{equation}
-            \mathcal{K}^t\boldsymbol{\phi}_\ell = \exp(t\lambda_\ell)\boldsymbol{\phi}
-            _\ell \implies g(\boldsymbol{x}) = \sum_{\ell \in \N} a_\ell \boldsymbol{\phi}_
-            \ell(\boldsymbol{x}),    
-        \end{equation}
-        A modal decomposition of $g$.
+        \frametitle{Introduction -- Koopmanism}
+        \begin{itemize}
+            \item 
+            Given $\bracks{\boldsymbol{y}_j}_{j=1}^{N^T+1}$, we seek a model such that
+            \begin{equation}
+                \dd{\boldsymbol{y}}{t} = f\parens{\boldsymbol{y}(t)},\quad \boldsymbol{y}(0) 
+                = \boldsymbol{x} \in \mathcal{M} \subseteq \R^{N_s}
+            \end{equation}
+
+            \item By \cite{koopman},
+            Denote $\boldsymbol{\varphi}(t;\boldsymbol{x}) =
+            \boldsymbol{y}(t)$ to be the flow map from $\boldsymbol{x}$
+            and $g: \mathcal{M} \to \C,$ be a square integrable 
+            observable then, $\exists \mathcal{K}$ such that
+            \begin{equation}
+                \mathcal{K}^t g(\boldsymbol{x}) = g(\boldsymbol{\varphi}(t; \boldsymbol{x})),
+            \end{equation}
+            \item
+            Finding the eigen-values $\bracks{\lambda_\ell}$ and 
+            eigen-functions $\bracks{\boldsymbol{\phi}_\ell}$ of $\mathcal{K}$ yields
+            \begin{equation}
+                \mathcal{K}^t\boldsymbol{\phi}_\ell = \exp(t\lambda_\ell)\boldsymbol{\phi}
+                _\ell \implies g(\boldsymbol{x}) = \sum_{\ell \in \N} a_\ell \boldsymbol{\phi}_
+                \ell(\boldsymbol{x}),    
+            \end{equation}
+        \end{itemize}
 
     
     \end{frame}
 
     \begin{frame}
-        \frametitle{Introduction - DMD and EDMD}
-        From here advancing the dynamics to time $t$ is equivalent to writing
-        \begin{equation}
-            \mathcal{K}^{t} g(\boldsymbol{x}) = \sum_{\ell \in \N} a_\ell 
-            \exp(t\lambda_\ell)\boldsymbol{\phi}_\ell (\boldsymbol{x})
-        \end{equation} 
-        If we suppose 
-        \begin{equation}
-            g(\boldsymbol{x}) = \sum_{\ell = 1}^{N_O} a_\ell \boldsymbol{\psi}_\ell
-            (\boldsymbol{x}) 
-        \end{equation}
-        with basis $\bracks{\boldsymbol{\psi}_\ell}_{\ell=1}^{N_O}$ of a subspace, 
-        then applying $\mathcal{K}$ for discrete time implies that
-        \begin{align} 
-            \mathcal{K}^{\delta t} g(\boldsymbol{x}) = \sum_{\ell = 1}^{N_O} a_\ell 
-            \exp(\delta t\lambda_\ell)\boldsymbol{\psi}_\ell (\boldsymbol{x})
-            = \sum_{\ell = 1}^{N_O} \boldsymbol{\psi}_\ell (\boldsymbol{x})
-            (\boldsymbol{K}_O^T
-            \boldsymbol{a})_\ell + r(\boldsymbol{x};\boldsymbol{K}_O)
-        \end{align}
+        \frametitle{Introduction -- Time advancement}
+        \begin{itemize}
+            \item 
+            From here advancing the dynamics to time $t$ is equivalent to writing
+            \begin{equation}
+                \mathcal{K}^{t} g(\boldsymbol{x}) = \sum_{\ell \in \N} a_\ell 
+                \exp(t\lambda_\ell)\boldsymbol{\phi}_\ell (\boldsymbol{x})
+            \end{equation} 
+            \item
+            If we suppose 
+            \begin{equation}
+                g(\boldsymbol{x}) = \sum_{\ell = 1}^{N_O} a_\ell \boldsymbol{\psi}_\ell
+                (\boldsymbol{x}) 
+            \end{equation}
+            with basis $\bracks{\boldsymbol{\psi}_\ell}_{\ell=1}^{N_O}$ of a subspace, 
+            then applying $\mathcal{K}$ for discrete time implies that
+            \begin{align} 
+                \mathcal{K}^{\delta t} g(\boldsymbol{x}) = \sum_{\ell = 1}^{N_O} a_\ell 
+                \exp(\delta t\lambda_\ell)\boldsymbol{\psi}_\ell (\boldsymbol{x})
+                = \sum_{\ell = 1}^{N_O} \boldsymbol{\psi}_\ell (\boldsymbol{x})
+                (\boldsymbol{K}_O^T
+                \boldsymbol{a})_\ell + r(\boldsymbol{x};\boldsymbol{K}_O)
+            \end{align}
+        \end{itemize}
     \end{frame}
 
     \begin{frame}
-        \frametitle{Introduction - Time advancement}
-        Where
-        \begin{equation}
-            \boldsymbol{K}_O = \underset{K}{\text{argmin}}\norm{{\bf\Psi}_+ - K{\bf\Psi}_-}_F^2
-        \end{equation}
-
-        We define ${\bf\Psi}_\pm$ to be
-        \begin{equation}
-            {\bf\Psi}_- = \parens{\Psi_1\ \Psi_2\ \cdots \Psi_{N_T}},\quad {\bf\Psi}_+ = \parens{
-            \Psi_2\ \Psi_3\ \cdots \Psi_{N_T+1}} 
-        \end{equation}
-        where $\bracks{\Psi_j}$ is an observable of the time series of interest 
-        $\bracks{\boldsymbol{y}_j}$. $\boldsymbol{K}_O$ is a one-step mapping from each data point
-        to the next that is found
-        %$\boldsymbol{K}_O$ approximates $\mathcal{K}$ for a one-step mapping and is found 
-        using a singular value decomposition (SVD). Thus
-        \begin{equation}
-            {\bf\Psi}_- = {\bf U\Sigma W}^{\dagger} \implies \boldsymbol{K}_O = 
-            {\bf\Psi}_+{\bf W\Sigma}^{-P}{\bf U}^{\dagger}.
-        \end{equation}
-        Another eigendecomposition gives
-        \begin{equation}
-            \boldsymbol{K}_O = {\bf VTV}^{-1}, 
-        \end{equation}
-        with $\lambda_\ell = \ln(({\bf T})_{\ell\ell})/\delta t$.
+        \frametitle{Introduction -- Observables}
+        \begin{itemize}
+            \item 
+            The $\boldsymbol{K}_O$ is a one-step mapping from each data point
+            to the next
+            \begin{equation}
+                \boldsymbol{K}_O = \underset{K}{\text{argmin}}\norm{{\bf\Psi}_+ - K{\bf\Psi}_-}_F^2
+            \end{equation}
+            where
+            \begin{equation}
+                {\bf\Psi}_- = \parens{{\bf \Psi}_1\ {\bf \Psi}_2\ \cdots {\bf \Psi}_{N_T}},\quad {\bf\Psi}_+ = \parens{
+                {\bf \Psi}_2\ {\bf \Psi}_3\ \cdots {\bf \Psi}_{N_T+1}} 
+            \end{equation}
+            are observables of the time series $\bracks{\boldsymbol{y}_j}$: ${\bf \Psi}_j = 
+            \parens{\Psi_1(\boldsymbol{y}_j),\ \Psi_2(\boldsymbol{y}_j),\ \cdots,\ \Psi_{N_O}(\boldsymbol{y}_j)}$
+            \item
+            Practically, $\boldsymbol{K}_O$ is found
+            using a singular value decomposition (SVD). 
+            The eigen-spectrum of $\boldsymbol{K}_O$ moves us forward
+            \begin{equation}
+                \boldsymbol{K}_O = {\bf VTV}^{-1}, 
+            \end{equation}
+            with $\lambda_\ell = \ln(({\bf T})_{\ell\ell})/\delta t$.
+        \end{itemize}
     \end{frame}
 
     \begin{frame}
-        \frametitle{Introduction - Flow reconstruction and advancement}
-        With this the dynamics can be approximated and advanced as 
-        \begin{equation}
-            y(t;\boldsymbol{x}) \approx \boldsymbol{K}_m\exp(t{\bf\Lambda}){\bf V}^{-1}\boldsymbol{\Psi}(\boldsymbol{x}) 
-        \end{equation}
-        where $\boldsymbol{\Psi}$ is the representation of the initial condition in terms of the observables, 
-        $\boldsymbol{K}_m$ is the $N_S \times N_O$ matrix whose columns are the Koopman modes 
-        %$\bracks{{\bf k}_\ell}_{\ell=1}^{N_O}$ which solve the initial value problem
-        %\begin{equation}
-        %    \boldsymbol{x} = \sum_{\ell=1}^{N_O}{\bf k}_\ell\boldsymbol{\phi}(\boldsymbol{x}),
-        %\end{equation}
-        and ${\bf \Lambda}$ is the diagonal matrix whose elements are $\lambda_\ell
-        = ({\bf \Lambda})_{\ell\ell}$.
-        
-        \vspace{1cm}
+        \frametitle{Introduction -- DMD}
+        \begin{itemize}
+            \item 
+            With this the dynamics can be approximated and advanced as 
+            \begin{equation}
+                y(t;\boldsymbol{x}) \approx \boldsymbol{K}_m\exp(t{\bf\Lambda}){\bf V}^{-1}\boldsymbol{\Psi}(\boldsymbol{x}) 
+            \end{equation}
+            where $\boldsymbol{\Psi}$ is the representation of the initial condition in terms of the observables, 
+            $\boldsymbol{K}_m$ is the $N_S \times N_O$ matrix whose columns are the Koopman modes 
+            and ${\bf \Lambda}$ is the diagonal matrix whose elements are $\lambda_\ell
+            = ({\bf \Lambda})_{\ell\ell}$.
 
-        This is the basis for Dynamic Mode Decomposition (DMD) when $N_O = N_S$ 
-        and the ultimate takeaway is that if an optimal set of observables is found, 
-        the error from DMD can be reduced.
+            \vspace{1cm}
+
+            \item
+            This is the basis for Dynamic Mode Decomposition (DMD) when $N_O = N_S$ 
+            and $\Psi_i(\boldsymbol{y}_j) = \parens{\boldsymbol{y}_j}_i$; the
+            ultimate takeaway is that if an optimal set of observables is found, 
+            the error from DMD can be reduced.
+        \end{itemize}
     \end{frame}
 
     % \begin{frame}
@@ -267,22 +274,26 @@
     % \end{frame}
 
     \begin{frame}
-        \frametitle{Introduction - DLDMD}
-        The key innovation of Lago
-        \cite{lago} is to use a neural network to come up with the collection of 
-        observables on $\bracks{\boldsymbol{y}_j}$ that allow for the best prediction 
-        of future system states, we call this method Deep Learning Enhanced DMD (DLDMD). 
-        This is implemented by defining an encoder 
-        $\mathcal{E}: \R^{N_S} \to \R^{N_O}$ and decoder $\mathcal{D}: \R^{N_O} \to \R^{N_S}$ composed of 
-        dense layers such that 
-        \begin{equation}
-            (\mathcal{D}\circ\mathcal{E})(\boldsymbol{x}) = \boldsymbol{x}
-        \end{equation}
-        We choose $N_O \geq N_S$ and an appropriate loss function so that 
-        $\mathcal{E}$ and $\mathcal{D}$ give a richer space of observables, called the 
-        latent space, for EDMD to use when advancing the dynamics. The implementation 
-        of NNs for this purpose requires a method of tuning to allow $\mathcal{E}$ and 
-        $\mathcal{D}$ to learn the best representations possible. 
+        \frametitle{Introduction -- DLDMD}
+        \begin{itemize}
+            \item 
+            The key innovation of Lago
+            \cite{lago} is to use a neural network to come up with the collection of 
+            observables on $\bracks{\boldsymbol{y}_j}$ that allow for the best prediction 
+            of future system states, we call this method Deep Learning Enhanced DMD (DLDMD). 
+            This is implemented by defining an encoder 
+            $\mathcal{E}: \R^{N_S} \to \R^{N_O}$ and decoder $\mathcal{D}: \R^{N_O} \to \R^{N_S}$ composed of 
+            dense layers such that 
+            \begin{equation}
+                (\mathcal{D}\circ\mathcal{E})(\boldsymbol{x}) = \boldsymbol{x}
+            \end{equation}
+            \item
+            We choose $N_O \geq N_S$ and an appropriate loss function so that 
+            $\mathcal{E}$ and $\mathcal{D}$ give a richer space of observables, called the 
+            latent space, for Extended DMD (EDMD) to use when advancing the dynamics. The implementation 
+            of NNs for this purpose requires a method of tuning to allow $\mathcal{E}$ and 
+            $\mathcal{D}$ to learn the best representations possible. 
+        \end{itemize}
     \end{frame}
     
     % \begin{frame}
@@ -306,7 +317,7 @@
     % \end{frame}
 
     \begin{frame}
-        \frametitle{Introduction - The Network Architecture}
+        \frametitle{Introduction -- The Network Architecture}
         Example of DLDMD newtork with $N_S = 2,\ N_O = 4,$ and $N_L = 3$ where every
         hidden layer has 16 neurons. The layers in the Figure are 
         labeled, sequentially, left to right: Enc in, Enc 0, Enc 1, Enc 2, Enc out, Dec in, 
@@ -325,27 +336,30 @@
     \end{frame}
 
     \begin{frame}
-        \frametitle{Introduction - The Dilemma}
-        For dense layers, passing a vector of 
-        data $\boldsymbol{x} \in \R^{d}$ through a layer $L$ can be written as 
-        \begin{equation}
-            L(\boldsymbol{x}; {\bf A}, \sigma, {\bf b}) = \sigma({\bf A}\boldsymbol{x} + {\bf b})
-        \end{equation}
-        for some matrix ${\bf A} \in \R^{N_O\times d}$, vector ${\bf b} \in \R^{N_O}$ and (typically nonlinear)
-        activation function $\sigma: \R^{N_O} \to \R^{N_O}$. 
-        The next state for each layer is dependent on the previous, so a reasonable 
-        framing would be as one of a discrete dynamical system of the form
-        \begin{equation}
-            Q_{n+1} = P(Q_n)
-        \end{equation}
-        In the interest of examining 
-        convergences, one might consider the following limit 
-        \begin{equation}
-            \lim_{n\to\infty} \norm{Q_{n+1} - Q_n}_2    
-        \end{equation}
-        for some two-norm on the space that $Q_n$ inhabits. While this ``one-step'' Cauchy 
-        convergence will tell us whether the machine is approaching a particular configuration
-        point-wise, this might not actually tell us much of anything else.
+        \frametitle{Introduction -- The Dilemma}
+        \begin{itemize}
+            \item 
+            For dense layers, passing a vector of 
+            data $\boldsymbol{x} \in \R^{d}$ through a layer $L$ can be written as 
+            \begin{equation}
+                L(\boldsymbol{x}; {\bf A}, \sigma, {\bf b}) = \sigma({\bf A}\boldsymbol{x} + {\bf b})
+            \end{equation}
+            for some matrix ${\bf A} \in \R^{N_O\times d}$, vector ${\bf b} \in \R^{N_O}$ and
+            activation function $\sigma: \R^{N_O} \to \R^{N_O}$. 
+            \item
+            Given a training procedure $P$, we can characterize the evolution with
+            \begin{equation}
+                Q_{n+1} = P(Q_n)
+            \end{equation}
+            In the interest of examining 
+            convergences, one might consider the following limit 
+            \begin{equation}
+                \lim_{n\to\infty} \norm{Q_{n+1} - Q_n}_2    
+            \end{equation}
+            for some two-norm on the space that $Q_n$ inhabits. 
+            \item
+            Convergence is meaningful, but this might not actually tell us much of anything else.
+        \end{itemize}
     \end{frame}
 
     % \begin{frame}
@@ -366,28 +380,29 @@
     % \end{frame}
 
     \begin{frame}
-        \frametitle{Kullback-Leibler Divergence - Entropy}
-        A measure of the uncertainty was 
-        proposed in 1948 and this measure is known as \emph{informational entropy} \cite{shannon}
-        or, simply, entropy. For a
-        continuous distribution with density function $f(x)$, the entropy is given by 
-        \begin{equation}
-            h[f] = \mathbb{E}\sqbracks{-\log(f(x))} = -\int_X f(x)\log(f(x))\ dx    
-        \end{equation}
-        For the normally distributed $X$ defined above, we have the probability density function
-        \begin{equation}
-        f(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\parens{-\frac{1}{2}\parens{\frac{x-\mu}{\sigma}}^2} 
-        \label{eqn:normal} 
-        \end{equation}
-        and the entropy integral for this evaluates to
-        \begin{equation}
-            h[f] = \frac{1}{2}\parens{\log(2\pi\sigma^2) + 1}
-        \end{equation}
-        which only depends on the variance.
+        \frametitle{Kullback-Leibler Divergence -- Entropy}
+        \begin{itemize}
+            \item 
+            For a
+            continuous distribution with density function $f(x)$, the entropy is given by 
+            \begin{equation}
+                h[f] = \mathbb{E}\sqbracks{-\log(f(x))} = -\int_X f(x)\log(f(x))\ dx    
+            \end{equation}
+            \item
+            For a normal probability distribution, we have the probability density function
+            \begin{equation}
+            f(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\parens{-\frac{1}{2}\parens{\frac{x-\mu}{\sigma}}^2} 
+            \label{eqn:normal} 
+            \end{equation}
+            and the entropy integral for this evaluates to
+            \begin{equation}
+                h[f] = \frac{1}{2}\parens{\log(2\pi\sigma^2) + 1}
+            \end{equation}
+        \end{itemize}
     \end{frame}
 
     \begin{frame}
-        \frametitle{Kullback-Leibler Divergence - Entropy example}
+        \frametitle{Kullback-Leibler Divergence -- Entropy example}
         \begin{figure}
             \centering
             \includegraphics[width=\textwidth]{../Figures/entropy_densities_example.png}
@@ -395,42 +410,48 @@
     \end{frame}
 
     \begin{frame}
-        \frametitle{Kullback-Leibler Divergence - Basic Definitions}
-        The Kullback-Leibler Divergence (KLD) is a statistical distance between a 
-        pair of probability distributions which measures how different a distribution $P$ is 
-        from a reference distribution $Q$. A simple interpretation of the 
-        divergence of $P$ from $Q$ is the expected excess surprise from using $Q$ as a model 
-        when the actual distribution is $P$ \cite{kullback}. If $P$ and $Q$ are continuous probability
-        distributions defined on $X$
-        with probability density functions $p$ and $q$, the KLD formula 
-        is
-        \begin{equation}
-            D_{KL}(P\ |\!|\ Q) = \int_X p(x)\log\parens{p(x)/q(x)}\ dx \label{eqn:continuous KLD}
-        \end{equation}
-        The reason we can consider this a ``distance'' is that the KLD 
-        is non-negative, $D_{KL}(P\ |\!|\ Q) \geq 0$. 
+        \frametitle{Kullback-Leibler Divergence -- Basic Definitions}
+        \begin{itemize}
+            \item 
+            The Kullback-Leibler Divergence (KLD) is a statistical distance between a 
+            pair of probability distributions which measures how different a distribution $P$ is 
+            from a reference distribution $Q$. If $P$ and $Q$ are continuous probability
+            distributions defined on $X$
+            with probability density functions $p$ and $q$, the KLD formula 
+            is
+            \begin{equation}
+                D_{KL}(P\ |\!|\ Q) = \int_X p(x)\log\parens{p(x)/q(x)}\ dx \label{eqn:continuous KLD}
+            \end{equation}
+            \item
+            The reason we can consider this a ``distance'' is that the KLD 
+            is non-negative, $D_{KL}(P\ |\!|\ Q) \geq 0$. 
+        \end{itemize}
     \end{frame}
 
     \begin{frame}
-        \frametitle{Kullback-Leibler Divergence - Statistical Distance}
-        For example, consider the random variables $X_1 \sim 
-        \mathcal{N}(\mu_1, \sigma_1^2)$ and $X_2 \sim \mathcal{N}(\mu_2, \sigma_2^2)$ 
-        with corresponding density functions given by equation \ref{eqn:normal}; the divergence 
-        between the distributions is
-        \begin{equation}
-            D_{KL}(p\ |\!|\ q) = \frac{1}{2}\parens{\ln\parens{\frac{\sigma_2^2}{\sigma_1^2}} + 
-            \frac{\sigma_1^2}{\sigma_2^2} + \frac{(\mu_1 - \mu_2)^2}{\sigma_2^2} - 1}, \label{eqn:normal divergence}
-        \end{equation}
-        Letting $\mu_1 = \mu_2$, $\sigma_1^2 = 1$, and allowing $\sigma_2^2$ to vary, we can 
-        write 
-        \begin{equation}
-            D_{KL}(p\ |\!|\ q) = \frac{1}{2}\parens{\ln\sigma_2^2 + 
-            \frac{1}{\sigma_2^2} - 1}, \label{eqn:normal divergence2}
-        \end{equation}
+        \frametitle{Kullback-Leibler Divergence -- Statistical Distance}
+        \begin{itemize}
+            \item 
+            For example, consider the random variables $X_1 \sim 
+            \mathcal{N}(\mu_1, \sigma_1^2)$ and $X_2 \sim \mathcal{N}(\mu_2, \sigma_2^2)$ 
+            with the appropriate density functions; the divergence 
+            between the distributions is
+            \begin{equation}
+                D_{KL}(p\ |\!|\ q) = \frac{1}{2}\parens{\ln\parens{\frac{\sigma_2^2}{\sigma_1^2}} + 
+                \frac{\sigma_1^2}{\sigma_2^2} + \frac{(\mu_1 - \mu_2)^2}{\sigma_2^2} - 1}, \label{eqn:normal divergence}
+            \end{equation}
+            \item
+            Letting $\mu_1 = \mu_2$, $\sigma_1^2 = 1$, and allowing $\sigma_2^2$ to vary, we can 
+            write 
+            \begin{equation}
+                D_{KL}(p\ |\!|\ q) = \frac{1}{2}\parens{\ln\sigma_2^2 + 
+                \frac{1}{\sigma_2^2} - 1}, \label{eqn:normal divergence2}
+            \end{equation}
+        \end{itemize}
     \end{frame}
 
     \begin{frame}
-        \frametitle{Kullback-Leibler Divergence - normal distribution example}
+        \frametitle{Kullback-Leibler Divergence -- normal distribution example}
         \begin{figure}
             \centering
             \includegraphics[width=\textwidth]{../Figures/divergence_example.png}
@@ -438,27 +459,28 @@
     \end{frame}
 
     \begin{frame}
-        \frametitle{Kullback-Leibler Divergence - Kernel Density Estimation}
-        The most 
-        basic idea behind KDE is using a bin centering method and a smoothing factor, 
-        called a kernel, to approximate a probability density $f$ from measured data in the form 
-        of a histogram. This is accomplished with the \emph{kernel density estimator} for $f$
-        given by
-        \begin{equation}
-            \hat{f}(x; K, h) = \frac{1}{nh}\sum_{i = 1}^n K\parens{\frac{x - x_i}{h}},
-        \end{equation}
-        where $K$ is the chosen kernel, $h$ is what's called the bandwidth parameter, and 
-        $\{x_i\}_{i=1}^n$ is the data that generates our histogram. Per Epanechnikov, 
-        the choice of kernel does not provide much statistical significance \cite{epanechnikov}; 
-        but the choice of the bandwidth parameter $h$ is very crucial for finding a density estimate
-        that approximates the underlying density function appropriately and can be thought of as an 
-        analogue of the bin width for the affliated histogram. We choose $h$ using the 
-        Improved Sheather-Jones algorithm \cite{botev}, which algorithmically finds an optimal 
-        bandwidth using the data itself.
+        \frametitle{Kullback-Leibler Divergence -- Kernel Density Estimation}
+        \begin{itemize}
+            \item 
+            Kernel Density Estimation (KDE) is a method to approximate a probability density 
+            $f$ from measured data in the form 
+            of a histogram. The \emph{kernel density estimator} for $f$
+            given by
+            \begin{equation}
+                \hat{f}(x; K, h) = \frac{1}{nh}\sum_{i = 1}^n K\parens{\frac{x - x_i}{h}},
+            \end{equation}
+            where $K$ is the chosen kernel, $h$ is what's called the bandwidth parameter, and 
+            $\{x_i\}_{i=1}^n$ is the data that generates our histogram. 
+            \item 
+            The choice of kernel does not provide much statistical significance; 
+            but the choice of the bandwidth parameter $h$ is very crucial for finding a density estimate
+            that approximates the underlying density function appropriately and can be thought of as an 
+            analogue of the bin width for the affliated histogram.
+        \end{itemize}
     \end{frame}
 
     \begin{frame}
-        \frametitle{Kullback-Leibler Divergence - KDE example}
+        \frametitle{Kullback-Leibler Divergence -- KDE example}
         \begin{figure}
             \centering
             \includegraphics[width=\textwidth]{../Figures/kde_example.png}
@@ -466,33 +488,35 @@
     \end{frame}
 
     \begin{frame}
-        \frametitle{Kullback-Leibler Divergence - Measuring Entropy Flow}
-        For a converging machine, for each layer
-        we should have that
-        \begin{equation}
-            {\bf W}_{l,\mathcal{E}}^{(n)}, {\bf W}_{l,\mathcal{D}}^{(n)} \to 
-            {\bf W}_{l,\mathcal{E}}^{*}, {\bf W}_{l,\mathcal{D}}^{*} \text{ as }
-            n \to \infty \label{eqn:weight convergence}
-        \end{equation}
-        Consequently, we can charaterize any set of weights via the formulas
-        \begin{equation}
-            {\bf W}_{l,\mathcal{E}}^{(n)} = {\bf W}_{l,\mathcal{E}}^{*} + {\bf W}_{l,\mathcal{E}}^{(n),f},\
-            {\bf W}_{l,\mathcal{D}}^{(n)} = {\bf W}_{l,\mathcal{D}}^{*} + {\bf W}_{l,\mathcal{D}}^{(n),f},
-        \end{equation}
-        where ${\bf W}_{l,\mathcal{E}}^{(n),f}$ and 
-        ${\bf W}_{l,\mathcal{D}}^{(n),f}$ are fluctuations from the 
-        steady state. First-order differencing gives us detrended matrices:
-        \begin{equation}
-            \delta{\bf W}_{l,\mathcal{E}}^{(n)} = {\bf W}_{l,\mathcal{E}}^{(n+1)} - {\bf W}_{l,\mathcal{E}}^{(n)}
-            = {\bf W}_{l,\mathcal{E}}^{(n+1),f} - {\bf W}_{l,\mathcal{E}}^{(n),f}
-        \end{equation}
-        Using KDE we generate an affliated empirical probability 
-        distribution $p_{l,\mathcal{E}}^{(n)}(w)$, which we can use to find consecutive divergences with KLD:
-        % With these distributions we now find the KLD 
-        % between consecutive distributions to generate the following sequence: 
-        \begin{equation}
-            D = \bracks{D_{KL}\parens{p_{l,\mathcal{E}}^{(n+1)} \Big|\!\Big| p_{l,\mathcal{E}}^{(n)}}}_{n=1}^{N_E - 2}
-        \end{equation}
+        \frametitle{Kullback-Leibler Divergence -- Measuring Entropy Flow}
+        \begin{itemize}
+            \item 
+            For a converging machine, for each layer
+            we should have that
+            \begin{equation}
+                {\bf W}_{l,\mathcal{E}}^{(n)}, {\bf W}_{l,\mathcal{D}}^{(n)} \to 
+                {\bf W}_{l,\mathcal{E}}^{*}, {\bf W}_{l,\mathcal{D}}^{*} \text{ as }
+                n \to \infty \label{eqn:weight convergence}
+            \end{equation}
+            Consequently, we can charaterize any set of weights via the formulas
+            \begin{equation}
+                {\bf W}_{l,\mathcal{E}}^{(n)} = {\bf W}_{l,\mathcal{E}}^{*} + {\bf W}_{l,\mathcal{E}}^{(n),f},\
+                {\bf W}_{l,\mathcal{D}}^{(n)} = {\bf W}_{l,\mathcal{D}}^{*} + {\bf W}_{l,\mathcal{D}}^{(n),f},
+            \end{equation}
+            where ${\bf W}_{l,\mathcal{E}}^{(n),f}$ and 
+            ${\bf W}_{l,\mathcal{D}}^{(n),f}$ are fluctuations from the 
+            steady state. First-order differencing gives us detrended matrices:
+            \begin{equation}
+                \delta{\bf W}_{l,\mathcal{E}}^{(n)} = {\bf W}_{l,\mathcal{E}}^{(n+1)} - {\bf W}_{l,\mathcal{E}}^{(n)}
+                = {\bf W}_{l,\mathcal{E}}^{(n+1),f} - {\bf W}_{l,\mathcal{E}}^{(n),f}
+            \end{equation}
+            \item 
+            Using KDE we generate an affliated empirical probability 
+            distribution $p_{l,\mathcal{E}}^{(n)}(w)$, which we can use to find consecutive divergences with KLD:
+            \begin{equation}
+                D = \bracks{D_{KL}\parens{p_{l,\mathcal{E}}^{(n+1)} \Big|\!\Big| p_{l,\mathcal{E}}^{(n)}}}_{n=1}^{N_E - 2}
+            \end{equation}
+        \end{itemize}
     \end{frame}
 
     % \begin{frame}
@@ -510,46 +534,57 @@
     % \end{frame}
 
     \begin{frame}
-        \frametitle{Kullback-Leibler Divergence - Implementation details}
-        After the training of each model for $N_E$ epochs, the 
-        data that we have to play with is 
-        \begin{equation}
-            {\bf W}_\mathcal{E} = \bracks{{\bf W}_{l,\mathcal{E}}^{(n)}}_{n=1, l=1}^{N_E, N_L}, 
-            {\bf W}_\mathcal{D} = \bracks{{\bf W}_{l,\mathcal{D}}^{(n)}}_{n=1, l=1}^{N_E, N_L}, 
-        \end{equation}
-        which are the sets of weights of the layers of the encoder and decoder. 
-        For each layer $l$, the set of detrended matrices are computed
-        \begin{equation}
-            \delta{\bf W}_{l, \mathcal{E}} = \bracks{{\bf W}_{l,\mathcal{E}}^{(n+1),f} - {\bf W}_{l,\mathcal{E}}^{(n),f}}_{n=1}^{N_E-1},
-        \end{equation}
-        these matrices are flattened and their entries are used as the data for KDE.
-        The kernel used is the Epanechnikov kernel, defined as 
-        \begin{equation}
-            K(x) = 
-            \begin{cases}
-                \frac{3(1-x^2)}{4}, & \abs{x} < 1 \\
-                0, & \abs{x} \geq 1
-            \end{cases},\label{eqn:epanechnikov}
-        \end{equation}
-        which is optimal in the mean-square error sense. 
+        \frametitle{Kullback-Leibler Divergence -- Implementation details}
+        \begin{itemize}
+            \item 
+            After the training of each model for $N_E$ epochs, the 
+            data that we have to play with is 
+            \begin{equation}
+                {\bf W}_\mathcal{E} = \bracks{{\bf W}_{l,\mathcal{E}}^{(n)}}_{n=1, l=1}^{N_E, N_L}, 
+                {\bf W}_\mathcal{D} = \bracks{{\bf W}_{l,\mathcal{D}}^{(n)}}_{n=1, l=1}^{N_E, N_L}, 
+            \end{equation}
+            which are the sets of weights of the layers of the encoder and decoder. 
+            For each layer $l$, the set of detrended matrices are computed
+            \begin{equation}
+                \delta{\bf W}_{l, \mathcal{E}} = \bracks{{\bf W}_{l,\mathcal{E}}^{(n+1),f} - {\bf W}_{l,\mathcal{E}}^{(n),f}}_{n=1}^{N_E-1},
+            \end{equation}
+            these matrices are flattened and their entries are used as the data for KDE.
+            \item
+            The kernel used is the Epanechnikov kernel, defined as 
+            \begin{equation}
+                K(x) = 
+                \begin{cases}
+                    \frac{3(1-x^2)}{4}, & \abs{x} < 1 \\
+                    0, & \abs{x} \geq 1
+                \end{cases},\label{eqn:epanechnikov}
+            \end{equation}
+            which is optimal in the mean-square error sense. The Improved Sheather-Jones algorithm is used for $h$.
+        \end{itemize}
     \end{frame}
 
     \begin{frame}
-        \frametitle{Kullback-Leibler Divergence - Implementation details cont.}
-        From this, we obtain the set of density estimates for each detrended 
-        matrix
-        \begin{equation}
-            p_{l,\mathcal{E}} = \text{KDE}(\delta{\bf W}_{l, \mathcal{E}}) = \bracks{p_{l,\mathcal{E}}^{(n)}(w)}_{n=1}^{N_E-1}
-        \end{equation}
-        where $w$ is the weight value itself and $p_{l,\mathcal{E}}(w)$ is the approximate density associated 
-        with that weight value. Given these density approximations, we 
-        can now compute what we are truly interested in:
-        \begin{equation}
-            D_l = \bracks{D_{SKL}\parens{p_{l,\mathcal{E}}^{(n+1)} \Big|\!\Big| p_{l,\mathcal{E}}^{(n)}}}_{n=1}^{N_E-2}
-        \end{equation}
-        Unlike in the first mention, we instead use the SKLD instead of the KLD.
-        We are interested in what these divergences tell us about information flow in the model's weights and 
-        seek to identify specific classifiers of good training. 
+        \frametitle{Kullback-Leibler Divergence -- Implementation details cont.}
+        \begin{itemize}
+            \item 
+            From this, we obtain the set of density estimates for each detrended 
+            matrix
+            \begin{equation}
+                p_{l,\mathcal{E}} = \text{KDE}(\delta{\bf W}_{l, \mathcal{E}}) = \bracks{p_{l,\mathcal{E}}^{(n)}(w)}_{n=1}^{N_E-1}
+            \end{equation}
+            \item
+            Given these density approximations, we 
+            can now compute what we are truly interested in:
+            \begin{equation}
+                D_l = \bracks{D_{SKL}\parens{p_{l,\mathcal{E}}^{(n+1)} \Big|\!\Big| p_{l,\mathcal{E}}^{(n)}}}_{n=1}^{N_E-2}
+            \end{equation}
+            Here 
+            \begin{equation}
+                D_{SKL}(p, q) = \frac{1}{2}\parens{D_{KL}(p\ |\!|\ q) + D_{KL}(q\ |\!|\ p)}
+            \end{equation}
+            \item
+            We are interested in what these divergences tell us about information flow in the model's weights and 
+            seek to identify specific classifiers of good training. 
+        \end{itemize}
     \end{frame}
 
     % \begin{frame}
@@ -567,7 +602,7 @@
     % \end{frame}
 
     \begin{frame}
-        \frametitle{Kullback-Leibler Divergence - Example fitting}
+        \frametitle{Kullback-Leibler Divergence -- Example fitting}
         \begin{figure}
             \centering
             \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_07_2022-07-17-1837/div_plot_linear_enc_1"}
@@ -583,7 +618,7 @@
     \end{frame}
 
     \begin{frame}
-        \frametitle{Results - Duffing loss curves and phase space}
+        \frametitle{Results -- Duffing loss curves and phase space}
         \begin{figure}
             \centering
             \begin{minipage}{.5\textwidth}
@@ -596,7 +631,7 @@
     \end{frame}
     
     \begin{frame}
-        \frametitle{Results - Duffing linear fit slope averages and variances}
+        \frametitle{Results -- Duffing linear fit slope averages and variances}
         \begin{figure}
             \centering
             \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png"}
@@ -604,7 +639,7 @@
     \end{frame}
 
     \begin{frame}
-        \frametitle{Results - Duffing linear fit slopes}
+        \frametitle{Results -- Duffing linear fit slopes}
         \begin{figure}
             \centering
             \begin{minipage}{.3333\textwidth}
@@ -632,7 +667,7 @@
     % \end{frame}
 
     \begin{frame}
-        \frametitle{Results - Van der Pol}
+        \frametitle{Results -- Van der Pol}
         \begin{figure}
             \centering
             \includegraphics[width=\textwidth]{../Figures/van_der_pol_phase_space.png}
@@ -640,7 +675,7 @@
     \end{frame}
 
     \begin{frame}
-        \frametitle{Results - Van der Pol loss curves and phase space}
+        \frametitle{Results -- Van der Pol loss curves and phase space}
         \begin{figure}
             \centering
             \begin{minipage}{.5\textwidth}
@@ -653,7 +688,7 @@
     \end{frame}
 
     \begin{frame}
-        \frametitle{Results - Van der Pol linear fit slope averages and variances}
+        \frametitle{Results -- Van der Pol linear fit slope averages and variances}
         
         \begin{figure}
             \centering
@@ -662,7 +697,7 @@
     \end{frame}
 
     \begin{frame}
-        \frametitle{Results - Van der Pol linear fit slopes} 
+        \frametitle{Results -- Van der Pol linear fit slopes} 
         \begin{figure}
             \centering
             \begin{minipage}{.3333\textwidth}

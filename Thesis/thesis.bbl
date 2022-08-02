@@ -1,0 +1,90 @@
+\begin{thebibliography}{10}
+
+\bibitem{lago}
+{\sc D.~Alford-Lago, C.~W. Curtis, A.~T. Ihler, and O.~Issan}, {\em Deep
+  {L}earning {E}nhanced {D}ynamic {M}ode {D}ecomposition}, Chaos: An
+  Interdisciplinary Journal of Nonlinear Science, 32 (2022).
+
+\bibitem{botev}
+{\sc Z.~I. Botev, J.~F. Grotowski, and D.~P. Kroese}, {\em {Kernel density
+  estimation via diffusion}}, The Annals of Statistics, 38 (2010), pp.~2916 --
+  2957.
+
+\bibitem{brunton}
+{\sc S.~Brunton, B.~R. Noack, and P.~Koumoutsakos}, {\em Machine learning for
+  fluid mechanics}, Ann. Rev. Fluid Mech., 52 (2020), pp.~477--508.
+
+\bibitem{epanechnikov}
+{\sc V.~A. Epanechnikov}, {\em Non-parametric estimation of a multivariate
+  probability density}, Theory of Probability \& Its Applications, 14 (1969),
+  pp.~153--158.
+
+\bibitem{oreilly}
+{\sc A.~Geron}, {\em Hands-On Machine Learning with Scikit-Learn, Keras, and
+  TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems},
+  O'Reilly Media, Inc., 2nd~ed., 2019.
+
+\bibitem{hollander}
+{\sc M.~Hollander, D.~Wolfe, and E.~Chicken}, {\em Nonparametric Statistical
+  Methods}, Wiley Series in Probability and Statistics, Wiley, 2013.
+
+\bibitem{hornik}
+{\sc K.~Hornik, M.~Stinchcombe, and H.~White}, {\em Multilayer {F}eedforward
+  {N}etworks are {U}niversal {A}pproximators}, Neural Networks,  (1989).
+
+\bibitem{koopman}
+{\sc B.~Koopman}, {\em Hamiltonian systems and transformations in {H}ilbert
+  space}, Proc. Nat. Acad. Sci., 17 (1931), pp.~315--318.
+
+\bibitem{kramer}
+{\sc M.~A. Kramer}, {\em Nonlinear principal component analysis using
+  autoassociative neural networks}, Aiche Journal, 37 (1991), pp.~233--243.
+
+\bibitem{kullback}
+{\sc S.~Kullback and R.~A. Leibler}, {\em {On Information and Sufficiency}},
+  The Annals of Mathematical Statistics, 22 (1951), pp.~79 -- 86.
+
+\bibitem{lusch}
+{\sc B.~Lusch, J.~N. Kutz, and S.~L. Brunton}, {\em Deep learning for universal
+  linear embeddings of nonlinear dynamics}, Nature Comm., 9 (2018), p.~4950.
+
+\bibitem{parzen}
+{\sc E.~Parzen}, {\em {On Estimation of a Probability Density Function and
+  Mode}}, The Annals of Mathematical Statistics, 33 (1962), pp.~1065 -- 1076.
+
+\bibitem{rosenblatt}
+{\sc M.~Rosenblatt}, {\em {Remarks on Some Nonparametric Estimates of a Density
+  Function}}, The Annals of Mathematical Statistics, 27 (1956), pp.~832 -- 837.
+
+\bibitem{rumelhart}
+{\sc D.~E. Rumelhart, J.~L. McClelland, and C.~PDP Research~Group}, eds., {\em
+  Parallel Distributed Processing: Explorations in the Microstructure of
+  Cognition, Vol. 1: Foundations}, MIT Press, Cambridge, MA, USA, 1986.
+
+\bibitem{schmid}
+{\sc P.~Schmid}, {\em Dynamic mode decomposition of numerical and experimental
+  data}, J. Fluid Mech., 656 (2010), pp.~5--28.
+
+\bibitem{terrell}
+{\sc D.~W. Scott and G.~R. Terrell}, {\em Biased and unbiased cross-validation
+  in density estimation}, Journal of the American Statistical Association, 82
+  (1987), pp.~1131--1146.
+
+\bibitem{shannon}
+{\sc C.~E. Shannon}, {\em A mathematical theory of communication}, The Bell
+  System Technical Journal, 27 (1948), pp.~379--423.
+
+\bibitem{strogatz:2000}
+{\sc S.~H. Strogatz}, {\em Nonlinear Dynamics and Chaos: With Applications to
+  Physics, Biology, Chemistry and Engineering}, Westview Press, 2000.
+
+\bibitem{theodoridis}
+{\sc S.~Theodoridis}, {\em Machine Learning: A Bayesian and Optimization
+  Perspective}, Academic Press, Inc., USA, 1st~ed., 2015.
+
+\bibitem{williams}
+{\sc M.~Williams, I.~G. Kevrekidis, and C.~W. Rowley}, {\em A data-driven
+  approximation of the {K}oopman operator: extending dynamic mode
+  decomposition}, J. Nonlin. Sci., 25 (2015), pp.~1307--1346.
+
+\end{thebibliography}

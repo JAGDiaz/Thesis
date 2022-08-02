@@ -6,30 +6,9 @@ D.J. Alford-Lago, C.~W. Curtis, A.~T. Ihler, and O.~Issan.
 \newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science}, 32,
   2022.
 
-\bibitem{botev}
-Z.~I. Botev, J.~F. Grotowski, and D.~P. Kroese.
-\newblock {Kernel density estimation via diffusion}.
-\newblock {\em The Annals of Statistics}, 38(5):2916 -- 2957, 2010.
-
-\bibitem{epanechnikov}
-V.~A. Epanechnikov.
-\newblock Non-parametric estimation of a multivariate probability density.
-\newblock {\em Theory of Probability \& Its Applications}, 14(1):153--158,
-  1969.
-
 \bibitem{koopman}
 B.O. Koopman.
 \newblock Hamiltonian systems and transformations in {H}ilbert space.
 \newblock {\em Proc. Nat. Acad. Sci.}, 17:315--318, 1931.
-
-\bibitem{kullback}
-S.~Kullback and R.~A. Leibler.
-\newblock {On Information and Sufficiency}.
-\newblock {\em The Annals of Mathematical Statistics}, 22(1):79 -- 86, 1951.
-
-\bibitem{shannon}
-C.~E. Shannon.
-\newblock A mathematical theory of communication.
-\newblock {\em The Bell System Technical Journal}, 27(3):379--423, 1948.
 
 \end{thebibliography}
