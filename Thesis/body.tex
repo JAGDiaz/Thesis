@@ -1,13 +1,3 @@
-% Note that if you want something in single space you can go back and
-% forth between single space and normal space by the use of \ssp and
-% \nsp.  If you want doublespacing you can use \dsp.  \nsp is normally
-% 1.5 spacing unless you use the doublespace option (or savepaper
-% option)
-%
-%(FORMAT) Usually you *don't* want to mess with the spacing for your
-%(FORMAT) final version.  If you think/know that the thesis template
-%(FORMAT) and/or thesis style file is incorrect/incomplete, PLEASE
-%(FORMAT) contact the maintainer.  THANK YOU!!!
 
 \chapter{INTRODUCTION}
 \label{chap:intro}
@@ -318,7 +308,7 @@ Chapter \ref{chap:results}.
     \begin{minipage}{.5\textwidth}
         $$\mathcal{E}$$
         \centering
-        \includegraphics[width=.9\textwidth]{Figures/Encoder.png}
+        \includegraphics[width=.9\textwidth]{../Figures/Encoder.png}
         \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
             Enc\ \ in & Enc\ \ \ 0 & Enc\ \ \ 1 & Enc\ \ \ 2 & Enc out
         \end{tabularx}
@@ -326,7 +316,7 @@ Chapter \ref{chap:results}.
     \begin{minipage}{.5\textwidth}
         $$\mathcal{D}$$
         \centering
-        \includegraphics[width=.9\textwidth]{Figures/Decoder.png}
+        \includegraphics[width=.9\textwidth]{../Figures/Decoder.png}
         \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
             Dec\ \ in & Dec\ \ \ 0 & Dec\ \ \ 1 & Dec\ \ \ 2 & Dec out
         \end{tabularx}
@@ -426,7 +416,7 @@ this.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{Figures/entropy_densities_example.png}
+    \includegraphics[width=\textwidth]{../Figures/entropy_densities_example.png}
 
     \caption{Entropy and density function change with respect to $\sigma^2$. The base 
     of the logarithm shown here is $e$, but the base itself is irrelevant due to the shared
@@ -485,7 +475,7 @@ write
 \begin{figure}[ht]
     \centering
     \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{Figures/divergence_example.png}
+        \includegraphics[width=\textwidth]{../Figures/divergence_example.png}
     \end{minipage} 
     \caption{Kullback-Leibler Divergence example with two normal distributions. As expected, the divergence 
     decreases to 0 as $\sigma^2 \to 1$ from either direction.}
@@ -534,7 +524,7 @@ density found using KDE and the ISJ algorithm.
 
 \begin{figure}[hbt!]
     \centering
-    \includegraphics[width=\textwidth]{Figures/kde_example.png}
+    \includegraphics[width=\textwidth]{../Figures/kde_example.png}
     \caption{Example of a density function found using KDE, its shape coincides with that
     of the histogram generated from the same samples.}
     \label{fig:kde example}
@@ -655,7 +645,7 @@ We have written code that implements all of these, and they can be found on GitH
 \begin{figure}[hbt!]
     \centering
     \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trained_models/van_der_pol_07_2022-07-17-1837/div_plot_linear_enc_1"}
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_07_div_plot_linear_enc_1.png"}
     \end{minipage}
     \caption{Example of linear fitting of divergence data for one of the models we examine in Chapter
     \ref{chap:results}.}
@@ -693,7 +683,7 @@ the hidden layers.
 \begin{figure}[!ht]
     \centering
     \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{"Figures/duffing_phase_space.png"}
+        \includegraphics[width=\textwidth]{"../Figures/duffing_phase_space.png"}
     \end{minipage}
     \caption{Duffing phase space.}
     \label{fig:duffing phase space}
@@ -805,7 +795,7 @@ reduce the number of variables down to the latent dimension $N_O$ alone.
 \begin{figure}[!ht]
     \centering
     \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_slope_linear_fit.png"} 
     \end{minipage}%
     \caption{Duffing average slopes of linear fits with standard deviations. This plot illustrates what we want 
     to find. Each latent dimension gives us a different behavior and we can readily see how the information must
@@ -836,7 +826,7 @@ and we conclude that this is a good indication of successful training.
 \begin{figure}[!ht]
     \centering
     \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/loss_plots.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_loss_plots.png"} 
     \end{minipage}%
     \caption{Duffing loss plots, smoothed to accentuate trends.}
     \label{fig:duffing losses}
@@ -845,7 +835,7 @@ and we conclude that this is a good indication of successful training.
 \begin{figure}[!ht]
     \centering
     \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/bandwidth_averages_plot.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_bandwidth_averages_plot.png"} 
     \end{minipage} 
     \caption{Duffing Average bandwidth.}
     \label{fig:duffing average bandwidth}
@@ -864,18 +854,18 @@ predict future states of Duffing for latent dimensions 3, 4, 5, and 6.
 \begin{figure}[!htbp]
     \centering
     \begin{minipage}{.5\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_in.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_0.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_1.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_2.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_enc_out.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_slope_linear_fit_enc_in.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_slope_linear_fit_enc_0.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_slope_linear_fit_enc_1.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_slope_linear_fit_enc_2.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_slope_linear_fit_enc_out.png"} 
     \end{minipage}%
     \begin{minipage}{.5\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_in.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_0.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_1.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_2.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/slope_linear_fit_dec_out.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_slope_linear_fit_dec_in.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_slope_linear_fit_dec_0.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_slope_linear_fit_dec_1.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_slope_linear_fit_dec_2.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_slope_linear_fit_dec_out.png"} 
     \end{minipage}
     \caption{Duffing slope of linear fits by layer.}
     \label{fig:duffing slopes all layers}
@@ -884,18 +874,18 @@ predict future states of Duffing for latent dimensions 3, 4, 5, and 6.
 \begin{figure}[!htbp]
     \centering
     \begin{minipage}{.5\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_in.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_0.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_1.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_2.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_enc_out.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_div_plot_linear_enc_in.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_div_plot_linear_enc_0.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_div_plot_linear_enc_1.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_div_plot_linear_enc_2.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_div_plot_linear_enc_out.png"} 
     \end{minipage}%
     \begin{minipage}{.5\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_in.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_0.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_1.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_2.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/div_plot_linear_dec_out.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_div_plot_linear_dec_in.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_div_plot_linear_dec_0.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_div_plot_linear_dec_1.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_div_plot_linear_dec_2.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_div_plot_linear_dec_out.png"} 
     \end{minipage}
     \caption{Duffing linear fits by layer.}
     \label{fig:duffing linear fits all layers}
@@ -904,18 +894,18 @@ predict future states of Duffing for latent dimensions 3, 4, 5, and 6.
 \begin{figure}[!htbp]
     \centering
     \begin{minipage}{.5\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_00.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_03.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_05.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_07.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_09.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_trajectories_00.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_trajectories_03.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_trajectories_05.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_trajectories_07.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_trajectories_09.png"} 
     \end{minipage}%
     \begin{minipage}{.5\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_02.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_04.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_06.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_08.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/duffing/trajectories_10.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_trajectories_02.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_trajectories_04.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_trajectories_06.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_trajectories_08.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/duffing_trajectories_10.png"} 
     \end{minipage}
     \caption{Duffing DLDMD results by latent dimension.}
     \label{fig:duffing DLDMD results}
@@ -927,7 +917,7 @@ predict future states of Duffing for latent dimensions 3, 4, 5, and 6.
 \begin{figure}[ht]
     \centering
     \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{"Figures/van_der_pol_phase_space.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_phase_space.png"} 
     \end{minipage}
     \caption{Van der Pol phase space.}
     \label{fig:van der pol phase space}
@@ -951,7 +941,7 @@ is
 \begin{figure}[ht]
     \centering
     \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_slope_linear_fit.png"} 
     \end{minipage}
     \caption{Van der Pol average slopes with standard deviations.}
     \label{fig:van der pol average slopes}
@@ -972,7 +962,7 @@ is minor enough that a Van der Pol hyperparameters table is omitted.
 \begin{figure}[ht]
     \centering
     \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/loss_plots.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_loss_plots.png"} 
     \end{minipage}
     \caption{Van der Pol loss plots, smoothed to accentuate trend.}
     \label{fig:van der pol losses}
@@ -1003,7 +993,7 @@ of the simpler phase space of Van der Pol.
 \begin{figure}[ht]
     \centering
     \begin{minipage}{\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/bandwidth_averages_plot.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_bandwidth_averages_plot.png"} 
     \end{minipage} 
     \caption{Van der Pol Average bandwidth.}
     \label{fig:van der pol average bandwidth}
@@ -1012,18 +1002,18 @@ of the simpler phase space of Van der Pol.
 \begin{figure}[!htbp]
     \centering
     \begin{minipage}{.5\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_in.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_0.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_1.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_2.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_enc_out.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_slope_linear_fit_enc_in.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_slope_linear_fit_enc_0.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_slope_linear_fit_enc_1.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_slope_linear_fit_enc_2.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_slope_linear_fit_enc_out.png"} 
     \end{minipage}%
     \begin{minipage}{.5\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_in.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_0.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_1.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_2.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/slope_linear_fit_dec_out.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_slope_linear_fit_dec_in.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_slope_linear_fit_dec_0.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_slope_linear_fit_dec_1.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_slope_linear_fit_dec_2.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_slope_linear_fit_dec_out.png"} 
     \end{minipage}
     \caption{Van der Pol slope of linear fits by layer.}
     \label{fig:van der pol slopes all layers}
@@ -1032,18 +1022,18 @@ of the simpler phase space of Van der Pol.
 \begin{figure}[!htbp]
     \centering
     \begin{minipage}{.5\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_in.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_0.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_1.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_2.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_enc_out.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_div_plot_linear_enc_in.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_div_plot_linear_enc_0.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_div_plot_linear_enc_1.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_div_plot_linear_enc_2.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_div_plot_linear_enc_out.png"} 
     \end{minipage}%
     \begin{minipage}{.5\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_in.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_0.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_1.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_2.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/div_plot_linear_dec_out.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_div_plot_linear_dec_in.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_div_plot_linear_dec_0.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_div_plot_linear_dec_1.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_div_plot_linear_dec_2.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_div_plot_linear_dec_out.png"} 
     \end{minipage}
     \caption{Van der Pol linear fits by layer.}
     \label{fig:van der pol linear fits all layers}
@@ -1052,18 +1042,18 @@ of the simpler phase space of Van der Pol.
 \begin{figure}[!htbp]
     \centering
     \begin{minipage}{.5\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_00.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_03.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_05.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_07.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_09.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_trajectories_00.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_trajectories_03.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_trajectories_05.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_trajectories_07.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_trajectories_09.png"} 
     \end{minipage}%
     \begin{minipage}{.5\textwidth}
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_02.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_04.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_06.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_08.png"} 
-        \includegraphics[width=\textwidth]{"Z:/ML_models/DLDMD-newest/examples/van_der_pol/trajectories_10.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_trajectories_02.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_trajectories_04.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_trajectories_06.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_trajectories_08.png"} 
+        \includegraphics[width=\textwidth]{"../Figures/van_der_pol_trajectories_10.png"} 
     \end{minipage}
     \caption{Van der Pol DLDMD results by latent dimension.}
     \label{fig:van der pol DLDMD results}
