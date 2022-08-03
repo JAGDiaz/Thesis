@@ -2,6 +2,16 @@
 
 
 Machine Learning is a useful tool for many problems in modern applied mathematics, especially given the
-availability of data and recent data-driven methods of analysis. As with any such method, quantifying the 
+availability of data and recent advancements in data-driven methods of model discovery and prediction such 
+as the family of Koopman derived
+methods known as Dynamic Mode Decomposition. As with any such methods, quantifying the 
 effectiveness of training is a meaningful question to ask when standard metrics do not give a concrete 
-answer.
+answer. The evolution of a Neural Network under training can be thought of as an extremely high-dimensional
+dynamical system in and of itself, given that the number of trainable parameters regularly reaches into the 
+hundreds, thousand, and (in our case) the hundreds of thousands. Classical methods of characterizing dynamical
+systems were not designed to handle such high-dimensional data, so we propose that data scientific methods must 
+be devised to describe Machine Learning model evolution with data. In this thesis, we explore such methods 
+from a statistical, probabilistic,
+and information theoretic point of view to find classifiers of good training among many different trainings
+of the Deep Learning Enhanced Dynamic Mode Decomposition prediction algorithm for a variety of model parameters.
+The change in information is used to exhibit differential behavior between good model parameters and bad.

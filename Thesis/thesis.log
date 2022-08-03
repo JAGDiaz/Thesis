@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.3)  2 AUG 2022 14:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.3)  3 AUG 2022 12:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -518,12 +518,6 @@ Package: supertabular 2020/02/02 v4.1g the supertabular environment
 Package: glossary-tree 2021/11/01 v4.49 (NLCT)
 \glstreeindent=\skip93
 ))
-\glswrite=\write4
-\glo@main@file=\write5
-\openout5 = `thesis.glo'.
-
-Package glossaries Info: Writing glossary file thesis.glo on input line 172.
- (glossary.tex)
 \c@theorem=\count337
  (C:\Users\josep\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
@@ -585,16 +579,14 @@ LaTeX Info: Redefining \ref on input line 326.
 LaTeX Info: Redefining \pageref on input line 326.
 LaTeX Info: Redefining \nameref on input line 326.
  (thesis.out) (thesis.out)
-\@outlinefile=\write6
-\openout6 = `thesis.out'.
+\@outlinefile=\write4
+\openout4 = `thesis.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
  [1
 
-
-\openout4 = `thesis.ist'.
 
 {C:/Users/josep/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] [4
 
@@ -613,22 +605,22 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
  (C:\Users\josep\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
-\tf@toc=\write7
-\openout7 = `thesis.toc'.
+\tf@toc=\write5
+\openout5 = `thesis.toc'.
 
  [6
 
 ] (thesis.lot)
-\tf@lot=\write8
-\openout8 = `thesis.lot'.
+\tf@lot=\write6
+\openout6 = `thesis.lot'.
 
  [7
 
 ] (thesis.lof [8
 
 ])
-\tf@lof=\write9
-\openout9 = `thesis.lof'.
+\tf@lof=\write7
+\openout7 = `thesis.lof'.
 
  [9] (body.tex
 
@@ -637,7 +629,7 @@ Package hyperref Warning: bookmark level for unknown chaphd defaults to 0.
 CHAPTER 1.
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 2.
+(Font)              using `OT1/cmr/bx/n' instead on input line 1.
 
  Section 1.1.
 [1
@@ -652,32 +644,32 @@ LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
 pdfTeX warning (ext4): destination with the same identifier (name{enumi.0}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.305 
+l.309 
       
 pdfTeX warning (ext4): destination with the same identifier (name{enumi.0}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.305 
+l.309 
       
 pdfTeX warning (ext4): destination with the same identifier (name{enumi.0}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.305 
+l.309 
       
 pdfTeX warning (ext4): destination with the same identifier (name{enumi.0}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.305 
+l.309 
       ]
-<../Figures/Encoder.png, id=318, 577.40718pt x 334.24875pt>
+<../Figures/Encoder.png, id=317, 577.40718pt x 334.24875pt>
 File: ../Figures/Encoder.png Graphic file (type png)
 <use ../Figures/Encoder.png>
-Package pdftex.def Info: ../Figures/Encoder.png  used on input line 311.
+Package pdftex.def Info: ../Figures/Encoder.png  used on input line 315.
 (pdftex.def)             Requested size: 203.258pt x 117.66203pt.
-<../Figures/Decoder.png, id=320, 577.40718pt x 334.24875pt>
+<../Figures/Decoder.png, id=319, 577.40718pt x 334.24875pt>
 File: ../Figures/Decoder.png Graphic file (type png)
 <use ../Figures/Decoder.png>
-Package pdftex.def Info: ../Figures/Decoder.png  used on input line 319.
+Package pdftex.def Info: ../Figures/Decoder.png  used on input line 323.
 (pdftex.def)             Requested size: 203.258pt x 117.66203pt.
 
  Section 1.5.
@@ -686,7 +678,7 @@ CHAPTER 2.
 <../Figures/entropy_densities_example.png, id=337, 722.7pt x 361.35pt>
 File: ../Figures/entropy_densities_example.png Graphic file (type png)
 <use ../Figures/entropy_densities_example.png>
-Package pdftex.def Info: ../Figures/entropy_densities_example.png  used on input line 419.
+Package pdftex.def Info: ../Figures/entropy_densities_example.png  used on input line 423.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
  Section 2.1.
 [9
@@ -695,7 +687,7 @@ Package pdftex.def Info: ../Figures/entropy_densities_example.png  used on input
 <../Figures/divergence_example.png, id=358, 722.7pt x 361.35pt>
 File: ../Figures/divergence_example.png Graphic file (type png)
 <use ../Figures/divergence_example.png>
-Package pdftex.def Info: ../Figures/divergence_example.png  used on input line 478.
+Package pdftex.def Info: ../Figures/divergence_example.png  used on input line 482.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
 
  Section 2.2.
@@ -703,369 +695,369 @@ Package pdftex.def Info: ../Figures/divergence_example.png  used on input line 4
 <../Figures/kde_example.png, id=374, 722.7pt x 361.35pt>
 File: ../Figures/kde_example.png Graphic file (type png)
 <use ../Figures/kde_example.png>
-Package pdftex.def Info: ../Figures/kde_example.png  used on input line 527.
+Package pdftex.def Info: ../Figures/kde_example.png  used on input line 537.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
 
  Section 2.3.
-[12]
+[12] [13 <../Figures/kde_example.png>]
  Section 2.4.
-[13 <../Figures/kde_example.png>] [14]
+[14]
 <../Figures/van_der_pol_07_div_plot_linear_enc_1.png, id=412, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_07_div_plot_linear_enc_1.png Graphic file (type png)
 <use ../Figures/van_der_pol_07_div_plot_linear_enc_1.png>
-Package pdftex.def Info: ../Figures/van_der_pol_07_div_plot_linear_enc_1.png  used on input line 648.
+Package pdftex.def Info: ../Figures/van_der_pol_07_div_plot_linear_enc_1.png  used on input line 658.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
  [15] [16 <../Figures/van_der_pol_07_div_plot_linear_enc_1.png>]
 CHAPTER 3.
  Section 3.1.
-<../Figures/duffing_phase_space.png, id=427, 722.7pt x 361.35pt>
+<../Figures/duffing_phase_space.png, id=428, 722.7pt x 361.35pt>
 File: ../Figures/duffing_phase_space.png Graphic file (type png)
 <use ../Figures/duffing_phase_space.png>
-Package pdftex.def Info: ../Figures/duffing_phase_space.png  used on input line 686.
+Package pdftex.def Info: ../Figures/duffing_phase_space.png  used on input line 696.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
 [17
 
 ] [18 <../Figures/duffing_phase_space.png>]
-<../Figures/duffing_slope_linear_fit.png, id=445, 722.7pt x 361.35pt>
+<../Figures/duffing_slope_linear_fit.png, id=446, 722.7pt x 361.35pt>
 File: ../Figures/duffing_slope_linear_fit.png Graphic file (type png)
 <use ../Figures/duffing_slope_linear_fit.png>
-Package pdftex.def Info: ../Figures/duffing_slope_linear_fit.png  used on input line 798.
+Package pdftex.def Info: ../Figures/duffing_slope_linear_fit.png  used on input line 808.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
  [19]
-<../Figures/duffing_loss_plots.png, id=457, 722.7pt x 361.35pt>
+<../Figures/duffing_loss_plots.png, id=458, 722.7pt x 361.35pt>
 File: ../Figures/duffing_loss_plots.png Graphic file (type png)
 <use ../Figures/duffing_loss_plots.png>
-Package pdftex.def Info: ../Figures/duffing_loss_plots.png  used on input line 829.
+Package pdftex.def Info: ../Figures/duffing_loss_plots.png  used on input line 839.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
  [20 <../Figures/duffing_slope_linear_fit.png>]
-<../Figures/duffing_bandwidth_averages_plot.png, id=463, 722.7pt x 361.35pt>
+<../Figures/duffing_bandwidth_averages_plot.png, id=464, 722.7pt x 361.35pt>
 File: ../Figures/duffing_bandwidth_averages_plot.png Graphic file (type png)
 <use ../Figures/duffing_bandwidth_averages_plot.png>
-Package pdftex.def Info: ../Figures/duffing_bandwidth_averages_plot.png  used on input line 838.
+Package pdftex.def Info: ../Figures/duffing_bandwidth_averages_plot.png  used on input line 848.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
  [21 <../Figures/duffing_loss_plots.png> <../Figures/duffing_bandwidth_averages_plot.png>]
-<../Figures/duffing_slope_linear_fit_enc_in.png, id=471, 722.7pt x 361.35pt>
+<../Figures/duffing_slope_linear_fit_enc_in.png, id=472, 722.7pt x 361.35pt>
 File: ../Figures/duffing_slope_linear_fit_enc_in.png Graphic file (type png)
 <use ../Figures/duffing_slope_linear_fit_enc_in.png>
-Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_enc_in.png  used on input line 857.
+Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_enc_in.png  used on input line 867.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_slope_linear_fit_enc_0.png, id=472, 722.7pt x 361.35pt>
+<../Figures/duffing_slope_linear_fit_enc_0.png, id=473, 722.7pt x 361.35pt>
 File: ../Figures/duffing_slope_linear_fit_enc_0.png Graphic file (type png)
 <use ../Figures/duffing_slope_linear_fit_enc_0.png>
-Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_enc_0.png  used on input line 858.
+Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_enc_0.png  used on input line 868.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_slope_linear_fit_enc_1.png, id=473, 722.7pt x 361.35pt>
+<../Figures/duffing_slope_linear_fit_enc_1.png, id=474, 722.7pt x 361.35pt>
 File: ../Figures/duffing_slope_linear_fit_enc_1.png Graphic file (type png)
 <use ../Figures/duffing_slope_linear_fit_enc_1.png>
-Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_enc_1.png  used on input line 859.
+Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_enc_1.png  used on input line 869.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_slope_linear_fit_enc_2.png, id=474, 722.7pt x 361.35pt>
+<../Figures/duffing_slope_linear_fit_enc_2.png, id=475, 722.7pt x 361.35pt>
 File: ../Figures/duffing_slope_linear_fit_enc_2.png Graphic file (type png)
 <use ../Figures/duffing_slope_linear_fit_enc_2.png>
-Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_enc_2.png  used on input line 860.
+Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_enc_2.png  used on input line 870.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_slope_linear_fit_enc_out.png, id=475, 722.7pt x 361.35pt>
+<../Figures/duffing_slope_linear_fit_enc_out.png, id=476, 722.7pt x 361.35pt>
 File: ../Figures/duffing_slope_linear_fit_enc_out.png Graphic file (type png)
 <use ../Figures/duffing_slope_linear_fit_enc_out.png>
-Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_enc_out.png  used on input line 861.
+Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_enc_out.png  used on input line 871.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_slope_linear_fit_dec_in.png, id=476, 722.7pt x 361.35pt>
+<../Figures/duffing_slope_linear_fit_dec_in.png, id=477, 722.7pt x 361.35pt>
 File: ../Figures/duffing_slope_linear_fit_dec_in.png Graphic file (type png)
 <use ../Figures/duffing_slope_linear_fit_dec_in.png>
-Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_dec_in.png  used on input line 864.
+Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_dec_in.png  used on input line 874.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_slope_linear_fit_dec_0.png, id=477, 722.7pt x 361.35pt>
+<../Figures/duffing_slope_linear_fit_dec_0.png, id=478, 722.7pt x 361.35pt>
 File: ../Figures/duffing_slope_linear_fit_dec_0.png Graphic file (type png)
 <use ../Figures/duffing_slope_linear_fit_dec_0.png>
-Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_dec_0.png  used on input line 865.
+Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_dec_0.png  used on input line 875.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_slope_linear_fit_dec_1.png, id=478, 722.7pt x 361.35pt>
+<../Figures/duffing_slope_linear_fit_dec_1.png, id=479, 722.7pt x 361.35pt>
 File: ../Figures/duffing_slope_linear_fit_dec_1.png Graphic file (type png)
 <use ../Figures/duffing_slope_linear_fit_dec_1.png>
-Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_dec_1.png  used on input line 866.
+Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_dec_1.png  used on input line 876.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_slope_linear_fit_dec_2.png, id=479, 722.7pt x 361.35pt>
+<../Figures/duffing_slope_linear_fit_dec_2.png, id=480, 722.7pt x 361.35pt>
 File: ../Figures/duffing_slope_linear_fit_dec_2.png Graphic file (type png)
 <use ../Figures/duffing_slope_linear_fit_dec_2.png>
-Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_dec_2.png  used on input line 867.
+Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_dec_2.png  used on input line 877.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_slope_linear_fit_dec_out.png, id=480, 722.7pt x 361.35pt>
+<../Figures/duffing_slope_linear_fit_dec_out.png, id=481, 722.7pt x 361.35pt>
 File: ../Figures/duffing_slope_linear_fit_dec_out.png Graphic file (type png)
 <use ../Figures/duffing_slope_linear_fit_dec_out.png>
-Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_dec_out.png  used on input line 868.
+Package pdftex.def Info: ../Figures/duffing_slope_linear_fit_dec_out.png  used on input line 878.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_div_plot_linear_enc_in.png, id=481, 722.7pt x 361.35pt>
+<../Figures/duffing_div_plot_linear_enc_in.png, id=482, 722.7pt x 361.35pt>
 File: ../Figures/duffing_div_plot_linear_enc_in.png Graphic file (type png)
 <use ../Figures/duffing_div_plot_linear_enc_in.png>
-Package pdftex.def Info: ../Figures/duffing_div_plot_linear_enc_in.png  used on input line 877.
+Package pdftex.def Info: ../Figures/duffing_div_plot_linear_enc_in.png  used on input line 887.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_div_plot_linear_enc_0.png, id=482, 722.7pt x 361.35pt>
+<../Figures/duffing_div_plot_linear_enc_0.png, id=483, 722.7pt x 361.35pt>
 File: ../Figures/duffing_div_plot_linear_enc_0.png Graphic file (type png)
 <use ../Figures/duffing_div_plot_linear_enc_0.png>
-Package pdftex.def Info: ../Figures/duffing_div_plot_linear_enc_0.png  used on input line 878.
+Package pdftex.def Info: ../Figures/duffing_div_plot_linear_enc_0.png  used on input line 888.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_div_plot_linear_enc_1.png, id=483, 722.7pt x 361.35pt>
+<../Figures/duffing_div_plot_linear_enc_1.png, id=484, 722.7pt x 361.35pt>
 File: ../Figures/duffing_div_plot_linear_enc_1.png Graphic file (type png)
 <use ../Figures/duffing_div_plot_linear_enc_1.png>
-Package pdftex.def Info: ../Figures/duffing_div_plot_linear_enc_1.png  used on input line 879.
+Package pdftex.def Info: ../Figures/duffing_div_plot_linear_enc_1.png  used on input line 889.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_div_plot_linear_enc_2.png, id=484, 722.7pt x 361.35pt>
+<../Figures/duffing_div_plot_linear_enc_2.png, id=485, 722.7pt x 361.35pt>
 File: ../Figures/duffing_div_plot_linear_enc_2.png Graphic file (type png)
 <use ../Figures/duffing_div_plot_linear_enc_2.png>
-Package pdftex.def Info: ../Figures/duffing_div_plot_linear_enc_2.png  used on input line 880.
+Package pdftex.def Info: ../Figures/duffing_div_plot_linear_enc_2.png  used on input line 890.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_div_plot_linear_enc_out.png, id=485, 722.7pt x 361.35pt>
+<../Figures/duffing_div_plot_linear_enc_out.png, id=486, 722.7pt x 361.35pt>
 File: ../Figures/duffing_div_plot_linear_enc_out.png Graphic file (type png)
 <use ../Figures/duffing_div_plot_linear_enc_out.png>
-Package pdftex.def Info: ../Figures/duffing_div_plot_linear_enc_out.png  used on input line 881.
+Package pdftex.def Info: ../Figures/duffing_div_plot_linear_enc_out.png  used on input line 891.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_div_plot_linear_dec_in.png, id=486, 722.7pt x 361.35pt>
+<../Figures/duffing_div_plot_linear_dec_in.png, id=487, 722.7pt x 361.35pt>
 File: ../Figures/duffing_div_plot_linear_dec_in.png Graphic file (type png)
 <use ../Figures/duffing_div_plot_linear_dec_in.png>
-Package pdftex.def Info: ../Figures/duffing_div_plot_linear_dec_in.png  used on input line 884.
+Package pdftex.def Info: ../Figures/duffing_div_plot_linear_dec_in.png  used on input line 894.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_div_plot_linear_dec_0.png, id=487, 722.7pt x 361.35pt>
+<../Figures/duffing_div_plot_linear_dec_0.png, id=488, 722.7pt x 361.35pt>
 File: ../Figures/duffing_div_plot_linear_dec_0.png Graphic file (type png)
 <use ../Figures/duffing_div_plot_linear_dec_0.png>
-Package pdftex.def Info: ../Figures/duffing_div_plot_linear_dec_0.png  used on input line 885.
+Package pdftex.def Info: ../Figures/duffing_div_plot_linear_dec_0.png  used on input line 895.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_div_plot_linear_dec_1.png, id=488, 722.7pt x 361.35pt>
+<../Figures/duffing_div_plot_linear_dec_1.png, id=489, 722.7pt x 361.35pt>
 File: ../Figures/duffing_div_plot_linear_dec_1.png Graphic file (type png)
 <use ../Figures/duffing_div_plot_linear_dec_1.png>
-Package pdftex.def Info: ../Figures/duffing_div_plot_linear_dec_1.png  used on input line 886.
+Package pdftex.def Info: ../Figures/duffing_div_plot_linear_dec_1.png  used on input line 896.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_div_plot_linear_dec_2.png, id=489, 722.7pt x 361.35pt>
+<../Figures/duffing_div_plot_linear_dec_2.png, id=490, 722.7pt x 361.35pt>
 File: ../Figures/duffing_div_plot_linear_dec_2.png Graphic file (type png)
 <use ../Figures/duffing_div_plot_linear_dec_2.png>
-Package pdftex.def Info: ../Figures/duffing_div_plot_linear_dec_2.png  used on input line 887.
+Package pdftex.def Info: ../Figures/duffing_div_plot_linear_dec_2.png  used on input line 897.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_div_plot_linear_dec_out.png, id=490, 722.7pt x 361.35pt>
+<../Figures/duffing_div_plot_linear_dec_out.png, id=491, 722.7pt x 361.35pt>
 File: ../Figures/duffing_div_plot_linear_dec_out.png Graphic file (type png)
 <use ../Figures/duffing_div_plot_linear_dec_out.png>
-Package pdftex.def Info: ../Figures/duffing_div_plot_linear_dec_out.png  used on input line 888.
+Package pdftex.def Info: ../Figures/duffing_div_plot_linear_dec_out.png  used on input line 898.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_trajectories_00.png, id=491, 722.7pt x 361.35pt>
+<../Figures/duffing_trajectories_00.png, id=492, 722.7pt x 361.35pt>
 File: ../Figures/duffing_trajectories_00.png Graphic file (type png)
 <use ../Figures/duffing_trajectories_00.png>
-Package pdftex.def Info: ../Figures/duffing_trajectories_00.png  used on input line 897.
+Package pdftex.def Info: ../Figures/duffing_trajectories_00.png  used on input line 907.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_trajectories_03.png, id=492, 722.7pt x 361.35pt>
+<../Figures/duffing_trajectories_03.png, id=493, 722.7pt x 361.35pt>
 File: ../Figures/duffing_trajectories_03.png Graphic file (type png)
 <use ../Figures/duffing_trajectories_03.png>
-Package pdftex.def Info: ../Figures/duffing_trajectories_03.png  used on input line 898.
+Package pdftex.def Info: ../Figures/duffing_trajectories_03.png  used on input line 908.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_trajectories_05.png, id=493, 722.7pt x 361.35pt>
+<../Figures/duffing_trajectories_05.png, id=494, 722.7pt x 361.35pt>
 File: ../Figures/duffing_trajectories_05.png Graphic file (type png)
 <use ../Figures/duffing_trajectories_05.png>
-Package pdftex.def Info: ../Figures/duffing_trajectories_05.png  used on input line 899.
+Package pdftex.def Info: ../Figures/duffing_trajectories_05.png  used on input line 909.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_trajectories_07.png, id=494, 722.7pt x 361.35pt>
+<../Figures/duffing_trajectories_07.png, id=495, 722.7pt x 361.35pt>
 File: ../Figures/duffing_trajectories_07.png Graphic file (type png)
 <use ../Figures/duffing_trajectories_07.png>
-Package pdftex.def Info: ../Figures/duffing_trajectories_07.png  used on input line 900.
+Package pdftex.def Info: ../Figures/duffing_trajectories_07.png  used on input line 910.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_trajectories_09.png, id=495, 722.7pt x 361.35pt>
+<../Figures/duffing_trajectories_09.png, id=496, 722.7pt x 361.35pt>
 File: ../Figures/duffing_trajectories_09.png Graphic file (type png)
 <use ../Figures/duffing_trajectories_09.png>
-Package pdftex.def Info: ../Figures/duffing_trajectories_09.png  used on input line 901.
+Package pdftex.def Info: ../Figures/duffing_trajectories_09.png  used on input line 911.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_trajectories_02.png, id=496, 722.7pt x 361.35pt>
+<../Figures/duffing_trajectories_02.png, id=497, 722.7pt x 361.35pt>
 File: ../Figures/duffing_trajectories_02.png Graphic file (type png)
 <use ../Figures/duffing_trajectories_02.png>
-Package pdftex.def Info: ../Figures/duffing_trajectories_02.png  used on input line 904.
+Package pdftex.def Info: ../Figures/duffing_trajectories_02.png  used on input line 914.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_trajectories_04.png, id=497, 722.7pt x 361.35pt>
+<../Figures/duffing_trajectories_04.png, id=498, 722.7pt x 361.35pt>
 File: ../Figures/duffing_trajectories_04.png Graphic file (type png)
 <use ../Figures/duffing_trajectories_04.png>
-Package pdftex.def Info: ../Figures/duffing_trajectories_04.png  used on input line 905.
+Package pdftex.def Info: ../Figures/duffing_trajectories_04.png  used on input line 915.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_trajectories_06.png, id=498, 722.7pt x 361.35pt>
+<../Figures/duffing_trajectories_06.png, id=499, 722.7pt x 361.35pt>
 File: ../Figures/duffing_trajectories_06.png Graphic file (type png)
 <use ../Figures/duffing_trajectories_06.png>
-Package pdftex.def Info: ../Figures/duffing_trajectories_06.png  used on input line 906.
+Package pdftex.def Info: ../Figures/duffing_trajectories_06.png  used on input line 916.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_trajectories_08.png, id=499, 722.7pt x 361.35pt>
+<../Figures/duffing_trajectories_08.png, id=500, 722.7pt x 361.35pt>
 File: ../Figures/duffing_trajectories_08.png Graphic file (type png)
 <use ../Figures/duffing_trajectories_08.png>
-Package pdftex.def Info: ../Figures/duffing_trajectories_08.png  used on input line 907.
+Package pdftex.def Info: ../Figures/duffing_trajectories_08.png  used on input line 917.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/duffing_trajectories_10.png, id=500, 722.7pt x 361.35pt>
+<../Figures/duffing_trajectories_10.png, id=501, 722.7pt x 361.35pt>
 File: ../Figures/duffing_trajectories_10.png Graphic file (type png)
 <use ../Figures/duffing_trajectories_10.png>
-Package pdftex.def Info: ../Figures/duffing_trajectories_10.png  used on input line 908.
+Package pdftex.def Info: ../Figures/duffing_trajectories_10.png  used on input line 918.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
 
  Section 3.2.
-<../Figures/van_der_pol_phase_space.png, id=501, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_phase_space.png, id=502, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_phase_space.png Graphic file (type png)
 <use ../Figures/van_der_pol_phase_space.png>
-Package pdftex.def Info: ../Figures/van_der_pol_phase_space.png  used on input line 920.
+Package pdftex.def Info: ../Figures/van_der_pol_phase_space.png  used on input line 930.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
-<../Figures/van_der_pol_slope_linear_fit.png, id=502, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_slope_linear_fit.png, id=503, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_slope_linear_fit.png Graphic file (type png)
 <use ../Figures/van_der_pol_slope_linear_fit.png>
-Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit.png  used on input line 944.
+Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit.png  used on input line 954.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
-<../Figures/van_der_pol_loss_plots.png, id=506, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_loss_plots.png, id=507, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_loss_plots.png Graphic file (type png)
 <use ../Figures/van_der_pol_loss_plots.png>
-Package pdftex.def Info: ../Figures/van_der_pol_loss_plots.png  used on input line 965.
+Package pdftex.def Info: ../Figures/van_der_pol_loss_plots.png  used on input line 975.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
 [22] [23 <../Figures/duffing_slope_linear_fit_enc_in.png> <../Figures/duffing_slope_linear_fit_enc_0.png> <../Figures/duffing_slope_linear_fit_enc_1.png> <../Figures/duffing_slope_linear_fit_enc_2.png> <../Figures/duffing_slope_linear_fit_enc_out.png> <../Figures/duffing_slope_linear_fit_dec_in.png> <../Figures/duffing_slope_linear_fit_dec_0.png> <../Figures/duffing_slope_linear_fit_dec_1.png> <../Figures/duffing_slope_linear_fit_dec_2.png> <../Figures/duffing_slope_linear_fit_dec_out.png>] [24 <../Figures/duffing_div_plot_linear_enc_in.png> <../Figures/duffing_div_plot_linear_enc_0.png> <../Figures/duffing_div_plot_linear_enc_1.png> <../Figures/duffing_div_plot_linear_enc_2.png> <../Figures/duffing_div_plot_linear_enc_out.png> <../Figures/duffing_div_plot_linear_dec_in.png> <../Figures/duffing_div_plot_linear_dec_0.png> <../Figures/duffing_div_plot_linear_dec_1.png> <../Figures/duffing_div_plot_linear_dec_2.png> <../Figures/duffing_div_plot_linear_dec_out.png>] [25 <../Figures/duffing_trajectories_00.png> <../Figures/duffing_trajectories_03.png> <../Figures/duffing_trajectories_05.png> <../Figures/duffing_trajectories_07.png> <../Figures/duffing_trajectories_09.png> <../Figures/duffing_trajectories_02.png> <../Figures/duffing_trajectories_04.png> <../Figures/duffing_trajectories_06.png> <../Figures/duffing_trajectories_08.png> <../Figures/duffing_trajectories_10.png>]
-<../Figures/van_der_pol_bandwidth_averages_plot.png, id=563, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_bandwidth_averages_plot.png, id=564, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_bandwidth_averages_plot.png Graphic file (type png)
 <use ../Figures/van_der_pol_bandwidth_averages_plot.png>
-Package pdftex.def Info: ../Figures/van_der_pol_bandwidth_averages_plot.png  used on input line 996.
+Package pdftex.def Info: ../Figures/van_der_pol_bandwidth_averages_plot.png  used on input line 1006.
 (pdftex.def)             Requested size: 451.6875pt x 225.8432pt.
-<../Figures/van_der_pol_slope_linear_fit_enc_in.png, id=564, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_slope_linear_fit_enc_in.png, id=565, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_slope_linear_fit_enc_in.png Graphic file (type png)
 <use ../Figures/van_der_pol_slope_linear_fit_enc_in.png>
-Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_enc_in.png  used on input line 1005.
+Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_enc_in.png  used on input line 1015.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_slope_linear_fit_enc_0.png, id=565, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_slope_linear_fit_enc_0.png, id=566, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_slope_linear_fit_enc_0.png Graphic file (type png)
 <use ../Figures/van_der_pol_slope_linear_fit_enc_0.png>
-Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_enc_0.png  used on input line 1006.
+Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_enc_0.png  used on input line 1016.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_slope_linear_fit_enc_1.png, id=566, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_slope_linear_fit_enc_1.png, id=567, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_slope_linear_fit_enc_1.png Graphic file (type png)
 <use ../Figures/van_der_pol_slope_linear_fit_enc_1.png>
-Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_enc_1.png  used on input line 1007.
+Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_enc_1.png  used on input line 1017.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_slope_linear_fit_enc_2.png, id=567, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_slope_linear_fit_enc_2.png, id=568, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_slope_linear_fit_enc_2.png Graphic file (type png)
 <use ../Figures/van_der_pol_slope_linear_fit_enc_2.png>
-Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_enc_2.png  used on input line 1008.
+Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_enc_2.png  used on input line 1018.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_slope_linear_fit_enc_out.png, id=568, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_slope_linear_fit_enc_out.png, id=569, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_slope_linear_fit_enc_out.png Graphic file (type png)
 <use ../Figures/van_der_pol_slope_linear_fit_enc_out.png>
-Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_enc_out.png  used on input line 1009.
+Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_enc_out.png  used on input line 1019.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_slope_linear_fit_dec_in.png, id=569, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_slope_linear_fit_dec_in.png, id=570, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_slope_linear_fit_dec_in.png Graphic file (type png)
 <use ../Figures/van_der_pol_slope_linear_fit_dec_in.png>
-Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_dec_in.png  used on input line 1012.
+Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_dec_in.png  used on input line 1022.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_slope_linear_fit_dec_0.png, id=570, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_slope_linear_fit_dec_0.png, id=571, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_slope_linear_fit_dec_0.png Graphic file (type png)
 <use ../Figures/van_der_pol_slope_linear_fit_dec_0.png>
-Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_dec_0.png  used on input line 1013.
+Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_dec_0.png  used on input line 1023.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_slope_linear_fit_dec_1.png, id=571, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_slope_linear_fit_dec_1.png, id=572, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_slope_linear_fit_dec_1.png Graphic file (type png)
 <use ../Figures/van_der_pol_slope_linear_fit_dec_1.png>
-Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_dec_1.png  used on input line 1014.
+Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_dec_1.png  used on input line 1024.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_slope_linear_fit_dec_2.png, id=572, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_slope_linear_fit_dec_2.png, id=573, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_slope_linear_fit_dec_2.png Graphic file (type png)
 <use ../Figures/van_der_pol_slope_linear_fit_dec_2.png>
-Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_dec_2.png  used on input line 1015.
+Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_dec_2.png  used on input line 1025.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_slope_linear_fit_dec_out.png, id=573, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_slope_linear_fit_dec_out.png, id=574, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_slope_linear_fit_dec_out.png Graphic file (type png)
 <use ../Figures/van_der_pol_slope_linear_fit_dec_out.png>
-Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_dec_out.png  used on input line 1016.
+Package pdftex.def Info: ../Figures/van_der_pol_slope_linear_fit_dec_out.png  used on input line 1026.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_div_plot_linear_enc_in.png, id=574, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_div_plot_linear_enc_in.png, id=575, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_div_plot_linear_enc_in.png Graphic file (type png)
 <use ../Figures/van_der_pol_div_plot_linear_enc_in.png>
-Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_enc_in.png  used on input line 1025.
+Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_enc_in.png  used on input line 1035.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_div_plot_linear_enc_0.png, id=575, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_div_plot_linear_enc_0.png, id=576, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_div_plot_linear_enc_0.png Graphic file (type png)
 <use ../Figures/van_der_pol_div_plot_linear_enc_0.png>
-Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_enc_0.png  used on input line 1026.
+Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_enc_0.png  used on input line 1036.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_div_plot_linear_enc_1.png, id=576, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_div_plot_linear_enc_1.png, id=577, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_div_plot_linear_enc_1.png Graphic file (type png)
 <use ../Figures/van_der_pol_div_plot_linear_enc_1.png>
-Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_enc_1.png  used on input line 1027.
+Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_enc_1.png  used on input line 1037.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_div_plot_linear_enc_2.png, id=577, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_div_plot_linear_enc_2.png, id=578, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_div_plot_linear_enc_2.png Graphic file (type png)
 <use ../Figures/van_der_pol_div_plot_linear_enc_2.png>
-Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_enc_2.png  used on input line 1028.
+Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_enc_2.png  used on input line 1038.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_div_plot_linear_enc_out.png, id=578, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_div_plot_linear_enc_out.png, id=579, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_div_plot_linear_enc_out.png Graphic file (type png)
 <use ../Figures/van_der_pol_div_plot_linear_enc_out.png>
-Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_enc_out.png  used on input line 1029.
+Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_enc_out.png  used on input line 1039.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_div_plot_linear_dec_in.png, id=579, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_div_plot_linear_dec_in.png, id=580, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_div_plot_linear_dec_in.png Graphic file (type png)
 <use ../Figures/van_der_pol_div_plot_linear_dec_in.png>
-Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_dec_in.png  used on input line 1032.
+Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_dec_in.png  used on input line 1042.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_div_plot_linear_dec_0.png, id=580, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_div_plot_linear_dec_0.png, id=581, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_div_plot_linear_dec_0.png Graphic file (type png)
 <use ../Figures/van_der_pol_div_plot_linear_dec_0.png>
-Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_dec_0.png  used on input line 1033.
+Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_dec_0.png  used on input line 1043.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_div_plot_linear_dec_1.png, id=581, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_div_plot_linear_dec_1.png, id=582, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_div_plot_linear_dec_1.png Graphic file (type png)
 <use ../Figures/van_der_pol_div_plot_linear_dec_1.png>
-Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_dec_1.png  used on input line 1034.
+Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_dec_1.png  used on input line 1044.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_div_plot_linear_dec_2.png, id=582, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_div_plot_linear_dec_2.png, id=583, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_div_plot_linear_dec_2.png Graphic file (type png)
 <use ../Figures/van_der_pol_div_plot_linear_dec_2.png>
-Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_dec_2.png  used on input line 1035.
+Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_dec_2.png  used on input line 1045.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_div_plot_linear_dec_out.png, id=583, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_div_plot_linear_dec_out.png, id=584, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_div_plot_linear_dec_out.png Graphic file (type png)
 <use ../Figures/van_der_pol_div_plot_linear_dec_out.png>
-Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_dec_out.png  used on input line 1036.
+Package pdftex.def Info: ../Figures/van_der_pol_div_plot_linear_dec_out.png  used on input line 1046.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_trajectories_00.png, id=584, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_trajectories_00.png, id=585, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_trajectories_00.png Graphic file (type png)
 <use ../Figures/van_der_pol_trajectories_00.png>
-Package pdftex.def Info: ../Figures/van_der_pol_trajectories_00.png  used on input line 1045.
+Package pdftex.def Info: ../Figures/van_der_pol_trajectories_00.png  used on input line 1055.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_trajectories_03.png, id=585, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_trajectories_03.png, id=586, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_trajectories_03.png Graphic file (type png)
 <use ../Figures/van_der_pol_trajectories_03.png>
-Package pdftex.def Info: ../Figures/van_der_pol_trajectories_03.png  used on input line 1046.
+Package pdftex.def Info: ../Figures/van_der_pol_trajectories_03.png  used on input line 1056.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_trajectories_05.png, id=586, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_trajectories_05.png, id=587, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_trajectories_05.png Graphic file (type png)
 <use ../Figures/van_der_pol_trajectories_05.png>
-Package pdftex.def Info: ../Figures/van_der_pol_trajectories_05.png  used on input line 1047.
+Package pdftex.def Info: ../Figures/van_der_pol_trajectories_05.png  used on input line 1057.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_trajectories_07.png, id=587, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_trajectories_07.png, id=588, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_trajectories_07.png Graphic file (type png)
 <use ../Figures/van_der_pol_trajectories_07.png>
-Package pdftex.def Info: ../Figures/van_der_pol_trajectories_07.png  used on input line 1048.
+Package pdftex.def Info: ../Figures/van_der_pol_trajectories_07.png  used on input line 1058.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_trajectories_09.png, id=588, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_trajectories_09.png, id=589, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_trajectories_09.png Graphic file (type png)
 <use ../Figures/van_der_pol_trajectories_09.png>
-Package pdftex.def Info: ../Figures/van_der_pol_trajectories_09.png  used on input line 1049.
+Package pdftex.def Info: ../Figures/van_der_pol_trajectories_09.png  used on input line 1059.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_trajectories_02.png, id=589, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_trajectories_02.png, id=590, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_trajectories_02.png Graphic file (type png)
 <use ../Figures/van_der_pol_trajectories_02.png>
-Package pdftex.def Info: ../Figures/van_der_pol_trajectories_02.png  used on input line 1052.
+Package pdftex.def Info: ../Figures/van_der_pol_trajectories_02.png  used on input line 1062.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_trajectories_04.png, id=590, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_trajectories_04.png, id=591, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_trajectories_04.png Graphic file (type png)
 <use ../Figures/van_der_pol_trajectories_04.png>
-Package pdftex.def Info: ../Figures/van_der_pol_trajectories_04.png  used on input line 1053.
+Package pdftex.def Info: ../Figures/van_der_pol_trajectories_04.png  used on input line 1063.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_trajectories_06.png, id=591, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_trajectories_06.png, id=592, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_trajectories_06.png Graphic file (type png)
 <use ../Figures/van_der_pol_trajectories_06.png>
-Package pdftex.def Info: ../Figures/van_der_pol_trajectories_06.png  used on input line 1054.
+Package pdftex.def Info: ../Figures/van_der_pol_trajectories_06.png  used on input line 1064.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_trajectories_08.png, id=592, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_trajectories_08.png, id=593, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_trajectories_08.png Graphic file (type png)
 <use ../Figures/van_der_pol_trajectories_08.png>
-Package pdftex.def Info: ../Figures/van_der_pol_trajectories_08.png  used on input line 1055.
+Package pdftex.def Info: ../Figures/van_der_pol_trajectories_08.png  used on input line 1065.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
-<../Figures/van_der_pol_trajectories_10.png, id=593, 722.7pt x 361.35pt>
+<../Figures/van_der_pol_trajectories_10.png, id=594, 722.7pt x 361.35pt>
 File: ../Figures/van_der_pol_trajectories_10.png Graphic file (type png)
 <use ../Figures/van_der_pol_trajectories_10.png>
-Package pdftex.def Info: ../Figures/van_der_pol_trajectories_10.png  used on input line 1056.
+Package pdftex.def Info: ../Figures/van_der_pol_trajectories_10.png  used on input line 1066.
 (pdftex.def)             Requested size: 225.84375pt x 112.9216pt.
  [26 <../Figures/van_der_pol_phase_space.png>] [27 <../Figures/van_der_pol_slope_linear_fit.png> <../Figures/van_der_pol_loss_plots.png>] [28 <../Figures/van_der_pol_bandwidth_averages_plot.png>] [29 <../Figures/van_der_pol_slope_linear_fit_enc_in.png> <../Figures/van_der_pol_slope_linear_fit_enc_0.png> <../Figures/van_der_pol_slope_linear_fit_enc_1.png> <../Figures/van_der_pol_slope_linear_fit_enc_2.png> <../Figures/van_der_pol_slope_linear_fit_enc_out.png> <../Figures/van_der_pol_slope_linear_fit_dec_in.png> <../Figures/van_der_pol_slope_linear_fit_dec_0.png> <../Figures/van_der_pol_slope_linear_fit_dec_1.png> <../Figures/van_der_pol_slope_linear_fit_dec_2.png> <../Figures/van_der_pol_slope_linear_fit_dec_out.png>] [30 <../Figures/van_der_pol_div_plot_linear_enc_in.png> <../Figures/van_der_pol_div_plot_linear_enc_0.png> <../Figures/van_der_pol_div_plot_linear_enc_1.png> <../Figures/van_der_pol_div_plot_linear_enc_2.png> <../Figures/van_der_pol_div_plot_linear_enc_out.png> <../Figures/van_der_pol_div_plot_linear_dec_in.png> <../Figures/van_der_pol_div_plot_linear_dec_0.png> <../Figures/van_der_pol_div_plot_linear_dec_1.png> <../Figures/van_der_pol_div_plot_linear_dec_2.png> <../Figures/van_der_pol_div_plot_linear_dec_out.png>] [31 <../Figures/van_der_pol_trajectories_00.png> <../Figures/van_der_pol_trajectories_03.png> <../Figures/van_der_pol_trajectories_05.png> <../Figures/van_der_pol_trajectories_07.png> <../Figures/van_der_pol_trajectories_09.png> <../Figures/van_der_pol_trajectories_02.png> <../Figures/van_der_pol_trajectories_04.png> <../Figures/van_der_pol_trajectories_06.png> <../Figures/van_der_pol_trajectories_08.png> <../Figures/van_der_pol_trajectories_10.png>]
 CHAPTER 4.
@@ -1080,13 +1072,7 @@ CHAPTER 4.
  Section 4.5.
 ) [34] (thesis.bbl [35] [36
 
-] [37])
-
-Package glossaries Warning: No \printglossary or \printglossaries found. 
-(Remove \makeglossaries if you don't want any glossaries.) 
-This document will not have a glossary.
-
-(thesis.aux)
+] [37]) (thesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1094,17 +1080,17 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 776139554F573EE41D3D3AD19F104AB5;3914.
  ) 
 Here is how much of TeX's memory you used:
- 18527 strings out of 478582
- 324082 string characters out of 2844345
- 651059 words of memory out of 3000000
- 36184 multiletter control sequences out of 15000+600000
+ 18070 strings out of 478582
+ 316570 string characters out of 2844345
+ 648428 words of memory out of 3000000
+ 35730 multiletter control sequences out of 15000+600000
  478670 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  91i,19n,91p,1231b,479s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/josep/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (46 pages, 7477219 bytes).
+Output written on thesis.pdf (46 pages, 7479157 bytes).
 PDF statistics:
- 786 PDF objects out of 1000 (max. 8388607)
- 160 named destinations out of 1000 (max. 500000)
+ 787 PDF objects out of 1000 (max. 8388607)
+ 161 named destinations out of 1000 (max. 500000)
  571 words of extra memory for PDF output out of 10000 (max. 10000000)
 

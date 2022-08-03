@@ -1,4 +1,3 @@
-
 \chapter{INTRODUCTION}
 \label{chap:intro}
 % By labeling the chapter, I can refer to it later using the
@@ -23,7 +22,12 @@ underlying dynamics to forecast future states. These are called Dynamic Mode
 Decompositions and they fit nicely within the broad family of modal 
 decompositions. In the coming sections, we will introduce a specific strain
 of Dynamic Mode Decomposition and discuss improvements made to it using
-Machine Learning (ML). The ultimate goal of this thesis is to show that we have
+Machine Learning (ML). The ability of Neural Netorks (NNs) to learn arbitrary
+functions subject to constraints motivates their use to avoid the shortcomings
+that these numerical methods exhibit for highly nonlinear data. Seeking new data 
+representations can extend the utility of many data-driven methods and NNs
+provide a new avenue of investigation in this field.
+The ultimate goal of this thesis is to show that we have
 come up with a method for quantifying the effectiveness of the training 
 that the affliated network undergoes with a few computed indicators.
 
@@ -143,7 +147,7 @@ and ${\bf \Lambda}$ is the diagonal matrix whose elements are $\lambda_\ell
 
 \section{What are Neural Networks?}
 
-Before we move on, a brief digression on Neural Networks (NNs) is appropriate. Ever since
+Before we move on, a brief digression on NNs is appropriate. Ever since
 scientists discovered the relatively simple interaction between neurons and axons in 
 the human brain, they have been enamored with the ability to create a learning computer 
 with the similar ability to become more adept at a task with training and practice. 
@@ -496,7 +500,13 @@ given by
     \hat{f}(x; K, h) = \frac{1}{nh}\sum_{i = 1}^n K\parens{\frac{x - x_i}{h}},
 \end{equation}
 where $K$ is the chosen kernel, $h$ is what's called the bandwidth parameter, and 
-$\{x_i\}_{i=1}^n$ is the data that generates our histogram. Per Epanechnikov, 
+$\{x_i\}_{i=1}^n$ is the data that generates our histogram. In this context, a kernel
+is a non-negative function that satisfies 
+\begin{equation}
+    \int_{-\infty}^\infty K(x)\ dx = 1 \text{ and } K(x) = K(-x),\ \forall x \in \R
+\end{equation}
+and can be thought of a dictating the shape of the density estimate derived.
+Per Epanechnikov, 
 the choice of kernel does not provide much statistical significance \cite{epanechnikov}; 
 but the choice of the bandwidth parameter $h$ is very crucial for finding a density estimate
 that approximates the underlying density function appropriately and can be thought of as an 

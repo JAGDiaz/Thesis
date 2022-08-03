@@ -954,11 +954,6 @@ INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\tex\latex\glossaries\styles\g
 INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\tex\latex\glossaries\styles\glossary-tree.sty
 INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\tex\latex\glossaries\styles\glossary-tree.sty
 INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\tex\latex\glossaries\styles\glossary-tree.sty
-OUTPUT thesis.glo
-INPUT .\glossary.tex
-INPUT glossary.tex
-INPUT .\glossary.tex
-INPUT glossary.tex
 INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
@@ -1043,7 +1038,6 @@ INPUT .\thesis.out
 INPUT .\thesis.out
 OUTPUT thesis.out
 INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-OUTPUT thesis.ist
 INPUT C:\Users\josep\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\josep\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
